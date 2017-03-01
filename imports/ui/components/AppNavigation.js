@@ -17,7 +17,7 @@ const AppNavigation = ({ hasUser, currentPage, setCurrentPage }) => (
       <Navbar.Brand>
         <Link href="#" onClick={(event) => {
           setCurrentPage(event, { page: 'index' });
-        }}>Application Name</Link>
+        }}>Look Into My Business</Link>
       </Navbar.Brand>
       <Navbar.Toggle />
     </Navbar.Header>
