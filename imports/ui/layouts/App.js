@@ -7,11 +7,13 @@ import Documents from '../pages/Documents.js';
 import NewDocument from '../pages/NewDocument.js';
 import EditDocument from '../containers/EditDocument.js';
 import ViewDocument from '../containers/ViewDocument.js';
+import CombinedSummary from '../pages/summary-pages/combinedSummaryPage.js';
+import { TempDataManagementPage } from '../pages/temp-pages/tempDataManagementPage.js';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { currentPage: 'documents', currentPageProps: null };
+    this.state = { currentPage: 'index', currentPageProps: null };
     this.setCurrentPage = this.setCurrentPage.bind(this);
   }
 
@@ -27,6 +29,8 @@ export default class App extends React.Component {
       newDocument: <NewDocument />,
       editDocument: <EditDocument />,
       viewDocument: <ViewDocument />,
+      combinedSummary: <CombinedSummary />,
+      tempDataManagement: <TempDataManagementPage />
     }[this.state.currentPage];
   }
 

@@ -11,6 +11,7 @@ export const upsertDocument = new ValidatedMethod({
     body: { type: String, optional: true },
   }).validator(),
   run(document) {
+    console.log("Inserting");
     return Documents.upsert({ _id: document._id }, { $set: document });
   },
 });
