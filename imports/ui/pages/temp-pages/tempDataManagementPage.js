@@ -31,9 +31,9 @@ export class TempDataManagementPage extends React.Component {
 		const addUniqueNumberToArray = function() {
 			let randomNumber=CRN(setSize);
 			let check = randomNumbers.indexOf(randomNumber);
-			if(check === -1 || randomNumber!==0) {
-				return randomNumber;
-			}else {
+			if(check === -1) {
+				return randomNumber + 1;
+			} else {
 				return addUniqueNumberToArray();
 			}
 		}
