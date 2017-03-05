@@ -1,0 +1,1 @@
+export const SARS = new Mongo.Collection('sars');

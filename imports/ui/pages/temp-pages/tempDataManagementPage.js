@@ -4,18 +4,6 @@ import { Button } from "react-bootstrap";
 
 export class TempDataManagementPage extends React.Component {
 
-	createDataRow() {
-		let row = {};
-		row.rowId=Random.id;
-		row.ownerName = "Not yet ready";
-		row.creationDate = "Not yet ready";
-		row.segmentName = "Not yet ready";
-		row.parentName = "Not yet ready";
-		row.favourability = "Not yet ready";
-		row.importance = "Not yet ready";
-		row.helpNote = "Not yet ready";
-	}
-
 	createRandomNumber(setSize) {
 		const randomNumber = Math.floor(Math.random() * setSize);
 		return randomNumber;
@@ -45,12 +33,12 @@ export class TempDataManagementPage extends React.Component {
 		return randomNumbers;
 	}
 
-	createRelationships(stakeholders, CTAA, CSTAR, CRN, CRNS) {
-		const STARs = this.createStakeholderToActivityRelationships(stakeholders, CTAA, CSTAR, CRN, CRNS);
+	createRelationships(stakeholders, CSTAR, CRN, CRNS) {
+		const STARs = this.createStakeholderToActivityRelationships(stakeholders, CSTAR, CRN, CRNS);
 		console.log(STARs);
 	}
 
-	createStakeholderToActivityRelationships(stakeholders, CTAA, CSTAR, CRN, CRNS) {
+	createStakeholderToActivityRelationships(stakeholders, CSTAR, CRN, CRNS) {
 		let stakeholderToActivityRelationships = [];
 		stakeholders.forEach(function(stakeholder) {
 			let randomNumbers = CRNS(4, 30, CRN);
@@ -63,23 +51,11 @@ export class TempDataManagementPage extends React.Component {
 		return stakeholderToActivityRelationships;
 	}
 
-	createTempActivityArray(count, activities) {
-		// Make a copy of the array
-		  var tmp = activities;
-		  var ret = [];
-		  
-		  for (var i = 0; i < count; i++) {
-		    var index = Math.floor(Math.random() * tmp.length);
-		    let addedActivity = tmp[index];
-		    ret.push(addedActivity);
-		  }
-		  return ret;  
-	}
-
 	createStakeholderToActivityRelationship(stakeholder, num) {
 		let STAR = {};
 		STAR.STARid=Random.id;
 		STAR.stakeholder = stakeholder;
+		STAR.parent = stakeholder;
 		STAR.activity = "activity-" + num;
 
 		return STAR;
@@ -96,76 +72,14 @@ export class TempDataManagementPage extends React.Component {
 			"stakeholder-5",
 		]
 
-		const activities = [
-			"activity-1",
-			"activity-2",
-			"activity-3",
-			"activity-4",
-			"activity-5",
-			"activity-6",
-			"activity-7",
-			"activity-8",
-			"activity-9",
-		]
-
-		const values = [
-			"value-1",
-			"value-2",
-			"value-3",
-			"value-4",
-			"value-5",
-			"value-6",
-			"value-7",
-			"value-8",
-			"value-9",
-			"value-10",
-			"value-11",
-			"value-12",
-			"value-13",
-			"value-14",
-			"value-15",
-			"value-16",
-			"value-17",
-		]
-
-		const ownerNames = [
-			"eran",
-			"michael",
-			"maurie",
-			"john"
-		]
-
-		const creationDates = [
-			[2016, 0, 1],
-			[2016, 3, 1],
-			[2016, 6, 1],
-			[2016, 9, 1],
-			[2016, 12, 1],
-		]
-
-		const favourabilityCategories = [
-			"unmarked",
-			"favourable",
-			"neutral",
-			"unfavourable"
-		]
-
-		const importanceCategories = [
-			"unmarked",
-			"important",
-			"neutral",
-			"unimportant"
-		]
-
-		const CTAA = this.createTempActivityArray;
 		const CSTAR = this.createStakeholderToActivityRelationship;
 		const CRN = this.createRandomNumber;
 		const CRNS= this.createRandomNumbers;
 		
 		return <div>
 			<h3>Temp data Management</h3>
-			<Button onClick={this.createRelationships.bind(this,stakeholders, CTAA, CSTAR, CRN, CRNS)}>Create STARs</Button>
-			<Button onClick={this.createRandomNumbers.bind(this,3,30, CRNS)}>Random numbers</Button>
+			<Button onClick={this.createRelationships.bind(this,stakeholders, CSTAR, CRN, CRNS)}>Create STARs</Button>
+			<Button >Save SARs</Button>
 		</div>
 	}
 }
