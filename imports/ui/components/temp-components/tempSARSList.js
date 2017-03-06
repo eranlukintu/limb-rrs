@@ -1,8 +1,9 @@
-import { ListGroup, ListGroupItem, Alert } from 'react-bootstrap';
 import React from "react";
+import { ListGroup, ListGroupItem, Alert } from 'react-bootstrap';
 
-const TempSARSList = ({ sars, setCurrentPage }) => (
-  <h4>Temp sars list</h4>
-  );
+export default class TempSARSList extends React.Component{
+  render() {
+    return <h3>Temp SARS list</h3>
+  }
+}
 
-export default TempSARSList;

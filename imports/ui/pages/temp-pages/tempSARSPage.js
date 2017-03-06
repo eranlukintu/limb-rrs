@@ -8,7 +8,7 @@ export const TempSARSListPage = props => (
       <div className="page-header clearfix">
         <h4 className="pull-left">SARS</h4>        
       </div>
-      <TempSARSList />
+      <TempSARSList  { ...props } />
     </Col>
   </Row>
 );
