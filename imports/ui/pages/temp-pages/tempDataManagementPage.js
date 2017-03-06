@@ -1,4 +1,6 @@
 import React from "react";
+import Meteor from "meteor/meteor";
+import { insertSAR } from "../../../api/temp-data/temp-methods/tempMethods.js";
 import { Random } from 'meteor/random';
 import { Button } from "react-bootstrap";
 
@@ -33,18 +35,18 @@ export class TempDataManagementPage extends React.Component {
 		return randomNumbers;
 	}
 
-	createRelationships(stakeholders, CSTAR, CRN, CRNS) {
-		const STARs = this.createStakeholderToActivityRelationships(stakeholders, CSTAR, CRN, CRNS);
-		console.log(STARs);
+	createRelationships(stakeholders, CSAR, CRN, CRNS) {
+		const SARs = this.createStakeholderToActivityRelationships(stakeholders, CSAR, CRN, CRNS);
+		console.log(SARs);
 	}
 
-	createStakeholderToActivityRelationships(stakeholders, CSTAR, CRN, CRNS) {
+	createStakeholderToActivityRelationships(stakeholders, CSAR, CRN, CRNS) {
 		let stakeholderToActivityRelationships = [];
 		stakeholders.forEach(function(stakeholder) {
 			let randomNumbers = CRNS(4, 30, CRN);
 			randomNumbers.forEach(function(rn) {
-				let STAR = CSTAR(stakeholder, rn);
-				stakeholderToActivityRelationships.push(STAR);
+				let SAR = CSAR(stakeholder, rn);
+				stakeholderToActivityRelationships.push(SAR);
 			});
 
 		});
@@ -52,13 +54,20 @@ export class TempDataManagementPage extends React.Component {
 	}
 
 	createStakeholderToActivityRelationship(stakeholder, num) {
-		let STAR = {};
-		STAR.STARid=Random.id;
-		STAR.stakeholder = stakeholder;
-		STAR.parent = stakeholder;
-		STAR.activity = "activity-" + num;
+		let SAR = {};
+		SAR.stakeholder = stakeholder;
+		SAR.parent = stakeholder;
+		SAR.activity = "activity-" + num;
 
-		return STAR;
+		return SAR;
+	}
+
+	saveSARS(stakeholders, CSAR, CRN, CRNS) {
+		let SARS = this.createStakeholderToActivityRelationships(stakeholders, CSAR, CRN, CRNS);
+		SARS.forEach(function(SAR) {
+			insertSAR.call(SAR);
+		});
+		console.log("Save completed");
 	}
 
 
@@ -72,14 +81,16 @@ export class TempDataManagementPage extends React.Component {
 			"stakeholder-5",
 		]
 
-		const CSTAR = this.createStakeholderToActivityRelationship;
+		const CSAR = this.createStakeholderToActivityRelationship;
 		const CRN = this.createRandomNumber;
 		const CRNS= this.createRandomNumbers;
+		const setCurrentPage = this.props.setCurrentPage;
 		
 		return <div>
 			<h3>Temp data Management</h3>
-			<Button onClick={this.createRelationships.bind(this,stakeholders, CSTAR, CRN, CRNS)}>Create STARs</Button>
-			<Button >Save SARs</Button>
+			<Button onClick={this.createRelationships.bind(this,stakeholders, CSAR, CRN, CRNS)}>Create SARs</Button>
+			<Button onClick={this.saveSARS.bind(this,stakeholders, CSAR, CRN, CRNS)}>Save SARs</Button>
+			<Button onClick={(event) => { setCurrentPage(event, { page: 'viewSARS' }); }}>View SARs</Button>
 		</div>
 	}
 }

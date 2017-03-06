@@ -1,16 +1,21 @@
 import { Meteor } from "meteor/meteor";
+import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import { SARS } from "../temp-collections/tempCollections.js";
 
-Meteor.methods({
-	"insertSAR": function(SAR) {
-		addSAR(SAR);
-	}
+export const insertSAR = new ValidatedMethod({
+  name: 'SAR.insert',
+  validate: new SimpleSchema({ 
+    stakeholder: { type: String, optional: true },
+    activity: { type: String, optional: true },
+    parent: { type: String, optional: true },
+  }).validator(),
+  run(SAR) {
+    SARS.insert(SAR);
+  },
 });
 
-addSAR = function(SAR) {
-	SARS.insert({
-		stakeholder: SAR.stakeholder,
-		activity: SAR.activity,
-		parent: SAR.stakeholder
-	});
+export const addSAR = function(SAR) {
+	console.log(SAR);
+	
 }
