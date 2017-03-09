@@ -15,7 +15,14 @@ export const insertSAR = new ValidatedMethod({
   },
 });
 
-export const addSAR = function(SAR) {
-	console.log(SAR);
-	
-}
+export const insertStructureItem = new ValidatedMethod({
+  name: 'structureItem.insert',
+  validate: new SimpleSchema({ 
+    stakeholder: { type: String, optional: true },
+    activity: { type: String, optional: true },
+    parent: { type: String, optional: true },
+  }).validator(),
+  run(SAR) {
+    SARS.insert(SAR);
+  },
+});
