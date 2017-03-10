@@ -11,3 +11,7 @@ export const createSetOfUniqueRandomNumbers = function generateRan(max, numberOf
     }
     return arrayOfUniqueRandoms
 }
+
+export const createRandomNumberWithinRange = function(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}

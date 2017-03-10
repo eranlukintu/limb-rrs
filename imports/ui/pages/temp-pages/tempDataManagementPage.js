@@ -4,7 +4,7 @@ import { insertSAR } from "../../../api/temp-data/temp-methods/tempMethods.js";
 import { createStakeholderFLI_s } from "../../functions/temp-functions/fli-functions/fliFunctions.js";
 import { createSLI_s } from "../../functions/temp-functions/fli-functions/fliFunctions.js";
 import { createSetOfUniqueRandomNumbers } from "../../functions/random-number-functions/randomNumberFunctions.js";
-
+import { createStructureItems } from "../../functions/temp-functions/structure-item-functions/structureItemFunctions";
 import { Random } from 'meteor/random';
 import { Button } from "react-bootstrap";
 
@@ -82,8 +82,13 @@ export class TempDataManagementPage extends React.Component {
 		console.log("Save completed");
 	}
 
+	saveStructureItems(actors) {
+		let structureItems = createStructureItems(actors);
+		console.log(structureItems);
+	}
+
 	showTopLevelFLI_s(actors) {
-		createSLI_s(actors);
+		createStructureItems(actors);
 	}
 
 
@@ -106,6 +111,7 @@ export class TempDataManagementPage extends React.Component {
 			<h3>Temp data Management</h3>
 			<Button onClick={this.createRelationships.bind(this,actors, CSAR, CRN, CRNS)}>Create SARs</Button>
 			<Button onClick={this.saveSARS.bind(this,actors, CSAR, CRN, CRNS)}>Save SARs</Button>
+			<Button onClick={this.saveStructureItems.bind(this,actors)}>Save structure items</Button>
 			<Button onClick={(event) => { setCurrentPage(event, { page: 'viewSARS' }); }}>View SARs</Button>
 			<Button onClick = {this.showTopLevelFLI_s.bind(this, actors)}>Create TLFI_s</Button>
 		</div>

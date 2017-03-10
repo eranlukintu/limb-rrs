@@ -1,13 +1,16 @@
-export const createHierarchyArray = function(arr, parent) { 
-	var out = [] 
-	for(var i in arr) 
-		{ if(arr[i].parent == parent) { 
-			var children = getNestedChildren(arr, arr[i].id) 
-			if(children.length) { 
-				arr[i].children = children 
-			} 
-			out.push(arr[i]) 
-		} 
-	} 
-	return out 
-}
+export const createHierarchyArray = function(arr) { 
+	var tree = [],
+      mappedArr = {},
+      arrElem,
+      mappedElem; 
+
+	  // First map the nodes of the array to an object -> create a hash table.
+	  for(var i = 0, len = arr.length; i < len; i++) {
+	    arrElem = arr[i];
+	    mappedArr[arrElem.elementId] = arrElem;
+	    mappedArr[arrElem.elementId]['children'] = [];
+	  }
+
+	  return tree;
+	}
+	

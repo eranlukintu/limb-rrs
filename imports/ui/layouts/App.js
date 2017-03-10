@@ -10,6 +10,7 @@ import ViewDocument from '../containers/ViewDocument.js';
 import CombinedSummary from '../pages/summary-pages/combinedSummaryPage.js';
 import { TempDataManagementPage } from '../pages/temp-pages/tempDataManagementPage.js';
 import { TempSARSListPage } from '../pages/temp-pages/tempSARSPage.js';
+import { TempDataStructureItemsPage } from '../pages/temp-pages/tempDataStructureItemsPage.js';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -32,7 +33,8 @@ export default class App extends React.Component {
       viewDocument: <ViewDocument />,
       combinedSummary: <CombinedSummary />,
       tempDataManagement: <TempDataManagementPage />,
-      viewSARS: <TempSARSListPage />
+      viewSARS: <TempSARSListPage />,
+      viewDataStructureItems: <TempDataStructureItemsPage />,
     }[this.state.currentPage];
   }
 
