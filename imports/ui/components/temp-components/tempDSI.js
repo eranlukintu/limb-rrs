@@ -6,7 +6,7 @@ export class TempDSI extends React.Component {
 		const dataStructureItem = this.props.dataStructureItem;
 
 		return <div>
-			{dataStructureItem}
+			{dataStructureItem.name}
 		</div>
 	}
 }

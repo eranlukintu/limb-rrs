@@ -1,14 +1,14 @@
 import React from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
-import TempDataStructureItems from '../../containers/tempContainers/tempDataStructureItemContainer.js';
+import TempDataStructureItemsList from '../../containers/tempContainers/tempDataStructureItemContainer.js';
 
 export const TempDataStructureItemsPage = props => (
   <Row>
     <Col xs={ 12 }>
       <div className="page-header clearfix">
-        <h4 className="pull-left">SARS</h4>        
+        <h4 className="pull-left">Structure items</h4>        
       </div>
-      <TempDataStructureItems  { ...props } />
+      <TempDataStructureItemsList  { ...props } />
     </Col>
   </Row>
 );

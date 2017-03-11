@@ -6,10 +6,11 @@ import Loading from '../../components/Loading.js';
 
 const composer = (params, onData) => {
   const subscription = Meteor.subscribe('StructureItems.list');
+
   if (subscription.ready()) {
     const dsiList = STRUCTUREITEMS.find().fetch();
     onData(null, { dsiList });
   }
 };
 
-export default composeWithTracker(composer, Loading)({ TempDataStructureItemsList });
+export default composeWithTracker(composer, Loading)(TempDataStructureItemsList);

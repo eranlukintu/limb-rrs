@@ -52,11 +52,10 @@ const createActorDataItems = function(actors) {
 		properties.helpNote = "help note not yet implemented";
 
 		let structureItem = createStructureItem(properties);
-		SDI_A.push(structureItem);
-		console.log(SDI_A);
+		SDI_A.push(structureItem);	
 
 	});
-
+	Array.prototype.push.apply(SDI_A, rootArray);
 	return SDI_A;
 }
 
@@ -88,7 +87,7 @@ const createActorActivities = function(actor) {
 		let properties = {};
 		properties.name = activity;
 		properties.itemType = "activity";
-		properties.parentId = "actor.itemId";
+		properties.parentId = actor.itemId;
 		properties.relationshipToParent = "activityOf";
 		properties.helpNote = "help note not yet implemented";
 

@@ -34,7 +34,7 @@ export default class App extends React.Component {
       combinedSummary: <CombinedSummary />,
       tempDataManagement: <TempDataManagementPage />,
       viewSARS: <TempSARSListPage />,
-      viewDataStructureItems: <TempDataStructureItemsPage />,
+      viewStructureItems: <TempDataStructureItemsPage />,
     }[this.state.currentPage];
   }
 

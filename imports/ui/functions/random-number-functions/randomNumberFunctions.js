@@ -2,7 +2,7 @@ export const createSetOfUniqueRandomNumbers = function generateRan(max, numberOf
 
     let arrayOfUniqueRandoms = [];
     for(let i = 0;i<numberOfElements ; i++){
-        let temp = Math.floor(Math.random()*max);
+        let temp = Math.floor(Math.random()*max) + 1;
         if(arrayOfUniqueRandoms.indexOf(temp) == -1){
             arrayOfUniqueRandoms.push(temp);
         }

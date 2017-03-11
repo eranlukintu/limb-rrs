@@ -1,6 +1,7 @@
 import React from "react";
 import Meteor from "meteor/meteor";
 import { insertSAR } from "../../../api/temp-data/temp-methods/tempMethods.js";
+import { insertStructureItem } from "../../../api/temp-data/temp-methods/tempMethods.js";
 import { createStakeholderFLI_s } from "../../functions/temp-functions/fli-functions/fliFunctions.js";
 import { createSLI_s } from "../../functions/temp-functions/fli-functions/fliFunctions.js";
 import { createSetOfUniqueRandomNumbers } from "../../functions/random-number-functions/randomNumberFunctions.js";
@@ -84,7 +85,10 @@ export class TempDataManagementPage extends React.Component {
 
 	saveStructureItems(actors) {
 		let structureItems = createStructureItems(actors);
-		console.log(structureItems);
+		structureItems.forEach(function(SI) {
+			insertStructureItem.call(SI)
+		});
+		console.log("Save completed");
 	}
 
 	showTopLevelFLI_s(actors) {
@@ -113,7 +117,7 @@ export class TempDataManagementPage extends React.Component {
 			<Button onClick={this.saveSARS.bind(this,actors, CSAR, CRN, CRNS)}>Save SARs</Button>
 			<Button onClick={this.saveStructureItems.bind(this,actors)}>Save structure items</Button>
 			<Button onClick={(event) => { setCurrentPage(event, { page: 'viewSARS' }); }}>View SARs</Button>
-			<Button onClick = {this.showTopLevelFLI_s.bind(this, actors)}>Create TLFI_s</Button>
+			<Button onClick={(event) => { setCurrentPage(event, { page: 'viewStructureItems' }); }}>View Structure Items</Button>
 		</div>
 	}
 }
