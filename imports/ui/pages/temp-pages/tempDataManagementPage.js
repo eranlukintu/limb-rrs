@@ -6,10 +6,16 @@ import { createStakeholderFLI_s } from "../../functions/temp-functions/fli-funct
 import { createSLI_s } from "../../functions/temp-functions/fli-functions/fliFunctions.js";
 import { createSetOfUniqueRandomNumbers } from "../../functions/random-number-functions/randomNumberFunctions.js";
 import { createStructureItems } from "../../functions/temp-functions/structure-item-functions/structureItemFunctions";
+import { createHierarchyArray } from "../../functions/createHierarchyArray";
 import { Random } from 'meteor/random';
 import { Button } from "react-bootstrap";
 
 export class TempDataManagementPage extends React.Component {
+
+	constructor(props) {
+	    super(props);
+	    this.state = { treeData: [] };
+	  }
 
 	createRandomNumber(setSize) {
 		const randomNumber = Math.floor(Math.random() * setSize);
@@ -91,10 +97,11 @@ export class TempDataManagementPage extends React.Component {
 		console.log("Save completed");
 	}
 
-	showTopLevelFLI_s(actors) {
-		createStructureItems(actors);
+	createTree(arr) {
+		let HA = createHierarchyArray(arr, 0);
+		this.setState({treeData: HA});
+		console.log("Tree data state set");
 	}
-
 
 	render() {
 
@@ -104,6 +111,17 @@ export class TempDataManagementPage extends React.Component {
 			"actor-3",
 			"actor-4",
 			"actor-5",
+		]
+
+		const arr = [
+		    {id: 1, text: 'hello', parent: 0},
+		    {id: 2, text: 'hello', parent: 1},
+		    {id: 3, text: 'hello', parent: 1},
+		    {id: 4, text: 'hello', parent: 3},
+		    {id: 5, text: 'hello', parent: 4},
+		    {id: 6, text: 'hello', parent: 4},
+		    {id: 7, text: 'hello', parent: 3},
+		    {id: 8, text: 'hello', parent: 2}
 		]
 
 		const CSAR = this.createStakeholderToActivityRelationship;
@@ -118,6 +136,8 @@ export class TempDataManagementPage extends React.Component {
 			<Button onClick={this.saveStructureItems.bind(this,actors)}>Save structure items</Button>
 			<Button onClick={(event) => { setCurrentPage(event, { page: 'viewSARS' }); }}>View SARs</Button>
 			<Button onClick={(event) => { setCurrentPage(event, { page: 'viewStructureItems' }); }}>View Structure Items</Button>
+			<Button onClick={this.createTree.bind(this,arr)}>Create tree</Button>
+			<Button onClick={(event) => { setCurrentPage(event, { page: 'viewTree', props: this.state}); }}>View Tree</Button>
 		</div>
 	}
 }

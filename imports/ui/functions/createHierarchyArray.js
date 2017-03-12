@@ -1,16 +1,18 @@
-export const createHierarchyArray = function(arr) { 
-	var tree = [],
-      mappedArr = {},
-      arrElem,
-      mappedElem; 
 
-	  // First map the nodes of the array to an object -> create a hash table.
-	  for(var i = 0, len = arr.length; i < len; i++) {
-	    arrElem = arr[i];
-	    mappedArr[arrElem.elementId] = arrElem;
-	    mappedArr[arrElem.elementId]['children'] = [];
-	  }
 
-	  return tree;
-	}
+export const createHierarchyArray = function(arr, parent) { 
+	var out = []
+    for(var i in arr) {
+    	console.log(arr[i]);
+        if(arr[i].parent == parent) {
+            var nodes = createHierarchyArray(arr, arr[i].id)
+
+            if(nodes.length) {
+                arr[i].nodes = nodes
+            }
+            out.push(arr[i])
+        }
+    }
+    return out
+}
 	
