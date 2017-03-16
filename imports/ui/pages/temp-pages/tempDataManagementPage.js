@@ -12,52 +12,46 @@ import { createActivitiesForActors } from "../../functions/temp-functions/struct
 import { createReferenceActivityItems } from "../../functions/temp-functions/structure-item-functions/structureItemFunctions";
 import { createReferenceValueItems } from "../../functions/temp-functions/structure-item-functions/structureItemFunctions";
 import { createReferenceValuesForReferenceActivities } from "../../functions/temp-functions/structure-item-functions/structureItemFunctions";
+import { assignValuesToActivities } from "../../functions/temp-functions/structure-item-functions/structureItemFunctions";
 import { createHierarchyArray } from "../../functions/createHierarchyArray";
 import { Random } from 'meteor/random';
-import { Button, Panel } from "react-bootstrap";
+import { Button, Panel, Row, Col } from "react-bootstrap";
+import { createReferenceActors } from "../../functions/temp-functions/structure-item-functions/actor-functions/actorFunctions.js";
+import { createReferenceActivities } from "../../functions/temp-functions/structure-item-functions/activity-functions/activityFunctions.js";
+import { createReferenceValues } from "../../functions/temp-functions/structure-item-functions/value-functions/valueFunctions.js";
 
 export class TempDataManagementPage extends React.Component {
 
 	constructor(props) {
 	    super(props);
 	    this.state = { 
+	    	referenceActors: [],
+	    	referenceActivities: [],
+	    	referenceValues: [],
 	    	treeData: [],
 	    	rootItem: {},
 	    	actorArray: [],
 	    	referenceActivitiesArray: [],
 	    	referenceValuesArray: [],
+	    	referenceActivitiesValuesArray: [],
 	    	activitiesArray: [],
 	    	valuesArray: [], 
 	    };
 	  }
-
-	createRandomNumber(setSize) {
-		const randomNumber = Math.floor(Math.random() * setSize);
-		return randomNumber;
+	
+	setReferenceActors() {
+		let referenceActors = createReferenceActors(5);
+		this.setState({referenceActors: referenceActors})
 	}
 
-	createRandomNumbers(size, setSize, CRN) {
-		let randomNumbers=[];
+	setReferenceActivities() {
+		let referenceActivities = createReferenceActivities(10);
+		this.setState({referenceActivities: referenceActivities});
+	}
 
-		for(var i=0; i<size+1; i++) {
-			randomNumbers.push(-1);
-		}
-
-		const addUniqueNumberToArray = function() {
-			let randomNumber=CRN(setSize);
-			let check = randomNumbers.indexOf(randomNumber);
-			if(check === -1) {
-				return randomNumber + 1;
-			} else {
-				return addUniqueNumberToArray();
-			}
-		}
-
-		randomNumbers.forEach(function(r, index) {
-			const uniqueNumber = addUniqueNumberToArray();
-			randomNumbers[index] = uniqueNumber;
-		});
-		return randomNumbers;
+	setReferenceValues() {
+		let referenceValues = createReferenceValues(15);
+		this.setState({referenceValues: referenceValues});
 	}
 
 	createRelationships(actors, CSAR, CRN, CRNS) {
@@ -119,6 +113,7 @@ export class TempDataManagementPage extends React.Component {
 	createReferenceActivities() {
 		let referenceActivitiesArray = createReferenceActivityItems();
 		this.setState({referenceActivitiesArray: referenceActivitiesArray});
+		console.log(referenceActivitiesArray);
 	}
 
 	createReferenceValues() {
@@ -128,12 +123,11 @@ export class TempDataManagementPage extends React.Component {
 
 	createReferenceActivitiesValues(referenceActivities, referenceValues) {
 		let referenceActivitiesValuesArray = createReferenceValuesForReferenceActivities(referenceActivities, referenceValues);
-		console.log(referenceActivitiesValuesArray);
+		this.setState({referenceActivitiesValuesArray: referenceActivitiesValuesArray});
 	}
 
 	createRoot() {
 		let rootItem = createRootItem();
-		console.log(rootItem);
 		this.setState({rootItem: rootItem});
 	}
 
@@ -144,44 +138,21 @@ export class TempDataManagementPage extends React.Component {
 		
 	}
 
-	createActivitiesArray(actorsStructureArray) {
-		let activitiesArray = createActivitiesForActors(actorsStructureArray);
+	createActivitiesArray(actorsStructureArray, referenceActivitiesArray) {
+		let activitiesArray = createActivitiesForActors(actorsStructureArray, referenceActivitiesArray);
 		this.setState({activitiesArray: activitiesArray});
-		let HA = createHierarchyArray(activitiesArray, "null");
+		console.log(activitiesArray);
+		
+	}
+
+	createValuesArray(activitiesArray, referenceActivitiesValuesArray) {
+		let valuesArray = assignValuesToActivities(activitiesArray, referenceActivitiesValuesArray);
+		console.log(valuesArray);
+		let HA = createHierarchyArray(valuesArray, "null");
 		this.setState({treeData: HA});
 	}
 
-	render() {
-
-		const actors = [
-			"actor-1",
-			"actor-2",
-			"actor-3",
-			"actor-4",
-			"actor-5",
-		]
-
-		const arrOriginal = [
-		    {id: 1, text: 'hello', parent: 0},
-		    {id: 2, text: 'hello', parent: 1},
-		    {id: 3, text: 'hello', parent: 1},
-		    {id: 4, text: 'hello', parent: 3},
-		    {id: 5, text: 'hello', parent: 4},
-		    {id: 6, text: 'hello', parent: 4},
-		    {id: 7, text: 'hello', parent: 3},
-		    {id: 8, text: 'hello', parent: 2}
-		]
-
-		const arr = [
-		    {itemId: "A", text: 'hello', parentId: "null"},
-		    {itemId: "B", text: 'hello', parentId: "A"},
-		    {itemId: "C", text: 'hello', parentId: "A"},
-		    {itemId: "D", text: 'hello', parentId: "C"},
-		    {itemId: "E", text: 'hello', parentId: "D"},
-		    {itemId: "F", text: 'hello', parentId: "D"},
-		    {itemId: "G", text: 'hello', parentId: "C"},
-		    {itemId: "H", text: 'hello', parentId: "B"}
-		]
+	render() {		
 
 		const CSAR = this.createStakeholderToActivityRelationship;
 		const CRN = this.createRandomNumber;
@@ -189,22 +160,33 @@ export class TempDataManagementPage extends React.Component {
 		const setCurrentPage = this.props.setCurrentPage;
 		
 		return <div>
-			<h3>Temp data Management</h3>
-			<Button onClick={this.createRelationships.bind(this,actors, CSAR, CRN, CRNS)}>Create SARs</Button>
-			<Button onClick={this.saveSARS.bind(this,actors, CSAR, CRN, CRNS)}>Save SARs</Button>
-			<Button onClick={this.saveStructureItems.bind(this,actors)}>Save structure items</Button>
+			<h3>Test data Management</h3>
 			<Button onClick={(event) => { setCurrentPage(event, { page: 'viewSARS' }); }}>View SARs</Button>
 			<Button onClick={(event) => { setCurrentPage(event, { page: 'viewStructureItems' }); }}>View Structure Items</Button>
-			<Button onClick={this.createTree.bind(this,arr)}>Create tree</Button>
 			<Button onClick={(event) => { setCurrentPage(event, { page: 'viewTree', props: this.state}); }}>View Tree</Button>
-			<Panel header="Structure actions">
-				<Button onClick={this.createReferenceActivities.bind(this)}>Create reference activities</Button>
-				<Button onClick={this.createReferenceValues.bind(this)}>Create reference values</Button>
-				<Button onClick={this.createReferenceActivitiesValues.bind(this, this.state.referenceActivitiesArray, this.state.referenceValuesArray)}>Create reference activities values</Button>
-				<Button onClick={this.createRoot.bind(this)}>Create root</Button>
-				<Button onClick={this.createActorsArray.bind(this, this.state.rootItem, actors)}>Create actor array</Button>
-				<Button onClick={this.createActivitiesArray.bind(this, this.state.actorsArray)}>Create activities array</Button>
-				<Button>Create values array</Button>
+			<Panel header="Structure actions">				
+				<Button onClick={this.createRoot.bind(this)}>Create root</Button>				
+			</Panel>
+			<Panel>
+				<Row >
+					<Col xs={4}>
+						<Panel header="Reference actions">
+							<Button onClick={this.setReferenceActors.bind(this)}>Create reference actors</Button>
+							<Button onClick={this.setReferenceActivities.bind(this)}>Create reference activities</Button>
+							<Button onClick={this.setReferenceValues.bind(this)}>Create reference values</Button>
+						</Panel>
+					</Col>
+					<Col xs={4}>
+						<Panel header="Structure items actions">
+							<Button>Button</Button>
+						</Panel>
+					</Col>
+					<Col xs={4}>
+						<Panel>
+							<Button>Button</Button>
+						</Panel>
+					</Col>					
+				</Row>
 			</Panel>
 		</div>
 	}

@@ -11,6 +11,16 @@ export const createStructureItems = function(actors) {
 	return SI_1;
 }
 
+export const createReferenceItem = function(referenceProperties) {
+	let referenceItem = {};
+	referenceItem.itemId = Random.id();
+	referenceItem.itemType = referenceProperties.itemType;
+	referenceItem.itemName = referenceProperties.itemName;
+	referenceItem.itemParentId = referenceProperties.itemParentId;
+
+	return referenceItem;
+}
+
 const createStructureItem = function(properties) {
 	let structureItem = {};
 	structureItem.userId = Meteor.userId();
@@ -104,10 +114,12 @@ export const createReferenceValuesForReferenceActivities = function(referenceAct
 
 	referenceActivities.forEach(function(referenceActivity) {
 		let associatedValues = createReferenceActivityValues(referenceActivity, referenceValues);
+		// console.log(associatedValues);
 		associatedValues.forEach(function(av) {
 			referenceActivitiesValues.push(av);
 		});
 	});
+	Array.prototype.push.apply(referenceActivitiesValues, referenceActivities);
 	return referenceActivitiesValues;
 }
 
@@ -135,24 +147,25 @@ const createReferenceActivityValues = function(referenceActivity, referenceValue
 		tempDSI = createStructureItem(properties);
 		valueDataItems.push(tempDSI);
 	});
+
 	return valueDataItems;	
 }
 
-export const createActivitiesForActors = function(actorsStructureArray) {
-
+export const createActivitiesForActors = function(actorsStructureArray, referenceActivities) {
+	// console.log(referenceActivities);
 	let actors = actorsStructureArray.filter(x => x.itemType === "actor");
 	let activities = [];
 	actors.forEach(function(actor) {
-		let actorActivities = createActorActivities(actor);
+		let actorActivities = createActorActivities(actor, referenceActivities);
 		Array.prototype.push.apply(activities, actorActivities);
 	});
 	Array.prototype.push.apply(actorsStructureArray, activities);
+	// console.log(actorsStructureArray);
 	return actorsStructureArray;
 }
 
-const createActorActivities = function(actor) {
+const createActorActivities = function(actor, referenceActivities) {
 
-	let referenceActivities = createReferenceActivityItems();
 	let numberOfActivities = createRandomNumberWithinRange(2, 6);
 	let generatedNumbers = createSetOfUniqueRandomNumbers(40, numberOfActivities);
 	let generatedActivityNames = [];
@@ -169,7 +182,7 @@ const createActorActivities = function(actor) {
 		properties.sourceId = foundActivity.itemId;
 		properties.name = activityName;
 		properties.itemType = "activity";
-		properties.parentId = actor.itemId;
+		properties.parentId = foundActivity.itemId;
 		properties.relationshipToParent = "activityOf";
 		properties.helpNote = "help note not yet implemented";
 
@@ -178,4 +191,34 @@ const createActorActivities = function(actor) {
 	});
 
 	return activityDataItems;
+}
+
+export const assignValuesToActivities = function(activitiesArray, referenceActivitiesValuesArray) {
+	// console.log(activitiesArray);
+	// let activitiesInValuesArray = referenceActivitiesValuesArray.filter(x => x.itemType==="activity");
+	// console.log(activitiesInValuesArray);
+	// console.log(referenceActivitiesValuesArray);
+	let activities = activitiesArray.filter(x => x.itemType === "activity");
+	// console.log(activities);
+	let valuesArray = [];
+	activities.forEach(function(activity) {
+		let referenceActivity = referenceActivitiesValuesArray.find(x => x.itemId === activity.sourceId);
+		// console.log(activity);
+		let activityValues = referenceActivitiesValuesArray.filter(x => x.parentId === activity.itemId);
+		console.log(activityValues);
+		activityValues.forEach(function(value) {
+			let properties = {};
+			properties.sourceId = value.itemId;
+			properties.name = valueName;
+			properties.itemType = "value";
+			properties.parentId = activity.itemId;
+			properties.relationshipToParent = "valueOf";
+			properties.helpNote = "help note not yet implemented";
+
+			let valueItem = createStructureItem(properties);
+			valuesArray.push(valueItem);			
+		})
+	});
+	Array.prototype.push.apply(valuesArray, activitiesArray);
+	return valuesArray;
 }
