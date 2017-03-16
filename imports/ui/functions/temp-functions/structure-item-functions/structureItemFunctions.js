@@ -21,33 +21,9 @@ export const createReferenceItem = function(referenceProperties) {
 	return referenceItem;
 }
 
-const createStructureItem = function(properties) {
-	let structureItem = {};
-	structureItem.userId = Meteor.userId();
-	structureItem.itemId = Random.id();
-	structureItem.name = properties.name;
-	structureItem.text = properties.name;
-	structureItem,sourceId = properties.sourceId;
-	structureItem.itemType = properties.itemType;
-	structureItem.parentId = properties.parentId;
-	structureItem.relationshipToParent = properties.relationshipToParent;
-	structureItem.helpNote = properties.helpNote;
 
-	return structureItem;
-}
 
-export const createRootItem = function() {
-	let properties = {};
-		properties.name = "root";
-		properties.itemType = "root";
-		properties.sourceId = Random.id()
-		properties.parentId = "null";
-		properties.relationshipToParent = "null";
-		properties.helpNote = "help note not yet implemented";
 
-	let rootItem = createStructureItem(properties);
-	return rootItem;
-}
 
 export const createActorDataItems = function(rootItem, actors) {
 
@@ -151,47 +127,7 @@ const createReferenceActivityValues = function(referenceActivity, referenceValue
 	return valueDataItems;	
 }
 
-export const createActivitiesForActors = function(actorsStructureArray, referenceActivities) {
-	// console.log(referenceActivities);
-	let actors = actorsStructureArray.filter(x => x.itemType === "actor");
-	let activities = [];
-	actors.forEach(function(actor) {
-		let actorActivities = createActorActivities(actor, referenceActivities);
-		Array.prototype.push.apply(activities, actorActivities);
-	});
-	Array.prototype.push.apply(actorsStructureArray, activities);
-	// console.log(actorsStructureArray);
-	return actorsStructureArray;
-}
 
-const createActorActivities = function(actor, referenceActivities) {
-
-	let numberOfActivities = createRandomNumberWithinRange(2, 6);
-	let generatedNumbers = createSetOfUniqueRandomNumbers(40, numberOfActivities);
-	let generatedActivityNames = [];
-	let activityDataItems = [];
-
-	generatedNumbers.forEach(function(num) {
-		let temp = "activity-" + num.toString();
-		generatedActivityNames.push(temp);
-	});
-
-	generatedActivityNames.forEach(function(activityName) {
-		let foundActivity = referenceActivities.find(x => x.name === activityName);
-		let properties = {};
-		properties.sourceId = foundActivity.itemId;
-		properties.name = activityName;
-		properties.itemType = "activity";
-		properties.parentId = foundActivity.itemId;
-		properties.relationshipToParent = "activityOf";
-		properties.helpNote = "help note not yet implemented";
-
-		tempDSI = createStructureItem(properties);
-		activityDataItems.push(tempDSI);
-	});
-
-	return activityDataItems;
-}
 
 export const assignValuesToActivities = function(activitiesArray, referenceActivitiesValuesArray) {
 	// console.log(activitiesArray);

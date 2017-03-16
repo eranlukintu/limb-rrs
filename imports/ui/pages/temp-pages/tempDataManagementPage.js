@@ -6,7 +6,7 @@ import { createStakeholderFLI_s } from "../../functions/temp-functions/fli-funct
 import { createSLI_s } from "../../functions/temp-functions/fli-functions/fliFunctions.js";
 import { createSetOfUniqueRandomNumbers } from "../../functions/random-number-functions/randomNumberFunctions.js";
 import { createStructureItems } from "../../functions/temp-functions/structure-item-functions/structureItemFunctions";
-import { createRootItem } from "../../functions/temp-functions/structure-item-functions/structureItemFunctions";
+import { createRootItem } from "../../functions/temp-functions/structure-item-functions/test-data-functions/testDataFunctions";
 import { createActorDataItems } from "../../functions/temp-functions/structure-item-functions/structureItemFunctions";
 import { createActivitiesForActors } from "../../functions/temp-functions/structure-item-functions/structureItemFunctions";
 import { createReferenceActivityItems } from "../../functions/temp-functions/structure-item-functions/structureItemFunctions";
@@ -19,6 +19,8 @@ import { Button, Panel, Row, Col } from "react-bootstrap";
 import { createReferenceActors } from "../../functions/temp-functions/structure-item-functions/actor-functions/actorFunctions.js";
 import { createReferenceActivities } from "../../functions/temp-functions/structure-item-functions/activity-functions/activityFunctions.js";
 import { createReferenceValues } from "../../functions/temp-functions/structure-item-functions/value-functions/valueFunctions.js";
+import { createReferenceActivitiesOfActors } from "../../functions/temp-functions/structure-item-functions/assignment-functions/activitiesOfActorsFunctions.js";
+import { createTestActorItems } from "../../functions/temp-functions/structure-item-functions/test-data-functions/testDataFunctions.js";
 
 export class TempDataManagementPage extends React.Component {
 
@@ -28,8 +30,9 @@ export class TempDataManagementPage extends React.Component {
 	    	referenceActors: [],
 	    	referenceActivities: [],
 	    	referenceValues: [],
-	    	treeData: [],
+	    	referenceActivitiesOfActors: [],
 	    	rootItem: {},
+	    	treeData: [],	    	
 	    	actorArray: [],
 	    	referenceActivitiesArray: [],
 	    	referenceValuesArray: [],
@@ -52,6 +55,22 @@ export class TempDataManagementPage extends React.Component {
 	setReferenceValues() {
 		let referenceValues = createReferenceValues(15);
 		this.setState({referenceValues: referenceValues});
+	}
+
+	setReferenceActivitiesOfActors() {
+		let referenceActivitiesOfActors = createReferenceActivitiesOfActors(this.state.referenceActors, this.state.referenceActivities);
+		this.setState({referenceActivitiesOfActors: referenceActivitiesOfActors});
+	}
+
+	setRootItem() {
+		let rootItem = createRootItem();
+		this.setState({rootItem: rootItem});
+	}
+
+	addTestActors(rootItem, referenceActors) {
+		let testActors = createTestActorItems(rootItem, referenceActors);
+		let HA = createHierarchyArray(testActors, "null");
+		this.setState({treeData: HA});
 	}
 
 	createRelationships(actors, CSAR, CRN, CRNS) {
@@ -174,11 +193,13 @@ export class TempDataManagementPage extends React.Component {
 							<Button onClick={this.setReferenceActors.bind(this)}>Create reference actors</Button>
 							<Button onClick={this.setReferenceActivities.bind(this)}>Create reference activities</Button>
 							<Button onClick={this.setReferenceValues.bind(this)}>Create reference values</Button>
+							<Button onClick={this.setReferenceActivitiesOfActors.bind(this)}>Create reference activities of actors</Button>
 						</Panel>
 					</Col>
 					<Col xs={4}>
 						<Panel header="Structure items actions">
-							<Button>Button</Button>
+							<Button onClick={this.setRootItem.bind(this)}>Create root item</Button>
+							<Button onClick={this.addTestActors.bind(this, this.state.rootItem, this.state.referenceActors)}>Add test actors</Button>
 						</Panel>
 					</Col>
 					<Col xs={4}>
