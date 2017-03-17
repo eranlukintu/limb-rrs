@@ -21,6 +21,7 @@ import { createReferenceActivities } from "../../functions/temp-functions/struct
 import { createReferenceValues } from "../../functions/temp-functions/structure-item-functions/value-functions/valueFunctions.js";
 import { createReferenceActivitiesOfActors } from "../../functions/temp-functions/structure-item-functions/assignment-functions/activitiesOfActorsFunctions.js";
 import { createTestActorItems } from "../../functions/temp-functions/structure-item-functions/test-data-functions/testDataFunctions.js";
+import { createTestActorsWithActivities } from "../../functions/temp-functions/structure-item-functions/test-data-functions/testDataFunctions.js";
 
 export class TempDataManagementPage extends React.Component {
 
@@ -32,6 +33,8 @@ export class TempDataManagementPage extends React.Component {
 	    	referenceValues: [],
 	    	referenceActivitiesOfActors: [],
 	    	rootItem: {},
+	    	testActors: [],
+	    	testActorsWithActivities: [],
 	    	treeData: [],	    	
 	    	actorArray: [],
 	    	referenceActivitiesArray: [],
@@ -69,7 +72,12 @@ export class TempDataManagementPage extends React.Component {
 
 	addTestActors(rootItem, referenceActors) {
 		let testActors = createTestActorItems(rootItem, referenceActors);
-		let HA = createHierarchyArray(testActors, "null");
+		this.setState({testActors: testActors});
+	}
+
+	addActivitiesToTestActors(testActors, referenceActors, referenceActivitiesOfActors) {
+		let testActorsWithActivities = createTestActorsWithActivities(testActors, referenceActors, referenceActivitiesOfActors);
+		let HA = createHierarchyArray(testActorsWithActivities, "null");
 		this.setState({treeData: HA});
 	}
 
@@ -200,6 +208,15 @@ export class TempDataManagementPage extends React.Component {
 						<Panel header="Structure items actions">
 							<Button onClick={this.setRootItem.bind(this)}>Create root item</Button>
 							<Button onClick={this.addTestActors.bind(this, this.state.rootItem, this.state.referenceActors)}>Add test actors</Button>
+							<Button 
+								onClick={this.addActivitiesToTestActors.bind(
+										this, 
+										this.state.testActors, 
+										this.state.referenceActors,
+										this.state.referenceActivitiesOfActors
+									)}>
+								Add activities to test actors
+							</Button>
 						</Panel>
 					</Col>
 					<Col xs={4}>

@@ -8,7 +8,7 @@ const createTestDataItem = function(properties) {
 	testDataItem.itemId = Random.id();
 	testDataItem.name = properties.name;
 	testDataItem.text = properties.name;
-	testDataItem,sourceId = properties.sourceId;
+	testDataItem.sourceId = properties.sourceId;
 	testDataItem.itemType = properties.itemType;
 	testDataItem.parentId = properties.parentId;
 	testDataItem.relationshipToParent = properties.relationshipToParent;
@@ -44,5 +44,37 @@ export const createTestActorItems = function(rootItem, referenceActors) {
 		let testActor = createTestDataItem(properties);
 		testActorItems.push(testActor);
 	})
+	// console.log(testActorItems);
 	return testActorItems;
+}
+
+export const createTestActorsWithActivities = function(testActors, referenceActors, referenceActivitiesOfActors) {
+	// console.log(referenceActivitiesOfActors);
+	let testActorsWithActivities = [];
+	testActors.forEach(function(testActor) {
+		testActorsWithActivities.push(testActor);
+	});
+	let selectedActors= testActors.filter(x => x.itemType === "actor");
+	// console.log(selectedActors);
+	selectedActors.forEach(function(selectedActor) {
+		let sourceActor = referenceActors.find(x => x.itemId === selectedActor.sourceId)
+		// console.log(sourceActor);
+		let associatedActivities = referenceActivitiesOfActors.filter(x => x.itemParentId === sourceActor.itemId);
+		console.log(associatedActivities);
+		associatedActivities.forEach(function(associatedActivity) {
+			let properties = {};
+			properties.name = associatedActivity.itemName;
+			properties.itemType = "activity";
+			properties.sourceId = associatedActivity.itemId;
+			properties.parentId = selectedActor.itemId;
+			properties.relationshipToParent = "activityOf";
+			properties.helpNote = "help note not yet implemented";
+
+			let interimActivity = createTestDataItem(properties);
+			// console.log(interimActivity);
+			testActorsWithActivities.push(interimActivity);
+		});		
+	});
+	// console.log(testActorsWithActivities);
+	return testActorsWithActivities;
 }
