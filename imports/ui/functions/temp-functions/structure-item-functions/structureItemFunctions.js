@@ -17,7 +17,7 @@ export const createReferenceItem = function(referenceProperties) {
 	referenceItem.itemType = referenceProperties.itemType;
 	referenceItem.itemName = referenceProperties.itemName;
 	referenceItem.itemParentId = referenceProperties.itemParentId;
-
+	referenceItem.itemSourceId = referenceProperties.itemSourceId;
 	return referenceItem;
 }
 

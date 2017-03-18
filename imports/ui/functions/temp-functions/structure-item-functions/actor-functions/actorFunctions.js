@@ -8,6 +8,7 @@ export const createReferenceActors = function(numberOfActors) {
 		referenceProperties.itemType = "actor";
 		referenceProperties.itemName = "actor-" + i.toString();
 		referenceProperties.itemParentId = "NA";
+		referenceProperties.itemSourceId = "NA";
 
 		let referenceActor = createReferenceItem(referenceProperties);
 		referenceActors.push(referenceActor);

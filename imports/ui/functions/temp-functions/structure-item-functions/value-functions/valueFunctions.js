@@ -8,6 +8,7 @@ export const createReferenceValues = function(numberOfValues) {
 		referenceProperties.itemType = "value";
 		referenceProperties.itemName = "value-" + i.toString();
 		referenceProperties.itemParentId = "NA";
+		referenceProperties.itemSourceId = "NA";
 
 		let referenceValue = createReferenceItem(referenceProperties);
 		referenceValues.push(referenceValue);

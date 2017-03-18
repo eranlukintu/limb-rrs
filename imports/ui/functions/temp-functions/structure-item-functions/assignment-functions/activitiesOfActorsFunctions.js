@@ -11,6 +11,7 @@ export const createReferenceActivitiesOfActors = function(referenceActors, refer
 			referenceProperties.itemType = "referenceActivityOfActor";
 			referenceProperties.itemName = selectedActivity.itemName;
 			referenceProperties.itemParentId = actor.itemId;
+			referenceProperties.itemSourceId = selectedActivity.itemId;
 
 			let referenceActivityOfActor = createReferenceItem(referenceProperties);
 			referenceActivitiesOfActors.push(referenceActivityOfActor);
@@ -33,3 +34,4 @@ const createReferenceActivitiesForSingleActor = function(actor, referenceActivit
 	})
 	return referenceActivitiesOfSingleActor;
 }
+

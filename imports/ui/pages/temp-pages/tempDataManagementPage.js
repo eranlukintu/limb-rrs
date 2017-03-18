@@ -20,8 +20,10 @@ import { createReferenceActors } from "../../functions/temp-functions/structure-
 import { createReferenceActivities } from "../../functions/temp-functions/structure-item-functions/activity-functions/activityFunctions.js";
 import { createReferenceValues } from "../../functions/temp-functions/structure-item-functions/value-functions/valueFunctions.js";
 import { createReferenceActivitiesOfActors } from "../../functions/temp-functions/structure-item-functions/assignment-functions/activitiesOfActorsFunctions.js";
+import { createReferenceValuesOfActivities } from "../../functions/temp-functions/structure-item-functions/assignment-functions/valuesOfActivitiesFunctions.js";
 import { createTestActorItems } from "../../functions/temp-functions/structure-item-functions/test-data-functions/testDataFunctions.js";
 import { createTestActorsWithActivities } from "../../functions/temp-functions/structure-item-functions/test-data-functions/testDataFunctions.js";
+import { createTestActorsWithActivityValues } from "../../functions/temp-functions/structure-item-functions/test-data-functions/testDataFunctions.js";
 
 export class TempDataManagementPage extends React.Component {
 
@@ -32,9 +34,11 @@ export class TempDataManagementPage extends React.Component {
 	    	referenceActivities: [],
 	    	referenceValues: [],
 	    	referenceActivitiesOfActors: [],
+	    	referenceValuesOfActivities: [],
 	    	rootItem: {},
 	    	testActors: [],
 	    	testActorsWithActivities: [],
+	    	testActorsWithActivityValues: [],
 	    	treeData: [],	    	
 	    	actorArray: [],
 	    	referenceActivitiesArray: [],
@@ -65,6 +69,12 @@ export class TempDataManagementPage extends React.Component {
 		this.setState({referenceActivitiesOfActors: referenceActivitiesOfActors});
 	}
 
+	setReferenceValuesOfActivities() {
+		let referenceValuesOfActivities = createReferenceValuesOfActivities(this.state.referenceActivities, this.state.referenceValues);
+		// console.log(referenceValuesOfActivities);
+		this.setState({referenceValuesOfActivities: referenceValuesOfActivities});
+	}
+
 	setRootItem() {
 		let rootItem = createRootItem();
 		this.setState({rootItem: rootItem});
@@ -75,9 +85,19 @@ export class TempDataManagementPage extends React.Component {
 		this.setState({testActors: testActors});
 	}
 
-	addActivitiesToTestActors(testActors, referenceActors, referenceActivitiesOfActors) {
-		let testActorsWithActivities = createTestActorsWithActivities(testActors, referenceActors, referenceActivitiesOfActors);
+	addActivitiesToTestActors(testActors, referenceActors, referenceActivitiesOfActors, referenceActivities) {
+		let testActorsWithActivities = createTestActorsWithActivities(testActors, referenceActors, referenceActivitiesOfActors, referenceActivities);
+		this.setState({testActorsWithActivities: testActorsWithActivities});
 		let HA = createHierarchyArray(testActorsWithActivities, "null");
+		this.setState({treeData: HA});
+	}
+
+	addValuesToTestActivities(testActorsWithActivities, referenceActivities, referenceValues, referenceValuesOfActivities) {
+		// console.log(referenceValuesOfActivities);
+		let testActorsWithActivityValues = createTestActorsWithActivityValues(testActorsWithActivities, referenceActivities, referenceValues, referenceValuesOfActivities);
+		// console.log(testActorsWithActivityValues);
+		this.setState({testActorsWithActivityValues: testActorsWithActivityValues});
+		let HA = createHierarchyArray(testActorsWithActivityValues, "null");
 		this.setState({treeData: HA});
 	}
 
@@ -202,6 +222,7 @@ export class TempDataManagementPage extends React.Component {
 							<Button onClick={this.setReferenceActivities.bind(this)}>Create reference activities</Button>
 							<Button onClick={this.setReferenceValues.bind(this)}>Create reference values</Button>
 							<Button onClick={this.setReferenceActivitiesOfActors.bind(this)}>Create reference activities of actors</Button>
+							<Button onClick={this.setReferenceValuesOfActivities.bind(this)}>Create reference values of activities</Button>
 						</Panel>
 					</Col>
 					<Col xs={4}>
@@ -213,9 +234,20 @@ export class TempDataManagementPage extends React.Component {
 										this, 
 										this.state.testActors, 
 										this.state.referenceActors,
-										this.state.referenceActivitiesOfActors
+										this.state.referenceActivitiesOfActors,
+										this.state.referenceActivities
 									)}>
 								Add activities to test actors
+							</Button>
+							<Button 
+								onClick={this.addValuesToTestActivities.bind(
+										this, 
+										this.state.testActorsWithActivities, 
+										this.state.referenceActivities,
+										this.state.referenceValues,
+										this.state.referenceValuesOfActivities
+									)}>
+								Add values to test activities
 							</Button>
 						</Panel>
 					</Col>

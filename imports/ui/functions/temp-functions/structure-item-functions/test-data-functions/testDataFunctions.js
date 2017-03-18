@@ -48,8 +48,9 @@ export const createTestActorItems = function(rootItem, referenceActors) {
 	return testActorItems;
 }
 
-export const createTestActorsWithActivities = function(testActors, referenceActors, referenceActivitiesOfActors) {
+export const createTestActorsWithActivities = function(testActors, referenceActors, referenceActivitiesOfActors,  referenceActivities) {
 	// console.log(referenceActivitiesOfActors);
+	// console.log(referenceActivities);
 	let testActorsWithActivities = [];
 	testActors.forEach(function(testActor) {
 		testActorsWithActivities.push(testActor);
@@ -62,10 +63,12 @@ export const createTestActorsWithActivities = function(testActors, referenceActo
 		let associatedActivities = referenceActivitiesOfActors.filter(x => x.itemParentId === sourceActor.itemId);
 		console.log(associatedActivities);
 		associatedActivities.forEach(function(associatedActivity) {
+			let sourceActivity = referenceActivities.find(x => x.itemId === associatedActivity.itemSourceId);
+			console.log(sourceActivity);
 			let properties = {};
 			properties.name = associatedActivity.itemName;
 			properties.itemType = "activity";
-			properties.sourceId = associatedActivity.itemId;
+			properties.sourceId = sourceActivity.itemId;
 			properties.parentId = selectedActor.itemId;
 			properties.relationshipToParent = "activityOf";
 			properties.helpNote = "help note not yet implemented";
@@ -77,4 +80,47 @@ export const createTestActorsWithActivities = function(testActors, referenceActo
 	});
 	// console.log(testActorsWithActivities);
 	return testActorsWithActivities;
+}
+
+export const createTestActorsWithActivityValues = function(
+													testActorsWithActivities, 
+													referenceActivities, 
+													referenceValues,
+													referenceActivityValues) {
+
+	let testActorsWithActivityValues = [];
+	testActorsWithActivities.forEach(function(TAWA) {
+		testActorsWithActivityValues.push(TAWA);
+	});
+
+	// console.log(referenceActivityValues);
+	// console.log(referenceActivities);
+
+	//extract all activities
+	let selectedActivities = testActorsWithActivities.filter(x => x.itemType === "activity");
+	// console.log(selectedActivities);
+
+	//For each activity, proceed with the following steps:
+	//1. Find the source activity
+	//2. For the source activity, find the values in the reference activity values array that have a
+	//parent id corresponding to the source id.
+	//3. For each of the activity values, find the corresponding reference value and set it as the source id
+	selectedActivities.forEach(function(selectedActivity) {
+		let sourceActivity = referenceActivities.find(x => x.itemId ===selectedActivity.sourceId);
+		console.log(sourceActivity);
+		let associatedValues = referenceActivityValues.filter(x => x.itemParentId === sourceActivity.itemId);
+		associatedValues.forEach(function(associatedValue) {
+			let properties = {};
+			properties.name = associatedValue.itemName;
+			properties.itemType = "value";
+			properties.sourceId = associatedValue.itemId;
+			properties.parentId = selectedActivity.itemId;
+			properties.relationshipToParent = "valueOf";
+			properties.helpNote = "help note not yet implemented";
+
+			let interimValue = createTestDataItem(properties);
+			testActorsWithActivityValues.push(interimValue);
+		});
+	});
+	return testActorsWithActivityValues;
 }
