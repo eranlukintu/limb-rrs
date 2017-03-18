@@ -64,7 +64,7 @@ export const createTestActorsWithActivities = function(testActors, referenceActo
 		console.log(associatedActivities);
 		associatedActivities.forEach(function(associatedActivity) {
 			let sourceActivity = referenceActivities.find(x => x.itemId === associatedActivity.itemSourceId);
-			console.log(sourceActivity);
+			// console.log(sourceActivity);
 			let properties = {};
 			properties.name = associatedActivity.itemName;
 			properties.itemType = "activity";
@@ -107,7 +107,7 @@ export const createTestActorsWithActivityValues = function(
 	//3. For each of the activity values, find the corresponding reference value and set it as the source id
 	selectedActivities.forEach(function(selectedActivity) {
 		let sourceActivity = referenceActivities.find(x => x.itemId ===selectedActivity.sourceId);
-		console.log(sourceActivity);
+		// console.log(sourceActivity);
 		let associatedValues = referenceActivityValues.filter(x => x.itemParentId === sourceActivity.itemId);
 		associatedValues.forEach(function(associatedValue) {
 			let properties = {};

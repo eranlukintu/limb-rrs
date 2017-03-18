@@ -21,6 +21,7 @@ import { createReferenceActivities } from "../../functions/temp-functions/struct
 import { createReferenceValues } from "../../functions/temp-functions/structure-item-functions/value-functions/valueFunctions.js";
 import { createReferenceActivitiesOfActors } from "../../functions/temp-functions/structure-item-functions/assignment-functions/activitiesOfActorsFunctions.js";
 import { createReferenceValuesOfActivities } from "../../functions/temp-functions/structure-item-functions/assignment-functions/valuesOfActivitiesFunctions.js";
+import { createReferenceInfluencersOfValues } from "../../functions/temp-functions/structure-item-functions/assignment-functions/influencerOfValuesFunctions.js";
 import { createTestActorItems } from "../../functions/temp-functions/structure-item-functions/test-data-functions/testDataFunctions.js";
 import { createTestActorsWithActivities } from "../../functions/temp-functions/structure-item-functions/test-data-functions/testDataFunctions.js";
 import { createTestActorsWithActivityValues } from "../../functions/temp-functions/structure-item-functions/test-data-functions/testDataFunctions.js";
@@ -35,6 +36,7 @@ export class TempDataManagementPage extends React.Component {
 	    	referenceValues: [],
 	    	referenceActivitiesOfActors: [],
 	    	referenceValuesOfActivities: [],
+	    	referenceInfluencersOfValues: [],
 	    	rootItem: {},
 	    	testActors: [],
 	    	testActorsWithActivities: [],
@@ -73,6 +75,14 @@ export class TempDataManagementPage extends React.Component {
 		let referenceValuesOfActivities = createReferenceValuesOfActivities(this.state.referenceActivities, this.state.referenceValues);
 		// console.log(referenceValuesOfActivities);
 		this.setState({referenceValuesOfActivities: referenceValuesOfActivities});
+	}
+
+	setReferenceInfluencersOfValues() {
+		let referenceInfluencersOfValues = createReferenceInfluencersOfValues(
+				this.state.referenceValues, 
+				this.state.referenceActivities, 
+				this.state.referenceValuesOfActivities);
+		this.setState({referenceInfluencersOfValues: referenceInfluencersOfValues});
 	}
 
 	setRootItem() {
@@ -222,6 +232,7 @@ export class TempDataManagementPage extends React.Component {
 							<Button block onClick={this.setReferenceValues.bind(this)}>Create reference values</Button>
 							<Button block onClick={this.setReferenceActivitiesOfActors.bind(this)}>Create reference activities of actors</Button>
 							<Button block onClick={this.setReferenceValuesOfActivities.bind(this)}>Create reference values of activities</Button>
+							<Button block onClick={this.setReferenceInfluencersOfValues.bind(this)}>Create reference influencers of values</Button>
 						</Panel>
 					</Col>
 					<Col xs={4}>
