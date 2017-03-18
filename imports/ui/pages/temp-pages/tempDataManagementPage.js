@@ -201,6 +201,10 @@ export class TempDataManagementPage extends React.Component {
 
 	render() {		
 
+		const panelStyle = {
+			displayFlex: "flex"
+		};
+
 		const CSAR = this.createStakeholderToActivityRelationship;
 		const CRN = this.createRandomNumber;
 		const CRNS= this.createRandomNumbers;
@@ -208,28 +212,23 @@ export class TempDataManagementPage extends React.Component {
 		
 		return <div>
 			<h3>Test data Management</h3>
-			<Button onClick={(event) => { setCurrentPage(event, { page: 'viewSARS' }); }}>View SARs</Button>
-			<Button onClick={(event) => { setCurrentPage(event, { page: 'viewStructureItems' }); }}>View Structure Items</Button>
-			<Button onClick={(event) => { setCurrentPage(event, { page: 'viewTree', props: this.state}); }}>View Tree</Button>
-			<Panel header="Structure actions">				
-				<Button onClick={this.createRoot.bind(this)}>Create root</Button>				
-			</Panel>
-			<Panel>
+						
+			<Panel bsStyle="primary">
 				<Row >
 					<Col xs={4}>
-						<Panel header="Reference actions">
-							<Button onClick={this.setReferenceActors.bind(this)}>Create reference actors</Button>
-							<Button onClick={this.setReferenceActivities.bind(this)}>Create reference activities</Button>
-							<Button onClick={this.setReferenceValues.bind(this)}>Create reference values</Button>
-							<Button onClick={this.setReferenceActivitiesOfActors.bind(this)}>Create reference activities of actors</Button>
-							<Button onClick={this.setReferenceValuesOfActivities.bind(this)}>Create reference values of activities</Button>
+						<Panel header="Reference actions" bsStyle="primary" style={panelStyle}>
+							<Button block onClick={this.setReferenceActors.bind(this)}>Create reference actors</Button>
+							<Button block onClick={this.setReferenceActivities.bind(this)}>Create reference activities</Button>
+							<Button block onClick={this.setReferenceValues.bind(this)}>Create reference values</Button>
+							<Button block onClick={this.setReferenceActivitiesOfActors.bind(this)}>Create reference activities of actors</Button>
+							<Button block onClick={this.setReferenceValuesOfActivities.bind(this)}>Create reference values of activities</Button>
 						</Panel>
 					</Col>
 					<Col xs={4}>
-						<Panel header="Structure items actions">
-							<Button onClick={this.setRootItem.bind(this)}>Create root item</Button>
-							<Button onClick={this.addTestActors.bind(this, this.state.rootItem, this.state.referenceActors)}>Add test actors</Button>
-							<Button 
+						<Panel header="Test data actions" bsStyle="primary" style={panelStyle}>
+							<Button block onClick={this.setRootItem.bind(this)}>Create root item</Button>
+							<Button block onClick={this.addTestActors.bind(this, this.state.rootItem, this.state.referenceActors)}>Add test actors</Button>
+							<Button block 
 								onClick={this.addActivitiesToTestActors.bind(
 										this, 
 										this.state.testActors, 
@@ -239,7 +238,7 @@ export class TempDataManagementPage extends React.Component {
 									)}>
 								Add activities to test actors
 							</Button>
-							<Button 
+							<Button block 
 								onClick={this.addValuesToTestActivities.bind(
 										this, 
 										this.state.testActorsWithActivities, 
@@ -252,8 +251,8 @@ export class TempDataManagementPage extends React.Component {
 						</Panel>
 					</Col>
 					<Col xs={4}>
-						<Panel>
-							<Button>Button</Button>
+						<Panel header="Viewing actions" bsStyle="primary" style={panelStyle}>
+							<Button block onClick={(event) => { setCurrentPage(event, { page: 'viewTree', props: this.state}); }}>View Tree</Button>
 						</Panel>
 					</Col>					
 				</Row>

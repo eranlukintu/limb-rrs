@@ -12,7 +12,7 @@ const renderNavigation = (hasUser, currentPage, setCurrentPage) => (
 );
 
 const AppNavigation = ({ hasUser, currentPage, setCurrentPage }) => (
-  <Navbar>
+  <Navbar bsStyle="inverse">
     <Navbar.Header>
       <Navbar.Brand>
         <Link href="#" onClick={(event) => {
