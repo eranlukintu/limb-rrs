@@ -61,7 +61,7 @@ export const createTestActorsWithActivities = function(testActors, referenceActo
 		let sourceActor = referenceActors.find(x => x.itemId === selectedActor.sourceId)
 		// console.log(sourceActor);
 		let associatedActivities = referenceActivitiesOfActors.filter(x => x.itemParentId === sourceActor.itemId);
-		console.log(associatedActivities);
+		// console.log(associatedActivities);
 		associatedActivities.forEach(function(associatedActivity) {
 			let sourceActivity = referenceActivities.find(x => x.itemId === associatedActivity.itemSourceId);
 			// console.log(sourceActivity);
@@ -124,3 +124,56 @@ export const createTestActorsWithActivityValues = function(
 	});
 	return testActorsWithActivityValues;
 }
+
+export const createTestActorsWithValueInfluencers = function(
+															testActorsWithActivityValues, 
+															referenceValues, 
+															referenceActivityValues, 
+															referenceInfluencersOfValues) {
+	// console.log(referenceInfluencersOfValues);
+
+	let testActorsWithValueInfluencers = [];
+
+	//Transfer existing test data items to new array
+	testActorsWithActivityValues.forEach(function(TAWAV) {
+		testActorsWithValueInfluencers.push(TAWAV);
+	});
+
+	//Filter for values. These values are not the original reference values, but a pointer to them.
+	let selectedActivityValues = testActorsWithActivityValues.filter(x => x.itemType === "value");
+	// console.log(selectedActivityValues);
+	selectedActivityValues.forEach(function(selectedTestValue) {		
+		//We need to find the respective value in the referenceInfluencersOfValues array.
+		//First, we need to find the value in the reference activity values array.
+		let sourceActivityValue = referenceActivityValues.find(x => x.itemId === selectedTestValue.sourceId);
+		// console.log(sourceActivityValue);
+
+		//Now we need to find the reference value.
+		let referenceValue = referenceValues.find(x => x.itemId === sourceActivityValue.itemSourceId);
+		// console.log(referenceValue);
+
+		//Now we need to locate that value in the reference influencers of values array. Its id will be the paremt id of 
+		//the respective item.
+		// let influencerValue = referenceInfluencersOfValues.find(x => x.itemParentId === referenceValue.itemId);
+		// console.log(influencerValue);
+
+		//We need to find all the influencers that are children of the influencerValue
+		let associatedInfluencers = referenceInfluencersOfValues.filter(x => x.itemParentId === referenceValue.itemId);
+		
+		//Each of the associated influencers needs to be transformed into a test data item
+		associatedInfluencers.forEach(function(associatedInfluencer) {
+			let properties = {};
+			properties.name = associatedInfluencer.itemName;
+			properties.itemType = "influencer";
+			properties.sourceId = associatedInfluencer.itemId;
+			properties.parentId = selectedTestValue.itemId;
+			properties.relationshipToParent = "influencerOn";
+			properties.helpNote = "help note not yet implemented";
+
+			let interimInfluencer = createTestDataItem(properties);
+			testActorsWithValueInfluencers.push(interimInfluencer);
+		})
+	});
+	return testActorsWithValueInfluencers;
+}
+

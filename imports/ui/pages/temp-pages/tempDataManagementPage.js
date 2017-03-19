@@ -25,6 +25,7 @@ import { createReferenceInfluencersOfValues } from "../../functions/temp-functio
 import { createTestActorItems } from "../../functions/temp-functions/structure-item-functions/test-data-functions/testDataFunctions.js";
 import { createTestActorsWithActivities } from "../../functions/temp-functions/structure-item-functions/test-data-functions/testDataFunctions.js";
 import { createTestActorsWithActivityValues } from "../../functions/temp-functions/structure-item-functions/test-data-functions/testDataFunctions.js";
+import { createTestActorsWithValueInfluencers } from "../../functions/temp-functions/structure-item-functions/test-data-functions/testDataFunctions.js";
 
 export class TempDataManagementPage extends React.Component {
 
@@ -41,6 +42,7 @@ export class TempDataManagementPage extends React.Component {
 	    	testActors: [],
 	    	testActorsWithActivities: [],
 	    	testActorsWithActivityValues: [],
+	    	testActorsWithValueInfluencers: [],
 	    	treeData: [],	    	
 	    	actorArray: [],
 	    	referenceActivitiesArray: [],
@@ -108,6 +110,17 @@ export class TempDataManagementPage extends React.Component {
 		// console.log(testActorsWithActivityValues);
 		this.setState({testActorsWithActivityValues: testActorsWithActivityValues});
 		let HA = createHierarchyArray(testActorsWithActivityValues, "null");
+		this.setState({treeData: HA});
+	}
+
+	addInfluencersToTestValues(testActorsWithActivityValues, referenceValues, referenceValuesOfActivities, referenceInfluencersOfValues) {
+		let testActorsWithValueInfluencers = createTestActorsWithValueInfluencers(
+					testActorsWithActivityValues, 
+					referenceValues, 
+					referenceValuesOfActivities,
+					referenceInfluencersOfValues);
+		this.setState({testActorsWithValueInfluencers: testActorsWithValueInfluencers})
+		let HA = createHierarchyArray(testActorsWithValueInfluencers, "null");
 		this.setState({treeData: HA});
 	}
 
@@ -258,6 +271,16 @@ export class TempDataManagementPage extends React.Component {
 										this.state.referenceValuesOfActivities
 									)}>
 								Add values to test activities
+							</Button>
+							<Button block 
+								onClick={this.addInfluencersToTestValues.bind(
+										this, 
+										this.state.testActorsWithActivityValues,
+										this.state.referenceValues,
+										this.state.referenceValuesOfActivities,
+										this.state.referenceInfluencersOfValues,
+									)}>
+								Add influencers to test values
 							</Button>
 						</Panel>
 					</Col>
