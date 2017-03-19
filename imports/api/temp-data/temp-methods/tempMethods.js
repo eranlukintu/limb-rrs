@@ -3,6 +3,7 @@ import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import { SARS } from "../temp-collections/tempCollections.js";
 import { STRUCTUREITEMS } from "../temp-collections/tempCollections.js";
+import { TESTDATA } from "../temp-collections/tempCollections.js";
 
 export const insertSAR = new ValidatedMethod({
   name: 'SAR.insert',
@@ -29,5 +30,23 @@ export const insertStructureItem = new ValidatedMethod({
   }).validator(),
   run(SI) {
     STRUCTUREITEMS.insert(SI);
+  },
+});
+
+export const insertTestDataItem = new ValidatedMethod({
+  name: 'testDataItem.insert',
+  validate: new SimpleSchema({ 
+    userId: { type: String, optional: false},
+    itemId: { type: String, optional: false },
+    name: { type: String, optional: false },
+    text: { type: String, optional: false },
+    sourceId: { type: String, optional: false },
+    itemType: { type: String, optional: false },
+    parentId: { type: String, optional: false },
+    relationshipToParent: { type: String, optional: false },
+    helpNote: { type: String, optional: false },
+  }).validator(),
+  run(TDI) {
+    TESTDATA.insert(TDI);
   },
 });

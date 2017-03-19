@@ -23,7 +23,7 @@ export const createReferenceValuesOfActivities = function(referenceActivities, r
 const createReferenceValuesForSingleActivity = function(referenceValues) {
 	let referenceValuesOfsingleActivity = [];
 	let numberOfReferenceValues = referenceValues.length;
-	let numberOfValuesToBeAssigned = createRandomNumberWithinRange(2, 5);
+	let numberOfValuesToBeAssigned = createRandomNumberWithinRange(8, 14);
 
 	let setOfValueIndexes = createSetOfUniqueRandomNumbers(numberOfReferenceValues, numberOfValuesToBeAssigned);
 

@@ -26,6 +26,7 @@ import { createTestActorItems } from "../../functions/temp-functions/structure-i
 import { createTestActorsWithActivities } from "../../functions/temp-functions/structure-item-functions/test-data-functions/testDataFunctions.js";
 import { createTestActorsWithActivityValues } from "../../functions/temp-functions/structure-item-functions/test-data-functions/testDataFunctions.js";
 import { createTestActorsWithValueInfluencers } from "../../functions/temp-functions/structure-item-functions/test-data-functions/testDataFunctions.js";
+import { insertTestDataItem } from "../../../api/temp-data/temp-methods/tempMethods.js";
 
 export class TempDataManagementPage extends React.Component {
 
@@ -54,17 +55,17 @@ export class TempDataManagementPage extends React.Component {
 	  }
 	
 	setReferenceActors() {
-		let referenceActors = createReferenceActors(5);
+		let referenceActors = createReferenceActors(10);
 		this.setState({referenceActors: referenceActors})
 	}
 
 	setReferenceActivities() {
-		let referenceActivities = createReferenceActivities(10);
+		let referenceActivities = createReferenceActivities(50);
 		this.setState({referenceActivities: referenceActivities});
 	}
 
 	setReferenceValues() {
-		let referenceValues = createReferenceValues(15);
+		let referenceValues = createReferenceValues(70);
 		this.setState({referenceValues: referenceValues});
 	}
 
@@ -122,6 +123,13 @@ export class TempDataManagementPage extends React.Component {
 		this.setState({testActorsWithValueInfluencers: testActorsWithValueInfluencers})
 		let HA = createHierarchyArray(testActorsWithValueInfluencers, "null");
 		this.setState({treeData: HA});
+	}
+
+	saveTestData() {
+		let testData = this.state.testActorsWithValueInfluencers;
+		testData.forEach(function(TDI) {
+			insertTestDataItem.call(TDI);
+		});
 	}
 
 	createRelationships(actors, CSAR, CRN, CRNS) {
@@ -282,6 +290,7 @@ export class TempDataManagementPage extends React.Component {
 									)}>
 								Add influencers to test values
 							</Button>
+							<Button bsStyle="danger" block onClick={this.saveTestData.bind(this)}>Save test data</Button>
 						</Panel>
 					</Col>
 					<Col xs={4}>
