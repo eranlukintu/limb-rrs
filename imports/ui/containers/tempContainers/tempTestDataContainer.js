@@ -1,17 +1,17 @@
 import { composeWithTracker } from 'react-komposer';
 import { Meteor } from 'meteor/meteor';
 import { STRUCTUREITEMS } from '../../../api/temp-data/temp-collections/tempCollections.js';
-
-import TempDataStructureItemsList from '../../components/temp-components/tempDataStructureItemList.js';
+import { TESTDATA } from '../../../api/temp-data/temp-collections/tempCollections.js';
+import TempTestDataList from '../../components/temp-components/tempTestDataList.js';
 import Loading from '../../components/Loading.js';
 
 const composer = (params, onData) => {
-  const subscription = Meteor.subscribe('StructureItems.list');
+  const subscription = Meteor.subscribe('TestData.all');
 
   if (subscription.ready()) {
-    const dsiList = STRUCTUREITEMS.find().fetch();
+    const dsiList = TESTDATA.find().fetch();
     onData(null, { dsiList });
   }
 };
 
-export default composeWithTracker(composer, Loading)(TempDataStructureItemsList);
+export default composeWithTracker(composer, Loading)(TempTestDataList);

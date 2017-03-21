@@ -42,7 +42,7 @@ export const insertTestDataItem = new ValidatedMethod({
     text: { type: String, optional: false },
     sourceId: { type: String, optional: false },
     itemType: { type: String, optional: false },
-    parentId: { type: String, optional: false },
+    crossReferenceId: { type: String, optional: false },
     relationshipToParent: { type: String, optional: false },
     helpNote: { type: String, optional: false },
   }).validator(),

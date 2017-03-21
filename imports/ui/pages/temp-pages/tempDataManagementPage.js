@@ -126,9 +126,12 @@ export class TempDataManagementPage extends React.Component {
 	}
 
 	saveTestData() {
-		let testData = this.state.testActorsWithValueInfluencers;
+		let testData = this.state.testActorsWithActivities;
+		// console.log(testData);
 		testData.forEach(function(TDI) {
+			console.log(TDI);
 			insertTestDataItem.call(TDI);
+			// console.log("item saved");
 		});
 	}
 
@@ -296,6 +299,7 @@ export class TempDataManagementPage extends React.Component {
 					<Col xs={4}>
 						<Panel header="Viewing actions" bsStyle="primary" style={panelStyle}>
 							<Button block onClick={(event) => { setCurrentPage(event, { page: 'viewTree', props: this.state}); }}>View Tree</Button>
+							<Button block onClick={(event) => { setCurrentPage(event, { page: 'viewRawTestData', props: this.state}); }}>View raw test data</Button>
 						</Panel>
 					</Col>					
 				</Row>

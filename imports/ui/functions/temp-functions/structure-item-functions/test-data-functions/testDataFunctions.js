@@ -10,7 +10,7 @@ const createTestDataItem = function(properties) {
 	testDataItem.text = properties.name;
 	testDataItem.sourceId = properties.sourceId;
 	testDataItem.itemType = properties.itemType;
-	testDataItem.parentId = properties.parentId;
+	testDataItem.crossReferenceId = properties.crossReferenceId;
 	testDataItem.relationshipToParent = properties.relationshipToParent;
 	testDataItem.helpNote = properties.helpNote;
 
@@ -22,7 +22,7 @@ export const createRootItem = function() {
 		properties.name = "root";
 		properties.itemType = "root";
 		properties.sourceId = Random.id()
-		properties.parentId = "null";
+		properties.crossReferenceId = "null";
 		properties.relationshipToParent = "null";
 		properties.helpNote = "help note not yet implemented";
 
@@ -38,7 +38,7 @@ export const createTestActorItems = function(rootItem, referenceActors) {
 		properties.name = actor.itemName;
 		properties.itemType = "actor";
 		properties.sourceId = actor.itemId;
-		properties.parentId = rootItem.itemId;
+		properties.crossReferenceId = rootItem.itemId;
 		properties.relationshipToParent = "actorOf";
 		properties.helpNote = "help note not yet implemented";
 		let testActor = createTestDataItem(properties);
@@ -52,9 +52,11 @@ export const createTestActorsWithActivities = function(testActors, referenceActo
 	// console.log(referenceActivitiesOfActors);
 	// console.log(referenceActivities);
 	let testActorsWithActivities = [];
+
 	testActors.forEach(function(testActor) {
 		testActorsWithActivities.push(testActor);
 	});
+
 	let selectedActors= testActors.filter(x => x.itemType === "actor");
 	// console.log(selectedActors);
 	selectedActors.forEach(function(selectedActor) {
@@ -69,7 +71,8 @@ export const createTestActorsWithActivities = function(testActors, referenceActo
 			properties.name = associatedActivity.itemName;
 			properties.itemType = "activity";
 			properties.sourceId = sourceActivity.itemId;
-			properties.parentId = selectedActor.itemId;
+			properties.crossReferenceId = selectedActor.itemId;
+			// properties.parentId = "null";
 			properties.relationshipToParent = "activityOf";
 			properties.helpNote = "help note not yet implemented";
 
@@ -79,6 +82,7 @@ export const createTestActorsWithActivities = function(testActors, referenceActo
 		});		
 	});
 	// console.log(testActorsWithActivities);
+	let testArray = testActors.concat(testActorsWithActivities);
 	return testActorsWithActivities;
 }
 
