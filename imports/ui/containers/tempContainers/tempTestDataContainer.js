@@ -9,8 +9,8 @@ const composer = (params, onData) => {
   const subscription = Meteor.subscribe('TestData.all');
 
   if (subscription.ready()) {
-    const dsiList = TESTDATA.find().fetch();
-    onData(null, { dsiList });
+    const testDataList = TESTDATA.find().fetch();
+    onData(null, { testDataList });
   }
 };
 

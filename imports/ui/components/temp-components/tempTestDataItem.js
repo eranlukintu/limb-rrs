@@ -3,10 +3,10 @@ import React from "react";
 export class TempTestDataItem extends React.Component {
 	render() {
 
-		const dataStructureItem = this.props.dataStructureItem;
+		const testDataItem = this.props.testDataItem;
 
 		return <div>
-			{dataStructureItem.name}
+			{testDataItem.itemId} {testDataItem.name} {testDataItem.itemType}
 		</div>
 	}
 }

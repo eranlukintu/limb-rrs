@@ -5,13 +5,13 @@ import { TempTestDataItem } from "./tempTestDataItem.js";
 export default class TempTestDataList extends React.Component{
   render() { 	
 
-    const dsiList = this.props.dsiList;
-    // console.log(dsiList);
+    const testDataList = this.props.testDataList;
+    // console.log(testDataList);
     
     return 	<div>
         <h3>Temp data structure item list</h3>
-        {dsiList.map((dsi, index) => (
-            <TempTestDataItem dataStructureItem = {dsi} key={index} />
+        {testDataList.map((tdi, index) => (
+            <TempTestDataItem testDataItem = {tdi} key={index} />
         ))}
     </div>
   }

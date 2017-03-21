@@ -118,7 +118,7 @@ export const createTestActorsWithActivityValues = function(
 			properties.name = associatedValue.itemName;
 			properties.itemType = "value";
 			properties.sourceId = associatedValue.itemId;
-			properties.parentId = selectedActivity.itemId;
+			properties.crossReferenceId = selectedActivity.itemId;
 			properties.relationshipToParent = "valueOf";
 			properties.helpNote = "help note not yet implemented";
 
@@ -170,7 +170,7 @@ export const createTestActorsWithValueInfluencers = function(
 			properties.name = associatedInfluencer.itemName;
 			properties.itemType = "influencer";
 			properties.sourceId = associatedInfluencer.itemId;
-			properties.parentId = selectedTestValue.itemId;
+			properties.crossReferenceId = selectedTestValue.itemId;
 			properties.relationshipToParent = "influencerOn";
 			properties.helpNote = "help note not yet implemented";
 

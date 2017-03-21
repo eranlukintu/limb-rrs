@@ -126,7 +126,7 @@ export class TempDataManagementPage extends React.Component {
 	}
 
 	saveTestData() {
-		let testData = this.state.testActorsWithActivities;
+		let testData = this.state.testActorsWithValueInfluencers;
 		// console.log(testData);
 		testData.forEach(function(TDI) {
 			console.log(TDI);
