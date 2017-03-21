@@ -1,9 +1,9 @@
 
 
-export const createHierarchyArray = function(arr, parentId) { 
+export const createHierarchyArray = function(arr, crossReferenceId) { 
 	var out = []
     for(var i in arr) {
-        if(arr[i].parentId == parentId) {
+        if(arr[i].crossReferenceId == crossReferenceId) {
             var nodes = createHierarchyArray(arr, arr[i].itemId)
 
             if(nodes.length) {
