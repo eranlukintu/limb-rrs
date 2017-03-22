@@ -6,11 +6,12 @@ const createTestDataItem = function(properties) {
 	let testDataItem = {};
 	testDataItem.userId = Meteor.userId();
 	testDataItem.itemId = Random.id();
+	testDataItem.staticDotString = properties.staticDotString;
 	testDataItem.name = properties.name;
 	testDataItem.text = properties.name;
 	testDataItem.sourceId = properties.sourceId;
 	testDataItem.itemType = properties.itemType;
-	testDataItem.crossReferenceId = properties.crossReferenceId;
+	// testDataItem.crossReferenceId = properties.crossReferenceId;
 	testDataItem.relationshipToParent = properties.relationshipToParent;
 	testDataItem.helpNote = properties.helpNote;
 
@@ -19,6 +20,7 @@ const createTestDataItem = function(properties) {
 
 export const createRootItem = function() {
 	let properties = {};
+		properties.staticDotString = "1";
 		properties.name = "root";
 		properties.itemType = "root";
 		properties.sourceId = Random.id()
@@ -33,12 +35,13 @@ export const createRootItem = function() {
 export const createTestActorItems = function(rootItem, referenceActors) {
 	let testActorItems = [];
 	testActorItems.push(rootItem);
-	referenceActors.forEach(function(actor) {
+	referenceActors.forEach(function(actor, index) {
 		let properties = {};
-		properties.name = actor.itemName;
+		properties.staticDotString = rootItem.staticDotString + "." + (index+1).toString();
+		properties.name = actor.name;
 		properties.itemType = "actor";
 		properties.sourceId = actor.itemId;
-		properties.crossReferenceId = rootItem.itemId;
+		// properties.crossReferenceId = rootItem.itemId;
 		properties.relationshipToParent = "actorOf";
 		properties.helpNote = "help note not yet implemented";
 		let testActor = createTestDataItem(properties);
@@ -62,16 +65,17 @@ export const createTestActorsWithActivities = function(testActors, referenceActo
 	selectedActors.forEach(function(selectedActor) {
 		let sourceActor = referenceActors.find(x => x.itemId === selectedActor.sourceId)
 		// console.log(sourceActor);
-		let associatedActivities = referenceActivitiesOfActors.filter(x => x.itemParentId === sourceActor.itemId);
+		let associatedActivities = referenceActivitiesOfActors.filter(x => x.crossReferenceId === sourceActor.itemId);
 		// console.log(associatedActivities);
-		associatedActivities.forEach(function(associatedActivity) {
+		associatedActivities.forEach(function(associatedActivity, index) {
 			let sourceActivity = referenceActivities.find(x => x.itemId === associatedActivity.itemSourceId);
 			// console.log(sourceActivity);
 			let properties = {};
-			properties.name = associatedActivity.itemName;
+			properties.staticDotString = selectedActor.staticDotString + "." + (index+1).toString();
+			properties.name = associatedActivity.name;
 			properties.itemType = "activity";
 			properties.sourceId = sourceActivity.itemId;
-			properties.crossReferenceId = selectedActor.itemId;
+			// properties.crossReferenceId = selectedActor.itemId;
 			// properties.parentId = "null";
 			properties.relationshipToParent = "activityOf";
 			properties.helpNote = "help note not yet implemented";
@@ -112,13 +116,14 @@ export const createTestActorsWithActivityValues = function(
 	selectedActivities.forEach(function(selectedActivity) {
 		let sourceActivity = referenceActivities.find(x => x.itemId ===selectedActivity.sourceId);
 		// console.log(sourceActivity);
-		let associatedValues = referenceActivityValues.filter(x => x.itemParentId === sourceActivity.itemId);
-		associatedValues.forEach(function(associatedValue) {
+		let associatedValues = referenceActivityValues.filter(x => x.crossReferenceId === sourceActivity.itemId);
+		associatedValues.forEach(function(associatedValue, index) {
 			let properties = {};
-			properties.name = associatedValue.itemName;
+			properties.staticDotString = selectedActivity.staticDotString + "." + (index+1).toString();
+			properties.name = associatedValue.name;
 			properties.itemType = "value";
 			properties.sourceId = associatedValue.itemId;
-			properties.crossReferenceId = selectedActivity.itemId;
+			// properties.crossReferenceId = selectedActivity.itemId;
 			properties.relationshipToParent = "valueOf";
 			properties.helpNote = "help note not yet implemented";
 
@@ -158,19 +163,20 @@ export const createTestActorsWithValueInfluencers = function(
 
 		//Now we need to locate that value in the reference influencers of values array. Its id will be the paremt id of 
 		//the respective item.
-		// let influencerValue = referenceInfluencersOfValues.find(x => x.itemParentId === referenceValue.itemId);
+		// let influencerValue = referenceInfluencersOfValues.find(x => x.crossReferenceId === referenceValue.itemId);
 		// console.log(influencerValue);
 
 		//We need to find all the influencers that are children of the influencerValue
-		let associatedInfluencers = referenceInfluencersOfValues.filter(x => x.itemParentId === referenceValue.itemId);
+		let associatedInfluencers = referenceInfluencersOfValues.filter(x => x.crossReferenceId === referenceValue.itemId);
 		
 		//Each of the associated influencers needs to be transformed into a test data item
-		associatedInfluencers.forEach(function(associatedInfluencer) {
+		associatedInfluencers.forEach(function(associatedInfluencer, index) {
 			let properties = {};
-			properties.name = associatedInfluencer.itemName;
+			properties.staticDotString = selectedTestValue.staticDotString + "." + (index+1).toString();
+			properties.name = associatedInfluencer.name;
 			properties.itemType = "influencer";
 			properties.sourceId = associatedInfluencer.itemId;
-			properties.crossReferenceId = selectedTestValue.itemId;
+			// properties.crossReferenceId = selectedTestValue.itemId;
 			properties.relationshipToParent = "influencerOn";
 			properties.helpNote = "help note not yet implemented";
 
@@ -178,6 +184,7 @@ export const createTestActorsWithValueInfluencers = function(
 			testActorsWithValueInfluencers.push(interimInfluencer);
 		})
 	});
+	console.log(testActorsWithValueInfluencers);
 	return testActorsWithValueInfluencers;
 }
 

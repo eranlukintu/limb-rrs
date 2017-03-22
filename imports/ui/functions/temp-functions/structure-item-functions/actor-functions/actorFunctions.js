@@ -6,7 +6,7 @@ export const createReferenceActors = function(numberOfActors) {
 	for(let i=1; i<numberOfActors + 1; i++) {
 		let referenceProperties = {};
 		referenceProperties.itemType = "actor";
-		referenceProperties.itemName = "actor-" + i.toString();
+		referenceProperties.name = "actor-" + i.toString();
 		referenceProperties.itemParentId = "NA";
 		referenceProperties.itemSourceId = "NA";
 

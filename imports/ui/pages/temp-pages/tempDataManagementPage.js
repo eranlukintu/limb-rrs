@@ -27,6 +27,7 @@ import { createTestActorsWithActivities } from "../../functions/temp-functions/s
 import { createTestActorsWithActivityValues } from "../../functions/temp-functions/structure-item-functions/test-data-functions/testDataFunctions.js";
 import { createTestActorsWithValueInfluencers } from "../../functions/temp-functions/structure-item-functions/test-data-functions/testDataFunctions.js";
 import { insertTestDataItem } from "../../../api/temp-data/temp-methods/tempMethods.js";
+import { deleteTestDataItem } from "../../../api/temp-data/temp-methods/tempMethods.js";
 
 export class TempDataManagementPage extends React.Component {
 
@@ -129,10 +130,19 @@ export class TempDataManagementPage extends React.Component {
 		let testData = this.state.testActorsWithValueInfluencers;
 		// console.log(testData);
 		testData.forEach(function(TDI) {
-			console.log(TDI);
+			// console.log(TDI);
 			insertTestDataItem.call(TDI);
 			// console.log("item saved");
 		});
+	}
+
+	deleteTestData() {
+		// let testData = this.state.testActorsWithActivities;
+		// testData.forEach(function(TDI) {
+		// 	// console.log(TDI);
+		// 	deleteTestDataItem.call(TDI._id);
+		// });
+		// console.log("Items deleted");
 	}
 
 	createRelationships(actors, CSAR, CRN, CRNS) {
@@ -293,7 +303,7 @@ export class TempDataManagementPage extends React.Component {
 									)}>
 								Add influencers to test values
 							</Button>
-							<Button bsStyle="danger" block onClick={this.saveTestData.bind(this)}>Save test data</Button>
+							<Button bsStyle="success" block onClick={this.saveTestData.bind(this)}>Save test data</Button>
 						</Panel>
 					</Col>
 					<Col xs={4}>

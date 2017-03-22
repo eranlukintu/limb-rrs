@@ -9,8 +9,8 @@ export const createReferenceValuesOfActivities = function(referenceActivities, r
 		referenceValuesOfSingleActivity.forEach(function(referenceValue) {
 			let referenceProperties = {};
 			referenceProperties.itemType = "referenceValueOfActivity";
-			referenceProperties.itemName = referenceValue.itemName;
-			referenceProperties.itemParentId = activity.itemId;
+			referenceProperties.name = referenceValue.name;
+			referenceProperties.crossReferenceId = activity.itemId;
 			referenceProperties.itemSourceId = referenceValue.itemId;
 
 			let referenceValueOfActivity = createReferenceItem(referenceProperties);

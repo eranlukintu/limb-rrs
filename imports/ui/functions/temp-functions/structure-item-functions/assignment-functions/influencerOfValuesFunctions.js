@@ -9,8 +9,8 @@ export const createReferenceInfluencersOfValues = function(referenceValues, refe
 		referenceInfluencersOfValue.forEach(function(referenceInfluencer) {
 			let referenceProperties = {};
 			referenceProperties.itemType = "referenceInfluencerOfValue";
-			referenceProperties.itemName = referenceInfluencer.itemName;
-			referenceProperties.itemParentId = referenceValue.itemId;
+			referenceProperties.name = referenceInfluencer.name;
+			referenceProperties.crossReferenceId = referenceValue.itemId;
 			referenceProperties.itemSourceId = referenceInfluencer.itemId;
 
 			let referenceInfluencerOfValue = createReferenceItem(referenceProperties);

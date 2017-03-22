@@ -15,8 +15,8 @@ export const createReferenceItem = function(referenceProperties) {
 	let referenceItem = {};
 	referenceItem.itemId = Random.id();
 	referenceItem.itemType = referenceProperties.itemType;
-	referenceItem.itemName = referenceProperties.itemName;
-	referenceItem.itemParentId = referenceProperties.itemParentId;
+	referenceItem.name = referenceProperties.name;
+	referenceItem.crossReferenceId = referenceProperties.crossReferenceId;
 	referenceItem.itemSourceId = referenceProperties.itemSourceId;
 	return referenceItem;
 }

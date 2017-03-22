@@ -6,7 +6,7 @@ export const createReferenceValues = function(numberOfValues) {
 	for(let i=1; i<numberOfValues + 1; i++) {
 		let referenceProperties = {};
 		referenceProperties.itemType = "value";
-		referenceProperties.itemName = "value-" + i.toString();
+		referenceProperties.name = "value-" + i.toString();
 		referenceProperties.itemParentId = "NA";
 		referenceProperties.itemSourceId = "NA";
 

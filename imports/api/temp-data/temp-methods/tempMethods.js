@@ -38,15 +38,37 @@ export const insertTestDataItem = new ValidatedMethod({
   validate: new SimpleSchema({ 
     userId: { type: String, optional: false},
     itemId: { type: String, optional: false },
+    staticDotString: { type: String, optional: false},
     name: { type: String, optional: false },
     text: { type: String, optional: false },
     sourceId: { type: String, optional: false },
     itemType: { type: String, optional: false },
-    crossReferenceId: { type: String, optional: false },
+    // crossReferenceId: { type: String, optional: false },
     relationshipToParent: { type: String, optional: false },
     helpNote: { type: String, optional: false },
   }).validator(),
   run(TDI) {
     TESTDATA.insert(TDI);
+  },
+});
+
+export const deleteTestDataItem = new ValidatedMethod({
+  name: 'testDataItem.delete',
+  validate: new SimpleSchema({ 
+    _id: {type: String},
+    userId: { type: String, optional: false},
+    itemId: { type: String, optional: false },
+    staticDotString: { type: String, optional: false},
+    name: { type: String, optional: false },
+    text: { type: String, optional: false },
+    sourceId: { type: String, optional: false },
+    itemType: { type: String, optional: false },
+    // crossReferenceId: { type: String, optional: false },
+    relationshipToParent: { type: String, optional: false },
+    helpNote: { type: String, optional: false },
+  }).validator(),
+  run({item}) {
+    // console.log(itemId);
+    TESTDATA.remove({item});
   },
 });

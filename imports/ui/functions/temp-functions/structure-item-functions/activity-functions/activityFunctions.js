@@ -6,8 +6,8 @@ export const createReferenceActivities = function(numberOfActivities) {
 	for(let i=1; i<numberOfActivities + 1; i++) {
 		let referenceProperties = {};
 		referenceProperties.itemType = "activity";
-		referenceProperties.itemName = "activity-" + i.toString();
-		referenceProperties.itemParentId = "NA";
+		referenceProperties.name = "activity-" + i.toString();
+		referenceProperties.crossReferenceId = "NA";
 		referenceProperties.itemSourceId = "NA";
 
 		let referenceActivity = createReferenceItem(referenceProperties);
