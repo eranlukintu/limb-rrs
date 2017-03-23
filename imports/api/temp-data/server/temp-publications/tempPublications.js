@@ -8,4 +8,6 @@ Meteor.publish('SARS.list', () => SARS.find());
 
 Meteor.publish('StructureItems.list', () => STRUCTUREITEMS.find());
 
-Meteor.publish("TestData.all", () => TESTDATA.find());
+Meteor.publish("TestData.all", function() { 
+	return TESTDATA.find({ userId:this.userId }, {sort: {staticSortString: 1}} );
+});

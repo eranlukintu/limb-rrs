@@ -1,3 +1,5 @@
+import { createSortString }  from "../../../dot-string-functions/dotStringFunctions.js";
+
 export const createTestData = function() {
 
 }
@@ -7,6 +9,7 @@ const createTestDataItem = function(properties) {
 	testDataItem.userId = Meteor.userId();
 	testDataItem.itemId = Random.id();
 	testDataItem.staticDotString = properties.staticDotString;
+	testDataItem.staticSortString = properties.staticSortString;
 	testDataItem.name = properties.name;
 	testDataItem.text = properties.name;
 	testDataItem.sourceId = properties.sourceId;
@@ -21,6 +24,7 @@ const createTestDataItem = function(properties) {
 export const createRootItem = function() {
 	let properties = {};
 		properties.staticDotString = "1";
+		properties.staticSortString = createSortString(properties.staticDotString);
 		properties.name = "root";
 		properties.itemType = "root";
 		properties.sourceId = Random.id()
@@ -32,12 +36,15 @@ export const createRootItem = function() {
 	return rootItem;
 }
 
+
+
 export const createTestActorItems = function(rootItem, referenceActors) {
 	let testActorItems = [];
 	testActorItems.push(rootItem);
 	referenceActors.forEach(function(actor, index) {
 		let properties = {};
 		properties.staticDotString = rootItem.staticDotString + "." + (index+1).toString();
+		properties.staticSortString = createSortString(properties.staticDotString);
 		properties.name = actor.name;
 		properties.itemType = "actor";
 		properties.sourceId = actor.itemId;
@@ -72,6 +79,7 @@ export const createTestActorsWithActivities = function(testActors, referenceActo
 			// console.log(sourceActivity);
 			let properties = {};
 			properties.staticDotString = selectedActor.staticDotString + "." + (index+1).toString();
+			properties.staticSortString = createSortString(properties.staticDotString);
 			properties.name = associatedActivity.name;
 			properties.itemType = "activity";
 			properties.sourceId = sourceActivity.itemId;
@@ -120,6 +128,7 @@ export const createTestActorsWithActivityValues = function(
 		associatedValues.forEach(function(associatedValue, index) {
 			let properties = {};
 			properties.staticDotString = selectedActivity.staticDotString + "." + (index+1).toString();
+			properties.staticSortString = createSortString(properties.staticDotString);
 			properties.name = associatedValue.name;
 			properties.itemType = "value";
 			properties.sourceId = associatedValue.itemId;
@@ -173,6 +182,7 @@ export const createTestActorsWithValueInfluencers = function(
 		associatedInfluencers.forEach(function(associatedInfluencer, index) {
 			let properties = {};
 			properties.staticDotString = selectedTestValue.staticDotString + "." + (index+1).toString();
+			properties.staticSortString = createSortString(properties.staticDotString);
 			properties.name = associatedInfluencer.name;
 			properties.itemType = "influencer";
 			properties.sourceId = associatedInfluencer.itemId;
@@ -184,7 +194,7 @@ export const createTestActorsWithValueInfluencers = function(
 			testActorsWithValueInfluencers.push(interimInfluencer);
 		})
 	});
-	console.log(testActorsWithValueInfluencers);
+	// console.log(testActorsWithValueInfluencers);
 	return testActorsWithValueInfluencers;
 }
 
