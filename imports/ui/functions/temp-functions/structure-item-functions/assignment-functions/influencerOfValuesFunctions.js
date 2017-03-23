@@ -1,6 +1,7 @@
 import { createReferenceItem } from "../structureItemFunctions.js";
 import { createRandomNumberWithinRange } from "../../../random-number-functions/randomNumberFunctions.js";
 import { createSetOfUniqueRandomNumbers } from "../../../random-number-functions/randomNumberFunctions.js";
+import { calculateParentDotString} from "../../../dot-string-functions/dotStringFunctions.js";
 
 export const createReferenceInfluencersOfValues = function(referenceValues, referenceActivities, referenceValuesOfActivities) {
 	referenceInfluencersOfActivities = [];
@@ -21,6 +22,7 @@ export const createReferenceInfluencersOfValues = function(referenceValues, refe
 }
 
 const createReferenceInfluencersOfSingleValue = function(referenceValue, referenceActivities, referenceValuesOfActivities) {
+	
 	let referenceInfluencersOfSingleValue = [];
 	let maxNumberOfInfluencers = referenceActivities.length;
 	let numberOfInfluencersToBeAssigned = createRandomNumberWithinRange(3, 8);
@@ -28,11 +30,21 @@ const createReferenceInfluencersOfSingleValue = function(referenceValue, referen
 
 	setOfInfluencerIndexes.forEach(function(influencerIndex) {
 		let interimInfluencer = referenceActivities[influencerIndex];
-		let idOfActivityAssociatedWithValue = referenceValue.parentId;
+		let interimDotString = interimInfluencer.staticDotString;
+
+		//Derive parent activities of referenceValue
+		let instancesOfValueInReferenceValuesOfActivities = referenceValuesOfActivities.filter(x => x.itemSourceId === referenceValue.itemId);
+		let lengthOfInstances = instancesOfValueInReferenceValuesOfActivities.length;
+
 		let idOfInterimInfluencer = interimInfluencer.itemId;
 
 		//check that the influencing activity is not the same as the parent activity
-		if(idOfInterimInfluencer !== idOfActivityAssociatedWithValue) {
+		if(lengthOfInstances > 0) {
+			let doesActivityMatch = instancesOfValueInReferenceValuesOfActivities.find(x => x.itemId === idOfInterimInfluencer);
+			if(doesActivityMatch === -1) {
+				referenceInfluencersOfSingleValue.push(interimInfluencer);
+			}			
+		}else {
 			referenceInfluencersOfSingleValue.push(interimInfluencer);
 		}
 	});
