@@ -42,3 +42,12 @@ export const calculateGrandparentDotString = function(dString) {
     }
     return grandparentDotString;
   }
+
+  export const calculateIndentLevel = function(dString) {
+    // console.log(dString);
+    let dStringSegments = dString.split(".");
+    let segmentNumber = dStringSegments.length;
+    let indentLevelNumber = segmentNumber - 1;
+    let indentLevel = indentLevelNumber.toString();
+    return indentLevel;
+  }

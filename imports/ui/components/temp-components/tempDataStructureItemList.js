@@ -7,7 +7,7 @@ export default class TempDataStructureItemsList extends React.Component{
   render() { 	
 
     const dsiList = this.props.dsiList;
-    console.log(dsiList);
+    // console.log(dsiList);
     
     return 	<div>
         <h3>Temp data structure item list</h3>
