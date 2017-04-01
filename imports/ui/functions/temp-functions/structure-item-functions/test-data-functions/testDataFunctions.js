@@ -4,21 +4,21 @@ export const createTestData = function() {
 
 }
 
-const createTestDataItem = function(properties) {
-	let testDataItem = {};
-	testDataItem.userId = Meteor.userId();
-	testDataItem.itemId = Random.id();
-	testDataItem.staticDotString = properties.staticDotString;
-	testDataItem.staticSortString = properties.staticSortString;
-	testDataItem.name = properties.name;
-	testDataItem.text = properties.name;
-	testDataItem.sourceId = properties.sourceId;
-	testDataItem.itemType = properties.itemType;
-	// testDataItem.crossReferenceId = properties.crossReferenceId;
-	testDataItem.relationshipToParent = properties.relationshipToParent;
-	testDataItem.helpNote = properties.helpNote;
+const createHierarchyItem = function(properties) {
+	let hierarchyItem = {};
+	hierarchyItem.userId = Meteor.userId();
+	hierarchyItem.itemId = Random.id();
+	hierarchyItem.staticDotString = properties.staticDotString;
+	hierarchyItem.staticSortString = properties.staticSortString;
+	hierarchyItem.name = properties.name;
+	hierarchyItem.text = properties.name;
+	hierarchyItem.sourceId = properties.sourceId;
+	hierarchyItem.itemType = properties.itemType;
+	// hierarchyItem.crossReferenceId = properties.crossReferenceId;
+	hierarchyItem.relationshipToParent = properties.relationshipToParent;
+	hierarchyItem.helpNote = properties.helpNote;
 
-	return testDataItem;
+	return hierarchyItem;
 }
 
 export const createRootItem = function() {
@@ -32,15 +32,15 @@ export const createRootItem = function() {
 		properties.relationshipToParent = "null";
 		properties.helpNote = "help note not yet implemented";
 
-	let rootItem = createTestDataItem(properties);
+	let rootItem = createHierarchyItem(properties);
 	return rootItem;
 }
 
 
 
-export const createTestActorItems = function(rootItem, referenceActors) {
-	let testActorItems = [];
-	testActorItems.push(rootItem);
+export const createHierarchyWithActors = function(rootItem, referenceActors) {
+	let hierarchyWithActors = [];
+	hierarchyWithActors.push(rootItem);
 	referenceActors.forEach(function(actor, index) {
 		let properties = {};
 		properties.staticDotString = rootItem.staticDotString + "." + (index+1).toString();
@@ -51,25 +51,25 @@ export const createTestActorItems = function(rootItem, referenceActors) {
 		// properties.crossReferenceId = rootItem.itemId;
 		properties.relationshipToParent = "actorOf";
 		properties.helpNote = "help note not yet implemented";
-		let testActor = createTestDataItem(properties);
-		testActorItems.push(testActor);
+		let testActor = createHierarchyItem(properties);
+		hierarchyWithActors.push(testActor);
 	})
-	// console.log(testActorItems);
-	return testActorItems;
+	// console.log(hierarchyWithActors);
+	return hierarchyWithActors;
 }
 
-export const createTestActorsWithActivities = function(testActors, referenceActors, referenceActivitiesOfActors,  referenceActivities) {
+export const createHierarchyWithActivities = function(hierarchyWithActors, referenceActors, referenceActivitiesOfActors,  referenceActivities) {
 	// console.log(referenceActivitiesOfActors);
 	// console.log(referenceActivities);
-	let testActorsWithActivities = [];
+	let hierarchyWithActivities = [];
 
-	testActors.forEach(function(testActor) {
-		testActorsWithActivities.push(testActor);
+	hierarchyWithActors.forEach(function(testActor) {
+		hierarchyWithActivities.push(testActor);
 	});
 
-	let selectedActors= testActors.filter(x => x.itemType === "actor");
-	// console.log(selectedActors);
-	selectedActors.forEach(function(selectedActor) {
+	let hierarchyActors= hierarchyWithActors.filter(x => x.itemType === "actor");
+	// console.log(hierarchyActors);
+	hierarchyActors.forEach(function(selectedActor) {
 		let sourceActor = referenceActors.find(x => x.itemId === selectedActor.sourceId)
 		// console.log(sourceActor);
 		let associatedActivities = referenceActivitiesOfActors.filter(x => x.crossReferenceId === sourceActor.itemId);
@@ -88,32 +88,31 @@ export const createTestActorsWithActivities = function(testActors, referenceActo
 			properties.relationshipToParent = "activityOf";
 			properties.helpNote = "help note not yet implemented";
 
-			let interimActivity = createTestDataItem(properties);
-			// console.log(interimActivity);
-			testActorsWithActivities.push(interimActivity);
+			let hierarchyActivity = createHierarchyItem(properties);
+			// console.log(hierarchyActivity);
+			hierarchyWithActivities.push(hierarchyActivity);
 		});		
 	});
-	// console.log(testActorsWithActivities);
-	let testArray = testActors.concat(testActorsWithActivities);
-	return testActorsWithActivities;
+	// console.log(hierarchyWithActivities);
+	return hierarchyWithActivities;
 }
 
-export const createTestActorsWithActivityValues = function(
-													testActorsWithActivities, 
+export const createHierarchyWithValues = function(
+													hierarchyWithActivities, 
 													referenceActivities, 
 													referenceValues,
 													referenceActivityValues) {
 
-	let testActorsWithActivityValues = [];
-	testActorsWithActivities.forEach(function(TAWA) {
-		testActorsWithActivityValues.push(TAWA);
+	let hierarchyWithValues = [];
+	hierarchyWithActivities.forEach(function(HWA) {
+		hierarchyWithValues.push(HWA);
 	});
 
 	// console.log(referenceActivityValues);
 	// console.log(referenceActivities);
 
 	//extract all activities
-	let selectedActivities = testActorsWithActivities.filter(x => x.itemType === "activity");
+	let selectedActivities = hierarchyWithActivities.filter(x => x.itemType === "activity");
 	// console.log(selectedActivities);
 
 	//For each activity, proceed with the following steps:
@@ -136,34 +135,34 @@ export const createTestActorsWithActivityValues = function(
 			properties.relationshipToParent = "valueOf";
 			properties.helpNote = "help note not yet implemented";
 
-			let interimValue = createTestDataItem(properties);
-			testActorsWithActivityValues.push(interimValue);
+			let interimValue = createHierarchyItem(properties);
+			hierarchyWithValues.push(interimValue);
 		});
 	});
-	return testActorsWithActivityValues;
+	return hierarchyWithValues;
 }
 
-export const createTestActorsWithValueInfluencers = function(
-															testActorsWithActivityValues, 
+export const createHierarchyWithInfluencers = function(
+															hierarchyWithValues, 
 															referenceValues, 
 															referenceActivityValues, 
 															referenceInfluencersOfValues) {
 	// console.log(referenceInfluencersOfValues);
 
-	let testActorsWithValueInfluencers = [];
+	let hierarchyWithInfluencers = [];
 
 	//Transfer existing test data items to new array
-	testActorsWithActivityValues.forEach(function(TAWAV) {
-		testActorsWithValueInfluencers.push(TAWAV);
+	hierarchyWithValues.forEach(function(THV) {
+		hierarchyWithInfluencers.push(THV);
 	});
 
 	//Filter for values. These values are not the original reference values, but a pointer to them.
-	let selectedActivityValues = testActorsWithActivityValues.filter(x => x.itemType === "value");
-	// console.log(selectedActivityValues);
-	selectedActivityValues.forEach(function(selectedTestValue) {		
+	let selectedHierarchyValues = hierarchyWithValues.filter(x => x.itemType === "value");
+	// console.log(selectedHierarchyValues);
+	selectedHierarchyValues.forEach(function(selectedHierarchyValue) {		
 		//We need to find the respective value in the referenceInfluencersOfValues array.
 		//First, we need to find the value in the reference activity values array.
-		let sourceActivityValue = referenceActivityValues.find(x => x.itemId === selectedTestValue.sourceId);
+		let sourceActivityValue = referenceActivityValues.find(x => x.itemId === selectedHierarchyValue.sourceId);
 		// console.log(sourceActivityValue);
 
 		//Now we need to find the reference value.
@@ -177,24 +176,24 @@ export const createTestActorsWithValueInfluencers = function(
 
 		//We need to find all the influencers that are children of the influencerValue
 		let associatedInfluencers = referenceInfluencersOfValues.filter(x => x.crossReferenceId === referenceValue.itemId);
-		
+		// console.log(associatedInfluencers);
 		//Each of the associated influencers needs to be transformed into a test data item
 		associatedInfluencers.forEach(function(associatedInfluencer, index) {
 			let properties = {};
-			properties.staticDotString = selectedTestValue.staticDotString + "." + (index+1).toString();
+			properties.staticDotString = selectedHierarchyValue.staticDotString + "." + (index+1).toString();
 			properties.staticSortString = createSortString(properties.staticDotString);
 			properties.name = associatedInfluencer.name;
 			properties.itemType = "influencer";
 			properties.sourceId = associatedInfluencer.itemId;
-			// properties.crossReferenceId = selectedTestValue.itemId;
+			// properties.crossReferenceId = selectedHierarchyValue.itemId;
 			properties.relationshipToParent = "influencerOn";
 			properties.helpNote = "help note not yet implemented";
 
-			let interimInfluencer = createTestDataItem(properties);
-			testActorsWithValueInfluencers.push(interimInfluencer);
+			let interimInfluencer = createHierarchyItem(properties);
+			hierarchyWithInfluencers.push(interimInfluencer);
 		})
 	});
-	// console.log(testActorsWithValueInfluencers);
-	return testActorsWithValueInfluencers;
+	// console.log(hierarchyWithInfluencers);
+	return hierarchyWithInfluencers;
 }
 

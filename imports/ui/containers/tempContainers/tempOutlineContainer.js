@@ -3,7 +3,7 @@ import { Meteor } from 'meteor/meteor';
 import { STRUCTUREITEMS } from '../../../api/temp-data/temp-collections/tempCollections.js';
 import { TESTDATA } from '../../../api/temp-data/temp-collections/tempCollections.js';
 import { TESTDISPLAYDATA } from '../../../api/temp-data/temp-collections/tempCollections.js';
-import TempTestDataList from '../../components/temp-components/tempTestDataList.js';
+import TempOutlineComponent from '../../components/temp-components/tempOutlineComponent.js';
 import Loading from '../../components/Loading.js';
 
 const composer = (params, onData) => {
@@ -15,4 +15,4 @@ const composer = (params, onData) => {
   }
 };
 
-export default composeWithTracker(composer, Loading)(TempTestDataList);
+export default composeWithTracker(composer, Loading)(TempOutlineComponent);

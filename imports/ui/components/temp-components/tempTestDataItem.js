@@ -9,8 +9,9 @@ export class TempTestDataItem extends React.Component {
 		
 		let indentLevel = this.props.indentLevel;
 		for(let i=0; i<indentLevel; i++) {
-			let key = Random.id();
-			hbArray.push(<span><HorizontalBarComponent key={key}/></span>);
+			// let d = new Date();
+			// let key = d.getTime();
+			hbArray.push(<span><HorizontalBarComponent key={i}/></span>);
 		}
 		return hbArray;
 	}

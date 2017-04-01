@@ -22,10 +22,10 @@ import { createReferenceValues } from "../../functions/temp-functions/structure-
 import { createReferenceActivitiesOfActors } from "../../functions/temp-functions/structure-item-functions/assignment-functions/activitiesOfActorsFunctions.js";
 import { createReferenceValuesOfActivities } from "../../functions/temp-functions/structure-item-functions/assignment-functions/valuesOfActivitiesFunctions.js";
 import { createReferenceInfluencersOfValues } from "../../functions/temp-functions/structure-item-functions/assignment-functions/influencerOfValuesFunctions.js";
-import { createTestActorItems } from "../../functions/temp-functions/structure-item-functions/test-data-functions/testDataFunctions.js";
-import { createTestActorsWithActivities } from "../../functions/temp-functions/structure-item-functions/test-data-functions/testDataFunctions.js";
-import { createTestActorsWithActivityValues } from "../../functions/temp-functions/structure-item-functions/test-data-functions/testDataFunctions.js";
-import { createTestActorsWithValueInfluencers } from "../../functions/temp-functions/structure-item-functions/test-data-functions/testDataFunctions.js";
+import { createHierarchyWithActors } from "../../functions/temp-functions/structure-item-functions/test-data-functions/testDataFunctions.js";
+import { createHierarchyWithActivities } from "../../functions/temp-functions/structure-item-functions/test-data-functions/testDataFunctions.js";
+import { createHierarchyWithValues } from "../../functions/temp-functions/structure-item-functions/test-data-functions/testDataFunctions.js";
+import { createHierarchyWithInfluencers } from "../../functions/temp-functions/structure-item-functions/test-data-functions/testDataFunctions.js";
 import { insertTestDataItem } from "../../../api/temp-data/temp-methods/tempMethods.js";
 import { deleteTestDataItem } from "../../../api/temp-data/temp-methods/tempMethods.js";
 
@@ -94,36 +94,32 @@ export class TempDataManagementPage extends React.Component {
 		this.setState({rootItem: rootItem});
 	}
 
-	addTestActors(rootItem, referenceActors) {
-		let testActors = createTestActorItems(rootItem, referenceActors);
+	addActorsToHierarchy(rootItem, referenceActors) {
+		let testActors = createHierarchyWithActors(rootItem, referenceActors);
 		this.setState({testActors: testActors});
 	}
 
-	addActivitiesToTestActors(testActors, referenceActors, referenceActivitiesOfActors, referenceActivities) {
-		let testActorsWithActivities = createTestActorsWithActivities(testActors, referenceActors, referenceActivitiesOfActors, referenceActivities);
+	addActivitiesToHierarchy(testActors, referenceActors, referenceActivitiesOfActors, referenceActivities) {
+		let testActorsWithActivities = createHierarchyWithActivities(testActors, referenceActors, referenceActivitiesOfActors, referenceActivities);
 		this.setState({testActorsWithActivities: testActorsWithActivities});
-		let HA = createHierarchyArray(testActorsWithActivities, "null");
-		this.setState({treeData: HA});
+		
 	}
 
-	addValuesToTestActivities(testActorsWithActivities, referenceActivities, referenceValues, referenceValuesOfActivities) {
+	addValuesToHierarchy(testActorsWithActivities, referenceActivities, referenceValues, referenceValuesOfActivities) {
 		// console.log(referenceValuesOfActivities);
-		let testActorsWithActivityValues = createTestActorsWithActivityValues(testActorsWithActivities, referenceActivities, referenceValues, referenceValuesOfActivities);
+		let testActorsWithActivityValues = createHierarchyWithValues(testActorsWithActivities, referenceActivities, referenceValues, referenceValuesOfActivities);
 		// console.log(testActorsWithActivityValues);
 		this.setState({testActorsWithActivityValues: testActorsWithActivityValues});
-		let HA = createHierarchyArray(testActorsWithActivityValues, "null");
-		this.setState({treeData: HA});
+		
 	}
 
-	addInfluencersToTestValues(testActorsWithActivityValues, referenceValues, referenceValuesOfActivities, referenceInfluencersOfValues) {
-		let testActorsWithValueInfluencers = createTestActorsWithValueInfluencers(
+	addInfluencersToHierarchy(testActorsWithActivityValues, referenceValues, referenceValuesOfActivities, referenceInfluencersOfValues) {
+		let testActorsWithValueInfluencers = createHierarchyWithInfluencers(
 					testActorsWithActivityValues, 
 					referenceValues, 
 					referenceValuesOfActivities,
 					referenceInfluencersOfValues);
 		this.setState({testActorsWithValueInfluencers: testActorsWithValueInfluencers})
-		let HA = createHierarchyArray(testActorsWithValueInfluencers, "null");
-		this.setState({treeData: HA});
 	}
 
 	saveTestData() {
@@ -272,9 +268,9 @@ export class TempDataManagementPage extends React.Component {
 					<Col xs={4}>
 						<Panel header="Test data actions" bsStyle="primary" style={panelStyle}>
 							<Button block onClick={this.setRootItem.bind(this)}>Create root item</Button>
-							<Button block onClick={this.addTestActors.bind(this, this.state.rootItem, this.state.referenceActors)}>Add test actors</Button>
+							<Button block onClick={this.addActorsToHierarchy.bind(this, this.state.rootItem, this.state.referenceActors)}>Add test actors</Button>
 							<Button block 
-								onClick={this.addActivitiesToTestActors.bind(
+								onClick={this.addActivitiesToHierarchy.bind(
 										this, 
 										this.state.testActors, 
 										this.state.referenceActors,
@@ -284,7 +280,7 @@ export class TempDataManagementPage extends React.Component {
 								Add activities to test actors
 							</Button>
 							<Button block 
-								onClick={this.addValuesToTestActivities.bind(
+								onClick={this.addValuesToHierarchy.bind(
 										this, 
 										this.state.testActorsWithActivities, 
 										this.state.referenceActivities,
@@ -294,7 +290,7 @@ export class TempDataManagementPage extends React.Component {
 								Add values to test activities
 							</Button>
 							<Button block 
-								onClick={this.addInfluencersToTestValues.bind(
+								onClick={this.addInfluencersToHierarchy.bind(
 										this, 
 										this.state.testActorsWithActivityValues,
 										this.state.referenceValues,
@@ -310,6 +306,7 @@ export class TempDataManagementPage extends React.Component {
 						<Panel header="Viewing actions" bsStyle="primary" style={panelStyle}>
 							<Button block onClick={(event) => { setCurrentPage(event, { page: 'viewTree', props: this.state}); }}>View Tree</Button>
 							<Button block onClick={(event) => { setCurrentPage(event, { page: 'viewRawTestData', props: this.state}); }}>View raw test data</Button>
+							<Button block onClick={(event) => { setCurrentPage(event, { page: 'viewTempOutline', props: this.state}); }}>View outline</Button>
 						</Panel>
 					</Col>					
 				</Row>

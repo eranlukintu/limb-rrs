@@ -13,6 +13,7 @@ import { TempSARSListPage } from '../pages/temp-pages/tempSARSPage.js';
 import { TempDataStructureItemsPage } from '../pages/temp-pages/tempDataStructureItemsPage.js';
 import { TempTreePage } from '../pages/temp-pages/tempTreePage.js';
 import { TempTestDataPage } from '../pages/temp-pages/rawTestDataPage.js';
+import { TempOutlinePage } from '../pages/temp-pages/tempOutlinePage.js';
 
 
 export default class App extends React.Component {
@@ -39,7 +40,8 @@ export default class App extends React.Component {
       viewSARS: <TempSARSListPage />,
       viewStructureItems: <TempDataStructureItemsPage />,
       viewTree: <TempTreePage />,
-      viewRawTestData: <TempTestDataPage />
+      viewRawTestData: <TempTestDataPage />,
+      viewTempOutline: <TempOutlinePage />
     }[this.state.currentPage];
   }
 
