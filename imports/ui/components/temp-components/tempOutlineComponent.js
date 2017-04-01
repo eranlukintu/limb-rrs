@@ -20,13 +20,19 @@ export default class TempOutlineComponent extends React.Component{
 
   render() { 	
     const testDataList = this.props.testDataList;
+    // console.log(this.props);
     // console.log(testDataList);
     
     return 	<div>
         <h3>Outline</h3>
         <Button bsStyle="danger" onClick={this.handleDeleteAllTestData.bind(this, testDataList)}>Delete all test data</Button>
         {testDataList.map((tdi, index) => (        	
-            <TempTestDataItem testDataItem = {tdi} key={index} indentLevel={this.handleCalculateIndentLevel(tdi)} />
+            <TempTestDataItem 
+                testDataItem = {tdi} 
+                key={index} 
+                setControllingElementId = {this.props.setControllingElementId}
+                indentLevel={this.handleCalculateIndentLevel(tdi)} 
+            />
         ))}
     </div>
   }

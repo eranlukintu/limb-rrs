@@ -16,9 +16,14 @@ export class TempTestDataItem extends React.Component {
 		return hbArray;
 	}
 
+	handleSelect(tdi) {
+		this.props.setControllingElementId(tdi);
+	}
+
 	render() {
 		const testDataItem = this.props.testDataItem;
-		return <div>
+		// console.log(this.props);
+		return <div onClick={this.handleSelect.bind(this, testDataItem)}>
 			{this.insertHorizontalBars()} {testDataItem.staticDotString} {testDataItem.name} {testDataItem.itemType}
 		</div>
 	}

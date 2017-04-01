@@ -249,6 +249,7 @@ export class TempDataManagementPage extends React.Component {
 		const CRN = this.createRandomNumber;
 		const CRNS= this.createRandomNumbers;
 		const setCurrentPage = this.props.setCurrentPage;
+		const setControllingElementId = this.props.setControllingElementId;
 		
 		return <div>
 			<h3>Test data Management</h3>

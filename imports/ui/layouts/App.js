@@ -19,13 +19,23 @@ import { TempOutlinePage } from '../pages/temp-pages/tempOutlinePage.js';
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { currentPage: 'index', currentPageProps: null };
+    this.state = { 
+      currentPage: 'index', 
+      controllingElementId: "Null",
+      currentPageProps: null 
+    };
     this.setCurrentPage = this.setCurrentPage.bind(this);
+    this.setControllingElementId = this.setControllingElementId.bind(this);
   }
 
   setCurrentPage(event, { page, props }) {
     if (event) event.preventDefault();
     this.setState({ currentPage: page, currentPageProps: props });
+  }
+
+  setControllingElementId(item) {
+    console.log(item);
+    this.setState({controllingElementId: item.itemId});
   }
 
   currentPage() {
@@ -58,7 +68,9 @@ export default class App extends React.Component {
             Meteor.userId() ?
             React.cloneElement(this.currentPage(), {
               setCurrentPage: this.setCurrentPage,
+              setControllingElementId: this.setControllingElementId,
               currentPage: this.state.currentPage,
+              controllingElementId: this.state.controllingElementId,
               ...this.state.currentPageProps,
             }) : children
           }
