@@ -41,6 +41,7 @@ export const insertTestDataItem = new ValidatedMethod({
     itemId: { type: String, optional: false },
     staticDotString: { type: String, optional: false},
     staticSortString: { type: String, optional: false},
+    staticIndentLevel: {type: String, optional: false},
     name: { type: String, optional: false },
     text: { type: String, optional: false },
     sourceId: { type: String, optional: false },

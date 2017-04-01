@@ -19,7 +19,7 @@ export const createReferenceInfluencersOfValues = function(referenceValues, refe
 			referenceInfluencersOfValues.push(referenceInfluencerOfValue);
 		});
 	});
-	console.log(referenceInfluencersOfValues)
+	// console.log(referenceInfluencersOfValues)
 	return referenceInfluencersOfValues;
 }
 

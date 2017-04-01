@@ -1,4 +1,5 @@
 import { createSortString }  from "../../../dot-string-functions/dotStringFunctions.js";
+import { calculateIndentLevel } from "../../../dot-string-functions/dotStringFunctions.js";
 
 export const createTestData = function() {
 
@@ -10,6 +11,7 @@ const createHierarchyItem = function(properties) {
 	hierarchyItem.itemId = Random.id();
 	hierarchyItem.staticDotString = properties.staticDotString;
 	hierarchyItem.staticSortString = properties.staticSortString;
+	hierarchyItem.staticIndentLevel = properties.staticIndentLevel;
 	hierarchyItem.name = properties.name;
 	hierarchyItem.text = properties.name;
 	hierarchyItem.sourceId = properties.sourceId;
@@ -25,6 +27,7 @@ export const createRootItem = function() {
 	let properties = {};
 		properties.staticDotString = "1";
 		properties.staticSortString = createSortString(properties.staticDotString);
+		properties.staticIndentLevel = "0";
 		properties.name = "root";
 		properties.itemType = "root";
 		properties.sourceId = Random.id()
@@ -45,6 +48,7 @@ export const createHierarchyWithActors = function(rootItem, referenceActors) {
 		let properties = {};
 		properties.staticDotString = rootItem.staticDotString + "." + (index+1).toString();
 		properties.staticSortString = createSortString(properties.staticDotString);
+		properties.staticIndentLevel = calculateIndentLevel(properties.staticDotString);
 		properties.name = actor.name;
 		properties.itemType = "actor";
 		properties.sourceId = actor.itemId;
@@ -80,6 +84,7 @@ export const createHierarchyWithActivities = function(hierarchyWithActors, refer
 			let properties = {};
 			properties.staticDotString = selectedActor.staticDotString + "." + (index+1).toString();
 			properties.staticSortString = createSortString(properties.staticDotString);
+			properties.staticIndentLevel = calculateIndentLevel(properties.staticDotString);
 			properties.name = associatedActivity.name;
 			properties.itemType = "activity";
 			properties.sourceId = sourceActivity.itemId;
@@ -128,6 +133,7 @@ export const createHierarchyWithValues = function(
 			let properties = {};
 			properties.staticDotString = selectedActivity.staticDotString + "." + (index+1).toString();
 			properties.staticSortString = createSortString(properties.staticDotString);
+			properties.staticIndentLevel = calculateIndentLevel(properties.staticDotString);
 			properties.name = associatedValue.name;
 			properties.itemType = "value";
 			properties.sourceId = associatedValue.itemId;
@@ -182,6 +188,7 @@ export const createHierarchyWithInfluencers = function(
 			let properties = {};
 			properties.staticDotString = selectedHierarchyValue.staticDotString + "." + (index+1).toString();
 			properties.staticSortString = createSortString(properties.staticDotString);
+			properties.staticIndentLevel = calculateIndentLevel(properties.staticDotString);
 			properties.name = associatedInfluencer.name;
 			properties.itemType = "influencer";
 			properties.sourceId = associatedInfluencer.itemId;
