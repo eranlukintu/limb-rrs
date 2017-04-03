@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"referenceI",
+				"referenceInfluencersOfSingleValue"
+			],
+			[
 				"activityId",
 				"activityIdsAssociatedWithInstances"
 			],
@@ -510,65 +514,16 @@
 			[
 				"sub",
 				"Submit"
-			],
-			[
-				"ema",
-				"emailAddress"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "imports/ui/components/supplementary-components/horizontal-bar-component/horizontalBarComponent.js",
-			"settings":
-			{
-				"buffer_size": 289,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "imports/ui/pages/temp-pages/tempOutlinePage.js",
-			"settings":
-			{
-				"buffer_size": 546,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "imports/api/temp-data/temp-methods/tempMethods.js",
 			"settings":
 			{
-				"buffer_size": 4733,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "imports/api/temp-data/server/temp-publications/tempPublications.js",
-			"settings":
-			{
-				"buffer_size": 933,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "imports/ui/layouts/App.js",
-			"settings":
-			{
-				"buffer_size": 2500,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "imports/ui/pages/temp-pages/tempDataManagementPage.js",
-			"settings":
-			{
-				"buffer_size": 13343,
+				"buffer_size": 4789,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -577,7 +532,7 @@
 			"file": "imports/ui/functions/temp-functions/structure-item-functions/test-data-functions/testDataFunctions.js",
 			"settings":
 			{
-				"buffer_size": 8375,
+				"buffer_size": 8905,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -586,16 +541,25 @@
 			"file": "imports/ui/functions/temp-functions/structure-item-functions/assignment-functions/influencerOfValuesFunctions.js",
 			"settings":
 			{
-				"buffer_size": 4277,
+				"buffer_size": 3053,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "imports/api/temp-data/temp-collections/tempCollections.js",
+			"file": "imports/ui/pages/temp-pages/tempOutlinePage.js",
 			"settings":
 			{
-				"buffer_size": 249,
+				"buffer_size": 741,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "imports/ui/layouts/App.js",
+			"settings":
+			{
+				"buffer_size": 2887,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -604,35 +568,16 @@
 			"file": "imports/ui/components/temp-components/tempTestDataItem.js",
 			"settings":
 			{
-				"buffer_size": 718,
+				"buffer_size": 956,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "imports/ui/containers/tempContainers/tempTestDataContainer.js",
+			"file": "imports/ui/components/DocumentsList.js",
 			"settings":
 			{
-				"buffer_size": 796,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "imports/ui/containers/tempContainers/tempOutlineContainer.js",
-			"settings":
-			{
-				"buffer_size": 808,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "imports/ui/components/temp-components/tempTestDataList.js",
-			"settings":
-			{
-				"buffer_size": 1190,
-				"encoding": "UTF-8",
+				"buffer_size": 645,
 				"line_ending": "Windows"
 			}
 		},
@@ -640,7 +585,16 @@
 			"file": "imports/ui/components/temp-components/tempOutlineComponent.js",
 			"settings":
 			{
-				"buffer_size": 1172,
+				"buffer_size": 1347,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "imports/ui/pages/temp-pages/tempDataManagementPage.js",
+			"settings":
+			{
+				"buffer_size": 13413,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -728,6 +682,8 @@
 	[
 		"/C/Users/Eran/Meteor/limb-rrs",
 		"/C/Users/Eran/Meteor/limb-rrs/client",
+		"/C/Users/Eran/Meteor/limb-rrs/client/stylesheets",
+		"/C/Users/Eran/Meteor/limb-rrs/client/stylesheets/module",
 		"/C/Users/Eran/Meteor/limb-rrs/imports",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/documents",
@@ -744,7 +700,6 @@
 		"/C/Users/Eran/Meteor/limb-rrs/imports/startup/server/accounts",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/supplementary-components",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/supplementary-components/horizontal-bar-component",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/temp-components",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/containers",
@@ -768,29 +723,33 @@
 	],
 	"file_history":
 	[
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/temp-components/tempTestDataList.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/containers/tempContainers/tempTestDataContainer.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/functions/createHierarchyArray.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/temp-pages/tempDataManagementPage.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/supplementary-components/horizontal-bar-component/horizontalBarComponent.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/temp-pages/tempOutlinePage.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/temp-data/temp-methods/tempMethods.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/temp-data/server/temp-publications/tempPublications.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/layouts/App.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/temp-pages/tempDataManagementPage.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/functions/temp-functions/structure-item-functions/test-data-functions/testDataFunctions.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/functions/temp-functions/structure-item-functions/assignment-functions/influencerOfValuesFunctions.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/temp-data/temp-collections/tempCollections.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/temp-components/tempTestDataItem.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/containers/tempContainers/tempTestDataContainer.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/containers/tempContainers/tempOutlineContainer.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/Loading.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/temp-components/tempTestDataList.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/temp-components/tempOutlineComponent.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/functions/createHierarchyArray.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/temp-pages/rawTestDataPage.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/functions/temp-functions/structure-item-functions/structureItemFunctions.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/functions/temp-functions/structure-item-functions/assignment-functions/activitiesOfActorsFunctions.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/functions/temp-functions/structure-item-functions/assignment-functions/influencerOfValuesFunctions.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/functions/temp-functions/structure-item-functions/assignment-functions/valuesOfActivitiesFunctions.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/api/temp-data/temp-methods/tempMethods.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/functions/temp-functions/structure-item-functions/test-data-functions/testDataFunctions.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/functions/dot-string-functions/dotStringFunctions.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/functions/temp-functions/structure-item-functions/actor-functions/actorFunctions.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/functions/temp-functions/structure-item-functions/value-functions/valueFunctions.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/functions/temp-functions/structure-item-functions/activity-functions/activityFunctions.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/containers/tempContainers/tempDataStructureItemContainer.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/temp-components/tempTestDataItem.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/supplementary-components/horizontal-bar-component/horizontalBarComponent.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/temp-components/tempDataStructureItemList.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/functions/random-number-functions/randomNumberFunctions.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/api/temp-data/temp-collections/tempCollections.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/layouts/App.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/AppNavigation.js",
 		"/C/Users/Eran/Meteor/limb-rrs/client/main.html",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/startup/client/index.js",
@@ -891,11 +850,7 @@
 		"/C/Users/Eran/Meteor/LIMB/imports/startup/server/index.js",
 		"/C/Users/Eran/Meteor/LIMB/server/main.js",
 		"/C/Users/Eran/Meteor/LIMB/imports/ui/layouts/insufficientLayout.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/startup/client/routes.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/pages/notFoundPage.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/components/secondary-components/graphicContent.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/components/secondary-components/textualContent.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/components/main-components/headerAndHelp.js"
+		"/C/Users/Eran/Meteor/LIMB/imports/startup/client/routes.js"
 	],
 	"find":
 	{
@@ -915,6 +870,7 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"e",
 			"interimInfluencer",
 			"referenceInfluencersOfActivities",
 			"testActors",
@@ -1041,8 +997,7 @@
 			"barTwo",
 			"barOne",
 			"babelrc",
-			"babel",
-			"../"
+			"babel"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1093,52 +1048,112 @@
 	"groups":
 	[
 		{
-			"selected": 7,
+			"selected": 6,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "imports/ui/components/supplementary-components/horizontal-bar-component/horizontalBarComponent.js",
+					"file": "imports/api/temp-data/temp-methods/tempMethods.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 289,
+						"buffer_size": 4789,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								101,
-								101
+								1615,
+								1615
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 600.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "imports/ui/functions/temp-functions/structure-item-functions/test-data-functions/testDataFunctions.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8905,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4191,
+								4191
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1260.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "imports/ui/functions/temp-functions/structure-item-functions/assignment-functions/influencerOfValuesFunctions.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3053,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1339,
+								1339
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
+					"buffer": 3,
 					"file": "imports/ui/pages/temp-pages/tempOutlinePage.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 546,
+						"buffer_size": 741,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								365,
-								365
+								292,
+								292
 							]
 						],
 						"settings":
@@ -1154,166 +1169,50 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "imports/api/temp-data/temp-methods/tempMethods.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4733,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3119,
-								3119
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1380.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "imports/api/temp-data/server/temp-publications/tempPublications.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 933,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								761,
-								932
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
 					"buffer": 4,
 					"file": "imports/ui/layouts/App.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2500,
+						"buffer_size": 2887,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1841,
-								1841
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 180.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "imports/ui/pages/temp-pages/tempDataManagementPage.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 13343,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3912,
-								3912
+								2515,
+								2515
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2194.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "imports/ui/functions/temp-functions/structure-item-functions/test-data-functions/testDataFunctions.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8375,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5999,
-								5999
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 2700.0,
+						"translation.y": 900.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "imports/ui/functions/temp-functions/structure-item-functions/assignment-functions/influencerOfValuesFunctions.js",
+					"buffer": 5,
+					"file": "imports/ui/components/temp-components/tempTestDataItem.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4277,
+						"buffer_size": 956,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2491,
-								2491
+								319,
+								319
 							]
 						],
 						"settings":
@@ -1322,76 +1221,19 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 420.0,
+						"translation.y": 60.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
-					"file": "imports/api/temp-data/temp-collections/tempCollections.js",
-					"semi_transient": false,
+					"buffer": 6,
+					"file": "imports/ui/components/DocumentsList.js",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 249,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								191,
-								206
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "imports/ui/components/temp-components/tempTestDataItem.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 718,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								427,
-								427
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "imports/ui/containers/tempContainers/tempTestDataContainer.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 796,
+						"buffer_size": 645,
 						"regions":
 						{
 						},
@@ -1399,63 +1241,37 @@
 						[
 							[
 								0,
-								796
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
-					"file": "imports/ui/containers/tempContainers/tempOutlineContainer.js",
+					"buffer": 7,
+					"file": "imports/ui/components/temp-components/tempOutlineComponent.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 808,
+						"buffer_size": 1347,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								724,
-								724
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "imports/ui/components/temp-components/tempTestDataList.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1190,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								782,
-								782
+								1127,
+								1127
 							]
 						],
 						"settings":
@@ -1468,37 +1284,36 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 13,
-					"file": "imports/ui/components/temp-components/tempOutlineComponent.js",
+					"buffer": 8,
+					"file": "imports/ui/pages/temp-pages/tempDataManagementPage.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1172,
+						"buffer_size": 13413,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								605,
-								605
+								12978,
+								12978
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 494.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]

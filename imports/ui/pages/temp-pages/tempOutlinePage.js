@@ -5,7 +5,7 @@ import TempOutlineComponent from '../../containers/tempContainers/tempOutlineCon
 export class TempOutlinePage extends React.Component  {
 
 	handleFocus(e) {
-		console.log(this.props);
+		console.log(this.props.controllingElementId);
 	}
 
 	render() {
@@ -14,7 +14,7 @@ export class TempOutlinePage extends React.Component  {
 	    <Col xs={ 12 }>
 	      <div className="page-header clearfix">
 	        <h4 className="pull-left">Outline</h4> 
-	        <span>
+	        <span className="pull-right">
 	        	<Button bsStyle="success" onClick = {this.handleFocus.bind(this)}>Focus</Button>
 	        </span>       
 	      </div>
