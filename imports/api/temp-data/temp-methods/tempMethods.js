@@ -4,7 +4,7 @@ import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import { SARS } from "../temp-collections/tempCollections.js";
 import { STRUCTUREITEMS } from "../temp-collections/tempCollections.js";
 import { TESTDATA } from "../temp-collections/tempCollections.js";
-import { TESTDISPLAYDATA } from "../temp-collections/tempCollections.js";
+
 
 export const insertSAR = new ValidatedMethod({
   name: 'SAR.insert',
@@ -77,57 +77,5 @@ export const deleteTestDataItem = new ValidatedMethod({
   },
 });
 
-export const loadAllDisplayData = new ValidatedMethod({
-  name: "testDisplayData.loadAll",
-  validate: new SimpleSchema({ 
 
-  }).validator(),
-  run({}) {
-    let  allTestData = TESTDATA.find().fetch();
-    allTestData.forEach(function(DDI) {
-      TESTDISPLAYDATA.insert(DDI);
-    });
-  },
-});
 
-export const insertTestDisplayDataItem = new ValidatedMethod({
-  name: 'testDisplayDataItem.insert',
-  validate: new SimpleSchema({ 
-    userId: { type: String, optional: false},
-    itemId: { type: String, optional: false },
-    staticDotString: { type: String, optional: false},
-    staticSortString: { type: String, optional: false},
-    name: { type: String, optional: false },
-    text: { type: String, optional: false },
-    sourceId: { type: String, optional: false },
-    itemType: { type: String, optional: false },
-    // crossReferenceId: { type: String, optional: false },
-    relationshipToParent: { type: String, optional: false },
-    helpNote: { type: String, optional: false },
-  }).validator(),
-  run(TDD) {
-    TESTDISPLAYDATA.insert(TDD);
-  },
-});
-
-export const deleteTestDisplayDataItem = new ValidatedMethod({
-  name: 'testDisplayDataItem.delete',
-  validate: new SimpleSchema({ 
-    _id: {type: String},
-    userId: { type: String, optional: false},
-    itemId: { type: String, optional: false },
-    staticDotString: { type: String, optional: false},
-    staticSortString: { type: String, optional: false},
-    name: { type: String, optional: false },
-    text: { type: String, optional: false },
-    sourceId: { type: String, optional: false },
-    itemType: { type: String, optional: false },
-    // crossReferenceId: { type: String, optional: false },
-    relationshipToParent: { type: String, optional: false },
-    helpNote: { type: String, optional: false },
-  }).validator(),
-  run({item}) {
-    // console.log(itemId);
-    TESTDISPLAYDATA.remove({item});
-  },
-});

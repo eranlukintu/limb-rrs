@@ -3,7 +3,7 @@ import { check } from 'meteor/check';
 import { SARS } from '../../temp-collections/tempCollections.js';
 import { STRUCTUREITEMS } from '../../temp-collections/tempCollections.js';
 import { TESTDATA } from '../../temp-collections/tempCollections.js';
-import { TESTDISPLAYDATA } from '../../temp-collections/tempCollections.js';
+import { DISPLAYDATA } from '../../temp-collections/tempCollections.js';
 
 Meteor.publish('SARS.list', () => SARS.find());
 
@@ -13,8 +13,8 @@ Meteor.publish("TestData.all", function() {
 	return TESTDATA.find({ userId:this.userId }, {sort: {staticSortString: 1}} );
 });
 
-Meteor.publish("TestDisplayData.all", function() { 
-	return TESTDISPLAYDATA.find({ userId:this.userId }, {sort: {staticSortString: 1}} );
+Meteor.publish("DisplayData.all", function() { 
+	return DISPLAYDATA.find({ userId:this.userId }, {sort: {staticSortString: 1}} );
 });
 
 // Meteor.publish("hierarchy.actors", function() {
