@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
 import TempOutlineComponent from '../../containers/tempContainers/tempOutlineContainer.js';
-import { loadActorsForDisplay } from "../../../api/temp-data/temp-methods/display-data-methods/displayDataMethods.js";
+// import { loadActorsForDisplay } from '../../../api/temp-data/server/server-methods/serverMethods.js';
 
 export class TempOutlinePage extends React.Component  {
 
@@ -10,7 +10,7 @@ export class TempOutlinePage extends React.Component  {
 	}
 
 	handleViewActors() {
-		loadActorsForDisplay.call({});
+		Meteor.call("DisplayData.actors", {});
 		console.log("loaded");
 	}
 

@@ -24,17 +24,3 @@ export const loadActorsForDisplay = new ValidatedMethod({
     });
   },
 });
-
-// export const loadActorsForDisplay = new ValidatedMethod({
-//   name: "DisplayData.actors",
-//   validate: new SimpleSchema({ 
-
-//   }).validator(),
-//   run({}) {
-//   	DISPLAYDATA.remove({});
-//     let  displayData = TESTDATA.find({ userId:this.userId }, {sort: {staticSortString: 1}}).fetch();
-//     displayData.forEach(function(DDI) {
-//       DISPLAYDATA.insert(DDI);
-//     });
-//   },
-// });
