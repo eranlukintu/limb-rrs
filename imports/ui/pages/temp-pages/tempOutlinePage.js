@@ -6,12 +6,13 @@ import TempOutlineComponent from '../../containers/tempContainers/tempOutlineCon
 export class TempOutlinePage extends React.Component  {
 
 	handleFocus(e) {
-		console.log(this.props.controllingElementId);
+		console.log(this.props);
+		Meteor.call("DisplayData.loadItemAndDescendants", {});
+		// console.log(this.props.controllingElementId);
 	}
 
 	handleViewActors() {
 		Meteor.call("DisplayData.actors", {});
-		console.log("loaded");
 	}
 
 	render() {

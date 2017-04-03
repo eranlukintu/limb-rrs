@@ -25,7 +25,8 @@ export class TempTestDataItem extends React.Component {
 	}
 
 	handleSelect(tdi) {
-		this.props.setControllingElementId(tdi);
+		// console.log(this.props);
+		this.props.setControllingElement(tdi);
 	}
 
 

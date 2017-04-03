@@ -245,11 +245,13 @@ export class TempDataManagementPage extends React.Component {
 			displayFlex: "flex"
 		};
 
+		console.log(this.props);
+
 		const CSAR = this.createStakeholderToActivityRelationship;
 		const CRN = this.createRandomNumber;
 		const CRNS= this.createRandomNumbers;
 		const setCurrentPage = this.props.setCurrentPage;
-		const setControllingElementId = this.props.setControllingElementId;
+		const setControllingElement = this.props.setControllingElement;
 		
 		return <div>
 			<h3>Test data Management</h3>

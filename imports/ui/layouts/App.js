@@ -21,11 +21,11 @@ export default class App extends React.Component {
     super(props);
     this.state = { 
       currentPage: 'index', 
-      controllingElementId: "Null",
+      controllingElement: "Null",
       currentPageProps: null 
     };
     this.setCurrentPage = this.setCurrentPage.bind(this);
-    this.setControllingElementId = this.setControllingElementId.bind(this);
+    this.setControllingElement = this.setControllingElement.bind(this);
   }
 
   setCurrentPage(event, { page, props }) {
@@ -33,9 +33,9 @@ export default class App extends React.Component {
     this.setState({ currentPage: page, currentPageProps: props });
   }
 
-  setControllingElementId(item) {
+  setControllingElement(item) {
     console.log(item);
-    this.setState({controllingElementId: item.itemId});
+    this.setState({controllingElement: item});
   }
 
   currentPage() {
@@ -68,9 +68,9 @@ export default class App extends React.Component {
             Meteor.userId() ?
             React.cloneElement(this.currentPage(), {
               setCurrentPage: this.setCurrentPage,
-              setControllingElementId: this.setControllingElementId,
+              setControllingElement: this.setControllingElement,
               currentPage: this.state.currentPage,
-              controllingElementId: this.state.controllingElementId,
+              controllingElement: this.state.controllingElement,
               ...this.state.currentPageProps,
             }) : children
           }

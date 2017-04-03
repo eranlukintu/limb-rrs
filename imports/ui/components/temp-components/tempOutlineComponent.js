@@ -30,7 +30,7 @@ export default class TempOutlineComponent extends React.Component{
                 <TempTestDataItem 
                     testDataItem = {tdi} 
                     key={index} 
-                    setControllingElementId = {this.props.setControllingElementId}
+                    setControllingElement = {this.props.setControllingElement}
                     indentLevel={this.handleCalculateIndentLevel(tdi)} 
                 />
             ))}
