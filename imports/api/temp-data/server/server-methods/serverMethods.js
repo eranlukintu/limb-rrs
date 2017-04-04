@@ -29,17 +29,18 @@ export const loadActorsForDisplay = new ValidatedMethod({
 export const loadItemAndDescendants = new ValidatedMethod({
   name: "DisplayData.loadItemAndDescendants",
   validate: new SimpleSchema({ 
-
+    staticSString: {type: String},
   }).validator(),
-  run({}) {
+  run({staticSString}) {
     
     DISPLAYDATA.remove({});
-
-    let staticDotString = "1.2";
+    // const staticDotString = item.staticDotString;
+    // console.log(staticDotString);
+    // console.log(staticDString);
 
     let pipeline = [
-      {$match: {staticDotString: {$regex: "^" + staticDotString}}},
-      {$sort: {staticDotString: 1}},
+      {$match: {staticSortString: {$regex: "^" + staticSString}}},
+      {$sort: {staticSortString: 1}},
     ];
 
     let  displayData = TESTDATA.aggregate(pipeline);

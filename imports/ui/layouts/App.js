@@ -34,7 +34,7 @@ export default class App extends React.Component {
   }
 
   setControllingElement(item) {
-    console.log(item);
+    // console.log(item);
     this.setState({controllingElement: item});
   }
 
