@@ -245,7 +245,7 @@ export class TempDataManagementPage extends React.Component {
 			displayFlex: "flex"
 		};
 
-		console.log(this.props);
+		// console.log(this.props);
 
 		const CSAR = this.createStakeholderToActivityRelationship;
 		const CRN = this.createRandomNumber;

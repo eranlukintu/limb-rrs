@@ -16,9 +16,15 @@ const createHierarchyItem = function(properties) {
 	hierarchyItem.text = properties.name;
 	hierarchyItem.sourceId = properties.sourceId;
 	hierarchyItem.itemType = properties.itemType;
-	// hierarchyItem.crossReferenceId = properties.crossReferenceId;
 	hierarchyItem.relationshipToParent = properties.relationshipToParent;
 	hierarchyItem.helpNote = properties.helpNote;
+	hierarchyItem.primaryItemId = properties.primaryItemId;
+	hierarchyItem.secondaryItemId = hierarchyItem.itemId;
+	hierarchyItem.observationType = properties.observationType;
+	hierarchyItem.observationValue = properties.observationValue;
+	hierarchyItem.observerId = properties.observerId;
+	hierarchyItem.observerName = properties.observerName;
+	hierarchyItem.observationDate = properties.observationDate;
 
 	return hierarchyItem;
 }
@@ -30,12 +36,18 @@ export const createRootItem = function() {
 		properties.staticIndentLevel = "0";
 		properties.name = "root";
 		properties.itemType = "root";
-		properties.sourceId = Random.id()
-		properties.crossReferenceId = "null";
+		properties.sourceId = Random.id()		
 		properties.relationshipToParent = "null";
 		properties.helpNote = "help note not yet implemented";
+		properties.primaryItemId = "null";
+		properties.observationType = "NA";
+		properties.observationValue = "NA";
+		properties.observerId = "NA";
+		properties.observerName = "NA";
+		properties.observationDate = "NA";
 
 	let rootItem = createHierarchyItem(properties);
+	// console.log(rootItem);
 	return rootItem;
 }
 
@@ -55,6 +67,12 @@ export const createHierarchyWithActors = function(rootItem, referenceActors) {
 		// properties.crossReferenceId = rootItem.itemId;
 		properties.relationshipToParent = "actorOf";
 		properties.helpNote = "help note not yet implemented";
+		properties.primaryItemId = rootItem.itemId;
+		properties.observationType = "NA";
+		properties.observationValue = "NA";
+		properties.observerId = "NA";
+		properties.observerName = "NA";
+		properties.observationDate = "NA";
 		let testActor = createHierarchyItem(properties);
 		hierarchyWithActors.push(testActor);
 	})
@@ -92,6 +110,12 @@ export const createHierarchyWithActivities = function(hierarchyWithActors, refer
 			// properties.parentId = "null";
 			properties.relationshipToParent = "activityOf";
 			properties.helpNote = "help note not yet implemented";
+			properties.primaryItemId = selectedActor.itemId;
+			properties.observationType = "NA";
+			properties.observationValue = "NA";
+			properties.observerId = "NA";
+			properties.observerName = "NA";
+			properties.observationDate = "NA";
 
 			let hierarchyActivity = createHierarchyItem(properties);
 			// console.log(hierarchyActivity);
@@ -140,6 +164,12 @@ export const createHierarchyWithValues = function(
 			// properties.crossReferenceId = selectedActivity.itemId;
 			properties.relationshipToParent = "valueOf";
 			properties.helpNote = "help note not yet implemented";
+			properties.primaryItemId = selectedActivity.itemId;
+			properties.observationType = "NA";
+			properties.observationValue = "NA";
+			properties.observerId = "NA";
+			properties.observerName = "NA";
+			properties.observationDate = "NA";
 
 			let interimValue = createHierarchyItem(properties);
 			hierarchyWithValues.push(interimValue);
@@ -195,6 +225,12 @@ export const createHierarchyWithInfluencers = function(
 			// properties.crossReferenceId = selectedHierarchyValue.itemId;
 			properties.relationshipToParent = "influencerOn";
 			properties.helpNote = "help note not yet implemented";
+			properties.primaryItemId = referenceValue.itemId;
+			properties.observationType = "NA";
+			properties.observationValue = "NA";
+			properties.observerId = "NA";
+			properties.observerName = "NA";
+			properties.observationDate = "NA";
 
 			let interimInfluencer = createHierarchyItem(properties);
 			hierarchyWithInfluencers.push(interimInfluencer);
