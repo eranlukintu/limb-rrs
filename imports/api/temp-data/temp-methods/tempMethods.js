@@ -49,6 +49,13 @@ export const insertTestDataItem = new ValidatedMethod({
     // crossReferenceId: { type: String, optional: false },
     relationshipToParent: { type: String, optional: false },
     helpNote: { type: String, optional: false },
+    primaryItemId: { type: String, optional: false },
+    secondaryItemId: { type: String, optional: false },
+    observationType: { type: String, optional: false },
+    observationValue: { type: String, optional: false },
+    observerId: { type: String, optional: false },
+    observerName: { type: String, optional: false },
+    observationDate: { type: String, optional: false },
   }).validator(),
   run(TDI) {
     TESTDATA.insert(TDI);
@@ -63,6 +70,7 @@ export const deleteTestDataItem = new ValidatedMethod({
     itemId: { type: String, optional: false },
     staticDotString: { type: String, optional: false},
     staticSortString: { type: String, optional: false},
+    staticIndentLevel: {type: String, optional: false},
     name: { type: String, optional: false },
     text: { type: String, optional: false },
     sourceId: { type: String, optional: false },
