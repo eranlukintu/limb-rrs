@@ -78,6 +78,13 @@ export const deleteTestDataItem = new ValidatedMethod({
     // crossReferenceId: { type: String, optional: false },
     relationshipToParent: { type: String, optional: false },
     helpNote: { type: String, optional: false },
+    primaryItemId: { type: String, optional: false },
+    secondaryItemId: { type: String, optional: false },
+    observationType: { type: String, optional: false },
+    observationValue: { type: String, optional: false },
+    observerId: { type: String, optional: false },
+    observerName: { type: String, optional: false },
+    observationDate: { type: String, optional: false },
   }).validator(),
   run({item}) {
     // console.log(itemId);

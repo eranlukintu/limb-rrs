@@ -132,113 +132,7 @@ export class TempDataManagementPage extends React.Component {
 		});
 	}
 
-	deleteTestData() {
-		// let testData = this.state.testActorsWithActivities;
-		// testData.forEach(function(TDI) {
-		// 	// console.log(TDI);
-		// 	deleteTestDataItem.call(TDI._id);
-		// });
-		// console.log("Items deleted");
-	}
-
-	createRelationships(actors, CSAR, CRN, CRNS) {
-		const SARs = this.createStakeholderToActivityRelationships(actors, CSAR, CRN, CRNS);
-		console.log(SARs);
-	}
-
-	createStakeholderToActivityRelationships(actors, CSAR, CRN, CRNS) {
-		let actorToActivityRelationships = [];
-		actors.forEach(function(actor) {
-			let randomNumbers = CRNS(4, 30, CRN);
-			randomNumbers.forEach(function(rn) {
-				let SAR = CSAR(actor, rn);
-				actorToActivityRelationships.push(SAR);
-			});
-
-		});
-		return actorToActivityRelationships;
-	}
-
-	createStakeholderToActivityRelationship(actor, num) {
-		let SAR = {};
-		SAR.actor = actor;
-		SAR.parent = actor;
-		SAR.activity = "activity-" + num;
-
-		return SAR;
-	}
-
-	createFirstLevelItem() {
-		let FLI = {};
-
-		FLI.fliId = (Random.id).toString();
-		FLI.primaryLabel = primaryLabel;
-		FLI.parentId
-	}
-
-	saveSARS(actors, CSAR, CRN, CRNS) {
-		let SARS = this.createStakeholderToActivityRelationships(actors, CSAR, CRN, CRNS);
-		SARS.forEach(function(SAR) {
-			insertSAR.call(SAR);
-		});
-		console.log("Save completed");
-	}
-
-	saveStructureItems(actors) {
-		let structureItems = createStructureItems(actors);
-		let HA = createHierarchyArray(structureItems, "null");
-		this.setState({treeData: HA});
-		console.log(this.state.treeData);
-	}
-
-	createTree(arr) {
-		let HA = createHierarchyArray(arr, "null");
-		this.setState({treeData: HA});
-		console.log("Tree data state set");
-	}
-
-	createReferenceActivities() {
-		let referenceActivitiesArray = createReferenceActivityItems();
-		this.setState({referenceActivitiesArray: referenceActivitiesArray});
-		console.log(referenceActivitiesArray);
-	}
-
-	createReferenceValues() {
-		let referenceValuesArray = createReferenceValueItems();
-		this.setState({referenceValuesArray: referenceValuesArray});
-	}
-
-	createReferenceActivitiesValues(referenceActivities, referenceValues) {
-		let referenceActivitiesValuesArray = createReferenceValuesForReferenceActivities(referenceActivities, referenceValues);
-		this.setState({referenceActivitiesValuesArray: referenceActivitiesValuesArray});
-	}
-
-	createRoot() {
-		let rootItem = createRootItem();
-		this.setState({rootItem: rootItem});
-	}
-
-	createActorsArray(rootItem, actors) {
-		let actorsArray = createActorDataItems(rootItem, actors);
-		console.log(actorsArray);
-		this.setState({actorsArray: actorsArray});
-		
-	}
-
-	createActivitiesArray(actorsStructureArray, referenceActivitiesArray) {
-		let activitiesArray = createActivitiesForActors(actorsStructureArray, referenceActivitiesArray);
-		this.setState({activitiesArray: activitiesArray});
-		console.log(activitiesArray);
-		
-	}
-
-	createValuesArray(activitiesArray, referenceActivitiesValuesArray) {
-		let valuesArray = assignValuesToActivities(activitiesArray, referenceActivitiesValuesArray);
-		console.log(valuesArray);
-		let HA = createHierarchyArray(valuesArray, "null");
-		this.setState({treeData: HA});
-	}
-
+	
 	render() {		
 
 		const panelStyle = {
@@ -312,6 +206,21 @@ export class TempDataManagementPage extends React.Component {
 							<Button block onClick={(event) => { setCurrentPage(event, { page: 'viewTempOutline', props: this.state}); }}>View outline</Button>
 						</Panel>
 					</Col>					
+				</Row>
+				<Row>
+					<Col xs={4}>
+						<Panel header="Create observations" bsStyle="primary" style={panelStyle}>
+							<Button block ></Button>
+						</Panel>
+					</Col>						
+					<Col xs={4}>
+						<Panel header="Interim" bsStyle="primary" style={panelStyle}>
+						</Panel>
+					</Col>
+					<Col xs={4}>
+						<Panel header="Interim" bsStyle="primary" style={panelStyle}>
+						</Panel>
+					</Col>
 				</Row>
 			</Panel>
 		</div>
