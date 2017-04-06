@@ -4,6 +4,7 @@ import { SARS } from '../../temp-collections/tempCollections.js';
 import { STRUCTUREITEMS } from '../../temp-collections/tempCollections.js';
 import { TESTDATA } from '../../temp-collections/tempCollections.js';
 import { DISPLAYDATA } from '../../temp-collections/tempCollections.js';
+import { OBSERVATIONDATA } from '../../temp-collections/tempCollections.js';
 
 Meteor.publish('SARS.list', () => SARS.find());
 
@@ -15,6 +16,10 @@ Meteor.publish("TestData.all", function() {
 
 Meteor.publish("DisplayData.all", function() { 
 	return DISPLAYDATA.find({ userId:this.userId }, {sort: {staticSortString: 1}} );
+});
+
+Meteor.publish("DisplayData.observations", function() { 
+	return OBSERVATIONDATA.find({ userId:this.userId } );
 });
 
 // Meteor.publish("hierarchy.actors", function() {

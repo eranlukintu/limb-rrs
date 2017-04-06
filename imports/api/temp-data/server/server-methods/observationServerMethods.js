@@ -14,10 +14,14 @@ export const loadObservationsForDisplay = new ValidatedMethod({
   	
   	OBSERVATIONDATA.remove({});
 
+  	// let pipeline = [
+  	// 	{$match: {$or:[{itemType:"actor"}, {itemType:"activity"}]}},
+   //    {$sort: {staticSortString: 1}},
+  	// ];
+
   	let pipeline = [
-  		{$match: {$or:[{itemType:"actor"}, {itemType:"activity"}]}},
-      {$sort: {staticSortString: 1}},
-  	];
+  		{$match: {itemType: "activity"}},
+  	]
 
     let  observationDisplayData = TESTDATA.aggregate(pipeline);
     // console.log(observationDisplayData);
