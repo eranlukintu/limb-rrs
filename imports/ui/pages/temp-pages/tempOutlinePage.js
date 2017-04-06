@@ -18,6 +18,7 @@ export class TempOutlinePage extends React.Component  {
 		Meteor.call("DisplayData.actors", {});
 	}
 
+
 	render() {
 
 		return <Row>

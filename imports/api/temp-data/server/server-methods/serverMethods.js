@@ -15,7 +15,7 @@ export const loadActorsForDisplay = new ValidatedMethod({
 
   	let pipeline = [
   		{$match: {itemType: "actor"}},
-      {$sort: {staticDotString: 1}},
+      {$sort: {staticSortString: 1}},
   	];
 
     let  displayData = TESTDATA.aggregate(pipeline);

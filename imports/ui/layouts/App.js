@@ -14,6 +14,7 @@ import { TempDataStructureItemsPage } from '../pages/temp-pages/tempDataStructur
 import { TempTreePage } from '../pages/temp-pages/tempTreePage.js';
 import { TempTestDataPage } from '../pages/temp-pages/rawTestDataPage.js';
 import { TempOutlinePage } from '../pages/temp-pages/tempOutlinePage.js';
+import { TempObservationsPage } from '../pages/temp-pages/tempObservationsPage.js';
 
 
 export default class App extends React.Component {
@@ -51,7 +52,8 @@ export default class App extends React.Component {
       viewStructureItems: <TempDataStructureItemsPage />,
       viewTree: <TempTreePage />,
       viewRawTestData: <TempTestDataPage />,
-      viewTempOutline: <TempOutlinePage />
+      viewTempOutline: <TempOutlinePage />,
+      viewTempObservations: <TempObservationsPage />,
     }[this.state.currentPage];
   }
 
