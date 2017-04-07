@@ -19,7 +19,7 @@ Meteor.publish("DisplayData.all", function() {
 });
 
 Meteor.publish("DisplayData.observations", function() { 
-	return OBSERVATIONDATA.find({ userId:this.userId } );
+	return OBSERVATIONDATA.find({userId:this.userId } );
 });
 
 // Meteor.publish("hierarchy.actors", function() {

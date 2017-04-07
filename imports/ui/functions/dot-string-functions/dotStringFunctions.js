@@ -13,24 +13,29 @@ export const createSortString = function(dString) {
 
 export const calculateParentDotString = function(dString) {
     let segmentArray = dString.split(".");
+    // console.log(segmentArray);
     let segmentArrayLength = segmentArray.length;
-    let lastIndex = segmentArrayLength - 1;
-    let parentIndex = lastIndex - 1;
+    // console.log(segmentArrayLength);
+    let lastIndex = segmentArrayLength;
+    let parentIndex = lastIndex-1;
+    // console.log(parentIndex);
     let parentDotString = [];
 
     if(parentIndex > -1) {
         parentSegmentArray = segmentArray.slice(0, parentIndex);
+        // console.log(parentSegmentArray);
         parentDotString = parentSegmentArray.join(".");
     }else {
         parentDotString = "NA";
     }
+    // console.log(dString, parentDotString);
     return parentDotString;
   }
 
 export const calculateGrandparentDotString = function(dString) {
     let segmentArray = dString.split(".");
     let segmentArrayLength = segmentArray.length;
-    let lastIndex = segmentArrayLength - 1;
+    let lastIndex = segmentArrayLength;
     let grandparentIndex = lastIndex - 2;
     let grandparentDotString = [];
 

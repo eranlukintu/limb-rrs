@@ -6,17 +6,13 @@ import { deleteTestDataItem } from "../../../api/temp-data/temp-methods/tempMeth
 import { calculateIndentLevel } from "../../functions/dot-string-functions/dotStringFunctions.js";
 
 export default class TempObservationsComponent extends React.Component{
-
-    handleCalculateIndentLevel(testDataItem) {
-        let dString = testDataItem.staticDotString;
-        return calculateIndentLevel(dString); 
-    }
+   
 
   render() { 	
 
     const testDataList = this.props.testDataList;
     // console.log(this.props);
-    console.log(testDataList);
+    // console.log(testDataList);
     
     return 	<div>
         
@@ -27,7 +23,6 @@ export default class TempObservationsComponent extends React.Component{
                     testDataItem = {tdi} 
                     key={tdi._id} 
                     setControllingElement = {this.props.setControllingElement}
-                    indentLevel={this.handleCalculateIndentLevel(tdi)} 
                 />
             ))}
         </ListGroup>

@@ -13,9 +13,10 @@ export class TempTestObservationItem extends React.Component {
 
 	render() {
 		const testDataItem = this.props.testDataItem;
+		// console.log(testDataItem);
 		// console.log(this.props);
 		return <ListGroupItem onClick={this.handleSelect.bind(this, testDataItem)} >
-			{testDataItem.name} {testDataItem.itemType}
+			{testDataItem.primaryName} {testDataItem.secondaryName} {testDataItem.score}
 		</ListGroupItem>
 	}
 }
