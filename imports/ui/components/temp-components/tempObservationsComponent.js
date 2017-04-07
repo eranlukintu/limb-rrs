@@ -10,18 +10,18 @@ export default class TempObservationsComponent extends React.Component{
 
   render() { 	
 
-    const testDataList = this.props.testDataList;
+    const observationsList = this.props.observationsList;
     // console.log(this.props);
-    // console.log(testDataList);
+    // console.log(observationsList);
     
     return 	<div>
         
         <ListGroup>
-            {testDataList.map((tdi, index) => ( 
+            {observationsList.map((obItem, index) => ( 
             // console.log(index);       	
                 <TempTestObservationItem 
-                    testDataItem = {tdi} 
-                    key={tdi._id} 
+                    observationItem = {obItem} 
+                    key={obItem._id} 
                     setControllingElement = {this.props.setControllingElement}
                 />
             ))}

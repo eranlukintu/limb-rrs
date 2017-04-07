@@ -11,8 +11,8 @@ const composer = (params, onData) => {
   const subscription = Meteor.subscribe('DisplayData.observations');
 
   if (subscription.ready()) {
-    const testDataList = OBSERVATIONDATA.find().fetch();
-    onData(null, { testDataList });
+    const observationsList = OBSERVATIONDATA.find().fetch();
+    onData(null, { observationsList });
   }
 };
 
