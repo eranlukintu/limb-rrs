@@ -16,38 +16,44 @@ export const loadObservationsForDisplay = new ValidatedMethod({
   	
   	OBSERVATIONDATA.remove({});
 
-  	let observation = {};
+  	let observedItems = ["activity", "value", "influencer"];
 
-  	let pipeline = [
-  		{$match: {itemType: "activity"}},
-  	]
+  	observedItems.forEach(function(observedItem) {
+  		let observation = {};
 
-    let  activities = TESTDATA.aggregate(pipeline);
-    // console.log(observationDisplayData);
-    activities.forEach(function(hierarchyActivity) {
-    	let activityStaticDotString = hierarchyActivity.staticDotString;
-    	let parentHierarchyActorDotString = calculateParentDotString(activityStaticDotString);
-    	// console.log(parentHierarchyActorDotString);
-    	let parentHierarchyActor = TESTDATA.findOne({staticDotString: parentHierarchyActorDotString});
-    	let observationPrimaryId = parentHierarchyActor.sourceId;
-    	let observationPrimaryName = parentHierarchyActor.name;
-    	let observationSecondaryId = hierarchyActivity.sourceId;
-    	let observationSecondaryName = hierarchyActivity.name;
-    	let observationType = "importance";
-    	let observationScore = createRandomNumberWithinRange(0,10);
+	  	let pipeline = [
+	  		{$match: {itemType: observedItem}},
+	  	]
 
-    	observation.userId = Meteor.userId();
-    	observation.createdAt = new Date();
-    	observation.primaryId = observationPrimaryId;
-    	observation.primaryName = observationPrimaryName;
-    	observation.secondaryId = observationSecondaryId;
-    	observation.secondaryName = observationSecondaryName;
-    	observation.observationType = observationType;
-    	observation.score = observationScore;
-    	// console.log(observation);
-    	OBSERVATIONDATA.insert(observation);
-    	
-    });
+	    let  oItems = TESTDATA.aggregate(pipeline);
+	    // console.log(observationDisplayData);
+	    oItems.forEach(function(hierarchyItem) {
+	    	let activityStaticDotString = hierarchyItem.staticDotString;
+	    	let parentHierarchyDotString = calculateParentDotString(activityStaticDotString);
+	    	// console.log(parentHierarchyDotString);
+	    	let parentHierarchy = TESTDATA.findOne({staticDotString: parentHierarchyDotString});
+	    	let observationPrimaryId = parentHierarchy.sourceId;
+	    	let observationPrimaryName = parentHierarchy.name;
+	    	let observationSecondaryId = hierarchyItem.sourceId;
+	    	let observationSecondaryName = hierarchyItem.name;
+	    	let observationType = "importance";
+	    	let observationScore = createRandomNumberWithinRange(0,10);
+
+	    	observation.userId = Meteor.userId();
+	    	observation.createdAt = new Date();
+	    	observation.primaryId = observationPrimaryId;
+	    	observation.primaryName = observationPrimaryName;
+	    	observation.secondaryId = observationSecondaryId;
+	    	observation.secondaryName = observationSecondaryName;
+	    	observation.observationType = observationType;
+	    	observation.score = observationScore;
+	    	// console.log(observation);
+	    	OBSERVATIONDATA.insert(observation);
+	    	
+	    });
+  	});
+
+  	
   },
 });
 
