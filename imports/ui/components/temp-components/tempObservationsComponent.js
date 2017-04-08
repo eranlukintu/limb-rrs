@@ -1,31 +1,62 @@
 import React from "react";
-import { ListGroup, ListGroupItem, Alert, Button } from 'react-bootstrap';
+import { ListGroup, ListGroupItem, Alert, Button, Row, Col, ButtonToolbar } from 'react-bootstrap';
 import { TempTestDataItem } from "./tempTestDataItem.js";
 import { TempTestObservationItem } from "./tempTestObservationItem.js";
 import { deleteTestDataItem } from "../../../api/temp-data/temp-methods/tempMethods.js";
 import { calculateIndentLevel } from "../../functions/dot-string-functions/dotStringFunctions.js";
+import { TempObservationsList } from "./tempObservationsList.js";
+import { TempObservationsSummary } from "./tempObservationsSummary.js";
 
-export default class TempObservationsComponent extends React.Component{
+export default class TempObservationsComponent extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            viewCase: 1
+        }
+    }
+
+    handleSelectViewList() {
+        this.setState({viewCase: 1});
+    }
+
+    handleSelectSummary() {
+        this.setState({viewCase: 2});
+    }
+
+    displayObservations(obList) {
+        console.log(obList);
+        let viewCase = this.state.viewCase;
+
+        switch(viewCase) {
+            case 1: return <TempObservationsList observationsList = {obList} />;
+            break;
+
+            case 2: return <TempObservationsSummary />;
+            break;
+
+            default: return <TempObservationsList observationsList = {obList} />;
+        }
+    }
    
-
   render() { 	
 
     const observationsList = this.props.observationsList;
-    // console.log(this.props);
-    // console.log(observationsList);
-    
-    return 	<div>
-        
-        <ListGroup>
-            {observationsList.map((obItem, index) => ( 
-            // console.log(index);       	
-                <TempTestObservationItem 
-                    observationItem = {obItem} 
-                    key={obItem._id} 
-                    setControllingElement = {this.props.setControllingElement}
-                />
-            ))}
-        </ListGroup>
-    </div>
+      
+    return <Row>
+        <Col xs={ 12 }>
+          <div className="page-header clearfix">
+            <h4 className="pull-left">Observations</h4> 
+            <span className="pull-right">
+                <ButtonToolbar>
+                    <Button bsStyle="success" onClick = {this.handleSelectViewList.bind(this)}>Observations list</Button>
+                    <Button bsStyle="success" onClick = {this.handleSelectSummary.bind(this)}>Observations summary</Button>
+                </ButtonToolbar>
+            </span>        
+          </div>
+          {this.displayObservations(observationsList)}
+        </Col>
+      </Row>                
+
   }
 }
