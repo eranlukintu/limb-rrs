@@ -8,6 +8,10 @@ export class TempObservationsPage extends React.Component {
 		Meteor.call("DisplayData.observations", {});
 	}
 
+	handleCreateObservationsSummary() {
+		
+	}
+
 	render() {
 		return <div>
 			<Row>
@@ -18,7 +22,7 @@ export class TempObservationsPage extends React.Component {
 				</Col>
 
 				<Col xs= {3}>
-					<Button block>Button 2</Button>
+					<Button block>Create summary 2</Button>
 				</Col>
 
 				<Col xs= {3}>
@@ -31,9 +35,6 @@ export class TempObservationsPage extends React.Component {
 			</Row>
 			<Row>
 		    <Col xs={ 12 }>
-		      <div className="page-header clearfix">
-		        <h4 className="pull-left">Observations</h4> 
-		      </div>
 		      <TempObservationsComponent  { ...this.props } />
 		    </Col>
 		  </Row>

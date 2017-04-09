@@ -25,7 +25,7 @@ export default class TempObservationsComponent extends React.Component {
     }
 
     displayObservations(obList) {
-        console.log(obList);
+        // console.log(obList);
         let viewCase = this.state.viewCase;
 
         switch(viewCase) {
