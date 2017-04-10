@@ -5,7 +5,7 @@ import { TempTestObservationItem } from "./tempTestObservationItem.js";
 import { deleteTestDataItem } from "../../../api/temp-data/temp-methods/tempMethods.js";
 import { calculateIndentLevel } from "../../functions/dot-string-functions/dotStringFunctions.js";
 import { TempObservationsList } from "./tempObservationsList.js";
-import { TempObservationsSummary } from "./tempObservationsSummary.js";
+import TempObservationsSummary from "./tempObservationsSummary.js";
 
 export default class TempObservationsComponent extends React.Component {
 

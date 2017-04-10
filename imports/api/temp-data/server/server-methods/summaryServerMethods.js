@@ -18,13 +18,13 @@ export const createSummaryDataForDisplay = new ValidatedMethod({
   	let numberOfActors;
 
   	let actorPipeline = [
-  		{$group : {_id:"$itemType", count:{$sum:1}}}	
+  		{$match: {secondaryType: "influencer"}},
   	];
 
-    let  summaryDisplayData = TESTDATA.aggregate(actorPipeline);
-    console.log(summaryDisplayData);
-    // summaryDisplayData.forEach(function(DDI) {
-    //   SUMMARYDATA.insert(DDI);
-    // });
+    let  summaryDisplayData = OBSERVATIONDATA.aggregate(actorPipeline);
+    // console.log(summaryDisplayData);
+    summaryDisplayData.forEach(function(DDI) {
+      SUMMARYDATA.insert(DDI);
+    });
   },
 });

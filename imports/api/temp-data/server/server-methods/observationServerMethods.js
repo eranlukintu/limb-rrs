@@ -48,25 +48,59 @@ const createObservation = function(hierarchyItem, obType) {
 	let observation = {};
 	let activityStaticDotString = hierarchyItem.staticDotString;
 	let parentHierarchyDotString = calculateParentDotString(activityStaticDotString);
-	// console.log(parentHierarchyDotString);
+
+	let observationUserId = Meteor.userId();
+	let observationObserverId = Meteor.userId();
+	let observationCreatedAt = new Date();
 	let parentHierarchy = TESTDATA.findOne({staticDotString: parentHierarchyDotString});
 	let observationPrimaryId = parentHierarchy.sourceId;
 	let observationPrimaryName = parentHierarchy.name;
+	let observationPrimaryType = parentHierarchy.itemType;
 	let observationSecondaryId = hierarchyItem.sourceId;
 	let observationSecondaryName = hierarchyItem.name;
+	let observationSecondaryType = hierarchyItem.itemType;
 	let observationType = obType;
 	let observationScore = createRandomNumberWithinRange(0,10);
+	let observationScoreClass = calculateObservationScoreClass(observationScore);
 
-	observation.userId = Meteor.userId();
-	observation.createdAt = new Date();
+	observation.userId = observationUserId;
+	observation.observerId = observationObserverId;
+	observation.createdAt = observationCreatedAt;
 	observation.primaryId = observationPrimaryId;
 	observation.primaryName = observationPrimaryName;
+	observation.primaryType = observationPrimaryType;
 	observation.secondaryId = observationSecondaryId;
 	observation.secondaryName = observationSecondaryName;
+	observation.secondaryType = observationSecondaryType;
 	observation.observationType = observationType;
 	observation.score = observationScore;
+	observation.scoreClass = observationScoreClass;
 
 	return observation;
+}
+
+const calculateObservationScoreClass = function(score) {
+	let observationScoreClass;
+
+	switch(score) {
+		case 0:
+		case 1:
+		case 2:
+		case 3: return observationScoreClass = "low";
+		break;
+
+		case 4:
+		case 5:
+		case 6:
+		case 7: return observationScoreClass = "medium";
+		break;
+
+		case 8:
+		case 9:
+		case 10: return observationScoreClass  = "high";
+
+		default: return observationScoreClass = "NA";
+	}
 }
 
 
