@@ -15,29 +15,38 @@ export const createSummaryDataForDisplay = new ValidatedMethod({
   	
   	SUMMARYDATA.remove({});
 
-  	let numberOfActors;
+    let summaryAttractivenessData = OBSERVATIONDATA.aggregate(attractivenessSummaryPipeline);
+  	
+    let  summaryDisplayData = [];
+    
 
-  	let attractivenessSummaryPipeline = [
-        {
-            $match: {
-              $and: [
-                {secondaryType: "influencer"}, 
-                {observationType: "impact"},
-                {primaryDomain: "internal"},
-                {secondaryDomain: "external"},
-              ]
-            }        
-        },
-        {
-          $group:{_id: "$scoreClass", subTotal: {$sum: 1}}
-        },
-      ];
-
-    let  summaryDisplayData = OBSERVATIONDATA.aggregate(attractivenessSummaryPipeline);
+    summaryAttractivenessData.forEach(function(summaryDisplayItem) {
+      let summaryDisplayRow = {};
+      summaryDisplayRow.itemLabel = summaryDisplayItem._id;
+      summaryDisplayRow.itemValue = summaryDisplayItem.subTotal;
+      summaryDisplayRow.indentLevel = 1;
+      summaryDisplayData.push(summaryDisplayRow);
+    });
     // console.log(summaryDisplayData);
     summaryDisplayData.forEach(function(DDI) {
       SUMMARYDATA.insert(DDI);
     });
   },
 });
+
+const attractivenessSummaryPipeline = [
+  {
+      $match: {
+        $and: [
+          {secondaryType: "influencer"}, 
+          {observationType: "impact"},
+          {primaryDomain: "internal"},
+          {secondaryDomain: "external"},
+        ]
+      }        
+  },
+  {
+    $group:{_id: "$scoreClass", subTotal: {$sum: 1}}
+  },
+];
 

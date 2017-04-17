@@ -1,16 +1,8 @@
 import React from "react";
-import { Random } from 'meteor/random';
 import { HorizontalBarComponent } from "../supplementary-components/horizontal-bar-component/horizontalBarComponent.js";
 import { ListGroup, ListGroupItem, Alert, Button } from 'react-bootstrap';
 
-export class TempTestDataItem extends React.Component {
-
-	constructor(props) {
-		super(props);
-		this.state = {
-			divStyle: "null",
-		};
-	}
+export class TempObservationSummaryItem extends React.Component {
 
 	insertHorizontalBars() {
 		let hbArray = [];
@@ -24,17 +16,11 @@ export class TempTestDataItem extends React.Component {
 		return hbArray;
 	}
 
-	handleSelect(tdi) {
-		// console.log(this.props);
-		this.props.setControllingElement(tdi);
-	}
-
-
 	render() {
-		const testDataItem = this.props.testDataItem;
+		const testSummaryItem = this.props.testSummaryItem;
 		// console.log(this.props);
-		return <ListGroupItem onClick={this.handleSelect.bind(this, testDataItem)} >
-			{this.insertHorizontalBars()} {testDataItem.staticDotString} {testDataItem.name} {testDataItem.itemType}
+		return <ListGroupItem >
+			{this.insertHorizontalBars()} {testSummaryItem.itemLabel} {testSummaryItem.itemValue}
 		</ListGroupItem>
 	}
 }

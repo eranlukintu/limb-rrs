@@ -4,6 +4,7 @@ import { composeWithTracker } from 'react-komposer';
 import { Meteor } from 'meteor/meteor';
 import { SUMMARYDATA } from "../../../api/temp-data/temp-collections/tempCollections.js";
 import Loading from '../../components/Loading.js';
+import { TempObservationSummaryItem } from "./tempObservationSummaryItem.js";
 
 class TempObservationsSummary extends React.Component {
 
@@ -13,20 +14,33 @@ class TempObservationsSummary extends React.Component {
 
 	render() {
 		console.log(this.props.observationsList);
-		return <Row>
-			<Col>
-				<div>
-					<h4>Observation Summary</h4>
-					<span>
-						<ButtonToolbar>
-							<Button bsStyle="info" onClick={this.handleRefreshSummary.bind(this)}>
-								Refresh summary
-							</Button>
-						</ButtonToolbar>
-					</span>
-				</div>
-			</Col>
-		</Row>
+		return <div>
+			<Row>
+				<Col>
+					<div>
+						<h4>Observation Summary</h4>
+						<span>
+							<ButtonToolbar>
+								<Button bsStyle="info" onClick={this.handleRefreshSummary.bind(this)}>
+									Refresh summary
+								</Button>
+							</ButtonToolbar>
+						</span>
+					</div>
+				</Col>
+			</Row>
+			<Row>
+				<Col>
+					{this.props.observationsList.map((obSumItem) => (
+						<TempObservationSummaryItem
+							key = {obSumItem._id}
+							testSummaryItem = {obSumItem}
+							indentLevel = {obSumItem.indentLevel}
+						 />
+					))}
+				</Col>
+			</Row>
+		</div>
 	}
 }
 
