@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col, Button } from 'react-bootstrap';
-import TempObservationsComponent from '../../containers/tempContainers/tempObservationsContainer.js';
+import TempObservationsComponent from '../../components/temp-components/tempObservationsComponent.js';
 
 export class TempObservationsPage extends React.Component {
 

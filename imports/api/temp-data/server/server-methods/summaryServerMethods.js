@@ -17,17 +17,21 @@ export const createSummaryDataForDisplay = new ValidatedMethod({
 
   	let numberOfActors;
 
-  	let attractivenessSummaryPipeline = [{
-        $match: {
-          $and: [
-            {secondaryType: "influencer"}, 
-            {observationType: "impact"},
-            {primaryDomain: "internal"},
-            {secondaryDomain: "external"},
-          ]
+  	let attractivenessSummaryPipeline = [
+        {
+            $match: {
+              $and: [
+                {secondaryType: "influencer"}, 
+                {observationType: "impact"},
+                {primaryDomain: "internal"},
+                {secondaryDomain: "external"},
+              ]
+            }        
         },
-        
-      }];
+        {
+          $group:{_id: "$scoreClass", subTotal: {$sum: 1}}
+        },
+      ];
 
     let  summaryDisplayData = OBSERVATIONDATA.aggregate(attractivenessSummaryPipeline);
     // console.log(summaryDisplayData);

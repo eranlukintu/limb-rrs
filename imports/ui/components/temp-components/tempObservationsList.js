@@ -1,12 +1,15 @@
 import React from "react";
 import { ListGroup, ListGroupItem, Alert, Button } from 'react-bootstrap';
-import { TempTestDataItem } from "./tempTestDataItem.js";
+import { Meteor } from 'meteor/meteor';
+// import { TempTestDataItem } from "./tempTestDataItem.js";
 import { TempTestObservationItem } from "./tempTestObservationItem.js";
-import { deleteTestDataItem } from "../../../api/temp-data/temp-methods/tempMethods.js";
-import { calculateIndentLevel } from "../../functions/dot-string-functions/dotStringFunctions.js";
+// import { deleteTestDataItem } from "../../../api/temp-data/temp-methods/tempMethods.js";
+// import { calculateIndentLevel } from "../../functions/dot-string-functions/dotStringFunctions.js";
+import { OBSERVATIONDATA } from "../../../api/temp-data/temp-collections/tempCollections.js";
+import Loading from '../../components/Loading.js';
+import { composeWithTracker } from 'react-komposer';
 
-export class TempObservationsList extends React.Component{
-   
+class TempObservationsList extends React.Component{   
 
   render() { 	
 
@@ -28,3 +31,14 @@ export class TempObservationsList extends React.Component{
     </div>
   }
 }
+
+const composer = (params, onData) => {
+  const subscription = Meteor.subscribe('DisplayData.observations');
+
+  if (subscription.ready()) {
+    const observationsList = OBSERVATIONDATA.find().fetch();
+    onData(null, { observationsList });
+  }
+};
+
+export default composeWithTracker(composer, Loading)(TempObservationsList);

@@ -4,7 +4,7 @@ import { TempTestDataItem } from "./tempTestDataItem.js";
 import { TempTestObservationItem } from "./tempTestObservationItem.js";
 import { deleteTestDataItem } from "../../../api/temp-data/temp-methods/tempMethods.js";
 import { calculateIndentLevel } from "../../functions/dot-string-functions/dotStringFunctions.js";
-import { TempObservationsList } from "./tempObservationsList.js";
+import TempObservationsList from "./tempObservationsList.js";
 import TempObservationsSummary from "./tempObservationsSummary.js";
 
 export default class TempObservationsComponent extends React.Component {
@@ -12,7 +12,7 @@ export default class TempObservationsComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            viewCase: 1
+            viewCase: 0
         }
     }
 
@@ -35,7 +35,7 @@ export default class TempObservationsComponent extends React.Component {
             case 2: return <TempObservationsSummary />;
             break;
 
-            default: return <TempObservationsList observationsList = {obList} />;
+            default: return <h4>Please select viewing option</h4>;
         }
     }
    
