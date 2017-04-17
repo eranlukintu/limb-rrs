@@ -16,19 +16,12 @@ export const createSummaryDataForDisplay = new ValidatedMethod({
   	SUMMARYDATA.remove({});
 
     let summaryAttractivenessData = OBSERVATIONDATA.aggregate(attractivenessSummaryPipeline);
-  	
-    let  summaryDisplayData = [];
-    
+    let summarySupportData = OBSERVATIONDATA.aggregate(supportSummaryPipeline);
 
-    summaryAttractivenessData.forEach(function(summaryDisplayItem) {
-      let summaryDisplayRow = {};
-      summaryDisplayRow.itemLabel = summaryDisplayItem._id;
-      summaryDisplayRow.itemValue = summaryDisplayItem.subTotal;
-      summaryDisplayRow.indentLevel = 1;
-      summaryDisplayData.push(summaryDisplayRow);
-    });
-    // console.log(summaryDisplayData);
-    summaryDisplayData.forEach(function(DDI) {
+    let  summaryDisplayData = addSummaryAttractivenessData(summaryAttractivenessData);
+    let extendedSummaryDisplayData = addSummarySupportData(summarySupportData, summaryDisplayData);
+  
+    extendedSummaryDisplayData.forEach(function(DDI) {
       SUMMARYDATA.insert(DDI);
     });
   },
@@ -49,4 +42,43 @@ const attractivenessSummaryPipeline = [
     $group:{_id: "$scoreClass", subTotal: {$sum: 1}}
   },
 ];
+
+const supportSummaryPipeline = [
+  {
+      $match: {
+        $and: [
+          {secondaryType: "influencer"}, 
+          {observationType: "impact"},
+          {primaryDomain: "external"},
+          {secondaryDomain: "internal"},
+        ]
+      }        
+  },
+  {
+    $group:{_id: "$scoreClass", subTotal: {$sum: 1}}
+  },
+];
+
+const addSummaryAttractivenessData = function(summaryAttractivenessData) {
+  let  summaryDisplayData = [];
+  summaryAttractivenessData.forEach(function(summaryDisplayItem) {
+    let summaryDisplayRow = {};    
+    summaryDisplayRow.itemLabel = summaryDisplayItem._id;
+    summaryDisplayRow.itemValue = summaryDisplayItem.subTotal;
+    summaryDisplayRow.indentLevel = 1;
+    summaryDisplayData.push(summaryDisplayRow);
+  });
+  return summaryDisplayData;
+}
+
+const addSummarySupportData = function(summarySupportData, summaryDisplayData) {
+  summarySupportData.forEach(function(summaryDisplayItem) {
+    let summaryDisplayRow = {};
+    summaryDisplayRow.itemLabel = summaryDisplayItem._id;
+    summaryDisplayRow.itemValue = summaryDisplayItem.subTotal;
+    summaryDisplayRow.indentLevel = 1;
+    summaryDisplayData.push(summaryDisplayRow);
+  });
+  return summaryDisplayData;
+}
 
