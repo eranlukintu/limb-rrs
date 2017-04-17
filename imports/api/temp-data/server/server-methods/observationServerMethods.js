@@ -45,6 +45,9 @@ export const loadObservationsForDisplay = new ValidatedMethod({
 });
 
 const createObservation = function(hierarchyItem, obType) {
+
+	// debugger;
+
 	let observation = {};
 	let activityStaticDotString = hierarchyItem.staticDotString;
 	let parentHierarchyDotString = calculateParentDotString(activityStaticDotString);
@@ -56,9 +59,11 @@ const createObservation = function(hierarchyItem, obType) {
 	let observationPrimaryId = parentHierarchy.sourceId;
 	let observationPrimaryName = parentHierarchy.name;
 	let observationPrimaryType = parentHierarchy.itemType;
+	let observationPrimaryDomain = parentHierarchy.itemDomain;
 	let observationSecondaryId = hierarchyItem.sourceId;
 	let observationSecondaryName = hierarchyItem.name;
 	let observationSecondaryType = hierarchyItem.itemType;
+	let observationSecondaryDomain = hierarchyItem.itemDomain;
 	let observationType = obType;
 	let observationScore = createRandomNumberWithinRange(0,10);
 	let observationScoreClass = calculateObservationScoreClass(observationScore);
@@ -69,9 +74,11 @@ const createObservation = function(hierarchyItem, obType) {
 	observation.primaryId = observationPrimaryId;
 	observation.primaryName = observationPrimaryName;
 	observation.primaryType = observationPrimaryType;
+	observation.primaryDomain = observationPrimaryDomain;
 	observation.secondaryId = observationSecondaryId;
 	observation.secondaryName = observationSecondaryName;
 	observation.secondaryType = observationSecondaryType;
+	observation.secondaryDomain = observationSecondaryDomain;
 	observation.observationType = observationType;
 	observation.score = observationScore;
 	observation.scoreClass = observationScoreClass;

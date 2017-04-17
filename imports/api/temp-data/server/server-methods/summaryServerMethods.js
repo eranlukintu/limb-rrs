@@ -21,7 +21,9 @@ export const createSummaryDataForDisplay = new ValidatedMethod({
         $match: {
           $and: [
             {secondaryType: "influencer"}, 
-            {observationType: "impact"}
+            {observationType: "impact"},
+            {primaryDomain: "internal"},
+            {secondaryDomain: "external"},
           ]
         },
         

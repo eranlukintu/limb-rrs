@@ -7,7 +7,7 @@ import Loading from '../../components/Loading.js';
 
 class TempObservationsSummary extends React.Component {
 
-	handleViewSummary() {
+	handleRefreshSummary() {
 		Meteor.call("SummaryData.create", {});
 	}
 
@@ -19,8 +19,8 @@ class TempObservationsSummary extends React.Component {
 					<h4>Observation Summary</h4>
 					<span>
 						<ButtonToolbar>
-							<Button bsStyle="info" onClick={this.handleViewSummary.bind(this)}>
-								View summary
+							<Button bsStyle="info" onClick={this.handleRefreshSummary.bind(this)}>
+								Refresh summary
 							</Button>
 						</ButtonToolbar>
 					</span>

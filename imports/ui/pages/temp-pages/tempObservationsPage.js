@@ -4,7 +4,7 @@ import TempObservationsComponent from '../../containers/tempContainers/tempObser
 
 export class TempObservationsPage extends React.Component {
 
-	handleAddActivityImportanceObservations() {
+	handleRefreshSummaryObservations() {
 		Meteor.call("DisplayData.observations", {});
 	}
 
@@ -16,8 +16,8 @@ export class TempObservationsPage extends React.Component {
 		return <div>
 			<Row>
 				<Col xs= {3}>
-					<Button block bsStyle="success" onClick={this.handleAddActivityImportanceObservations.bind(this)}>
-						Add activity importance observations
+					<Button block bsStyle="success" onClick={this.handleRefreshSummaryObservations.bind(this)}>
+						Refresh summary observations
 					</Button>
 				</Col>
 
