@@ -12,6 +12,7 @@ export const createReferenceInfluencersOfValues = function(referenceValues, refe
 			let referenceProperties = {};
 			referenceProperties.itemType = "referenceInfluencerOfValue";
 			referenceProperties.name = referenceInfluencer.name;
+			referenceProperties.itemDomain = "NA";
 			referenceProperties.crossReferenceId = referenceValue.itemId;
 			referenceProperties.itemSourceId = referenceInfluencer.itemId;
 

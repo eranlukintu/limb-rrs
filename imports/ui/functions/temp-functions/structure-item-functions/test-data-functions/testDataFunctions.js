@@ -16,6 +16,7 @@ const createHierarchyItem = function(properties) {
 	hierarchyItem.text = properties.name;
 	hierarchyItem.sourceId = properties.sourceId;
 	hierarchyItem.itemType = properties.itemType;
+	hierarchyItem.itemDomain = properties.itemDomain;
 	hierarchyItem.relationshipToParent = properties.relationshipToParent;
 	hierarchyItem.helpNote = properties.helpNote;
 	hierarchyItem.primaryItemId = properties.primaryItemId;
@@ -36,6 +37,7 @@ export const createRootItem = function() {
 		properties.staticIndentLevel = "0";
 		properties.name = "root";
 		properties.itemType = "root";
+		properties.itemDomain = "root";
 		properties.sourceId = Random.id()		
 		properties.relationshipToParent = "null";
 		properties.helpNote = "help note not yet implemented";
@@ -63,6 +65,7 @@ export const createHierarchyWithActors = function(rootItem, referenceActors) {
 		properties.staticIndentLevel = calculateIndentLevel(properties.staticDotString);
 		properties.name = actor.name;
 		properties.itemType = "actor";
+		properties.itemDomain = actor.itemDomain;
 		properties.sourceId = actor.itemId;
 		// properties.crossReferenceId = rootItem.itemId;
 		properties.relationshipToParent = "actorOf";
@@ -105,6 +108,7 @@ export const createHierarchyWithActivities = function(hierarchyWithActors, refer
 			properties.staticIndentLevel = calculateIndentLevel(properties.staticDotString);
 			properties.name = associatedActivity.name;
 			properties.itemType = "activity";
+			properties.itemDomain = selectedActor.itemDomain;
 			properties.sourceId = sourceActivity.itemId;
 			// properties.crossReferenceId = selectedActor.itemId;
 			// properties.parentId = "null";
@@ -160,6 +164,7 @@ export const createHierarchyWithValues = function(
 			properties.staticIndentLevel = calculateIndentLevel(properties.staticDotString);
 			properties.name = associatedValue.name;
 			properties.itemType = "value";
+			properties.itemDomain = selectedActivity.itemDomain;
 			properties.sourceId = associatedValue.itemId;
 			// properties.crossReferenceId = selectedActivity.itemId;
 			properties.relationshipToParent = "valueOf";
@@ -214,27 +219,63 @@ export const createHierarchyWithInfluencers = function(
 		let associatedInfluencers = referenceInfluencersOfValues.filter(x => x.crossReferenceId === referenceValue.itemId);
 		// console.log(associatedInfluencers);
 		//Each of the associated influencers needs to be transformed into a test data item
-		associatedInfluencers.forEach(function(associatedInfluencer, index) {
-			let properties = {};
-			properties.staticDotString = selectedHierarchyValue.staticDotString + "." + (index+1).toString();
-			properties.staticSortString = createSortString(properties.staticDotString);
-			properties.staticIndentLevel = calculateIndentLevel(properties.staticDotString);
-			properties.name = associatedInfluencer.name;
-			properties.itemType = "influencer";
-			properties.sourceId = associatedInfluencer.itemId;
-			// properties.crossReferenceId = selectedHierarchyValue.itemId;
-			properties.relationshipToParent = "influencerOn";
-			properties.helpNote = "help note not yet implemented";
-			properties.primaryItemId = referenceValue.itemId;
-			properties.observationType = "NA";
-			properties.observationValue = "NA";
-			properties.observerId = "NA";
-			properties.observerName = "NA";
-			properties.observationDate = "NA";
 
-			let interimInfluencer = createHierarchyItem(properties);
-			hierarchyWithInfluencers.push(interimInfluencer);
-		})
+		let indexCounter = 1;
+
+		associatedInfluencers.forEach(function(ai) {
+			let instancesOfAssociatedInfluencerInHierarchy = hierarchyWithValues.filter(x => x.name === ai.name );
+			// console.log(instancesOfAssociatedInfluencerInHierarchy.length);
+			instancesOfAssociatedInfluencerInHierarchy.forEach(function(instanceOfAssociatedInfluencer, index) {
+				// console.log("Testing for activity");
+				// debugger;
+
+				let properties = {};
+				properties.staticDotString = selectedHierarchyValue.staticDotString + "." + (indexCounter+1).toString();
+				properties.staticSortString = createSortString(properties.staticDotString);
+				properties.staticIndentLevel = calculateIndentLevel(properties.staticDotString);
+				properties.name = ai.name;
+				properties.itemType = "influencer";
+				properties.itemDomain = instanceOfAssociatedInfluencer.itemDomain;
+				properties.sourceId = ai.itemId;
+				properties.relationshipToParent = "influencerOn";
+				properties.helpNote = "help note not yet implemented";
+				properties.primaryItemId = "NA";
+				properties.observationType = "NA";
+				properties.observationValue = "NA";
+				properties.observerId = "NA";
+				properties.observerName = "NA";
+				properties.observationDate = "NA";
+
+				let interimInfluencer = createHierarchyItem(properties);
+				hierarchyWithInfluencers.push(interimInfluencer);
+
+				indexCounter = indexCounter + 1;
+
+			});
+		});
+
+		// associatedInfluencers.forEach(function(associatedInfluencer, index) {
+		// 	let properties = {};
+		// 	properties.staticDotString = selectedHierarchyValue.staticDotString + "." + (index+1).toString();
+		// 	properties.staticSortString = createSortString(properties.staticDotString);
+		// 	properties.staticIndentLevel = calculateIndentLevel(properties.staticDotString);
+		// 	properties.name = associatedInfluencer.name;
+		// 	properties.itemType = "influencer";
+		// 	properties.itemDomain = "NA";
+		// 	properties.sourceId = associatedInfluencer.itemId;
+		// 	// properties.crossReferenceId = selectedHierarchyValue.itemId;
+		// 	properties.relationshipToParent = "influencerOn";
+		// 	properties.helpNote = "help note not yet implemented";
+		// 	properties.primaryItemId = referenceValue.itemId;
+		// 	properties.observationType = "NA";
+		// 	properties.observationValue = "NA";
+		// 	properties.observerId = "NA";
+		// 	properties.observerName = "NA";
+		// 	properties.observationDate = "NA";
+
+		// 	let interimInfluencer = createHierarchyItem(properties);
+		// 	hierarchyWithInfluencers.push(interimInfluencer);
+		// })
 	});
 	// console.log(hierarchyWithInfluencers);
 	return hierarchyWithInfluencers;

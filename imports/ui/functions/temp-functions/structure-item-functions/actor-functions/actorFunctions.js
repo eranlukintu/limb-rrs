@@ -7,6 +7,7 @@ export const createReferenceActors = function(numberOfActors) {
 		let referenceProperties = {};
 		referenceProperties.itemType = "actor";
 		referenceProperties.name = "actor-" + i.toString();
+		referenceProperties.itemDomain = setItemDomain(i, numberOfActors);
 		referenceProperties.itemParentId = "NA";
 		referenceProperties.itemSourceId = "NA";
 
@@ -14,4 +15,20 @@ export const createReferenceActors = function(numberOfActors) {
 		referenceActors.push(referenceActor);
 	}
 	return referenceActors;
+}
+
+const setItemDomain = function(i, numberOfActors) {
+	let itemDomain;
+
+	switch(i) {
+		case 1: itemDomain = "internal";
+		break;
+
+		case numberOfActors: itemDomain = "competitive";
+		break;
+
+		default: itemDomain = "external";
+	}
+
+	return itemDomain;
 }

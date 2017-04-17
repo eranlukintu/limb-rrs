@@ -10,9 +10,9 @@ export const createReferenceValuesOfActivities = function(referenceActivities, r
 			let referenceProperties = {};
 			referenceProperties.itemType = "referenceValueOfActivity";
 			referenceProperties.name = referenceValue.name;
+			referenceProperties.itemDomain = "NA";
 			referenceProperties.crossReferenceId = activity.itemId;
 			referenceProperties.itemSourceId = referenceValue.itemId;
-
 			let referenceValueOfActivity = createReferenceItem(referenceProperties);
 			referenceValuesOfActivities.push(referenceValueOfActivity);
 		});

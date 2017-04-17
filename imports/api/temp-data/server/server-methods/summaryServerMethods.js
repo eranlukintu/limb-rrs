@@ -17,14 +17,21 @@ export const createSummaryDataForDisplay = new ValidatedMethod({
 
   	let numberOfActors;
 
-  	let actorPipeline = [
-  		{$match: {secondaryType: "influencer"}},
-  	];
+  	let attractivenessSummaryPipeline = [{
+        $match: {
+          $and: [
+            {secondaryType: "influencer"}, 
+            {observationType: "impact"}
+          ]
+        },
+        
+      }];
 
-    let  summaryDisplayData = OBSERVATIONDATA.aggregate(actorPipeline);
+    let  summaryDisplayData = OBSERVATIONDATA.aggregate(attractivenessSummaryPipeline);
     // console.log(summaryDisplayData);
     summaryDisplayData.forEach(function(DDI) {
       SUMMARYDATA.insert(DDI);
     });
   },
 });
+

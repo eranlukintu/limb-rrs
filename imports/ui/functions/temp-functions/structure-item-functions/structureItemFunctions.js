@@ -15,15 +15,12 @@ export const createReferenceItem = function(referenceProperties) {
 	let referenceItem = {};
 	referenceItem.itemId = Random.id();
 	referenceItem.itemType = referenceProperties.itemType;
+	referenceItem.itemDomain = referenceProperties.itemDomain;
 	referenceItem.name = referenceProperties.name;
 	referenceItem.crossReferenceId = referenceProperties.crossReferenceId;
 	referenceItem.itemSourceId = referenceProperties.itemSourceId;
 	return referenceItem;
 }
-
-
-
-
 
 export const createActorDataItems = function(rootItem, actors) {
 
