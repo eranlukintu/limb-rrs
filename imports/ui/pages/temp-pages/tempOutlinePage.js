@@ -2,6 +2,7 @@ import React from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
 import TempOutlineComponent from '../../containers/tempContainers/tempOutlineContainer.js';
 // import { loadActorsForDisplay } from '../../../api/temp-data/server/server-methods/serverMethods.js';
+import PropTypes from 'prop-types';
 
 export class TempOutlinePage extends React.Component  {
 

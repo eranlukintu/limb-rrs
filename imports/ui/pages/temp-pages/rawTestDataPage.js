@@ -1,6 +1,7 @@
 import React from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
 import TempTestDataList from '../../containers/tempContainers/tempTestDataContainer.js';
+import PropTypes from 'prop-types';
 
 export class TempTestDataPage extends React.Component  {
 	render() {

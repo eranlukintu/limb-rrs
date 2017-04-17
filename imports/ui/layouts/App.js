@@ -15,6 +15,7 @@ import { TempTreePage } from '../pages/temp-pages/tempTreePage.js';
 import { TempTestDataPage } from '../pages/temp-pages/rawTestDataPage.js';
 import { TempOutlinePage } from '../pages/temp-pages/tempOutlinePage.js';
 import { TempObservationsPage } from '../pages/temp-pages/tempObservationsPage.js';
+import PropTypes from 'prop-types';
 
 
 export default class App extends React.Component {

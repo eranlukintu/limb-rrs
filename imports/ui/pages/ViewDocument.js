@@ -2,6 +2,7 @@ import React from 'react';
 import { ButtonToolbar, ButtonGroup, Button } from 'react-bootstrap';
 import { Bert } from 'meteor/themeteorchef:bert';
 import { removeDocument } from '../../api/documents/methods.js';
+import PropTypes from 'prop-types';
 
 const handleRemove = (_id, setCurrentPage) => {
   if (confirm('Are you sure? This is permanent!')) {

@@ -1,5 +1,6 @@
 import React from 'react';
 import DocumentEditor from '../components/DocumentEditor.js';
+import PropTypes from 'prop-types';
 
 const EditDocument = props => (
   <div className="EditDocument">

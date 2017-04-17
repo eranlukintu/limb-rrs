@@ -1,6 +1,7 @@
 import React from "react";
 import { Row, Col, Button } from 'react-bootstrap';
 import TempObservationsComponent from '../../components/temp-components/tempObservationsComponent.js';
+import PropTypes from 'prop-types';
 
 export class TempObservationsPage extends React.Component {
 

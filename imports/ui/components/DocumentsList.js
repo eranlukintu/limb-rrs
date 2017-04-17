@@ -1,5 +1,6 @@
 import React from 'react';
 import { ListGroup, ListGroupItem, Alert } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 const DocumentsList = ({ documents, setCurrentPage }) => (
   documents.length > 0 ? <ListGroup className="DocumentsList">

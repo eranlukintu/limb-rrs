@@ -1,6 +1,7 @@
 import React from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
 import TempDataStructureItemsList from '../../containers/tempContainers/tempDataStructureItemContainer.js';
+import PropTypes from 'prop-types';
 
 export const TempDataStructureItemsPage = props => (
   <Row>

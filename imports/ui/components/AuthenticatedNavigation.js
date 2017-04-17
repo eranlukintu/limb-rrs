@@ -3,6 +3,7 @@ import { browserHistory } from 'react-router';
 import { IndexLinkContainer, LinkContainer } from 'react-router-bootstrap';
 import { Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import { Meteor } from 'meteor/meteor';
+import PropTypes from 'prop-types';
 
 const handleLogout = () => Meteor.logout(() => browserHistory.push('/login'));
 

@@ -3,6 +3,7 @@ import { Navbar } from 'react-bootstrap';
 import { Link } from 'react-router';
 import PublicNavigation from './PublicNavigation.js';
 import AuthenticatedNavigation from './AuthenticatedNavigation.js';
+import PropTypes from 'prop-types';
 
 const renderNavigation = (hasUser, currentPage, setCurrentPage) => (
   hasUser ? <AuthenticatedNavigation
