@@ -63,6 +63,7 @@ const addSummaryAttractivenessData = function(summaryAttractivenessData) {
   let  summaryDisplayData = [];
   summaryAttractivenessData.forEach(function(summaryDisplayItem) {
     let summaryDisplayRow = {};    
+    summaryDisplayRow.itemCategory = "attractiveness";
     summaryDisplayRow.itemLabel = summaryDisplayItem._id;
     summaryDisplayRow.itemValue = summaryDisplayItem.subTotal;
     summaryDisplayRow.indentLevel = 1;
@@ -74,6 +75,7 @@ const addSummaryAttractivenessData = function(summaryAttractivenessData) {
 const addSummarySupportData = function(summarySupportData, summaryDisplayData) {
   summarySupportData.forEach(function(summaryDisplayItem) {
     let summaryDisplayRow = {};
+    summaryDisplayRow.itemCategory = "support";
     summaryDisplayRow.itemLabel = summaryDisplayItem._id;
     summaryDisplayRow.itemValue = summaryDisplayItem.subTotal;
     summaryDisplayRow.indentLevel = 1;

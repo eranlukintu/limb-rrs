@@ -1,5 +1,5 @@
 import React from "react";
-import { ListGroup, ListGroupItem, Alert, Button } from 'react-bootstrap';
+import { ListGroup, ListGroupItem, Alert, Button, Table, thead, tbody, tr, td, th } from 'react-bootstrap';
 import { Meteor } from 'meteor/meteor';
 // import { TempTestDataItem } from "./tempTestDataItem.js";
 import { TempTestObservationItem } from "./tempTestObservationItem.js";
@@ -19,15 +19,24 @@ class TempObservationsList extends React.Component{
     
     return 	<div>
         
-        <ListGroup>
-            {observationsList.map((obItem) => ( 
-            // console.log(index);       	
-                <TempTestObservationItem 
-                    observationItem = {obItem} 
-                    key={obItem._id} 
-                />
-            ))}
-        </ListGroup>
+        <Table>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Label</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                {observationsList.map((obItem) => ( 
+                // console.log(index);       	
+                    <TempTestObservationItem 
+                        observationItem = {obItem} 
+                        key={obItem._id} 
+                    />
+                ))}
+            </tbody>
+        </Table>
     </div>
   }
 }

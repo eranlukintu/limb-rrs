@@ -1,5 +1,5 @@
 import React from "react";
-import { ListGroup, ListGroupItem, Alert, Button, Row, Col, ButtonToolbar } from 'react-bootstrap';
+import { ListGroup, ListGroupItem, Alert, Button, ButtonToolbar, Table, thead, tbody, tr, td, th, Row, Col } from 'react-bootstrap';
 import { composeWithTracker } from 'react-komposer';
 import { Meteor } from 'meteor/meteor';
 import { SUMMARYDATA } from "../../../api/temp-data/temp-collections/tempCollections.js";
@@ -13,31 +13,37 @@ class TempObservationsSummary extends React.Component {
 	}
 
 	render() {
-		console.log(this.props.observationsList);
+		// console.log(this.props.observationsList);
 		return <div>
 			<Row>
-				<Col>
-					<div>
-						<h4>Observation Summary</h4>
-						<span>
-							<ButtonToolbar>
-								<Button bsStyle="info" onClick={this.handleRefreshSummary.bind(this)}>
-									Refresh summary
-								</Button>
-							</ButtonToolbar>
-						</span>
-					</div>
+				<Col>					
+					<ButtonToolbar>
+						<Button bsStyle="info" onClick={this.handleRefreshSummary.bind(this)}>
+							Refresh summary
+						</Button>
+					</ButtonToolbar>						
 				</Col>
 			</Row>
 			<Row>
 				<Col>
-					{this.props.observationsList.map((obSumItem) => (
-						<TempObservationSummaryItem
-							key = {obSumItem._id}
-							testSummaryItem = {obSumItem}
-							indentLevel = {obSumItem.indentLevel}
-						 />
-					))}
+					<Table striped bordered condensed hover>
+			            <thead>
+			                <tr>
+			                    <th>Category</th>
+			                    <th>Label</th>
+			                    <th>Value</th>
+			                </tr>
+			            </thead>
+			            <tbody>
+			                {this.props.observationsList.map((obSumItem) => (
+								<TempObservationSummaryItem
+									key = {obSumItem._id}
+									testSummaryItem = {obSumItem}
+								 />
+							))}
+			            </tbody>
+			        </Table>
+					
 				</Col>
 			</Row>
 		</div>
