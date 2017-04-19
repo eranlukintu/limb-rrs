@@ -29,7 +29,7 @@ export default class TempObservationsComponent extends React.Component {
         let viewCase = this.state.viewCase;
 
         switch(viewCase) {
-            case 1: return <TempObservationsList observationsList = {obList} />;
+            case 1: return <TempObservationsList  />;
             break;
 
             case 2: return <TempObservationsSummary />;
