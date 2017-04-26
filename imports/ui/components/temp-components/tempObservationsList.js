@@ -17,17 +17,7 @@ class TempObservationsList extends React.Component{
     // console.log(this.props);
     // console.log(observationsList);
     
-    return 	<div>
-        
-        <Table>
-            <thead>
-                <tr>
-                    <th>Category</th>
-                    <th>Label</th>
-                    <th>Value</th>
-                </tr>
-            </thead>
-            <tbody>
+    return 	<ListGroup> 
                 {observationsList.map((obItem) => ( 
                 // console.log(index);       	
                     <TempTestObservationItem 
@@ -35,9 +25,7 @@ class TempObservationsList extends React.Component{
                         key={obItem._id} 
                     />
                 ))}
-            </tbody>
-        </Table>
-    </div>
+    </ListGroup>
   }
 }
 

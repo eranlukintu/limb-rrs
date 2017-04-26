@@ -67,6 +67,7 @@ const createObservation = function(hierarchyItem, obType) {
 	let observationType = obType;
 	let observationScore = createRandomNumberWithinRange(0,10);
 	let observationScoreClass = calculateObservationScoreClass(observationScore);
+	let observationScoreClassRank = rankObservationScoreClass(observationScoreClass);
 
 	observation.userId = observationUserId;
 	observation.observerId = observationObserverId;
@@ -82,6 +83,7 @@ const createObservation = function(hierarchyItem, obType) {
 	observation.observationType = observationType;
 	observation.score = observationScore;
 	observation.scoreClass = observationScoreClass;
+	observation.scoreClassRank = observationScoreClassRank;
 
 	return observation;
 }
@@ -107,6 +109,19 @@ const calculateObservationScoreClass = function(score) {
 		case 10: return observationScoreClass  = "high";
 
 		default: return observationScoreClass = "NA";
+	}
+}
+
+const rankObservationScoreClass = function(observationScoreClass) {
+	
+	switch(observationScoreClass) {
+
+		case "NA": return 0; break;
+		case "low": return 1; break;
+		case "medium": return 2; break;
+		case "high": return 3; break;
+		default: return 0;
+
 	}
 }
 

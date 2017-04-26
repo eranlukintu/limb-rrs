@@ -9,7 +9,13 @@ import { TempObservationSummaryItem } from "./tempObservationSummaryItem.js";
 class TempObservationsSummary extends React.Component {
 
 	render() {
-		// console.log(this.props.observationsList);
+		// console.log(this.props.observationsSummaryList);
+		const total = this.props.observationsSummaryList.reduce(function(runningTotal, item) {
+			return runningTotal + item.itemValue;
+		},0);
+
+		console.log(total);
+
 		return <div>
 			<Row>
 				<Col>
@@ -20,13 +26,15 @@ class TempObservationsSummary extends React.Component {
 				                    <th>Category</th>
 				                    <th>Label</th>
 				                    <th>Value</th>
+				                    <th>Percentage</th>
 				                </tr>
 				            </thead>
 				            <tbody>
-				                {this.props.observationsList.map((obSumItem) => (
+				                {this.props.observationsSummaryList.map((obSumItem) => (
 									<TempObservationSummaryItem
 										key = {obSumItem._id}
 										testSummaryItem = {obSumItem}
+										total = {total}
 									 />
 								))}
 				            </tbody>
@@ -42,8 +50,8 @@ const composer = (params, onData) => {
   const subscription = Meteor.subscribe('observationsSummary');
 
   if (subscription.ready()) {
-    const observationsList = SUMMARYDATA.find({}).fetch();
-    onData(null, { observationsList });
+    const observationsSummaryList = SUMMARYDATA.find({}).fetch();
+    onData(null, { observationsSummaryList });
   }
 };
 

@@ -18,6 +18,8 @@ export const createSummaryDataForDisplay = new ValidatedMethod({
     let summaryAttractivenessData = OBSERVATIONDATA.aggregate(attractivenessSummaryPipeline);
     let summarySupportData = OBSERVATIONDATA.aggregate(supportSummaryPipeline);
 
+    console.log(summaryAttractivenessData);
+
     let  summaryDisplayData = addSummaryAttractivenessData(summaryAttractivenessData);
     let extendedSummaryDisplayData = addSummarySupportData(summarySupportData, summaryDisplayData);
   
@@ -62,11 +64,14 @@ const supportSummaryPipeline = [
 const addSummaryAttractivenessData = function(summaryAttractivenessData) {
   let  summaryDisplayData = [];
   summaryAttractivenessData.forEach(function(summaryDisplayItem) {
-    let summaryDisplayRow = {};    
+    let summaryDisplayRow = {}; 
+    // summaryDisplayRow.userId = summaryDisplayItem.userId;   
     summaryDisplayRow.itemCategory = "attractiveness";
     summaryDisplayRow.itemLabel = summaryDisplayItem._id;
     summaryDisplayRow.itemValue = summaryDisplayItem.subTotal;
     summaryDisplayRow.indentLevel = 1;
+    summaryDisplayRow.sortRanking = 1;
+    summaryDisplayRow.scoreClassRank = summaryDisplayItem.scoreClassRank;
     summaryDisplayData.push(summaryDisplayRow);
   });
   return summaryDisplayData;
@@ -75,10 +80,13 @@ const addSummaryAttractivenessData = function(summaryAttractivenessData) {
 const addSummarySupportData = function(summarySupportData, summaryDisplayData) {
   summarySupportData.forEach(function(summaryDisplayItem) {
     let summaryDisplayRow = {};
+    // summaryDisplayRow.userId = summaryDisplayItem.userId; 
     summaryDisplayRow.itemCategory = "support";
     summaryDisplayRow.itemLabel = summaryDisplayItem._id;
     summaryDisplayRow.itemValue = summaryDisplayItem.subTotal;
     summaryDisplayRow.indentLevel = 1;
+    summaryDisplayRow.sortRanking = 2;
+    summaryDisplayRow.scoreClassRank = summaryDisplayItem.scoreClassRank;
     summaryDisplayData.push(summaryDisplayRow);
   });
   return summaryDisplayData;

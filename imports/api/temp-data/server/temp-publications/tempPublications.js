@@ -24,7 +24,7 @@ Meteor.publish("DisplayData.observations", function() {
 });
 
 Meteor.publish("observationsSummary", function() {
-	return SUMMARYDATA.find({});
+	return SUMMARYDATA.find({}, {sort: {itemCategory:1}});
 });
 
 // Meteor.publish("hierarchy.actors", function() {

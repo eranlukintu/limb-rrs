@@ -11,7 +11,7 @@ export class TempObservationsPage extends React.Component {
 	constructor(props) {
         super(props);
         this.state = {
-            viewCase: 0
+            viewCase: 2
         }
     }
 
@@ -23,15 +23,15 @@ export class TempObservationsPage extends React.Component {
         this.setState({viewCase: 2});
     }
 
-    displayObservations(obList) {
+    displayObservations() {
         // console.log(obList);
         let viewCase = this.state.viewCase;
 
         switch(viewCase) {
-            case 1: return <TempObservationsList  />;
+            case 1: return <TempObservationsList { ...this.props } />;
             break;
 
-            case 2: return <TempObservationsSummary />;
+            case 2: return <TempObservationsSummary { ...this.props } />;
             break;
 
             default: return <h4>Please select viewing option</h4>;
@@ -50,27 +50,28 @@ export class TempObservationsPage extends React.Component {
 		return <div>
 			<Row>
 				<Col xs= {3}>
-					<Button block bsStyle="success" onClick={this.handleRefreshAllObservations.bind(this)}>
+					<Button block block bsStyle="success" onClick={this.handleSelectSummary.bind(this)}>View summary</Button>
+				</Col>
+
+				<Col xs= {3}>
+					<Button block block bsStyle="success" onClick={this.handleSelectViewList.bind(this)}>View list</Button>
+				</Col>
+
+				<Col xs= {3}>
+					<Button block bsStyle="danger" onClick={this.handleRefreshAllObservations.bind(this)}>
 						Refresh all observations
 					</Button>
 				</Col>
 
 				<Col xs= {3}>
-					<Button block bsStyle="success" onClick={this.handleRefreshSummaryObservations.bind(this)}>Refresh summary observations</Button>
-				</Col>
-
-				<Col xs= {3}>
-					<Button block>Button 3</Button>
-				</Col>
-
-				<Col xs= {3}>
-					<Button block>Button 4</Button>
+					<Button block bsStyle="danger" onClick={this.handleRefreshSummaryObservations.bind(this)}>Refresh summary observations</Button>
 				</Col>
 			</Row>
+
 			<Row>
-		    <Col xs={ 12 }>
-		      <TempObservationsSummary  { ...this.props } />
-		    </Col>
+			    <Col xs={ 12 }>
+			      {this.displayObservations()};
+			    </Col>
 		  </Row>
 	  </div>
 	}  
