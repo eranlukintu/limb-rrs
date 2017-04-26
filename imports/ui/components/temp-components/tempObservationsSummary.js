@@ -14,8 +14,6 @@ class TempObservationsSummary extends React.Component {
 			return runningTotal + item.itemValue;
 		},0);
 
-		console.log(total);
-
 		return <div>
 			<Row>
 				<Col>

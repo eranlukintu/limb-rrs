@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Button } from 'react-bootstrap';
+import { Row, Col, Button, Nav, NavDropdown, MenuItem } from 'react-bootstrap';
 import TempObservationsComponent from '../../components/temp-components/tempObservationsComponent.js';
 import TempObservationsSummary from '../../components/temp-components/tempObservationsSummary.js';
 import TempObservationsList from '../../components/temp-components/tempObservationsList.js';
@@ -21,6 +21,16 @@ export class TempObservationsPage extends React.Component {
 
     handleSelectSummary() {
         this.setState({viewCase: 2});
+    }
+
+    handleDropdownSelect(eventKey) {
+    	switch(eventKey) {
+    		case "1": return this.handleSelectSummary(); break;
+    		case "2": return this.handleSelectViewList(); break;
+    		case "3": return this.handleRefreshAllObservations(); break;
+    		case "4": return this.handleRefreshSummaryObservations(); break;
+    		default: return console.log(eventKey);
+    	}
     }
 
     displayObservations() {
@@ -49,22 +59,16 @@ export class TempObservationsPage extends React.Component {
 	render() {
 		return <div>
 			<Row>
-				<Col xs= {3}>
-					<Button block block bsStyle="success" onClick={this.handleSelectSummary.bind(this)}>View summary</Button>
-				</Col>
-
-				<Col xs= {3}>
-					<Button block block bsStyle="success" onClick={this.handleSelectViewList.bind(this)}>View list</Button>
-				</Col>
-
-				<Col xs= {3}>
-					<Button block bsStyle="danger" onClick={this.handleRefreshAllObservations.bind(this)}>
-						Refresh all observations
-					</Button>
-				</Col>
-
-				<Col xs= {3}>
-					<Button block bsStyle="danger" onClick={this.handleRefreshSummaryObservations.bind(this)}>Refresh summary observations</Button>
+				<Col >
+					<Nav bsStyle="pills" pullRight>
+						<NavDropdown eventKey="1" title="Actions" id="nav-dropdown" onSelect={this.handleDropdownSelect.bind(this)}>
+							<MenuItem eventKey="1" bsStyle="danger">View summary</MenuItem>
+							<MenuItem eventKey="2">View list</MenuItem>
+							<MenuItem divider></MenuItem>
+							<MenuItem eventKey="3">Refresh all</MenuItem>
+							<MenuItem eventKey="4">Refresh summary</MenuItem>
+						</NavDropdown>
+					</Nav>
 				</Col>
 			</Row>
 
