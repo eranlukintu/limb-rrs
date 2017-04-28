@@ -14,6 +14,15 @@ class TempObservationsSummary extends React.Component {
 			return runningTotal + item.itemValue;
 		},0);
 
+		let categories = [];
+		const summaryObservations = this.props.observationsSummaryList;
+		summaryObservations.forEach(function(ob) {
+			if(categories.indexOf(ob.itemCategory) === -1) {
+				categories.push(ob.itemCategory);
+			}			
+		});		
+
+
 		return <div>
 			<Row>
 				<Col>
@@ -22,7 +31,7 @@ class TempObservationsSummary extends React.Component {
 				            <thead>
 				                <tr>
 				                    <th>Category</th>
-				                    <th>Label</th>
+				                    <th>Impact</th>
 				                    <th>Value</th>
 				                    <th>Percentage</th>
 				                </tr>

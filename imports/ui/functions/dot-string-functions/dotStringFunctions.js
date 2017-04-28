@@ -48,6 +48,22 @@ export const calculateGrandparentDotString = function(dString) {
     return grandparentDotString;
   }
 
+  export const calculateGreatgrandparentDotString = function(dString) {
+    let segmentArray = dString.split(".");
+    let segmentArrayLength = segmentArray.length;
+    let lastIndex = segmentArrayLength;
+    let greatGrandparentIndex = lastIndex - 3;
+    let greatGrandparentDotString = [];
+
+    if(greatGrandparentIndex > -1) {
+        greatGrandparentSegmentArray = segmentArray.slice(0, greatGrandparentIndex);
+        greatGrandparentDotString = greatGrandparentSegmentArray.join(".");
+    }else {
+        greatGrandparentDotString = "NA";
+    }
+    return greatGrandparentDotString;
+  }
+
   export const calculateIndentLevel = function(dString) {
     // console.log(dString);
     let dStringSegments = dString.split(".");

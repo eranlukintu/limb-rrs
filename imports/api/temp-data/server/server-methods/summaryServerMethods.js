@@ -3,8 +3,12 @@ import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import { DISPLAYDATA } from "../../temp-collections/tempCollections.js";
 import { TESTDATA } from "../../temp-collections/tempCollections.js";
-import { OBSERVATIONDATA } from "../../temp-collections/tempCollections.js";
+import { OBSERVATIONSDATA } from "../../temp-collections/tempCollections.js";
 import { SUMMARYDATA } from "../../temp-collections/tempCollections.js";
+import { ATTRACTIVENESSDATA } from "../../temp-collections/tempCollections.js";
+import { SUPPORTDATA } from "../../temp-collections/tempCollections.js";
+import { ALIGNMENTDATA } from "../../temp-collections/tempCollections.js";
+
 
 export const createSummaryDataForDisplay = new ValidatedMethod({
   name: "SummaryData.create",
@@ -12,43 +16,47 @@ export const createSummaryDataForDisplay = new ValidatedMethod({
 
   }).validator(),
   run({}) {
+
+    // console.log(this.userId);
   	
   	SUMMARYDATA.remove({});
+    // let userId = this.userId;
+    // console.log(userId);
+    let summaryObservations = OBSERVATIONSDATA.aggregate(summaryPipeline);
+    let size = summaryObservations.length;
+    console.log(size);
 
-    let summaryAttractivenessData = OBSERVATIONDATA.aggregate(attractivenessSummaryPipeline);
-    let summarySupportData = OBSERVATIONDATA.aggregate(supportSummaryPipeline);
+    // let summaryAttractivenessData = OBSERVATIONSDATA.aggregate(attractivenessSummaryPipeline);
+    // let summarySupportData = OBSERVATIONSDATA.aggregate(supportSummaryPipeline);
 
-    console.log(summaryAttractivenessData);
+    // console.log(summaryAttractivenessData);
 
-    let  summaryDisplayData = addSummaryAttractivenessData(summaryAttractivenessData);
-    let extendedSummaryDisplayData = addSummarySupportData(summarySupportData, summaryDisplayData);
+    // let  summaryDisplayData = addSummaryAttractivenessData(summaryAttractivenessData);
+    // let extendedSummaryDisplayData = addSummarySupportData(summarySupportData, summaryDisplayData);
   
-    extendedSummaryDisplayData.forEach(function(DDI) {
+    summaryObservations.forEach(function(DDI) {
       SUMMARYDATA.insert(DDI);
     });
   },
 });
 
-const attractivenessSummaryPipeline = [
+const summaryPipeline = [
   {
       $match: {
         $and: [
-          {secondaryType: "influencer"}, 
-          {observationType: "impact"},
-          {primaryDomain: "internal"},
-          {secondaryDomain: "external"},
+          {observationType: "impact"},      
         ]
       }        
   },
-  {
-    $group:{_id: "$scoreClass", subTotal: {$sum: 1}}
-  },
 ];
+
+
 
 const supportSummaryPipeline = [
   {
       $match: {
         $and: [
+          // {userId: userId},
           {secondaryType: "influencer"}, 
           {observationType: "impact"},
           {primaryDomain: "external"},
