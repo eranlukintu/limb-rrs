@@ -8,20 +8,29 @@ import { TempTestObservationItem } from "./tempTestObservationItem.js";
 
 
 class TempAttractivenessList extends React.Component {
+
+	handleRefreshAttractivenessObservations() {
+		Meteor.call("refreshAttractivenessData", {});
+	}
 	
 	render() {
 
 		const attractivenessList = this.props.attractivenessList;
 		// console.log(attractivenessList);
 
-		return <ListGroup> 
-                {attractivenessList.map((obItem) => (        	
-                    <TempTestObservationItem 
-                        observationItem = {obItem} 
-                        key={obItem._id} 
-                    />
-                ))}
-    </ListGroup>
+		return <div>
+			<ButtonToolbar>
+				<Button bsStyle="danger" >Refresh</Button>
+			</ButtonToolbar>
+			<ListGroup> 
+	                {attractivenessList.map((obItem) => (        	
+	                    <TempTestObservationItem 
+	                        observationItem = {obItem} 
+	                        key={obItem._id} 
+	                    />
+	                ))}
+	    	</ListGroup>
+    	</div>
 	}
 }
 

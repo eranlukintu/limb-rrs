@@ -13,13 +13,18 @@ export const refreshAttractivenessData = new ValidatedMethod({
   run({}) {
 
     // console.log(this.userId);
+    // console.log(OBSERVATIONSDATA.find().count());
   	
   	ATTRACTIVENESSDATA.remove({});
+  	// console.log("After remove", ATTRACTIVENESSDATA.find().count());
+  	console.log(OBSERVATIONSDATA.find().count());
     
     let attractivenessObservations = OBSERVATIONSDATA.aggregate(attractivenessPipeline);
+    // console.log(attractivenessObservations);
     // let size = attractivenessObservations.length;
+    // console.log("Refresh attractiveness data activated");
     // console.log(size);
-    
+    // let obSize = OBSERVATIONSDATA.length;    
   
     attractivenessObservations.forEach(function(DDI) {
       ATTRACTIVENESSDATA.insert(DDI);

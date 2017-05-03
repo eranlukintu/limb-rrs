@@ -8,3 +8,4 @@ import '../../api/temp-data/server/server-methods/attractivenessServerMethods.js
 import '../../api/temp-data/server/server-methods/supportServerMethods.js';
 import '../../api/temp-data/server/server-methods/alignmentServerMethods.js';
 import '../../api/temp-data/server/temp-publications/tempPublications.js';
+import '../../api/temp-data/temp-pipelines/tempPipelines.js';

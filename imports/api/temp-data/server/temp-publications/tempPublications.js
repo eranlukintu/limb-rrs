@@ -21,7 +21,7 @@ Meteor.publish("DisplayData.all", function() {
 });
 
 Meteor.publish("DisplayData.observations", function() { 
-	return OBSERVATIONSDATA.find({userId:this.userId } );
+	return OBSERVATIONSDATA.find({userId:this.userId }, {limit: 100} );
 });
 
 Meteor.publish("observationsSummary", function() {

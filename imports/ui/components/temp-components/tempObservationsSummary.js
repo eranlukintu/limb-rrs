@@ -8,50 +8,36 @@ import { TempObservationSummaryItem } from "./tempObservationSummaryItem.js";
 
 class TempObservationsSummary extends React.Component {
 
-	render() {
-		// console.log(this.props.observationsSummaryList);
-		const total = this.props.observationsSummaryList.reduce(function(runningTotal, item) {
-			return runningTotal + item.itemValue;
-		},0);
-
-		let categories = [];
-		const summaryObservations = this.props.observationsSummaryList;
-		summaryObservations.forEach(function(ob) {
-			if(categories.indexOf(ob.itemCategory) === -1) {
-				categories.push(ob.itemCategory);
-			}			
-		});		
-
-
-		return <div>
-			<Row>
-				<Col>
-					<Panel header="Observations summary">
-						<Table striped bordered condensed hover>
-				            <thead>
-				                <tr>
-				                    <th>Category</th>
-				                    <th>Impact</th>
-				                    <th>Value</th>
-				                    <th>Percentage</th>
-				                </tr>
-				            </thead>
-				            <tbody>
-				                {this.props.observationsSummaryList.map((obSumItem) => (
-									<TempObservationSummaryItem
-										key = {obSumItem._id}
-										testSummaryItem = {obSumItem}
-										total = {total}
-									 />
-								))}
-				            </tbody>
-				        </Table>
-					</Panel>
-				</Col>
-			</Row>
-		</div>
+	constructor(props) {
+		super(props);
+		this.state={availableHeight: 0, scrollTop: 0};
 	}
-}
+
+	componentDidMount() {
+	    this.setState({
+	      availableHeight: 600
+	    })
+	  }
+
+	handleScroll(event) {
+		console.log(event);
+	    // this.setState({
+	    //   scrollTop: event.target.scrollTop
+	    // })
+	  }
+
+	render() {
+
+			return <div>
+				{this.props.observationsSummaryList.map((obSumItem) => (
+					<TempObservationSummaryItem
+						key = {obSumItem._id}
+						testSummaryItem = {obSumItem}
+					 />
+				))}			
+			</div>
+		}
+	}
 
 const composer = (params, onData) => {
   const subscription = Meteor.subscribe('observationsSummary');

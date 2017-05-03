@@ -200,7 +200,6 @@ export class TempDataManagementPage extends React.Component {
 					</Col>
 					<Col xs={4}>
 						<Panel header="Viewing actions" bsStyle="primary" style={panelStyle}>
-							<Button block onClick={(event) => { setCurrentPage(event, { page: 'viewTree', props: this.state}); }}>View Tree</Button>
 							<Button block onClick={(event) => { setCurrentPage(event, { page: 'viewRawTestData', props: this.state}); }}>View raw test data</Button>
 							<Button block onClick={(event) => { setCurrentPage(event, { page: 'viewTempOutline', props: this.state}); }}>View outline</Button>
 							<Button block onClick={(event) => { setCurrentPage(event, { page: 'viewTempObservations', props: this.state}); }}>View observations</Button>

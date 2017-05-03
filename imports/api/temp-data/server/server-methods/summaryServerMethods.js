@@ -23,8 +23,8 @@ export const createSummaryDataForDisplay = new ValidatedMethod({
     // let userId = this.userId;
     // console.log(userId);
     let summaryObservations = OBSERVATIONSDATA.aggregate(summaryPipeline);
-    let size = summaryObservations.length;
-    console.log(size);
+    // let size = summaryObservations.length;
+    // console.log(size);
 
     // let summaryAttractivenessData = OBSERVATIONSDATA.aggregate(attractivenessSummaryPipeline);
     // let summarySupportData = OBSERVATIONSDATA.aggregate(supportSummaryPipeline);
@@ -42,15 +42,30 @@ export const createSummaryDataForDisplay = new ValidatedMethod({
 
 const summaryPipeline = [
   {
+      $match: 
+        {
+          secondaryType: "influencer", 
+          observationType: "impact",
+        }        
+  },
+  {
+    $limit: 50
+  }
+];
+
+const attractivenessSummaryPipeline = [
+  {
       $match: {
         $and: [
-          {observationType: "impact"},      
+          // {userId: userId},
+          {secondaryType: "influencer"}, 
+          {observationType: "impact"},
+          {primaryDomain: "internal"},
+          {secondaryDomain: "external"},
         ]
       }        
   },
 ];
-
-
 
 const supportSummaryPipeline = [
   {

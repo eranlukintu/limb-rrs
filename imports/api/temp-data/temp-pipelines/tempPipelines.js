@@ -1,16 +1,23 @@
+import { Meteor } from "meteor/meteor";
+
 export const attractivenessPipeline = [
   {
-      $match: {
-        $and: [
-          // {userId: userId},
-          {secondaryType: "influencer"}, 
-          {observationType: "impact"},
-          {primaryDomain: "internal"},
-          {secondaryDomain: "external"},
-        ]
-      }        
+    $match: 
+        {
+          secondaryType: "influencer", 
+          observationType: "impact",
+          primaryDomain: "external",
+          secondaryDomain: "internal"
+        }              
   },
   {
-    $group: {_id: "$primaryName", "influencers": {$push: {"influencer": "$secondaryName"}}}
+    $group: {_id: "$controllingActorName", 
+    // controllingActor: ($first: "$controllingActor"),
+    primaryName: {$first:"$primaryName"},
+    secondaryName: {$first: "$secondaryName"},
+    subTotal: {$sum: 1} }
   },
-];
+  {
+    $sort: {_id: 1}
+  }
+]

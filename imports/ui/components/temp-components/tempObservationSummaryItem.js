@@ -9,11 +9,9 @@ export class TempObservationSummaryItem extends React.Component {
 		// const percentage = (((testSummaryItem.itemValue/this.props.total)*100).toFixed(1)).toString() + "%";
 		const percentage = "NA";
 		// console.log(this.props);
-		return <tr >
-			<td>{testSummaryItem.itemCategory}</td>
-			<td>{testSummaryItem.itemLabel}</td>
-			<td>{testSummaryItem.itemValue}</td>
-			<td>{percentage}</td>			   
-		</tr>
+		return <ListGroupItem>
+			{testSummaryItem.primaryName}  
+			{testSummaryItem.secondaryName}						   
+		</ListGroupItem>
 	}
 }
