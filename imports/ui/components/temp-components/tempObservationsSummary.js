@@ -3,6 +3,7 @@ import { ListGroup, ListGroupItem, Alert, Button, ButtonToolbar, Table, thead, t
 import { composeWithTracker } from 'react-komposer';
 import { Meteor } from 'meteor/meteor';
 import { SUMMARYDATA } from "../../../api/temp-data/temp-collections/tempCollections.js";
+import { COMBINEDSUMMARYDATA } from "../../../api/temp-data/temp-collections/tempCollections.js";
 import Loading from '../../components/Loading.js';
 import { TempObservationSummaryItem } from "./tempObservationSummaryItem.js";
 
@@ -28,23 +29,25 @@ class TempObservationsSummary extends React.Component {
 
 	render() {
 
-			return <div>
-				{this.props.observationsSummaryList.map((obSumItem) => (
-					<TempObservationSummaryItem
-						key = {obSumItem._id}
-						testSummaryItem = {obSumItem}
-					 />
-				))}			
-			</div>
-		}
+		console.log(this.props.combinedSummaryList);
+
+		return <div>
+			{this.props.combinedSummaryList.map((obSumItem) => (
+				<TempObservationSummaryItem
+					key = {obSumItem._id}
+					testSummaryItem = {obSumItem}
+				 />
+			))}			
+		</div>
 	}
+}
 
 const composer = (params, onData) => {
-  const subscription = Meteor.subscribe('observationsSummary');
+  const subscription = Meteor.subscribe('populateCombinedSummary');
 
   if (subscription.ready()) {
-    const observationsSummaryList = SUMMARYDATA.find({}).fetch();
-    onData(null, { observationsSummaryList });
+    const combinedSummaryList = COMBINEDSUMMARYDATA.find({}).fetch();
+    onData(null, { combinedSummaryList });
   }
 };
 

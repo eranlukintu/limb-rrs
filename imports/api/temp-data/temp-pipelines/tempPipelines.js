@@ -5,106 +5,87 @@ export const attractivenessPipeline = [
     $match: 
         {
           secondaryType: "influencer", 
-          observationType: "impact",
+          // observationType: "impact",
           primaryDomain: "external",
           secondaryDomain: "internal"
         }              
   },
   {
+    $group: 
+      {
+        _id: 
+        {
+          obType: "$observationType",
+          scoreClass: "$scoreClass"
+        },
+      }
+  },
+  {
     $group:
       {
-        _id: "$controllingActorName", 
-        lowCount: 
-          {
-            $sum: 
-              {
-                $cond: [{$eq: ["$scoreClass", "low"]}, 1, 0 ]
-              }
-          },
-          mediumCount: 
-          {
-            $sum: 
-              {
-                $cond: [{$eq: ["$scoreClass", "medium"]}, 1, 0 ]
-              }
-          },
-          highCount: 
-          {
-            $sum: 
-              {
-                $cond: [{$eq: ["$scoreClass", "high"]}, 1, 0 ]
-              }
-          },
-          subTotal: {$sum: 1}
+        _id: "$_id.observationType",
+        
+
       }
-  },
-  {
-     $project: 
-      {
-        lowCount: 1,
-        mediumCount: 1,
-        highCount: 1,
-        subTotal: 1,
-        lowFraction: 
-          {
-            $divide: ["$lowCount", "$subTotal"]
-          },
-        mediumFraction: 
-          {
-            $divide: ["$mediumCount", "$subTotal"]
-          },
-        highFraction: 
-          {
-            $divide: ["$highCount", "$subTotal"]
-          },
-        combinedFraction: 
-          {
-            $divide: ["$subTotal", "$subTotal"]
-          },
-      }
-  },
-  {
-    $sort: {_id: 1} 
   }
+  // {
+  //   $project: 
+  //     {
+  //       scores: 1
+  //     }
+  // }
+  // //       _id: "$controllingActorName",    
+  //       lowImpactCount: 
+  //         {
+  //           $sum: 
+  //             {
+  //               $cond: [{$eq: ["$scoreClass", "low"]}, 1, 0 ]
+  //             }
+  //         },
+  //         mediumImpactCount: 
+  //         {
+  //           $sum: 
+  //             {
+  //               $cond: [{$eq: ["$scoreClass", "medium"]}, 1, 0 ]
+  //             }
+  //         },
+  //         highImpactCount: 
+  //         {
+  //           $sum: 
+  //             {
+  //               $cond: [{$eq: ["$scoreClass", "high"]}, 1, 0 ]
+  //             }
+  //         },
+  //         subTotal: {$sum: 1}
+  //     }
+  // },
+  // {
+  //    $project: 
+  //     {
+  //       lowImpactCount: 1,
+  //       mediumImpactCount: 1,
+  //       highImpactCount: 1,
+  //       subTotal: 1,
+  //       lowImpactFraction: 
+  //         {
+  //           $divide: ["$lowImpactCount", "$subTotal"]
+  //         },
+  //       mediumImpactFraction: 
+  //         {
+  //           $divide: ["$mediumImpactCount", "$subTotal"]
+  //         },
+  //       highImpactFraction: 
+  //         {
+  //           $divide: ["$highImpactCount", "$subTotal"]
+  //         },
+  //       combinedImpactFraction: 
+  //         {
+  //           $divide: ["$subTotal", "$subTotal"]
+  //         },
+  //     }
+  // },
+  // {
+  //   $sort: {_id: 1} 
+  // }
 ]
 
-
-
-
-  // {
-  //   $group: 
-  //   {
-  //     _id: "$controllingActorName", 
-  //     primaryName: {$first:"$primaryName"},
-  //     secondaryName: {$first: "$secondaryName"},
-  //     lowItems: {
-  //       $push: {
-  //         $cond: {
-  //           if: {$eq: ["$scoreClass", "low"]},
-  //           then: ["$_id", "$scoreClass"],
-  //           else: null,
-  //           }
-  //         }
-  //       },
-
-  //     // scoreClass: {$first: "$scoreClass"},
-  //     // scoreClassRank: {$first: "$scoreClassRank"},
-  //     subTotal: {$sum: 1} 
-  //   }
-  // },
-  // {
-  //   $project: {primaryName: 1, lowItems: 1}
-  // }
-  // {
-  //   $sort: {_id: 1}
-  // },
-  // {
-  //   $group: 
-  //   {
-  //     _id: "$scoreClass",
-  //     primaryName: {$first:"$primaryName"},
-  // //     // secondaryName: {$first: "$secondaryName"},
-  // //     // scoreClassRank: {$first: "$scoreClassRank"},
-  //   }
-  // }
-// ]

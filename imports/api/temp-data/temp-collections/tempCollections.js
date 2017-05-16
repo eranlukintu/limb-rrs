@@ -7,3 +7,4 @@ export const SUMMARYDATA = new Mongo.Collection('summaryData');
 export const ATTRACTIVENESSDATA = new Mongo.Collection('attractivenessData');
 export const SUPPORTDATA = new Mongo.Collection('supportData');
 export const ALIGNMENTDATA = new Mongo.Collection('alignmentData');
+export const COMBINEDSUMMARYDATA = new Mongo.Collection('combinedSummaryData');

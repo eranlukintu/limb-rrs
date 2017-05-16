@@ -62,7 +62,8 @@ export class TempObservationsPage extends React.Component {
 	}
 
 	handleRefreshSummaryObservations() {
-		Meteor.call("SummaryData.create", {});
+        console.log("Calling create combined summary");
+		Meteor.call("createCombinedSummary", {});
 	}
 
 	handleRefreshAttractivenessObservations() {

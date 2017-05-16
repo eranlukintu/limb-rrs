@@ -17,7 +17,7 @@ export const refreshAttractivenessData = new ValidatedMethod({
   	
   	ATTRACTIVENESSDATA.remove({});
   	// console.log("After remove", ATTRACTIVENESSDATA.find().count());
-  	console.log(OBSERVATIONSDATA.find().count());
+  	// console.log(OBSERVATIONSDATA.find().count());
     
     let attractivenessObservations = OBSERVATIONSDATA.aggregate(attractivenessPipeline);
     // console.log(attractivenessObservations);

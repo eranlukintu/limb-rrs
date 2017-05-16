@@ -7,6 +7,7 @@ import { DISPLAYDATA } from '../../temp-collections/tempCollections.js';
 import { OBSERVATIONSDATA } from '../../temp-collections/tempCollections.js';
 import { SUMMARYDATA } from '../../temp-collections/tempCollections.js';
 import { ATTRACTIVENESSDATA } from '../../temp-collections/tempCollections.js';
+import { COMBINEDSUMMARYDATA } from '../../temp-collections/tempCollections.js';
 
 Meteor.publish('SARS.list', () => SARS.find());
 
@@ -30,6 +31,10 @@ Meteor.publish("observationsSummary", function() {
 
 Meteor.publish("refreshAttractivenessList", function() {
 	return ATTRACTIVENESSDATA.find({});
+});
+
+Meteor.publish("populateCombinedSummary", function() {
+	return COMBINEDSUMMARYDATA.find({});
 });
 
 // Meteor.publish("hierarchy.actors", function() {
