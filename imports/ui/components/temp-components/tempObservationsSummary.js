@@ -1,11 +1,12 @@
 import React from "react";
-import { ListGroup, ListGroupItem, Alert, Button, ButtonToolbar, Table, thead, tbody, tr, td, th, Row, Col, Panel } from 'react-bootstrap';
+import { ListGroup, ListGroupItem, Alert, Button, ButtonToolbar, Table, thead, tbody, tr, td, th, Row, Col, Panel, Well } from 'react-bootstrap';
 import { composeWithTracker } from 'react-komposer';
 import { Meteor } from 'meteor/meteor';
 import { SUMMARYDATA } from "../../../api/temp-data/temp-collections/tempCollections.js";
 import { COMBINEDSUMMARYDATA } from "../../../api/temp-data/temp-collections/tempCollections.js";
 import Loading from '../../components/Loading.js';
-import { TempObservationSummaryItem } from "./tempObservationSummaryItem.js";
+import { TempObservationSummaryItem } from "./tempObservationSummaryItem.js"; 
+import { TempCombinedSummaryComponent } from "./tempCombinedSummaryComponent.js";
 
 class TempObservationsSummary extends React.Component {
 
@@ -32,8 +33,9 @@ class TempObservationsSummary extends React.Component {
 		console.log(this.props.combinedSummaryList);
 
 		return <div>
+			<Well><h3>Combined summary</h3></Well>
 			{this.props.combinedSummaryList.map((obSumItem) => (
-				<TempObservationSummaryItem
+				<TempCombinedSummaryComponent
 					key = {obSumItem._id}
 					testSummaryItem = {obSumItem}
 				 />

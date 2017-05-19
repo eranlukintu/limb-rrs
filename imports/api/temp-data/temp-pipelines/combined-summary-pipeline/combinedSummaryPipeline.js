@@ -27,7 +27,7 @@ export const combinedSummaryPipeline = [
             {$eq: ["$secondaryDomain", "external"]}
           ]
         },
-          "attractiveness",
+          "Attractiveness",
             {
               $cond: [
                 {
@@ -36,8 +36,8 @@ export const combinedSummaryPipeline = [
                     {$eq: ["$secondaryDomain", "internal"]}
                 ]
               },
-                "support",
-                "other"
+                "Support",
+                "Other"
             ]   
           },          
         ]
@@ -46,7 +46,7 @@ export const combinedSummaryPipeline = [
   },
   {
     $match: {
-      category: {$ne: "other"}
+      category: {$ne: "Other"}
     }
   },
   {
@@ -74,6 +74,7 @@ export const combinedSummaryPipeline = [
   },
   {
     $project: {
+
       lowImpactPercentage: {
         $multiply: [{$divide: ["$low", "$totalCategoryCount"]}, 100]
       },
@@ -86,10 +87,7 @@ export const combinedSummaryPipeline = [
 
     }
   },
-  // {
-  //   $limit: 100
-  // },
-  // {
-  //   $sort: {primaryName: 1, secondaryName: 1}
-  // }
+  {
+    $sort: {_id: 1}
+  }
 ]

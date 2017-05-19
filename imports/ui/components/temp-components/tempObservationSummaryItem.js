@@ -6,6 +6,8 @@ export class TempObservationSummaryItem extends React.Component {
 
 	render() {
 		const testSummaryItem = this.props.testSummaryItem;
+		console.log(testSummaryItem._id);
+		console.log(testSummaryItem.lowImpactPercentage);
 		// const percentage = (((testSummaryItem.itemValue/this.props.total)*100).toFixed(1)).toString() + "%";
 		const percentage = "NA";
 		// console.log(this.props);
