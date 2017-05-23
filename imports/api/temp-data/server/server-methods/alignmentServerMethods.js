@@ -15,6 +15,7 @@ export const refreshAlignmentData = new ValidatedMethod({
   	ALIGNMENTDATA.remove({});
   	
     let alignmentObservations = OBSERVATIONSDATA.aggregate(alignmentSummaryPipeline);
+    console.log("Alignments", alignmentObservations.length);
     
     alignmentObservations.forEach(function(DDI) {
       ALIGNMENTDATA.insert(DDI);

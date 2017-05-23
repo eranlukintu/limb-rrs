@@ -52,8 +52,8 @@ export const loadObservationsForDisplay = new ValidatedMethod({
 const createObservation = function(hierarchyItem, obType) {
 
 	let observation = {};
-	let activityStaticDotString = hierarchyItem.staticDotString;
-	let parentHierarchyDotString = calculateParentDotString(activityStaticDotString);
+	let hierarchyItemDotString = hierarchyItem.staticDotString;
+	let observationParentDotString = calculateParentDotString(hierarchyItemDotString);
 
 	let observationUserId = Meteor.userId();
 	let observationObserverId = Meteor.userId();
@@ -63,7 +63,7 @@ const createObservation = function(hierarchyItem, obType) {
 	let observationControllingActivity = findObservationControllingActivity(obType, hierarchyItem);
 	let observationControllingValue = findObservationControllingValue(obType, hierarchyItem);
 
-	let parentHierarchy = TESTDATA.findOne({staticDotString: parentHierarchyDotString});
+	let observationHierarchyParent = TESTDATA.findOne({staticDotString: observationParentDotString});
 
 	let observationControllingActorId = setControllingItemId(observationControllingActor);
 	let observationControllingActorName = setControllingActorName(observationControllingActor);
@@ -72,16 +72,20 @@ const createObservation = function(hierarchyItem, obType) {
 	let observationControllingValueId = setControllingItemId(observationControllingValue);
 	let observationControllingValueName = setControllingActorName(observationControllingValue);
 
-	let observationPrimaryId = parentHierarchy.sourceId;
-	let observationPrimaryName = parentHierarchy.name;
-	let observationPrimaryType = parentHierarchy.itemType;
-	let observationPrimaryDomain = parentHierarchy.itemDomain;
+	let observationPrimaryId = observationHierarchyParent.sourceId;
+	let observationPrimaryName = observationHierarchyParent.name;
+	let observationPrimaryType = observationHierarchyParent.itemType;
+	let observationPrimaryDomain = observationHierarchyParent.itemDomain;
 	let observationSecondaryId = hierarchyItem.sourceId;
 	let observationSecondaryName = hierarchyItem.name;
 	let observationSecondaryType = hierarchyItem.itemType;
 	let observationSecondaryDomain = hierarchyItem.itemDomain;
 	let observationType = obType;
-	let observationCombinedId = observationPrimaryId + observationSecondaryId + observationType;
+
+	let observationCombinedId = observationPrimaryId + observationSecondaryId + observationType
+		+ observationControllingActorId + observationControllingActivityId 
+		+ observationControllingValueId;
+
 	let observationScore = createRandomNumberWithinRange(0,10);
 	let observationScoreClass = calculateObservationScoreClass(observationScore);
 	let observationScoreClassRank = rankObservationScoreClass(observationScoreClass);

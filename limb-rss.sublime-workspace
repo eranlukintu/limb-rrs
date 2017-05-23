@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"observationControllingVal",
+				"observationControllingValueId"
+			],
+			[
+				"observationControllingActiv",
+				"observationControllingActivityId"
+			],
+			[
 				"controlling",
 				"controllingActorName"
 			],
@@ -506,14 +514,6 @@
 			[
 				"sc",
 				"screenWidth"
-			],
-			[
-				"hand",
-				"handlePrincipalLabelKeyUp"
-			],
-			[
-				"inp",
-				"inputDivStyle"
 			]
 		]
 	},
@@ -523,7 +523,7 @@
 			"file": "imports/ui/components/temp-components/tempObservationsSummary.js",
 			"settings":
 			{
-				"buffer_size": 1538,
+				"buffer_size": 1671,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -547,6 +547,15 @@
 			}
 		},
 		{
+			"file": "imports/ui/components/temp-components/tempAlignmentList.js",
+			"settings":
+			{
+				"buffer_size": 1250,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "imports/ui/components/temp-components/tempTestObservationItem.js",
 			"settings":
 			{
@@ -565,19 +574,55 @@
 			}
 		},
 		{
-			"file": "imports/api/temp-data/temp-pipelines/combined-summary-pipeline/combinedSummaryPipeline.js",
+			"file": "imports/api/temp-data/temp-pipelines/alignmentSummaryPipeline.js",
 			"settings":
 			{
-				"buffer_size": 1669,
+				"buffer_size": 300,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "imports/api/temp-data/server/server-methods/observationServerMethods.js",
+			"file": "imports/api/temp-data/server/server-methods/serverMethods.js",
 			"settings":
 			{
-				"buffer_size": 9467,
+				"buffer_size": 1383,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "imports/api/temp-data/temp-pipelines/combined-summary-pipeline/combinedSummaryPipeline.js",
+			"settings":
+			{
+				"buffer_size": 1904,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "imports/ui/components/temp-components/tempObservationSummaryItem.js",
+			"settings":
+			{
+				"buffer_size": 764,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "imports/ui/components/temp-components/tempCombinedSummaryComponent.js",
+			"settings":
+			{
+				"buffer_size": 802,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "client/stylesheets/main.css",
+			"settings":
+			{
+				"buffer_size": 52,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
@@ -586,6 +631,15 @@
 			"settings":
 			{
 				"buffer_size": 1255,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "imports/api/temp-data/server/server-methods/alignmentServerMethods.js",
+			"settings":
+			{
+				"buffer_size": 850,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -603,7 +657,7 @@
 			"file": "imports/ui/pages/temp-pages/tempObservationsPage.js",
 			"settings":
 			{
-				"buffer_size": 3118,
+				"buffer_size": 3767,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -636,10 +690,19 @@
 			}
 		},
 		{
+			"file": "imports/api/temp-data/server/server-methods/observationServerMethods.js",
+			"settings":
+			{
+				"buffer_size": 9716,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "imports/api/temp-data/server/temp-publications/tempPublications.js",
 			"settings":
 			{
-				"buffer_size": 1673,
+				"buffer_size": 1837,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -739,6 +802,8 @@
 	[
 		"/C/Users/Eran/Meteor/limb-rrs",
 		"/C/Users/Eran/Meteor/limb-rrs/.meteor",
+		"/C/Users/Eran/Meteor/limb-rrs/client/stylesheets",
+		"/C/Users/Eran/Meteor/limb-rrs/client/stylesheets/base",
 		"/C/Users/Eran/Meteor/limb-rrs/imports",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/data",
@@ -752,13 +817,13 @@
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/temp-data/temp-pipelines",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/temp-data/temp-pipelines/combined-summary-pipeline",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/startup",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/startup/client",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/startup/server",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/supplementary-components",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/supplementary-components/horizontal-bar-component",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/temp-components",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/functions",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/functions/dot-string-functions",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/functions/temp-functions",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/functions/temp-functions/fli-functions",
@@ -926,6 +991,9 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"attractivenessList",
+			"attractivenessObservations",
+			"ATTRACTIVENESSDATA",
 			"combinedSummaryData",
 			"observationsSummaryList",
 			"attractivenessObservations",
@@ -1050,10 +1118,7 @@
 			"documents",
 			"DocumentsList",
 			"STAR",
-			"STARs",
-			"arrayNum",
-			"misalignedMinor",
-			"misalignedMajor"
+			"STARs"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1104,7 +1169,7 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 19,
 			"sheets":
 			[
 				{
@@ -1113,15 +1178,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1538,
+						"buffer_size": 1671,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1143,
-								1143
+								1148,
+								1148
 							]
 						],
 						"settings":
@@ -1130,10 +1195,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 198.0,
+						"translation.y": 528.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
@@ -1160,10 +1225,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 396.0,
+						"translation.y": 726.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
@@ -1179,8 +1244,8 @@
 						"selection":
 						[
 							[
-								746,
-								746
+								0,
+								1487
 							]
 						],
 						"settings":
@@ -1188,14 +1253,42 @@
 							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 38.0,
+						"translation.y": 324.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
 					"buffer": 3,
+					"file": "imports/ui/components/temp-components/tempAlignmentList.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1250,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1176,
+								1176
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 110.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
 					"file": "imports/ui/components/temp-components/tempTestObservationItem.js",
 					"semi_transient": false,
 					"settings":
@@ -1220,11 +1313,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "imports/api/temp-data/temp-pipelines/tempPipelines.js",
 					"semi_transient": false,
 					"settings":
@@ -1236,8 +1329,8 @@
 						"selection":
 						[
 							[
-								118,
-								147
+								561,
+								561
 							]
 						],
 						"settings":
@@ -1247,49 +1340,47 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 528.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 16,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "imports/api/temp-data/temp-pipelines/combined-summary-pipeline/combinedSummaryPipeline.js",
+					"buffer": 6,
+					"file": "imports/api/temp-data/temp-pipelines/alignmentSummaryPipeline.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1669,
+						"buffer_size": 300,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1556,
-								1556
+								189,
+								189
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 594.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "imports/api/temp-data/server/server-methods/observationServerMethods.js",
+					"buffer": 7,
+					"file": "imports/api/temp-data/server/server-methods/serverMethods.js",
 					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 9467,
+						"buffer_size": 1383,
 						"regions":
 						{
 						},
@@ -1303,17 +1394,133 @@
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1452.0,
+						"translation.y": 264.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 8,
+					"file": "imports/api/temp-data/temp-pipelines/combined-summary-pipeline/combinedSummaryPipeline.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1904,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1894,
+								1894
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1320.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "imports/ui/components/temp-components/tempObservationSummaryItem.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 764,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								251
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 80.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 20,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "imports/ui/components/temp-components/tempCombinedSummaryComponent.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 802,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								394,
+								394
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "client/stylesheets/main.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 52,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								52,
+								52
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 19,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
 					"file": "imports/api/temp-data/server/server-methods/attractivenessServerMethods.js",
 					"semi_transient": false,
 					"settings":
@@ -1325,8 +1532,8 @@
 						"selection":
 						[
 							[
-								320,
-								399
+								0,
+								1254
 							]
 						],
 						"settings":
@@ -1339,11 +1546,41 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 17,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "imports/api/temp-data/server/server-methods/alignmentServerMethods.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 850,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								715,
+								715
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 66.0,
+						"zoom_level": 1.0
+					},
 					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 14,
 					"file": "imports/api/temp-data/server/server-methods/combinedSummaryServerMethods.js",
 					"semi_transient": false,
 					"settings":
@@ -1366,27 +1603,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 132.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 18,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 15,
 					"file": "imports/ui/pages/temp-pages/tempObservationsPage.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3118,
+						"buffer_size": 3767,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1473,
-								1473
+								1732,
+								1732
 							]
 						],
 						"settings":
@@ -1395,15 +1632,15 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": -0.0,
-						"translation.y": 594.0,
+						"translation.x": 0.0,
+						"translation.y": 1056.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 16,
 					"file": "imports/startup/server/api.js",
 					"semi_transient": false,
 					"settings":
@@ -1415,8 +1652,8 @@
 						"selection":
 						[
 							[
-								932,
-								932
+								697,
+								697
 							]
 						],
 						"settings":
@@ -1427,11 +1664,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 17,
 					"file": "imports/api/temp-data/temp-collections/tempCollections.js",
 					"semi_transient": false,
 					"settings":
@@ -1455,11 +1692,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 12,
+					"buffer": 18,
 					"file": "imports/api/temp-data/server/server-methods/summaryServerMethods.js",
 					"semi_transient": false,
 					"settings":
@@ -1482,27 +1719,56 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 990.0,
+						"translation.y": 1584.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 15,
 					"type": "text"
 				},
 				{
-					"buffer": 13,
-					"file": "imports/api/temp-data/server/temp-publications/tempPublications.js",
+					"buffer": 19,
+					"file": "imports/api/temp-data/server/server-methods/observationServerMethods.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1673,
+						"buffer_size": 9716,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1416,
-								1439
+								4083,
+								4083
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 462.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"file": "imports/api/temp-data/server/temp-publications/tempPublications.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1837,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								668,
+								668
 							]
 						],
 						"settings":
@@ -1510,10 +1776,10 @@
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 198.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 6,
 					"type": "text"
 				}
 			]
@@ -1608,7 +1874,7 @@
 	"show_open_files": true,
 	"show_tabs": false,
 	"side_bar_visible": true,
-	"side_bar_width": 450.0,
+	"side_bar_width": 460.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
