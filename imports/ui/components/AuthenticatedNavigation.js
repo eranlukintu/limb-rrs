@@ -20,11 +20,6 @@ const AuthenticatedNavigation = ({ currentPage, setCurrentPage }) => (
         eventKey={ 1 }
         onClick={(event) => { setCurrentPage(event, { page: 'index' }); }}
       >Index</NavItem>
-      <NavItem
-        active={ currentPage === 'documents' }
-        eventKey={ 2 }
-        onClick={(event) => { setCurrentPage(event, { page: 'documents' }); }}
-      >Documents</NavItem>
     </Nav>
     <Nav pullRight>
       <NavDropdown eventKey={ 3 } title={ userName() } id="basic-nav-dropdown">

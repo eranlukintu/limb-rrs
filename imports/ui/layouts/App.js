@@ -3,15 +3,11 @@ import { Grid } from 'react-bootstrap';
 import { Meteor } from 'meteor/meteor';
 import AppNavigation from '../containers/AppNavigation.js';
 import Index from '../pages/Index.js';
-import Documents from '../pages/Documents.js';
-import NewDocument from '../pages/NewDocument.js';
-import EditDocument from '../containers/EditDocument.js';
-import ViewDocument from '../containers/ViewDocument.js';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { currentPage: 'documents', currentPageProps: null };
+    this.state = { currentPage: 'index', currentPageProps: null };
     this.setCurrentPage = this.setCurrentPage.bind(this);
   }
 
@@ -23,10 +19,6 @@ export default class App extends React.Component {
   currentPage() {
     return {
       index: <Index />,
-      documents: <Documents />,
-      newDocument: <NewDocument />,
-      editDocument: <EditDocument />,
-      viewDocument: <ViewDocument />,
     }[this.state.currentPage];
   }
 

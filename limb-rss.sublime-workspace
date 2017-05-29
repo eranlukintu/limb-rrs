@@ -4,6 +4,266 @@
 		"selected_items":
 		[
 			[
+				"observationControllingVal",
+				"observationControllingValueId"
+			],
+			[
+				"observationControllingActiv",
+				"observationControllingActivityId"
+			],
+			[
+				"controlling",
+				"controllingActorName"
+			],
+			[
+				"observ",
+				"observationType"
+			],
+			[
+				"observat",
+				"observationsSummaryList"
+			],
+			[
+				"attractiv",
+				"attractivenessPipeline"
+			],
+			[
+				"obser",
+				"observationsSummaryList"
+			],
+			[
+				"handleR",
+				"handleRefreshAllObservations"
+			],
+			[
+				"summaryD",
+				"summaryDisplayItem"
+			],
+			[
+				"handleRef",
+				"handleRefreshSummaryObservations"
+			],
+			[
+				"addS",
+				"addSummarySupportData"
+			],
+			[
+				"summaryDispl",
+				"summaryDisplayData"
+			],
+			[
+				"TempObser",
+				"TempObservationSummaryItem"
+			],
+			[
+				"summaryDisp",
+				"summaryDisplayRow"
+			],
+			[
+				"summaryDis",
+				"summaryDisplayItem"
+			],
+			[
+				"observationScor",
+				"observationScoreClass"
+			],
+			[
+				"observationS",
+				"observationSecondaryType"
+			],
+			[
+				"observationPr",
+				"observationPrimaryType"
+			],
+			[
+				"observationSco",
+				"observationScoreClass"
+			],
+			[
+				"Butt",
+				"ButtonToolbar"
+			],
+			[
+				"TempOb",
+				"TempObservationsList"
+			],
+			[
+				"segmentArr",
+				"segmentArrayLength"
+			],
+			[
+				"observationSec",
+				"observationSecondaryName"
+			],
+			[
+				"observationSe",
+				"observationSecondaryId"
+			],
+			[
+				"observationP",
+				"observationPrimaryName"
+			],
+			[
+				"parentH",
+				"parentHierarchyActor"
+			],
+			[
+				"ListGr",
+				"ListGroupItem"
+			],
+			[
+				"referenceI",
+				"referenceInfluencersOfSingleValue"
+			],
+			[
+				"activityId",
+				"activityIdsAssociatedWithInstances"
+			],
+			[
+				"lengthof",
+				"lengthOfActivityIdsToBeMatched"
+			],
+			[
+				"valueIn",
+				"valueInstanceCrossReferenceToActivityId"
+			],
+			[
+				"referenceV",
+				"referenceValuesOfActivities"
+			],
+			[
+				"grandp",
+				"grandparentDotString"
+			],
+			[
+				"grandpa",
+				"grandparentDotString"
+			],
+			[
+				"testActorsW",
+				"testActorsWithActivities"
+			],
+			[
+				"createTestA",
+				"createTestActorsWithValueInfluencers"
+			],
+			[
+				"referenceIn",
+				"referenceInfluencersOfValue"
+			],
+			[
+				"createRefere",
+				"createReferenceInfluencersOfSingleValue"
+			],
+			[
+				"referenceInf",
+				"referenceInfluencersOfSingleValue"
+			],
+			[
+				"referenceVa",
+				"referenceValuesOfActivities"
+			],
+			[
+				"createRan",
+				"createSetOfUniqueRandomNumbers"
+			],
+			[
+				"createReferenceVa",
+				"createReferenceValuesForSingleActivity"
+			],
+			[
+				"referenceValuesOf",
+				"referenceValuesOfsingleActivity"
+			],
+			[
+				"selectedA",
+				"selectedActivity"
+			],
+			[
+				"testActorsWith",
+				"testActorsWithActivityValues"
+			],
+			[
+				"referenceAc",
+				"referenceActivitiesOfActors"
+			],
+			[
+				"createTestAct",
+				"createTestActorsWithActivities"
+			],
+			[
+				"createTestData",
+				"createTestDataItem"
+			],
+			[
+				"referenceAct",
+				"referenceActivities"
+			],
+			[
+				"referenceActivities",
+				"referenceActivitiesValues"
+			],
+			[
+				"referenceActivitiesVa",
+				"referenceActivitiesValuesArray"
+			],
+			[
+				"referen",
+				"referenceActivity"
+			],
+			[
+				"structureDataI",
+				"structureDataItems"
+			],
+			[
+				"structureData",
+				"structureDataItemsArray"
+			],
+			[
+				"structur",
+				"structureDataItem"
+			],
+			[
+				"createStakeh",
+				"createStakeholderToActivityRelationships"
+			],
+			[
+				"randomN",
+				"randomNumber"
+			],
+			[
+				"rando",
+				"randomNumbers"
+			],
+			[
+				"random",
+				"randomNumber"
+			],
+			[
+				"createRando",
+				"createRandomNumber"
+			],
+			[
+				"createRandom",
+				"createRandomNumbers"
+			],
+			[
+				"indexOf",
+				"indexOfExistingItem"
+			],
+			[
+				"rand",
+				"randomNumbers"
+			],
+			[
+				"createRand",
+				"createRandomNumber"
+			],
+			[
+				"createStak",
+				"createStakeholderToActivityRelationship"
+			],
+			[
 				"SmallPortr",
 				"SmallPortraitCombinedSummaryMenu"
 			],
@@ -54,10 +314,6 @@
 			[
 				"align",
 				"align-items"
-			],
-			[
-				"attractiv",
-				"attractivenessSummaryArray"
 			],
 			[
 				"graph",
@@ -258,267 +514,38 @@
 			[
 				"sc",
 				"screenWidth"
-			],
-			[
-				"hand",
-				"handlePrincipalLabelKeyUp"
-			],
-			[
-				"inp",
-				"inputDivStyle"
-			],
-			[
-				"render",
-				"renderLabelInput"
-			],
-			[
-				"Dyn",
-				"DynamicRowSelected"
-			],
-			[
-				"han",
-				"handleButtonCollapseToggle"
-			],
-			[
-				"Dyna",
-				"DynamicRowUnselected"
-			],
-			[
-				"pri",
-				"principalLabelCollapse"
-			],
-			[
-				"co",
-				"collapseClass"
-			],
-			[
-				"princ",
-				"principalLabelDrow"
-			],
-			[
-				"Prop",
-				"propTypes"
-			],
-			[
-				"con",
-				"controllingDrowDrowId"
-			],
-			[
-				"Act",
-				"ActionDynamicDrowsHandler"
-			],
-			[
-				"ActionD",
-				"ActionDynamicDrows"
-			],
-			[
-				"I",
-				"InitialiseComponent"
-			],
-			[
-				"in",
-				"initialDrows"
-			],
-			[
-				"int",
-				"initialControllingDrow"
-			],
-			[
-				"crea",
-				"createInitialPrincipalLabelDrow"
-			],
-			[
-				"creat",
-				"createInitialControllingDrow"
-			],
-			[
-				"init",
-				"initialiseDrows"
-			],
-			[
-				"tes",
-				"testField3"
-			],
-			[
-				"test",
-				"testField2"
-			],
-			[
-				"Dr",
-				"DrowsList"
-			],
-			[
-				"ran",
-				"randomId"
-			],
-			[
-				"insert",
-				"insertSingleDrow"
-			],
-			[
-				"sub",
-				"Submit"
-			],
-			[
-				"ema",
-				"emailAddress"
-			],
-			[
-				"subs",
-				"subscribe"
-			],
-			[
-				"curre",
-				"currentStaticDrow"
-			],
-			[
-				"my",
-				"myModelHeadDrow"
-			],
-			[
-				"dynamicr",
-				"dynamicReferenceArray"
-			],
-			[
-				"dy",
-				"dynamicReferenceArray"
-			],
-			[
-				"cu",
-				"currentIndex"
-			],
-			[
-				"dynamicParentD",
-				"dynamicParentDynamicDstring"
-			],
-			[
-				"cur",
-				"currentDynamicDrow"
-			],
-			[
-				"re",
-				"relationshipHeaderDrow"
-			],
-			[
-				"dynamicR",
-				"dynamicReferenceArray"
-			],
-			[
-				"myM",
-				"myModelLabelRow"
-			],
-			[
-				"myModelL",
-				"myModelLabelStaticDstring"
-			],
-			[
-				"subj",
-				"subjectElementType"
-			],
-			[
-				"una",
-				"unamendedValueInfluencerName"
-			],
-			[
-				"su",
-				"subjectElementType"
-			],
-			[
-				"cross",
-				"crossReferenceId"
-			],
-			[
-				"crossRef",
-				"crossReferenceTopRowType"
-			],
-			[
-				"item",
-				"itemType"
-			],
-			[
-				"cro",
-				"crossReferencedTopRow"
-			],
-			[
-				"curr",
-				"currentObservationStaticDstring"
-			],
-			[
-				"performa",
-				"performanceAttributesArray"
-			],
-			[
-				"high",
-				"highImportanceLowPerformanceArray"
-			],
-			[
-				"perf",
-				"performanceRank"
-			],
-			[
-				"nu",
-				"numberOfHighImportanceLowPerformance"
-			],
-			[
-				"perform",
-				"performanceInputRank"
-			],
-			[
-				"current",
-				"currentObservationStaticDstring"
-			],
-			[
-				"perfor",
-				"performanceAttributesArray"
-			],
-			[
-				"obser",
-				"observationAttributes"
-			],
-			[
-				"observat",
-				"observationHeaders"
-			],
-			[
-				"observa",
-				"observationAttributes"
-			],
-			[
-				"cal",
-				"calculateIndentLevel"
-			],
-			[
-				"import",
-				"importanceArray"
-			],
-			[
-				"hi",
-				"highValueNumber"
-			],
-			[
-				"highV",
-				"highValueArray"
-			],
-			[
-				"highva",
-				"highValueNumber"
-			],
-			[
-				"get",
-				"getObservationValue"
-			],
-			[
-				"im",
-				"importanceObservationsArray"
-			],
-			[
-				"dRo",
-				"dRowObservationHeaders"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "imports/startup/server/fixtures.js",
+			"settings":
+			{
+				"buffer_size": 593,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "imports/ui/layouts/App.js",
+			"settings":
+			{
+				"buffer_size": 1275,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "imports/ui/components/AuthenticatedNavigation.js",
+			"settings":
+			{
+				"buffer_size": 1177,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -534,6 +561,18 @@
 			[
 				"bab",
 				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"prv",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"pacl",
+				"Package Control: List Unmanaged Packages"
 			],
 			[
 				"Package Control: ",
@@ -600,10 +639,111 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/Eran/Meteor/limb-rrs"
+		"/C/Users/Eran/Meteor/limb-rrs",
+		"/C/Users/Eran/Meteor/limb-rrs/.meteor",
+		"/C/Users/Eran/Meteor/limb-rrs/client",
+		"/C/Users/Eran/Meteor/limb-rrs/imports",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/temp-data",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/temp-data/server",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/temp-data/temp-pipelines",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/startup",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/startup/client",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/startup/server",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/containers",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/layouts",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages",
+		"/C/Users/Eran/Meteor/limb-rrs/server",
+		"/C/Users/Eran/Meteor/limb-rrs/tests"
 	],
 	"file_history":
 	[
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/ViewDocument.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/temp-components/tempObservationsSummary.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/temp-components/tempObservationsComponent.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/temp-components/tempAttractivenessList.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/temp-components/tempAlignmentList.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/temp-components/tempTestObservationItem.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/temp-data/temp-pipelines/tempPipelines.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/temp-data/temp-pipelines/alignmentSummaryPipeline.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/temp-data/temp-pipelines/combined-summary-pipeline/combinedSummaryPipeline.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/temp-components/tempObservationSummaryItem.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/temp-components/tempCombinedSummaryComponent.js",
+		"/C/Users/Eran/Meteor/limb-rrs/client/stylesheets/main.css",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/temp-data/server/server-methods/attractivenessServerMethods.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/temp-data/server/server-methods/alignmentServerMethods.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/temp-data/server/server-methods/combinedSummaryServerMethods.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/temp-pages/tempObservationsPage.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/startup/server/api.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/temp-data/temp-collections/tempCollections.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/temp-data/server/server-methods/summaryServerMethods.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/temp-data/server/server-methods/observationServerMethods.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/temp-data/server/temp-publications/tempPublications.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/temp-components/tempInfluencers.js",
+		"/C/Users/Eran/AppData/Roaming/Sublime Text 3/Packages/Theme - Default/Default.sublime-theme",
+		"/C/Users/Eran/AppData/Roaming/Sublime Text 3/Packages/Theme - Default/Widget.sublime-settings",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/temp-pages/tempDataManagementPage.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/functions/dot-string-functions/dotStringFunctions.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/temp-components/tempObservationsList.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/temp-components/tempTestDataItem.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/AppNavigation.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/AuthenticatedNavigation.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/DocumentEditor.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/DocumentsList.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/temp-pages/tempOutlinePage.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/temp-pages/tempSARSPage.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/Documents.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/EditDocument.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/ResetPassword.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/functions/temp-functions/structure-item-functions/test-data-functions/testDataFunctions.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/temp-data/temp-methods/tempMethods.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/functions/temp-functions/structure-item-functions/structureItemFunctions.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/layouts/App.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/temp-pages/rawTestDataPage.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/temp-pages/tempDataStructureItemsPage.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/functions/temp-functions/structure-item-functions/assignment-functions/activitiesOfActorsFunctions.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/functions/temp-functions/structure-item-functions/assignment-functions/valuesOfActivitiesFunctions.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/functions/temp-functions/structure-item-functions/assignment-functions/influencerOfValuesFunctions.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/functions/temp-functions/structure-item-functions/actor-functions/actorFunctions.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/temp-data/server/server-methods/serverMethods.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/containers/tempContainers/tempTestDataContainer.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/containers/tempContainers/tempObservationsContainer.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/containers/tempContainers/tempOutlineContainer.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/temp-data/temp-methods/display-data-methods/displayDataMethods.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/temp-components/tempOutlineComponent.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/supplementary-components/horizontal-bar-component/horizontalBarComponent.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/Loading.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/temp-components/tempTestDataList.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/functions/createHierarchyArray.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/functions/temp-functions/structure-item-functions/value-functions/valueFunctions.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/functions/temp-functions/structure-item-functions/activity-functions/activityFunctions.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/containers/tempContainers/tempDataStructureItemContainer.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/temp-components/tempDataStructureItemList.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/functions/random-number-functions/randomNumberFunctions.js",
+		"/C/Users/Eran/Meteor/limb-rrs/client/main.html",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/startup/client/index.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/startup/server/browser-policy.js",
+		"/C/Users/Eran/Meteor/limb-rrs/client/stylesheets/state/_navbar.scss",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/temp-pages/tempTreePage.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/temp-pages/tempSortableTreePage.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/temp-components/tempDSI.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/containers/tempContainers/testDocument.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/containers/tempContainers/tempSARSContainer.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/temp-components/tempSAR.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/temp-components/tempSARSList.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/functions/temp-functions/fli-functions/fliFunctions.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/summary-pages/combinedSummaryPage.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/data/data-functions/createCombinedSummaryCollection.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/containers/summary-containers/combinedSummaryContrainer.js",
+		"/C/Users/Eran/Meteor/limb-rrs/.meteor/packages",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/data/summary-data/summary-data-publications.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/Index.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/startup/server/fixtures.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/startup/server/temp-data/attractivenessSummaryData.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/documents/methods.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/startup/server/temp-data/combinedSummaryData.js",
 		"/C/Users/Eran/Meteor/limbx/imports/ui/components/pageRenderer.js",
 		"/C/Users/Eran/Meteor/limbx/imports/ui/layouts/secondary-layouts/smallPortraitStackLayout.js",
 		"/C/Users/Eran/Meteor/limbx/imports/ui/components/control-components/small-portrait-controls/smallPortraitTopBar.js",
@@ -647,91 +787,7 @@
 		"/C/Users/Eran/Meteor/LIMB/imports/ui/components/functions/layout-functions/testSubLayout.js",
 		"/C/Users/Eran/Meteor/LIMB/imports/ui/layouts/StackPortraitLayout.js",
 		"/C/Users/Eran/Meteor/LIMB/imports/fixed-data/combinedSummaryArray.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/layouts/StackLandscapeLayout.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/pages/masterPage.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/layouts/landscapeLayout.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/layouts/portraitLayout.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/components/functions/layout-functions/invokeLargeLayout.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/components/stack-components/singleLandscapeStack.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/components/stack-components/singlePortraitStack.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/components/functions/layout-functions/selectLayout.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/pages/errorPage.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/components/main-components/content.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/components/main-components/navigation.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/components/menu-components/activeMenu.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/components/functions/menu-functions/selectMenu.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/components/menu-components/homeMenu.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/components/menu-components/combinedSummaryMenu.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/components/functions/settings-functions/selectLayout.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/referencestates/stackLandscapeState.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/referencestates/stackPortraitState.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/components/functions/determineOrientation.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/components/functions/layout-functions/invokeInsufficientLayout.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/components/functions/layout-functions/invokeStandardLayout.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/layouts/largeLayout.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/components/secondary-components/standard-secondary-components/standardGraphicalPortraitContent.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/components/secondary-components/standard-secondary-components/standardTextualContent.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/components/secondary-components/standard-secondary-components/standardGraphicalContent.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/layouts/standardLayout.js",
-		"/C/Users/Eran/Meteor/LIMB/client/main.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/startup/server/index.js",
-		"/C/Users/Eran/Meteor/LIMB/server/main.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/layouts/insufficientLayout.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/startup/client/routes.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/pages/notFoundPage.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/components/secondary-components/graphicContent.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/components/secondary-components/textualContent.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/components/main-components/headerAndHelp.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/components/main-components/informationBar.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/startup/client/index.js",
-		"/C/Users/Eran/Meteor/LIMB/package.json",
-		"/C/Users/Eran/Meteor/LIMB/client/main.html",
-		"/C/Users/Eran/Meteor/LIMB/.meteor/local/build/programs/web.browser/packages/reload.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/ui/header-and-info/headerAndInfo.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/fixed-data/combinedSummaryArray.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/functions/create-view-state-object/createViewStateObject.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/ui/pages/error-page/errorPage.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/components/stack-components/singleSegment.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/components/stack-components/singleStack.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/ui/views/summaryView.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/ui/views/homeView.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/styles/styles.css",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/ui/combined-summary-graphic-view/combinedSummaryGraphicView.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/functions/set-selected-stack-style/setSelectedStackStyle.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/functions/set-segment-style/setSegmentStyle.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/ui/menu-components/homePageMenu.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/ui/menu-components/master-page-menu.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/ui/menu-components/summaryMenu.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/ui/menu-components/supportMenu.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/ui/menu-components/alignmentMenu.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/ui/menu-components/attractivenessMenu.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/functions/show-selected-view/showSelectedView.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/ui/views/alignmentView.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/functions/determine-orientation/determineOrientation.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/ui/top-nav/topNav.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/ui/single-column-stack/singleColumnStack.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/ui/Combined summary/combinedSummaryPage.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/ui/pages/master-page/masterPage.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/ui/views/attractivenessView.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/ui/views/supportView.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/functions/set-active-menu/setActiveMenu.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/functions/set-active-page/setActivePage.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/ui/pages/home-page/homePage.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/ui/combined-summary-top-menu/combinedSummaryTopMenu.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/ui/Main app/app.jsx",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/client/main.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/ui/combined-summary-view/combinedSummaryView.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/ui/single-row-stack/singleRowStack.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/ui/single-column-segment/singleColumnSegment.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/client/main.html",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/ui/single-row-segment/singleRowSegment.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/ui/large-summary-view/largeSummaryView.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/.meteor/packages",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/collections/collections.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/start-up/server/collections.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/server/main.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/start-up/client/collections.js",
-		"/C/Users/Eran/Meteor/LIMB-Scratch/imports/ui/observer-dropdown/observerDropdown.js"
+		"/C/Users/Eran/Meteor/LIMB/imports/ui/layouts/StackLandscapeLayout.js"
 	],
 	"find":
 	{
@@ -742,6 +798,7 @@
 		"height": 96.0,
 		"where_history":
 		[
+			"C:\\Users\\Eran\\Meteor\\limb-rrs",
 			"C:\\Users\\Eran\\Meteor\\limbx",
 			""
 		]
@@ -751,134 +808,134 @@
 		"case_sensitive": true,
 		"find_history":
 		[
-			"misalignedMinor",
-			"misalignedMajor",
-			"redBar",
-			"orangeBar",
-			"greenBar",
-			"\"greyBar",
-			"clearBar",
-			"barFive",
-			"barFour",
-			"barThree",
-			"barTwo",
-			"barOne",
-			"div",
-			"unborderedDivStyle",
-			"setStackWidth",
-			"activeArray",
-			"divStyle",
-			"navStyle",
-			"SingleStack",
-			"clearBar",
-			"redBar",
-			"orangeBar",
-			"#99ff99",
-			"greenBar",
-			"greyBar",
-			"segmentsArray",
-			"clearBar",
-			"barFive",
-			"barFour",
-			"barThree",
-			"barTwo",
-			"barOne",
-			"babelrc",
-			"babel",
-			"../",
-			"this.state",
-			"mainDivStyle",
-			"h2",
-			"showSelectedSummaryView",
-			"pageName",
-			"menuName",
-			"setStackOrientationClass",
-			"state",
-			"testName",
-			"segmentArray",
-			"100",
-			"h3",
-			"x",
-			"csa",
-			"select",
-			"DropdownButton",
-			"handleSelection",
-			"Title",
-			"elementsJSON",
-			"lastBatchString",
-			"wholeBatchArray",
-			"createMaster",
-			"relationshipType",
-			"relationshipTypeDrow",
-			"sortedRelationshipTypes",
-			"rtd",
-			"relationship",
-			"relationshipTypeDrows",
-			"parentStaticIndentLevel",
-			"sourceDrow",
-			"relationshipDrow",
-			"crossReferencedTopRow",
+			"parentHierarchy",
+			"parentHierarchyDotString",
+			"attractivenessList",
+			"attractivenessObservations",
+			"ATTRACTIVENESSDATA",
+			"combinedSummaryData",
+			"observationsSummaryList",
+			"attractivenessObservations",
+			"ATTRACTIVENESSDATA",
+			"OBSERVATIONDATA",
+			"summaryObservations",
+			"observationsList",
+			"handleRefreshObservations",
+			"handleRefreshSummaryObservations",
+			"testDataItem",
+			"handleViewSummary",
+			"handleAddActivityImportanceObservations",
+			"DisplayData.observations",
+			"actorPipeline",
+			"observationScoreclass",
+			"pipeline",
+			"displayData",
+			"testDataItem",
+			"testDataList",
+			"tdi",
+			"testDataList",
+			"parentHierarchItem",
+			"parentHierarchyActor",
+			"hierarchyActivity",
+			"activities",
+			"TempOutlineComponent",
+			"TempOutlinePage",
+			"displayData",
+			"sds",
+			"controllingElementId",
+			"setControllingElementId",
+			"allTestData",
+			"e",
+			"interimInfluencer",
+			"referenceInfluencersOfActivities",
+			"testActors",
+			"selectedTestValue",
+			"selectedActivityValues",
+			"testHierarchyInfluencers",
+			"TAWA",
+			"interimActivity",
+			"testDataItem",
+			"createTestDataItem",
+			"selectedActors",
+			"testActors",
+			"addInfluencersTTestValues",
+			"addValuesToTestActivities",
+			"addActivitiesToTestActors",
+			"addTestActors",
+			"testHierarchyValues",
+			"testActorsWithActivities",
+			"testActorItems",
+			"TAWAV",
+			"testActorsWithValueInfluencers",
+			"testActorsWithActivityValues",
+			"TempTestDataList",
+			"loadAllTestData",
+			"handleLoadAllData",
+			"TempTestDataPage",
 			"var",
-			"subType",
-			"headDrowDrowId",
-			"relationshipDrow",
-			"itemTypeDrow",
-			"principalLabel",
-			"principalLabelDrow",
-			"handleAddHas",
-			"handleModalShow",
-			"partial",
-			"div",
-			"modalCollapse",
-			"handleModalCollapse",
-			"handleButtonCollapseToggle",
-			"dr",
-			"handleToggleInputSection",
-			"collapseClass",
-			"staticIndentLevel",
+			"itemName",
+			"_id",
+			"itemParentId",
+			"dynamicDotString",
+			"parentId",
+			"dsiList",
+			"dataStructureItem",
+			"dsiList",
+			"selectedValue",
+			"selectedValues",
+			"influencersOfValues",
+			"referenceValueOfActivity",
+			"referenceValues",
+			"interimArray",
+			"structureItem",
+			"createStructureItem",
+			"referenceActor",
+			"actorsStructureArray",
+			"referenceActivity",
+			"activity",
+			"referenceActivities",
+			"numberOfActivities",
+			"referenceActor",
+			"referenceActors",
+			"numberOfActors",
+			"generatedActivities",
+			"structureItemsArray",
+			"children",
+			"chilrden",
+			"title",
+			"id",
+			"TempDataStructureItems",
+			"createStructureDataItems",
+			"structureDataItems",
+			"DSI_1",
+			"DSI_2",
+			"structureDataItem",
+			"createStructureDataItem",
+			"dataStructureItem",
+			"TempSARSList",
+			"TempDataStructureItemsList",
+			"sarsList",
+			"TempSARSList",
+			"sar",
+			"TempSAR",
+			"id",
+			"text",
+			"parent",
+			"displayLabel",
+			"stakeholder",
+			"stakeholders",
+			"stakeholder",
+			"stakeholders",
+			"TLI_s",
+			"random",
 			"var",
-			"headDrow",
-			"initialControllingDrow",
-			"dynamicFamilyItems",
-			"dynamicrows",
-			"master",
-			"familyHeadDrow",
-			"drow",
-			"drw",
-			"drows",
-			"masterDynamicRow",
-			"familyHeadDrow",
-			"singleDrow",
-			"AddDocument",
-			"DocumentsList",
-			"doc",
+			"CRN",
+			"TempSARSPage",
 			"documents",
-			"document",
-			"documentId",
-			"document",
-			"Documents",
-			"document",
-			"Document",
-			"insertDocument",
-			"handleInsertDocument",
-			"Documents",
-			"true",
-			"false",
-			"Invites",
-			"<\n",
-			"List",
-			"topic",
-			"listItems",
-			"members",
-			"Documents",
-			"signup",
-			"class",
-			"handleInsertDocument",
-			"insertDocument",
-			"Documents",
-			"removeMember",
-			"updateMember",
-			"member"
+			"doc",
+			"SARS",
+			"documents",
+			"DocumentsList"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -929,8 +986,99 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "imports/startup/server/fixtures.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 593,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								152,
+								152
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "imports/ui/layouts/App.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1275,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								637,
+								637
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 66.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "imports/ui/components/AuthenticatedNavigation.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1177,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								781,
+								781
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -1023,7 +1171,7 @@
 	"show_open_files": true,
 	"show_tabs": false,
 	"side_bar_visible": true,
-	"side_bar_width": 404.0,
+	"side_bar_width": 460.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
