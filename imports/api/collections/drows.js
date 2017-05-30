@@ -2,21 +2,21 @@ import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 
-export const DRows = new Mongo.Collection('DRows');
+export const DOTROWS = new Mongo.Collection('DOTROWS');
 
-DRows.allow({
+DOTROWS.allow({
   insert: () => false,
   update: () => false,
   remove: () => false,
 });
 
-DRows.deny({
+DOTROWS.deny({
   insert: () => true,
   update: () => true,
   remove: () => true,
 });
 
-DRows.schema = new SimpleSchema({
+DOTROWS.schema = new SimpleSchema({
   title: {
     type: String,
     label: 'The title of the item.',
@@ -85,4 +85,4 @@ DRows.schema = new SimpleSchema({
   }
 });
 
-DRows.attachSchema(DRows.schema);
+DOTROWS.attachSchema(DOTROWS.schema);
