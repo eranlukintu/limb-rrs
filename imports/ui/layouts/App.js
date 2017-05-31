@@ -3,6 +3,7 @@ import { Grid } from 'react-bootstrap';
 import { Meteor } from 'meteor/meteor';
 import AppNavigation from '../containers/AppNavigation.js';
 import Index from '../pages/Index.js';
+import { ModelingPage } from '../pages/ModelingPage.js';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -19,6 +20,7 @@ export default class App extends React.Component {
   currentPage() {
     return {
       index: <Index />,
+      modeling: <ModelingPage />,
     }[this.state.currentPage];
   }
 

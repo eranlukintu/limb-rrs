@@ -520,58 +520,30 @@
 	"buffers":
 	[
 		{
+			"file": "imports/functions/dot-functions/dotStringFunctions.js",
+			"settings":
+			{
+				"buffer_size": 327,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "import { createSortString } from \"../dotStringFunctions.js\";\nimport { Random } from 'meteor/random';\n\nexport const createInitialDrows = () => {\n   const initialControllingDrow = createInitialControllingDrow();\n   const initialPrincipalLabelDrow = createInitialPrincipalLabelDrow(initialControllingDrow);\n   const initialItemTypeDrow = createInitialItemTypeDrow(initialControllingDrow);\n    const initialDrows = [];\n    initialDrows.push(initialControllingDrow);\n    initialDrows.push(initialPrincipalLabelDrow);\n    initialDrows.push(initialItemTypeDrow);\n    return initialDrows;\n}\n\nconst createInitialControllingDrow =() => {\n   const initialControllingDrow = {};\n   initialControllingDrow.title = \"NA\";\n   initialControllingDrow.dRowId = Random.id();\n   initialControllingDrow.batchId = \"1\";\n   initialControllingDrow.sequenceId = \"1\";\n   initialControllingDrow.staticDstring = \"1\";\n   initialControllingDrow.staticIndentLevel = \"0\";\n   initialControllingDrow.staticSortString = createSortString(\"1\");\n   initialControllingDrow.primaryId = Random.id();\n   initialControllingDrow.primaryLabel = \"dRow\";\n   initialControllingDrow.secondaryId = Random.id();\n   initialControllingDrow.secondaryLabel = \"has auto label\";\n   initialControllingDrow.tertiaryId = Random.id();\n   initialControllingDrow.tertiaryLabel = \"root\";\n\n   return initialControllingDrow;\n}\n\nconst createInitialPrincipalLabelDrow = (initialControllingDrow) => {\n   const initialPrincipalLabelDrow = {};\n   initialPrincipalLabelDrow.title = \"NA\";\n   initialPrincipalLabelDrow.dRowId = Random.id();\n   initialPrincipalLabelDrow.batchId = \"1\";\n   initialPrincipalLabelDrow.sequenceId = \"2\";\n   initialPrincipalLabelDrow.staticDstring = \"1.1\";\n   initialPrincipalLabelDrow.staticIndentLevel = \"1\";\n   initialPrincipalLabelDrow.staticSortString = createSortString(initialPrincipalLabelDrow.staticDstring);\n   initialPrincipalLabelDrow.primaryId = initialControllingDrow.dRowId;\n   initialPrincipalLabelDrow.primaryLabel = \"drow\";\n   initialPrincipalLabelDrow.secondaryId = Random.id();\n   initialPrincipalLabelDrow.secondaryLabel = \"has principal label\";\n   initialPrincipalLabelDrow.tertiaryId = Random.id();\n   initialPrincipalLabelDrow.tertiaryLabel = \"root\";\n\n   return initialPrincipalLabelDrow;\n}\n\nconst createInitialItemTypeDrow = (initialControllingDrow) => {\n   const initialItemTypeDrow = {};\n   initialItemTypeDrow.title = \"NA\";\n   initialItemTypeDrow.dRowId = Random.id();\n   initialItemTypeDrow.batchId = \"1\";\n   initialItemTypeDrow.sequenceId = \"3\";\n   initialItemTypeDrow.staticDstring = \"1.2\";\n   initialItemTypeDrow.staticIndentLevel = \"1\";\n   initialItemTypeDrow.staticSortString = createSortString(initialItemTypeDrow.staticDstring);;\n   initialItemTypeDrow.primaryId = initialControllingDrow.dRowId;\n   initialItemTypeDrow.primaryLabel = \"drow\";\n   initialItemTypeDrow.secondaryId = Random.id();\n   initialItemTypeDrow.secondaryLabel = \"has item type\";\n   initialItemTypeDrow.tertiaryId = Random.id();\n   initialItemTypeDrow.tertiaryLabel = \"root\";\n\n   return initialItemTypeDrow;\n}\n",
+			"file": "imports/functions/dot-functions/dot-item-functions/createRootItem.js",
+			"file_size": 3135,
+			"file_write_time": 131405238324234038,
+			"settings":
+			{
+				"buffer_size": 3065,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "imports/startup/server/fixtures.js",
 			"settings":
 			{
-				"buffer_size": 593,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "export const createSortString = function(dotString) {\n\n    let expansionAmount = 1000000;\n    let splitDotString = dotString.split(\".\");\n\n    let adjustedDotString = splitDotString.forEach(function(c) {\n        let ac = c + expansionAmount;\n    });\n\n    let sortString = adjustedDotString.join(\".\");\n    return sortString;\n  }",
-			"file": "imports/functions/dot-string-functions/dotStringFunctions.js",
-			"file_size": 337,
-			"file_write_time": 131405213241956506,
-			"settings":
-			{
-				"buffer_size": 326,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": ".meteor/packages",
-			"settings":
-			{
-				"buffer_size": 1229,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "imports/ui/layouts/App.js",
-			"settings":
-			{
-				"buffer_size": 1275,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "imports/startup/server/api.js",
-			"settings":
-			{
-				"buffer_size": 1,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "imports/ui/components/AuthenticatedNavigation.js",
-			"settings":
-			{
-				"buffer_size": 1177,
-				"encoding": "UTF-8",
+				"buffer_size": 983,
 				"line_ending": "Windows"
 			}
 		},
@@ -579,8 +551,18 @@
 			"file": "imports/api/collections/drows.js",
 			"settings":
 			{
-				"buffer_size": 1605,
-				"encoding": "UTF-8",
+				"buffer_size": 1619,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "import React from 'react';\nimport { Nav, NavDropdown, MenuItem} from \"react-bootstrap\";\n\n\n",
+			"file": "imports/ui/components/menu-components/indexMenu.js",
+			"file_size": 0,
+			"file_write_time": 131405860675246119,
+			"settings":
+			{
+				"buffer_size": 90,
 				"line_ending": "Windows"
 			}
 		}
@@ -683,13 +665,13 @@
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/collections",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/functions",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/functions/dot-functions",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/functions/dot-functions/dot-item-functions",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/startup",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/startup/client",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/startup/server",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/startup/server/accounts",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/menu-components",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/containers",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/layouts",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages",
@@ -698,6 +680,13 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Eran/Meteor/limb-rrs/imports/startup/server/fixtures.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/functions/dot-string-functions/dotStringFunctions.js",
+		"/C/Users/Eran/Meteor/limb-rrs/.meteor/packages",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/layouts/App.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/startup/server/api.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/AuthenticatedNavigation.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/collections/drows.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/functions/dot-functions/dot-item-functions/createRootItem.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/ViewDocument.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/temp-components/tempObservationsSummary.js",
@@ -715,7 +704,6 @@
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/temp-data/server/server-methods/alignmentServerMethods.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/temp-data/server/server-methods/combinedSummaryServerMethods.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/temp-pages/tempObservationsPage.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/startup/server/api.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/temp-data/temp-collections/tempCollections.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/temp-data/server/server-methods/summaryServerMethods.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/temp-data/server/server-methods/observationServerMethods.js",
@@ -728,7 +716,6 @@
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/temp-components/tempObservationsList.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/temp-components/tempTestDataItem.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/AppNavigation.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/AuthenticatedNavigation.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/DocumentEditor.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/DocumentsList.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/temp-pages/tempOutlinePage.js",
@@ -739,7 +726,6 @@
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/functions/temp-functions/structure-item-functions/test-data-functions/testDataFunctions.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/temp-data/temp-methods/tempMethods.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/functions/temp-functions/structure-item-functions/structureItemFunctions.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/layouts/App.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/temp-pages/rawTestDataPage.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/temp-pages/tempDataStructureItemsPage.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/functions/temp-functions/structure-item-functions/assignment-functions/activitiesOfActorsFunctions.js",
@@ -776,10 +762,8 @@
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/summary-pages/combinedSummaryPage.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/data/data-functions/createCombinedSummaryCollection.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/containers/summary-containers/combinedSummaryContrainer.js",
-		"/C/Users/Eran/Meteor/limb-rrs/.meteor/packages",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/data/summary-data/summary-data-publications.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/Index.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/startup/server/fixtures.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/startup/server/temp-data/attractivenessSummaryData.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/documents/methods.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/startup/server/temp-data/combinedSummaryData.js",
@@ -823,9 +807,7 @@
 		"/C/Users/Eran/Meteor/LIMB/imports/ui/reference-states/stackPortraitState.js",
 		"/C/Users/Eran/Meteor/LIMB/imports/ui/reference-states/stackLandscapeState.js",
 		"/C/Users/Eran/Meteor/LIMB/imports/ui/components/functions/layout-functions/testLayout.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/components/functions/layout-functions/testSubLayout.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/ui/layouts/StackPortraitLayout.js",
-		"/C/Users/Eran/Meteor/LIMB/imports/fixed-data/combinedSummaryArray.js"
+		"/C/Users/Eran/Meteor/LIMB/imports/ui/components/functions/layout-functions/testSubLayout.js"
 	],
 	"find":
 	{
@@ -846,6 +828,7 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"DRows",
 			"splitDstring",
 			"method",
 			"parentHierarchy",
@@ -972,8 +955,7 @@
 			"CRN",
 			"TempSARSPage",
 			"documents",
-			"doc",
-			"SARS"
+			"doc"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1024,142 +1006,24 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "imports/startup/server/fixtures.js",
+					"file": "imports/functions/dot-functions/dotStringFunctions.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 593,
+						"buffer_size": 327,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								592,
-								592
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "imports/functions/dot-string-functions/dotStringFunctions.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 326,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								322,
-								322
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": ".meteor/packages",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1229,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "imports/ui/layouts/App.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1275,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								637,
-								637
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "imports/startup/server/api.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
+								327,
+								327
 							]
 						],
 						"settings":
@@ -1170,54 +1034,54 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "imports/ui/components/AuthenticatedNavigation.js",
+					"buffer": 1,
+					"file": "imports/functions/dot-functions/dot-item-functions/createRootItem.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1177,
+						"buffer_size": 3065,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								781,
-								781
+								3065,
+								3065
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
+							"tab_size": 3,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "imports/api/collections/drows.js",
+					"buffer": 2,
+					"file": "imports/startup/server/fixtures.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1605,
+						"buffer_size": 983,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								190,
-								190
+								593,
+								593
 							]
 						],
 						"settings":
@@ -1231,6 +1095,64 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "imports/api/collections/drows.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1619,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								370,
+								370
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "imports/ui/components/menu-components/indexMenu.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 90,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								89,
+								89
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
 					"type": "text"
 				}
 			]

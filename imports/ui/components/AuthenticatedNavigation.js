@@ -3,6 +3,7 @@ import { browserHistory } from 'react-router';
 import { IndexLinkContainer, LinkContainer } from 'react-router-bootstrap';
 import { Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import { Meteor } from 'meteor/meteor';
+import { IndexMenu } from "./menu-components/indexMenu.js";
 
 const handleLogout = () => Meteor.logout(() => browserHistory.push('/login'));
 
@@ -20,6 +21,9 @@ const AuthenticatedNavigation = ({ currentPage, setCurrentPage }) => (
         eventKey={ 1 }
         onClick={(event) => { setCurrentPage(event, { page: 'index' }); }}
       >Index</NavItem>
+    </Nav>
+    <Nav>
+      < IndexMenu setCurrentPage={setCurrentPage}/>
     </Nav>
     <Nav pullRight>
       <NavDropdown eventKey={ 3 } title={ userName() } id="basic-nav-dropdown">
