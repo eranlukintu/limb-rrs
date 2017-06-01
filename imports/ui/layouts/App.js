@@ -4,6 +4,7 @@ import { Meteor } from 'meteor/meteor';
 import AppNavigation from '../containers/AppNavigation.js';
 import Index from '../pages/Index.js';
 import { ModelingPage } from '../pages/ModelingPage.js';
+import { ModelingWorkPage } from '../pages/modelingWorkPage.js';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -30,6 +31,7 @@ export default class App extends React.Component {
     return {
       index: <Index />,
       modeling: <ModelingPage />,
+      modelingWorkPage: <ModelingWorkPage />,
     }[this.state.currentPage];
   }
 

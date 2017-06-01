@@ -1,6 +1,7 @@
 import React from "react";
 import { IndexMenu } from "./indexMenu.js";
 import { ModelingMenu} from "./modelingMenu.js";
+import { ModelingWorkPageMenu } from "./modelingWorkPageMenu.js"
 
 export const MenuMaster = (props) => {
 
@@ -14,6 +15,13 @@ export const MenuMaster = (props) => {
 
 		case "modelingMenu": 
 			return <ModelingMenu 
+				setCurrentPage={props.setCurrentPage} 
+				menuName={props.menuName} 
+				setMenuName={props.setMenuName}/>
+			break;
+
+		case "modelingWorkPageMenu": 
+			return <ModelingWorkPageMenu 
 				setCurrentPage={props.setCurrentPage} 
 				menuName={props.menuName} 
 				setMenuName={props.setMenuName}/>
