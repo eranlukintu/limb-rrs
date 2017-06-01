@@ -8,13 +8,22 @@ import { ModelingPage } from '../pages/ModelingPage.js';
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { currentPage: 'index', currentPageProps: null };
+    this.state = { 
+      currentPage: 'index', 
+      currentPageProps: null,
+      menuName: 'indexMenu'
+    };
     this.setCurrentPage = this.setCurrentPage.bind(this);
+    this.setMenuName = this.setMenuName.bind(this);
   }
 
   setCurrentPage(event, { page, props }) {
     if (event) event.preventDefault();
     this.setState({ currentPage: page, currentPageProps: props });
+  }
+
+  setMenuName(menuName) {
+    this.setState({menuName: menuName});
   }
 
   currentPage() {
@@ -26,11 +35,15 @@ export default class App extends React.Component {
 
   render() {
     const { children } = this.props;
+    console.log(this.props);
+    
     return (
       <div>
         <AppNavigation
           currentPage={ this.state.currentPage }
           setCurrentPage={ this.setCurrentPage }
+          menuName={this.state.menuName}
+          setMenuName={ this.setMenuName }
         />
         <Grid>
           {

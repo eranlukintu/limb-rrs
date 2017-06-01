@@ -1,7 +1,7 @@
 import React from 'react';
 import { Nav, NavDropdown, MenuItem} from "react-bootstrap";
 
-export const IndexMenu = function(props) {
+export const ModelingMenu = function(props) {
 
 	handleSelect = (eventKey) => {
 		const page = eventKey;
@@ -12,14 +12,14 @@ export const IndexMenu = function(props) {
 
 	chooseMenuName = (eventKey) => {
 		switch(eventKey) {
-			case "modeling": return "modelingMenu";
+			case "index": return "indexMenu";
 			break;
 
 		default: return "NA";
 		}
 	}
 
-	return (<NavDropdown title="Actions" onSelect={this.handleSelect} id="indexMenuDropdown">
-		<MenuItem eventKey="modeling">Go to business model</MenuItem>
+	return (<NavDropdown title="Actions" onSelect={this.handleSelect} id="modelingMenuDropdown">
+		<MenuItem eventKey="index">Go to index page</MenuItem>
 	</NavDropdown>)
 }
