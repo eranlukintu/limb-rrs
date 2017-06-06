@@ -5,7 +5,7 @@ import AppNavigation from '../containers/AppNavigation.js';
 import Index from '../pages/Index.js';
 import { ModelingPage } from '../pages/ModelingPage.js';
 import { ModelingWorkPage } from '../pages/modelingWorkPage.js';
-// import { calculateNextPage } from '../../functions/ui-functions/menu-functions/calculateNextPage.js';
+import { calculateNextPage } from '../../functions/ui-functions/menu-functions/calculateNextPage.js';
 import { calculateNextMenu } from '../../functions/ui-functions/menu-functions/calculateNextMenu.js';
 
 export default class App extends React.Component {
@@ -23,21 +23,6 @@ export default class App extends React.Component {
   setCurrentPage(event, { page, props }) {
     if (event) event.preventDefault();
     this.setState({ currentPage: page, currentPageProps: props });
-  }
-
-  calculateNextPage(key, currentPage) {
-
-    let nextPage = "NA";
-
-    switch(currentPage) {
-      case "index":
-        switch(key) {
-          case "modeling": nextPage = "modeling";
-          break;
-        }
-    }
-
-    return nextPage;
   }
 
   calculateNextPageName(key, currentPage, calculateNextPage) {
@@ -66,7 +51,7 @@ export default class App extends React.Component {
           currentPage={ this.state.currentPage }
           setCurrentPage={ this.setCurrentPage }
           calculateNextPageName={ this.calculateNextPageName}
-          calculateNextPage={this.calculateNextPage}
+          calculateNextPage={calculateNextPage}
           menuName={this.state.menuName}
           setMenuName={ this.setMenuName }
         />
