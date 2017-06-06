@@ -7,9 +7,7 @@ export const IndexMenu = function(props) {
 		const currentPage = props.currentPage;
 		const currentMenu = props.menuName;
 		const calculateNextPage = props.calculateNextPage;
-		const nextPage = props.calculateNextPageName(eventKey, currentPage, calculateNextPage);
-		console.log(nextPage);
-		console.log(props);
+		const nextPage = props.calculateNextPageAndMenu(eventKey, currentPage, calculateNextPage);
 	}
 
 	return (<NavDropdown title="Actions" onSelect={this.handleSelect} id="indexMenuDropdown">

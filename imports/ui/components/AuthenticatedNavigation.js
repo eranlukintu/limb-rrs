@@ -13,7 +13,7 @@ const userName = () => {
   return user ? `${name.first} ${name.last}` : '';
 };
 
-const AuthenticatedNavigation = ({ currentPage, setCurrentPage, menuName, setMenuName, calculateNextPageName, calculateNextPage}) => (
+const AuthenticatedNavigation = ({ currentPage, setCurrentPage, menuName, setMenuName, calculateNextPageAndMenu, calculateNextPage}) => (
   <div>
     <Nav>
       < MenuMaster 
@@ -21,7 +21,7 @@ const AuthenticatedNavigation = ({ currentPage, setCurrentPage, menuName, setMen
         setCurrentPage={setCurrentPage} 
         menuName={menuName} 
         setMenuName={setMenuName}
-        calculateNextPageName={calculateNextPageName}
+        calculateNextPageAndMenu={calculateNextPageAndMenu}
         calculateNextPage={calculateNextPage}/>
     </Nav>
     <Nav pullRight>

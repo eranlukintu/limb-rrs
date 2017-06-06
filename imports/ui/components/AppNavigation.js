@@ -9,19 +9,19 @@ const renderNavigation = (hasUser,
                           setCurrentPage, 
                           menuName, 
                           setMenuName, 
-                          calculateNextPageName,
+                          calculateNextPageAndMenu,
                           calculateNextPage) => (
   hasUser ? <AuthenticatedNavigation
     currentPage={ currentPage }
     setCurrentPage={ setCurrentPage }
     menuName={menuName}
     setMenuName={ setMenuName }
-    calculateNextPageName = { calculateNextPageName }
+    calculateNextPageAndMenu = { calculateNextPageAndMenu }
     calculateNextPage = { calculateNextPage }
   /> : <PublicNavigation />
 );
 
-const AppNavigation = ({ hasUser, currentPage, setCurrentPage, menuName, setMenuName, calculateNextPageName, calculateNextPage}) => (
+const AppNavigation = ({ hasUser, currentPage, setCurrentPage, menuName, setMenuName, calculateNextPageAndMenu, calculateNextPage}) => (
   <Navbar>
     <Navbar.Header>
       <Navbar.Brand>
@@ -29,7 +29,7 @@ const AppNavigation = ({ hasUser, currentPage, setCurrentPage, menuName, setMenu
       </Navbar.Brand>
     </Navbar.Header>
     <Navbar.Collapse>
-      { renderNavigation(hasUser, currentPage, setCurrentPage, menuName, setMenuName, calculateNextPageName, calculateNextPage) }
+      { renderNavigation(hasUser, currentPage, setCurrentPage, menuName, setMenuName, calculateNextPageAndMenu, calculateNextPage) }
     </Navbar.Collapse>
   </Navbar>
 );

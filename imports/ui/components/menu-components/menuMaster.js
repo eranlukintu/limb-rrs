@@ -13,7 +13,7 @@ export const MenuMaster = (props) => {
 				setCurrentPage={props.setCurrentPage} 
 				menuName={props.menuName} 
 				setMenuName={props.setMenuName}
-				calculateNextPageName={props.calculateNextPageName}
+				calculateNextPageAndMenu={props.calculateNextPageAndMenu}
 				calculateNextPage={props.calculateNextPage}/>
 			break;
 
@@ -23,7 +23,7 @@ export const MenuMaster = (props) => {
 				setCurrentPage={props.setCurrentPage} 
 				menuName={props.menuName} 
 				setMenuName={props.setMenuName}
-				calculateNextPageName={props.calculateNextPageName}
+				calculateNextPageAndMenu={props.calculateNextPageAndMenu}
 				calculateNextPage={props.calculateNextPage}/>
 			break;
 
@@ -33,7 +33,7 @@ export const MenuMaster = (props) => {
 				setCurrentPage={props.setCurrentPage} 
 				menuName={props.menuName} 
 				setMenuName={props.setMenuName}
-				calculateNextPageName={props.calculateNextPageName}
+				calculateNextPageAndMenu={props.calculateNextPageAndMenu}
 				calculateNextPage={props.calculateNextPage}/>
 			break;
 
@@ -43,7 +43,7 @@ export const MenuMaster = (props) => {
 				setCurrentPage={props.setCurrentPage} 
 				menuName={props.menuName} 
 				setMenuName={props.setMenuName}
-				calculateNextPageName={props.calculateNextPageName}
+				calculateNextPageAndMenu={props.calculateNextPageAndMenu}
 				calculateNextPage={props.calculateNextPage}/>
 			break;
 
@@ -53,7 +53,7 @@ export const MenuMaster = (props) => {
 				setCurrentPage={props.setCurrentPage} 
 				menuName={props.menuName} 
 				setMenuName={props.setMenuName}
-				calculateNextPageName={props.calculateNextPageName}
+				calculateNextPageAndMenu={props.calculateNextPageAndMenu}
 				calculateNextPage={props.calculateNextPage}/>
 	}
 }
