@@ -25,9 +25,11 @@ export default class App extends React.Component {
     this.setState({ currentPage: page, currentPageProps: props });
   }
 
-  calculateNextPageAndMenu(key, currentPage, calculateNextPage) {
+  calculateNextPageAndMenu(key, currentPage, calculateNextPage, calculateNextMenu) {
     const nextPage = calculateNextPage(key, currentPage);
-    console.log(key, currentPage, nextPage);
+    const nextMenu = calculateNextMenu(key, currentPage);
+    console.log("Next page", nextPage);
+    console.log("Next menu", nextMenu);
   }
 
   setMenuName(menuName) {
@@ -52,6 +54,7 @@ export default class App extends React.Component {
           setCurrentPage={ this.setCurrentPage }
           calculateNextPageAndMenu={ this.calculateNextPageAndMenu}
           calculateNextPage={calculateNextPage}
+          calculateNextMenu={calculateNextMenu}
           menuName={this.state.menuName}
           setMenuName={ this.setMenuName }
         />

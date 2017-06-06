@@ -4,22 +4,10 @@ import { Nav, NavDropdown, MenuItem} from "react-bootstrap";
 export const ModelingWorkPageMenu = function(props) {
 
 	handleSelect = (eventKey) => {
-		const page = eventKey;
-		props.setCurrentPage("" , {page: page, props: null});
-		const menuName = chooseMenuName(eventKey);
-		props.setMenuName(menuName);
-	}
-
-	chooseMenuName = (eventKey) => {
-		switch(eventKey) {
-			case "index": return "indexMenu";
-			break;
-
-			case "modeling": return "modelingMenu";
-			break
-
-		default: return "NA";
-		}
+		const currentPage = props.currentPage;
+		const currentMenu = props.menuName;
+		const calculateNextPage = props.calculateNextPage;
+		const nextPage = props.calculateNextPageAndMenu(eventKey, currentPage, calculateNextPage);
 	}
 
 	return (<NavDropdown title="Actions" onSelect={this.handleSelect} id="modelingMenuDropdown">
