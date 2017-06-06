@@ -13,17 +13,16 @@ const userName = () => {
   return user ? `${name.first} ${name.last}` : '';
 };
 
-const AuthenticatedNavigation = ({ currentPage, setCurrentPage, menuName, setMenuName }) => (
+const AuthenticatedNavigation = ({ currentPage, setCurrentPage, menuName, setMenuName, calculateNextPageName, calculateNextPage}) => (
   <div>
     <Nav>
-      <NavItem
-        active={ currentPage === 'index' }
-        eventKey={ 1 }
-        onClick={(event) => { setCurrentPage(event, { page: 'index' }); }}
-      >Index</NavItem>
-    </Nav>
-    <Nav>
-      < MenuMaster setCurrentPage={setCurrentPage} menuName={menuName} setMenuName={setMenuName}/>
+      < MenuMaster 
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage} 
+        menuName={menuName} 
+        setMenuName={setMenuName}
+        calculateNextPageName={calculateNextPageName}
+        calculateNextPage={calculateNextPage}/>
     </Nav>
     <Nav pullRight>
       <NavDropdown eventKey={ 3 } title={ userName() } id="account-dropdown">

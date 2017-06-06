@@ -1,5 +1,8 @@
 import React from "react";
-import {Tabs, Tab } from "react-bootstrap";
+import {Tabs, Tab, Navbar } from "react-bootstrap";
+import { BusinessModelComponent } from "../components/modeling-components/businessModelComponent.js";
+import RawModelComponent from "../components/modeling-components/rawModelComponent.js";
+import { setMenuName } from "../../functions/ui-functions/menu-functions/menuFunctions.js";
 
 export class ModelingWorkPage extends React.Component {
 
@@ -10,18 +13,33 @@ export class ModelingWorkPage extends React.Component {
 		}
 	}
 
-	handleSelect(key) {
-	    alert('selected ' + key);
-	    this.setState({key});
+	handleSelect(tabKey) {
+	    this.setState({tabKey});
+	    let menuName=setMenuName(tabKey);
+	    // this.props.setMenuName(menuName);
+	    console.log(this.props);
   }
 	
 	render() {
+
 		return(
-	      <Tabs activeKey={this.state.key} onSelect={this.handleSelect} id="controlled-tab-example">
-	        <Tab eventKey={1} title="Tab 1">Tab 1 content</Tab>
-	        <Tab eventKey={2} title="Tab 2">Tab 2 content</Tab>
-	        <Tab eventKey={3} title="Tab 3" disabled>Tab 3 content</Tab>
-	      </Tabs>
+		      <Tabs activeKey={this.state.key} onSelect={this.handleSelect} id="modelingWorkPageTab">
+		        <Tab eventKey={1} title="Business model">
+		        	<BusinessModelComponent />
+		        </Tab>
+		        <Tab eventKey={2} title="Actors">Actors content
+
+		        </Tab>
+		        <Tab eventKey={3} title="Activities">Activities content
+
+		        </Tab>
+		        <Tab eventKey={4} title="Values">Values content
+
+		        </Tab>
+		        <Tab eventKey={5} title="Raw">
+		        	<RawModelComponent coreProps={this.props} newMenuName="rawModelingMenu"/>
+		        </Tab>
+		      </Tabs>
 	    );
 	}
 }

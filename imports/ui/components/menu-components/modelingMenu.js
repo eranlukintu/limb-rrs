@@ -5,7 +5,7 @@ export const ModelingMenu = function(props) {
 
 	handleSelect = (eventKey) => {
 		const page = eventKey;
-		props.setCurrentPage("" , {page: page, props: null});
+		props.setCurrentPage("" , {page: page, props: {props}});
 		const menuName = chooseMenuName(eventKey);
 		props.setMenuName(menuName);
 	}

@@ -4,27 +4,32 @@ import { Link } from 'react-router';
 import PublicNavigation from './PublicNavigation.js';
 import AuthenticatedNavigation from './AuthenticatedNavigation.js';
 
-const renderNavigation = (hasUser, currentPage, setCurrentPage, menuName, setMenuName) => (
+const renderNavigation = (hasUser, 
+                          currentPage, 
+                          setCurrentPage, 
+                          menuName, 
+                          setMenuName, 
+                          calculateNextPageName,
+                          calculateNextPage) => (
   hasUser ? <AuthenticatedNavigation
     currentPage={ currentPage }
     setCurrentPage={ setCurrentPage }
     menuName={menuName}
     setMenuName={ setMenuName }
+    calculateNextPageName = { calculateNextPageName }
+    calculateNextPage = { calculateNextPage }
   /> : <PublicNavigation />
 );
 
-const AppNavigation = ({ hasUser, currentPage, setCurrentPage, menuName, setMenuName }) => (
+const AppNavigation = ({ hasUser, currentPage, setCurrentPage, menuName, setMenuName, calculateNextPageName, calculateNextPage}) => (
   <Navbar>
     <Navbar.Header>
       <Navbar.Brand>
-        <Link href="#" onClick={(event) => {
-          setCurrentPage(event, { page: 'index' });
-        }}>Look Into My Business</Link>
+        Look Into My Business
       </Navbar.Brand>
-      <Navbar.Toggle />
     </Navbar.Header>
     <Navbar.Collapse>
-      { renderNavigation(hasUser, currentPage, setCurrentPage, menuName, setMenuName) }
+      { renderNavigation(hasUser, currentPage, setCurrentPage, menuName, setMenuName, calculateNextPageName, calculateNextPage) }
     </Navbar.Collapse>
   </Navbar>
 );
