@@ -30,7 +30,8 @@ const AppNavigation = ({ hasUser,
                         setMenuName, 
                         calculateNextPageAndMenu, 
                         calculateNextPage,
-                        calculateNextMenu}) => (
+                        calculateNextMenu,
+                        modeling}) => (
   <Navbar>
     <Navbar.Header>
       <Navbar.Brand>
@@ -45,7 +46,8 @@ const AppNavigation = ({ hasUser,
                         setMenuName, 
                         calculateNextPageAndMenu, 
                         calculateNextPage,
-                        calculateNextMenu) }
+                        calculateNextMenu,
+                        modeling) }
     </Navbar.Collapse>
   </Navbar>
 );

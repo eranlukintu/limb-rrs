@@ -22,14 +22,18 @@ export default class App extends React.Component {
 
   setCurrentPage(event, { page, props }) {
     if (event) event.preventDefault();
+    console.log(page);
     this.setState({ currentPage: page, currentPageProps: props });
   }
 
-  calculateNextPageAndMenu(key, currentPage, calculateNextPage, calculateNextMenu) {
+  calculateNextPageAndMenu(key, currentPage, calculateNextPage, calculateNextMenu, setCurrentPage, props, setMenuName) {
     const nextPage = calculateNextPage(key, currentPage);
     const nextMenu = calculateNextMenu(key, currentPage);
     console.log("Next page", nextPage);
     console.log("Next menu", nextMenu);
+    // console.log(props);
+    setCurrentPage("", {page: nextPage, props: props});
+    setMenuName(nextMenu);
   }
 
   setMenuName(menuName) {
@@ -57,6 +61,7 @@ export default class App extends React.Component {
           calculateNextMenu={calculateNextMenu}
           menuName={this.state.menuName}
           setMenuName={ this.setMenuName }
+          modeling={ModelingPage}
         />
         <Grid>
           {

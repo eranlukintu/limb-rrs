@@ -26,7 +26,8 @@ export const MenuMaster = (props) => {
 				setMenuName={props.setMenuName}
 				calculateNextPageAndMenu={props.calculateNextPageAndMenu}
 				calculateNextPage={props.calculateNextPage}
-				calculateNextMenu={props.calculateNextMenu}/>
+				calculateNextMenu={props.calculateNextMenu}
+				modeling={props.modeling}/>
 			break;
 
 		case "modelingWorkPageMenu": 
@@ -37,7 +38,8 @@ export const MenuMaster = (props) => {
 				setMenuName={props.setMenuName}
 				calculateNextPageAndMenu={props.calculateNextPageAndMenu}
 				calculateNextPage={props.calculateNextPage}
-				calculateNextMenu={props.calculateNextMenu}/>
+				calculateNextMenu={props.calculateNextMenu}
+				modeling={props.modeling}/>
 			break;
 
 		case "rawModelingMenu": 
@@ -48,7 +50,8 @@ export const MenuMaster = (props) => {
 				setMenuName={props.setMenuName}
 				calculateNextPageAndMenu={props.calculateNextPageAndMenu}
 				calculateNextPage={props.calculateNextPage}
-				calculateNextMenu={props.calculateNextMenu}/>
+				calculateNextMenu={props.calculateNextMenu}
+				modeling={props.modeling}/>
 			break;
 
 		default: 
@@ -59,6 +62,7 @@ export const MenuMaster = (props) => {
 				setMenuName={props.setMenuName}
 				calculateNextPageAndMenu={props.calculateNextPageAndMenu}
 				calculateNextPage={props.calculateNextPage}
-				calculateNextMenu={props.calculateNextMenu}/>
+				calculateNextMenu={props.calculateNextMenu}
+				modeling={props.modeling}/>
 	}
 }
