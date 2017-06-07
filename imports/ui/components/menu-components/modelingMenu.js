@@ -22,6 +22,6 @@ export const ModelingMenu = function(props) {
 
 	return (<NavDropdown title="Actions" onSelect={this.handleSelect} id="modelingMenuDropdown">
 		<MenuItem eventKey="index">Go to index page</MenuItem>
-		<MenuItem eventKey="modelingWorkPage">Go to modeling work page</MenuItem>
+		<MenuItem eventKey="rawModelComponent">Raw model</MenuItem>
 	</NavDropdown>)
 }

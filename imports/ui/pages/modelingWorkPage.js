@@ -17,7 +17,7 @@ export class ModelingWorkPage extends React.Component {
 	    this.setState({tabKey});
 	    let menuName=setMenuName(tabKey);
 	    // this.props.setMenuName(menuName);
-	    console.log(this.props);
+	    // console.log(this.props);
   }
 	
 	render() {

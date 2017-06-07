@@ -4,6 +4,7 @@ import { Nav, NavDropdown, MenuItem} from "react-bootstrap";
 export const ModelingWorkPageMenu = function(props) {
 
 	handleSelect = (eventKey) => {
+		console.log(eventKey);
 		const currentPage = props.currentPage;
 		const currentMenu = props.menuName;
 		const calculateNextPage = props.calculateNextPage;

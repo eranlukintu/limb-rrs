@@ -14,16 +14,16 @@ export const calculateNextPage = function(key, currentPage) {
 				case "index": nextPage = "index";
 				break;
 
-				case "modelingWorkPage": nextPage = "modelingWorkPage";
+				case "rawModelComponent": nextPage = "rawModelComponent";
 				break;
 			}
 
-		case "modelingWorkPage":
+		case "rawModelComponent":
 			switch(key) {
 				case "index": nextPage = "index";
 				break;
 
-				case "modeling": nextPage = "modeling";
+				case "back": nextPage = "modeling";
 			  	break;
 			}
     }

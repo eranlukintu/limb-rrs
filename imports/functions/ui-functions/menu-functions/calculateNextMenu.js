@@ -19,20 +19,20 @@ export const calculateNextMenu = function(key, currentPage) {
 				case "index": return "indexMenu";
 				break;
 
-				case "modelingWorkPage": return "modelingWorkPageMenu";
+				case "rawModelComponent": return "rawModelingMenu";
 				break;
 			}
 			break;
 
-		case "modelingWorkPage":
+		case "rawModelComponent":
 			switch(key) {
 				case "index": return "indexMenu";
 				break;
 
-			case "modeling": return "modelingMenu";
+				case "back": return "modelingMenu";
+					break;
+				}
 				break;
-			}
-			break;
 
 		default: return "NA";
 	}

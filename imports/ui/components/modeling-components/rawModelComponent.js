@@ -4,7 +4,7 @@ import { DOTROWS } from "../../../api/collections/drows.js";
 import Loading from "../Loading.js";
 
 const RawModelComponent = function(props) {
-	console.log(props);
+	// console.log(props);
 	return <h3>Raw model</h3>
 }
 
