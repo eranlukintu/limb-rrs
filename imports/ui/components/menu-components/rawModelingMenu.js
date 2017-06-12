@@ -1,11 +1,13 @@
 import React from 'react';
 import { Nav, NavDropdown, MenuItem} from "react-bootstrap";
+import { Meteor } from "meteor/meteor";
 
 export const RawModelingMenu = function(props) {
 
 	handleSelect = (eventKey) => {
 		switch(eventKey) {
-			case "createRoot": return console.log("Create root function");
+			case "createRoot": 
+				Meteor.call("addRootItem", {});
 			break;
 
 			case "index":
@@ -32,6 +34,6 @@ export const RawModelingMenu = function(props) {
 	return (<NavDropdown title="Actions" onSelect={this.handleSelect} id="modelingMenuDropdown">
 		<MenuItem eventKey="index">Go to index page</MenuItem>
 		<MenuItem eventKey="back">Go back to modeling page</MenuItem>
-		<MenuItem eventKey="createRoot">Create root</MenuItem>
+
 	</NavDropdown>)
 }

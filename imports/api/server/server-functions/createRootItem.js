@@ -1,7 +1,7 @@
-import { createSortString } from "../dotStringFunctions.js";
+import { createSortStringAtServer } from "./createSortStringAtServer.js";
 import { Random } from 'meteor/random';
 
-export const createInitialDrows = () => {
+export const createRootItem = () => {
    const initialControllingDrow = createInitialControllingDrow();
    const initialPrincipalLabelDrow = createInitialPrincipalLabelDrow(initialControllingDrow);
    const initialItemTypeDrow = createInitialItemTypeDrow(initialControllingDrow);
@@ -9,7 +9,6 @@ export const createInitialDrows = () => {
     initialDrows.push(initialControllingDrow);
     initialDrows.push(initialPrincipalLabelDrow);
     initialDrows.push(initialItemTypeDrow);
-    console.log(initialDrows);
     return initialDrows;
 }
 
@@ -21,7 +20,7 @@ const createInitialControllingDrow =() => {
    initialControllingDrow.sequenceId = "1";
    initialControllingDrow.staticDstring = "1";
    initialControllingDrow.staticIndentLevel = "0";
-   initialControllingDrow.staticSortString = createSortString("1");
+   initialControllingDrow.staticSortString = createSortStringAtServer("1");
    initialControllingDrow.primaryId = Random.id();
    initialControllingDrow.primaryLabel = "dRow";
    initialControllingDrow.secondaryId = Random.id();
@@ -40,7 +39,7 @@ const createInitialPrincipalLabelDrow = (initialControllingDrow) => {
    initialPrincipalLabelDrow.sequenceId = "2";
    initialPrincipalLabelDrow.staticDstring = "1.1";
    initialPrincipalLabelDrow.staticIndentLevel = "1";
-   initialPrincipalLabelDrow.staticSortString = createSortString(initialPrincipalLabelDrow.staticDstring);
+   initialPrincipalLabelDrow.staticSortString = createSortStringAtServer(initialPrincipalLabelDrow.staticDstring);
    initialPrincipalLabelDrow.primaryId = initialControllingDrow.dRowId;
    initialPrincipalLabelDrow.primaryLabel = "drow";
    initialPrincipalLabelDrow.secondaryId = Random.id();
@@ -59,7 +58,7 @@ const createInitialItemTypeDrow = (initialControllingDrow) => {
    initialItemTypeDrow.sequenceId = "3";
    initialItemTypeDrow.staticDstring = "1.2";
    initialItemTypeDrow.staticIndentLevel = "1";
-   initialItemTypeDrow.staticSortString = createSortString(initialItemTypeDrow.staticDstring);;
+   initialItemTypeDrow.staticSortString = createSortStringAtServer(initialItemTypeDrow.staticDstring);;
    initialItemTypeDrow.primaryId = initialControllingDrow.dRowId;
    initialItemTypeDrow.primaryLabel = "drow";
    initialItemTypeDrow.secondaryId = Random.id();

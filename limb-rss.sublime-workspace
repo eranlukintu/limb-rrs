@@ -519,6 +519,15 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "imports/ui/components/modeling-components/raw-model/rawModelComponent.js",
+			"settings":
+			{
+				"buffer_size": 673,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -616,15 +625,24 @@
 		"/C/Users/Eran/Meteor/limb-rrs/imports",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/collections",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/publications",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-functions",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-methods",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/functions",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/functions/dot-functions",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/functions/dot-functions/dot-item-functions",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/functions/ui-functions",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/functions/ui-functions/menu-functions",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/modules",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/startup",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/startup/server",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/menu-components",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/modeling-components",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/modeling-components/raw-model",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/outline-components",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/containers",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/layouts",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages",
@@ -633,22 +651,30 @@
 	],
 	"file_history":
 	[
-		"/C/Users/Eran/Meteor/limb-rrs/imports/functions/ui-functions/menu-functions/calculateNextMenu.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/menu-components/indexMenu.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/layouts/App.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/modeling-components/rawModelComponent.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/menu-components/modelingMenu.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/menu-components/modelingWorkPageMenu.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/modelingWorkPage.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/functions/dot-functions/dot-item-functions/createRootItem.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-functions/createRootItem.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-functions/createSortStringAtServer.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/startup/server/api.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-methods/createRootMethod.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-functions/getDotRowsLength.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/menu-components/rawModelingMenu.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/modeling-components/rawModelComponent.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/modelingWorkPage.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/outline-components/horizontalBarComponent.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/layouts/App.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/AppNavigation.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/AuthenticatedNavigation.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/menu-components/menuMaster.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/menu-components/indexMenu.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/menu-components/unInitialisedIndexMenu.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/menu-components/preInitialisedMenu.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/menu-components/initialisedIndexMenu.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/functions/ui-functions/menu-functions/calculateNextMenu.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/menu-components/modelingMenu.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/menu-components/modelingWorkPageMenu.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/functions/ui-functions/menu-functions/calculateNextPage.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/functions/dot-functions/dotStringFunctions.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/functions/dot-functions/dot-item-functions/createRootItem.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/startup/server/fixtures.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/startup/server/api.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/collections/drows.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/publications/publications.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/ModelingPage.js",
@@ -752,15 +778,7 @@
 		"/C/Users/Eran/Meteor/limbx/imports/ui/layouts/core-layouts/smallPortraitScreen.js",
 		"/C/Users/Eran/Meteor/limbx/imports/ui/components/notReady.js",
 		"/C/Users/Eran/Meteor/limbx/imports/ui/components/control-components/topBar.js",
-		"/C/Users/Eran/Meteor/limbx/imports/ui/components/stacks/singlePortraitStack.js",
-		"/C/Users/Eran/Meteor/limbx/imports/ui/components/segments/singlePortraitSegment.js",
-		"/C/Users/Eran/Meteor/limbx/imports/ui/components/segments/smallPortraitSegmentText.js",
-		"/C/Users/Eran/Meteor/limbx/imports/ui/layouts/secondary-layouts/smallLandscapeStackLayout.js",
-		"/C/Users/Eran/Meteor/limbx/imports/temp-data/combinedSummaryData.js",
-		"/C/Users/Eran/Meteor/limbx/imports/temp-data/attractivenessSummaryData.js",
-		"/C/Users/Eran/Meteor/limbx/imports/ui/components/App.jsx",
-		"/C/Users/Eran/Meteor/limbx/client/main.html",
-		"/C/Users/Eran/Meteor/limbx/imports/ui/layouts/core-layouts/smallLandscapeScreen.js"
+		"/C/Users/Eran/Meteor/limbx/imports/ui/components/stacks/singlePortraitStack.js"
 	],
 	"find":
 	{
@@ -781,6 +799,10 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"tdi",
+			"addRootItem",
+			"test",
+			"createSortString",
 			"currentPageName",
 			"calculateNextPageName",
 			"attractivenessList",
@@ -904,11 +926,7 @@
 			"parent",
 			"displayLabel",
 			"stakeholder",
-			"stakeholders",
-			"stakeholder",
-			"stakeholders",
-			"TLI_s",
-			"random"
+			"stakeholders"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -959,8 +977,39 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "imports/ui/components/modeling-components/raw-model/rawModelComponent.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 673,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								673,
+								673
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -1053,7 +1102,7 @@
 	"show_open_files": true,
 	"show_tabs": false,
 	"side_bar_visible": true,
-	"side_bar_width": 460.0,
+	"side_bar_width": 448.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

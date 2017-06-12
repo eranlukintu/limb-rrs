@@ -11,7 +11,8 @@ const renderNavigation = (hasUser,
                           setMenuName, 
                           calculateNextPageAndMenu,
                           calculateNextPage,
-                          calculateNextMenu) => (
+                          calculateNextMenu,
+                          isInitialised) => (
   hasUser ? <AuthenticatedNavigation
     currentPage={ currentPage }
     setCurrentPage={ setCurrentPage }
@@ -31,7 +32,7 @@ const AppNavigation = ({ hasUser,
                         calculateNextPageAndMenu, 
                         calculateNextPage,
                         calculateNextMenu,
-                        modeling}) => (
+                        isInitialised}) => (
   <Navbar>
     <Navbar.Header>
       <Navbar.Brand>
@@ -47,7 +48,7 @@ const AppNavigation = ({ hasUser,
                         calculateNextPageAndMenu, 
                         calculateNextPage,
                         calculateNextMenu,
-                        modeling) }
+                        isInitialised) }
     </Navbar.Collapse>
   </Navbar>
 );

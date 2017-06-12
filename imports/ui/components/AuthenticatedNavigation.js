@@ -20,7 +20,7 @@ const AuthenticatedNavigation = ({ currentPage,
                                   calculateNextPageAndMenu, 
                                   calculateNextPage,
                                   calculateNextMenu,
-                                  modeling}) => (
+                                  isInitialised}) => (
   <div>
     <Nav>
       < MenuMaster 
@@ -31,7 +31,7 @@ const AuthenticatedNavigation = ({ currentPage,
           calculateNextPageAndMenu={calculateNextPageAndMenu}
           calculateNextPage={calculateNextPage}
           calculateNextMenu={calculateNextMenu}
-          modeling/>
+          isInitialised/>
     </Nav>
     <Nav pullRight>
       <NavDropdown eventKey={ 3 } title={ userName() } id="account-dropdown">

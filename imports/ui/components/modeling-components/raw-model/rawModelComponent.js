@@ -1,11 +1,19 @@
 import React from "react";
+import { ListGroup, ListGroupItem} from 'react-bootstrap';
 import { composeWithTracker } from 'react-komposer';
-import { DOTROWS } from "../../../api/collections/drows.js";
-import Loading from "../Loading.js";
+import { DOTROWS } from "../../../../api/collections/drows.js";
+import Loading from "../../Loading.js";
+import { RawDataRow } from "./rawDataRow.js";
 
 const RawModelComponent = function(props) {
-	// console.log(props);
-	return <h3>Raw model</h3>
+	return <div>
+		<h3>Raw model</h3>
+		<ListGroup>
+        {rawList.map((rr) => (
+            <RawDataRow rawDataRow = {rr} key = {rr._id}/>
+          ))};    
+    </ListGroup>
+	</div>
 }
 
 let rawList;

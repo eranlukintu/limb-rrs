@@ -1,5 +1,5 @@
 import React from "react";
-import { IndexMenu } from "./indexMenu.js";
+import IndexMenu from "./indexMenu.js";
 import { ModelingMenu} from "./modelingMenu.js";
 import { ModelingWorkPageMenu } from "./modelingWorkPageMenu.js";
 import { RawModelingMenu } from "./rawModelingMenu.js";
@@ -15,7 +15,8 @@ export const MenuMaster = (props) => {
 				setMenuName={props.setMenuName}
 				calculateNextPageAndMenu={props.calculateNextPageAndMenu}
 				calculateNextPage={props.calculateNextPage}
-				calculateNextMenu={props.calculateNextMenu}/>
+				calculateNextMenu={props.calculateNextMenu}
+				isInitialised={props.isInitialised}/>
 			break;
 
 		case "modelingMenu": 
@@ -27,7 +28,7 @@ export const MenuMaster = (props) => {
 				calculateNextPageAndMenu={props.calculateNextPageAndMenu}
 				calculateNextPage={props.calculateNextPage}
 				calculateNextMenu={props.calculateNextMenu}
-				modeling={props.modeling}/>
+				isInitialised={props.isInitialised}/>
 			break;
 
 		case "modelingWorkPageMenu": 
@@ -39,7 +40,7 @@ export const MenuMaster = (props) => {
 				calculateNextPageAndMenu={props.calculateNextPageAndMenu}
 				calculateNextPage={props.calculateNextPage}
 				calculateNextMenu={props.calculateNextMenu}
-				modeling={props.modeling}/>
+				isInitialised={props.isInitialised}/>
 			break;
 
 		case "rawModelingMenu": 
@@ -51,7 +52,7 @@ export const MenuMaster = (props) => {
 				calculateNextPageAndMenu={props.calculateNextPageAndMenu}
 				calculateNextPage={props.calculateNextPage}
 				calculateNextMenu={props.calculateNextMenu}
-				modeling={props.modeling}/>
+				isInitialised={props.isInitialised}/>
 			break;
 
 		default: 
@@ -63,6 +64,6 @@ export const MenuMaster = (props) => {
 				calculateNextPageAndMenu={props.calculateNextPageAndMenu}
 				calculateNextPage={props.calculateNextPage}
 				calculateNextMenu={props.calculateNextMenu}
-				modeling={props.modeling}/>
+				isInitialised={props.isInitialised}/>
 	}
 }

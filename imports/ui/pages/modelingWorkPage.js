@@ -1,7 +1,7 @@
 import React from "react";
 import {Tabs, Tab, Navbar } from "react-bootstrap";
 import { BusinessModelComponent } from "../components/modeling-components/businessModelComponent.js";
-import RawModelComponent from "../components/modeling-components/rawModelComponent.js";
+import RawModelComponent from "../components/modeling-components/raw-model/rawModelComponent.js";
 import { setMenuName } from "../../functions/ui-functions/menu-functions/menuFunctions.js";
 
 export class ModelingWorkPage extends React.Component {
