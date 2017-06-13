@@ -9,6 +9,7 @@ import { ModelingWorkPage } from '../pages/modelingWorkPage.js';
 import RawModelComponent from '../components/modeling-components/raw-model/rawModelComponent.js';
 import { calculateNextPage } from '../../functions/ui-functions/menu-functions/calculateNextPage.js';
 import { calculateNextMenu } from '../../functions/ui-functions/menu-functions/calculateNextMenu.js';
+import { calculateIndentLevel } from '../../functions/dot-functions/dotRowFunctions';
 import { DOTROWS } from '../../api/collections/drows.js';
 import { Loading } from '../components/Loading.js';
 
@@ -87,8 +88,7 @@ export default class App extends React.Component {
             React.cloneElement(this.currentPage(), {
               setCurrentPage: this.setCurrentPage,
               currentPage: this.state.currentPage,
-              menuName: this.state.menuName,
-              setMenuName: this.setMenuName,
+              calculateIndentLevel: calculateIndentLevel,
               ...this.state.currentPageProps,
             }) : children
           }

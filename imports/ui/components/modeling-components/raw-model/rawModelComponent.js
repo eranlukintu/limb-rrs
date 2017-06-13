@@ -5,12 +5,13 @@ import { DOTROWS } from "../../../../api/collections/drows.js";
 import Loading from "../../Loading.js";
 import { RawDataRow } from "./rawDataRow.js";
 
+
 const RawModelComponent = function(props) {
 	return <div>
 		<h3>Raw model</h3>
 		<ListGroup>
         {rawList.map((rr) => (
-            <RawDataRow rawDataRow = {rr} key = {rr._id}/>
+            <RawDataRow rawDataRow = {rr} key = {rr._id} calculateIndentLevel={props.calculateIndentLevel}/>
           ))};    
     </ListGroup>
 	</div>
