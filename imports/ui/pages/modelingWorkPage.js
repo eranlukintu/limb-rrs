@@ -1,6 +1,6 @@
 import React from "react";
 import {Tabs, Tab, Navbar } from "react-bootstrap";
-import { BusinessModelComponent } from "../components/modeling-components/businessModelComponent.js";
+import { BusinessModelComponent } from "../components/modeling-components/business-model/businessModelComponent.js";
 import RawModelComponent from "../components/modeling-components/raw-model/rawModelComponent.js";
 import { setMenuName } from "../../functions/ui-functions/menu-functions/menuFunctions.js";
 

@@ -3,6 +3,7 @@ import IndexMenu from "./indexMenu.js";
 import { ModelingMenu} from "./modelingMenu.js";
 import { ModelingWorkPageMenu } from "./modelingWorkPageMenu.js";
 import { RawModelingMenu } from "./rawModelingMenu.js";
+import { BusinessModelingMenu } from "./businessModelingMenu.js";
 
 export const MenuMaster = (props) => {
 
@@ -33,6 +34,18 @@ export const MenuMaster = (props) => {
 
 		case "modelingWorkPageMenu": 
 			return <ModelingWorkPageMenu 
+				currentPage={props.currentPage}
+				setCurrentPage={props.setCurrentPage} 
+				menuName={props.menuName} 
+				setMenuName={props.setMenuName}
+				calculateNextPageAndMenu={props.calculateNextPageAndMenu}
+				calculateNextPage={props.calculateNextPage}
+				calculateNextMenu={props.calculateNextMenu}
+				isInitialised={props.isInitialised}/>
+			break;
+
+		case "businessModelingMenu": 
+			return <BusinessModelingMenu 
 				currentPage={props.currentPage}
 				setCurrentPage={props.setCurrentPage} 
 				menuName={props.menuName} 

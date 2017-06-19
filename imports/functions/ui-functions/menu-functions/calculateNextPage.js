@@ -14,8 +14,20 @@ export const calculateNextPage = function(key, currentPage) {
 				case "index": nextPage = "index";
 				break;
 
+				case "businessModelComponent": nextPage = "businessModelComponent";
+				break;
+
 				case "rawModelComponent": nextPage = "rawModelComponent";
 				break;
+			}
+
+		case "businessModelComponent":
+			switch(key) {
+				case "index": nextPage = "index";
+				break;
+
+				case "back": nextPage = "modeling";
+			  	break;
 			}
 
 		case "rawModelComponent":

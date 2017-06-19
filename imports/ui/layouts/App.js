@@ -6,6 +6,7 @@ import { PreInitialisedMenu } from '../components/menu-components/preInitialised
 import Index from '../pages/Index.js';
 import { ModelingPage } from '../pages/ModelingPage.js';
 import { ModelingWorkPage } from '../pages/modelingWorkPage.js';
+import BusinessModelComponent from '../components/modeling-components/business-model/businessModelComponent.js';
 import RawModelComponent from '../components/modeling-components/raw-model/rawModelComponent.js';
 import { calculateNextPage } from '../../functions/ui-functions/menu-functions/calculateNextPage.js';
 import { calculateNextMenu } from '../../functions/ui-functions/menu-functions/calculateNextMenu.js';
@@ -49,6 +50,7 @@ export default class App extends React.Component {
     return {
       index: <Index />,
       modeling: <ModelingPage />,
+      businessModelComponent: <BusinessModelComponent />,
       rawModelComponent: <RawModelComponent />,
     }[this.state.currentPage];
   }

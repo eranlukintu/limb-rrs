@@ -19,9 +19,24 @@ export const calculateNextMenu = function(key, currentPage) {
 				case "index": return "indexMenu";
 				break;
 
+				case "businessModelComponent": 
+				console.log(key, currentPage);
+				return "businessModelingMenu";
+				break;
+
 				case "rawModelComponent": return "rawModelingMenu";
 				break;
 			}
+			break;
+
+		case "businessModelComponent":
+			switch(key) {
+				case "index": return "indexMenu";
+				break;
+
+				case "back": return "modelingMenu";
+				break;
+				}
 			break;
 
 		case "rawModelComponent":
@@ -32,7 +47,7 @@ export const calculateNextMenu = function(key, currentPage) {
 				case "back": return "modelingMenu";
 					break;
 				}
-				break;
+			break;
 
 		default: return "NA";
 	}
