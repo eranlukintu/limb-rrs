@@ -12,16 +12,19 @@ export const createDynamicList = new ValidatedMethod({
 
   }).validator(),
   run({}) {
-    const length = DOTROWS.find().count();
+    const length = DOTROWS.find().count();  
+    const familyHeadDstring = "1";
     if(length > 0) {
       DYNAMICROWS.remove({});
 
-      const dynamicArray = createDynamicArray();
-      dynamicArray.forEach(function(si) {
-        let di={};
-        di.name = si.tertiaryLabel;
-        DYNAMICROWS.insert(di);
-      });
+      var familyHeadDrow = DOTROWS.findOne({staticDstring: familyHeadDstring});
+
+      const dynamicArray = createDynamicArray(familyHeadDrow);
+      // dynamicArray.forEach(function(si) {
+      //   let di={};
+      //   di.name = si.tertiaryLabel;
+      //   DYNAMICROWS.insert(di);
+      // });
 
     }else {
       console.log("No static array")

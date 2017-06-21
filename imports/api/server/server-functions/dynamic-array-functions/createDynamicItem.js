@@ -8,14 +8,14 @@ export const createDynamicItem = function(sourceItem) {
   dynamicItem.dynamicIndentLevel = sourceItem.dynamicIndentLevel;
   dynamicItem.pLabel = sourceItem.pLabel;
   dynamicItem.parentId = sourceItem.parentId;
-  dynamicItem.indentLevelClass = sourceItem.indentLevelClass;
+  // dynamicItem.indentLevelClass = sourceItem.indentLevelClass;
   dynamicItem.elementType = sourceItem.elementType;
-  dynamicItem.relationshipSubType = sourceItem.relationshipSubType;
+  // dynamicItem.relationshipSubType = sourceItem.relationshipSubType;
   dynamicItem.crossReferenceId = sourceItem.crossReferenceId;
   dynamicItem.observations = sourceItem.observations;
   dynamicItem.created = sourceItem.created;
-  dynamicItem.selectionClass = sourceItem.selectionClass;
-  dynamicItem.linkClass = sourceItem.linkClass;
+  // dynamicItem.selectionClass = sourceItem.selectionClass;
+  // dynamicItem.linkClass = sourceItem.linkClass;
   // console.log(dynamicItem);
   return dynamicItem;
 }
