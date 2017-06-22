@@ -28,6 +28,9 @@ export const calculateNextPage = function(key, currentPage) {
 
 				case "back": nextPage = "modeling";
 			  	break;
+
+			  	case "actorModelComponent": nextPage = "actorModelComponent";
+			  	break;
 			}
 
 		case "rawModelComponent":
@@ -37,6 +40,16 @@ export const calculateNextPage = function(key, currentPage) {
 
 				case "back": nextPage = "modeling";
 			  	break;
+			}
+
+		case "actorModelComponent":
+			switch(key) {
+				case "index": nextPage = "index";
+				break;
+
+				case "back": nextPage = "businessModelComponent";
+			  	break;
+
 			}
     }
 

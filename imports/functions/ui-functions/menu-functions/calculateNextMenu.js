@@ -47,6 +47,16 @@ export const calculateNextMenu = function(key, currentPage) {
 				}
 			break;
 
+		case "actorModelComponent":
+			switch(key) {
+				case "index": return "indexMenu";
+				break;
+
+				case "back": return "modelingMenu";
+					break;
+				}
+			break;
+
 		default: return "NA";
 	}
 }
