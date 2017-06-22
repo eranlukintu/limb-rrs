@@ -23,11 +23,13 @@ export default class App extends React.Component {
       currentPageProps: null,
       menuName: 'indexMenu',
       isInitialised: false,
+      controllingStaticDrowId: null,
     };
 
     this.setCurrentPage = this.setCurrentPage.bind(this);
     this.setMenuName = this.setMenuName.bind(this);
     this.calculateNextPageAndMenu = this.calculateNextPageAndMenu.bind(this);
+    this.setControllingStaticDrowId = this.setControllingStaticDrowId.bind(this);
   }
 
   setCurrentPage(event, { page, props }) {
@@ -44,6 +46,14 @@ export default class App extends React.Component {
 
   setMenuName(menuName) {
     this.setState({menuName: menuName});
+  }
+
+  setControllingStaticDrowId(staticDrowId) {
+    if(this.state.controllingStaticDrowId === staticDrowId) {
+      this.setState({controllingStaticDrowId: null});
+    }else {
+      this.setState({controllingStaticDrowId: staticDrowId});
+    }
   }
 
   currentPage() {
@@ -90,7 +100,9 @@ export default class App extends React.Component {
             React.cloneElement(this.currentPage(), {
               setCurrentPage: this.setCurrentPage,
               currentPage: this.state.currentPage,
+              controllingStaticDrowId: this.state.controllingStaticDrowId,
               calculateIndentLevel: calculateIndentLevel,
+              setControllingStaticDrowId: this.setControllingStaticDrowId,
               ...this.state.currentPageProps,
             }) : children
           }

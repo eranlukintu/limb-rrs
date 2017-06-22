@@ -18,13 +18,12 @@ export const createDynamicList = new ValidatedMethod({
       DYNAMICROWS.remove({});
 
       var familyHeadDrow = DOTROWS.findOne({staticDstring: familyHeadDstring});
+      console.log(familyHeadDrow);
 
       const dynamicArray = createDynamicArray(familyHeadDrow);
-      // dynamicArray.forEach(function(si) {
-      //   let di={};
-      //   di.name = si.tertiaryLabel;
-      //   DYNAMICROWS.insert(di);
-      // });
+      dynamicArray.forEach(function(si) {
+        DYNAMICROWS.insert(si);
+      });
 
     }else {
       console.log("No static array")

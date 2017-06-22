@@ -7,7 +7,7 @@ import Loading from "../Loading.js";
 const IndexMenu = function(props) {
 
 	handleSelect = (eventKey) => {
-		console.log(props.isInitialised);
+		// console.log(props.isInitialised);
 		switch(eventKey) {
 			case "createRoot": 
 					Meteor.call("addRootItem", {});

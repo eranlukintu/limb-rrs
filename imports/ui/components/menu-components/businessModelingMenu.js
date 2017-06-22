@@ -4,9 +4,7 @@ import { Meteor } from "meteor/meteor";
 import { DYNAMICROWS } from "../../../api/collections/dynamicRows.js";
 
 export const BusinessModelingMenu = function(props) {
-
-	console.log(props);
-
+	
 	handleSelect = (eventKey) => {
 		switch(eventKey) {
 			case "createDynamicList": 
@@ -14,7 +12,7 @@ export const BusinessModelingMenu = function(props) {
 			break;
 
 			case "index":
-			case "back": console.log(eventKey);
+			case "back": 
 				const currentPage = props.currentPage;
 				const currentMenu = props.menuName;
 				const calculateNextPage = props.calculateNextPage;

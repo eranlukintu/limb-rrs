@@ -1,0 +1,7 @@
+.icon-checkbox-unchecked:before {
+  content: "\ea53";
+}
+
+.icon-checkbox-checked:before {
+  content: "\ea52";
+}

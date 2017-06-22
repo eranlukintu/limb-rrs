@@ -19,9 +19,7 @@ export const calculateNextMenu = function(key, currentPage) {
 				case "index": return "indexMenu";
 				break;
 
-				case "businessModelComponent": 
-				console.log(key, currentPage);
-				return "businessModelingMenu";
+				case "businessModelComponent": return "businessModelingMenu";
 				break;
 
 				case "rawModelComponent": return "rawModelingMenu";
