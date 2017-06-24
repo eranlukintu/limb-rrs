@@ -26,7 +26,7 @@ export const createDynamicList = new ValidatedMethod({
       });
 
     }else {
-      console.log("No static array")
+      console.log("No static array");
     }    
   },
 });

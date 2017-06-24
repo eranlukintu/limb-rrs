@@ -8,7 +8,7 @@ import { ModelingPage } from '../pages/ModelingPage.js';
 import { ModelingWorkPage } from '../pages/modelingWorkPage.js';
 import BusinessModelComponent from '../components/modeling-components/business-model/businessModelComponent.js';
 import RawModelComponent from '../components/modeling-components/raw-model/rawModelComponent.js';
-import {ActorModelComponent} from '../components/modeling-components/actor-model/actorModelComponent.js';
+import ActorModelComponent from '../components/modeling-components/actor-model/actorModelComponent.js';
 import { calculateNextPage } from '../../functions/ui-functions/menu-functions/calculateNextPage.js';
 import { calculateNextMenu } from '../../functions/ui-functions/menu-functions/calculateNextMenu.js';
 import { calculateIndentLevel } from '../../functions/dot-functions/dotRowFunctions';

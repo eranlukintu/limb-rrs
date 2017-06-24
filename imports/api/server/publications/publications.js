@@ -1,5 +1,6 @@
 import { DOTROWS } from "../../collections/drows.js";
 import { DYNAMICROWS } from '../../collections/dynamicRows.js';
+import { ACTORS } from '../../collections/actors.js';
 import { Meteor } from 'meteor/meteor';
 
 Meteor.publish("populateRawModel", function() {
@@ -10,3 +11,6 @@ Meteor.publish("populateBusinessModel", function() {
 	return DYNAMICROWS.find({});
 });
 
+Meteor.publish("populateActorModel", function() {
+	return ACTORS.find({});
+});

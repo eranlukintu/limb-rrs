@@ -34,6 +34,10 @@ export const calculateNextMenu = function(key, currentPage) {
 
 				case "back": return "modelingMenu";
 				break;
+
+				case "actorModelComponent": return "actorModelingMenu";
+				break;
+
 				}
 			break;
 
@@ -52,7 +56,7 @@ export const calculateNextMenu = function(key, currentPage) {
 				case "index": return "indexMenu";
 				break;
 
-				case "back": return "modelingMenu";
+				case "back": return "businessModelingMenu";
 					break;
 				}
 			break;

@@ -7,8 +7,8 @@ export const ActorModelingMenu = function(props) {
 	
 	handleSelect = (eventKey) => {
 		switch(eventKey) {
-			case "createDynamicList": 
-				Meteor.call("createDynamicList", {});
+			case "refreshActorList": 
+				Meteor.call("createActorList", {});
 			break;
 
 			case "index":
@@ -34,6 +34,8 @@ export const ActorModelingMenu = function(props) {
 
 	return (<NavDropdown title="Actions" onSelect={this.handleSelect} id="modelingMenuDropdown">
 		<MenuItem eventKey="index">Go to index page</MenuItem>
+		<MenuItem eventKey="back">Back to business model</MenuItem>
+		<MenuItem eventKey="refreshActorList">Refresh actor list</MenuItem>
 		
 
 	</NavDropdown>)
