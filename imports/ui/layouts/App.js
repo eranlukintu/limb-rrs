@@ -9,6 +9,7 @@ import { ModelingWorkPage } from '../pages/modelingWorkPage.js';
 import BusinessModelComponent from '../components/modeling-components/business-model/businessModelComponent.js';
 import RawModelComponent from '../components/modeling-components/raw-model/rawModelComponent.js';
 import ActorModelComponent from '../components/modeling-components/actor-model/actorModelComponent.js';
+import { CreateNewActorComponent } from '../components/modeling-components/actor-model/createNewActorComponent.js';
 import { calculateNextPage } from '../../functions/ui-functions/menu-functions/calculateNextPage.js';
 import { calculateNextMenu } from '../../functions/ui-functions/menu-functions/calculateNextMenu.js';
 import { calculateIndentLevel } from '../../functions/dot-functions/dotRowFunctions';
@@ -25,12 +26,16 @@ export default class App extends React.Component {
       menuName: 'indexMenu',
       isInitialised: false,
       controllingStaticDrowId: null,
+      controllingActorDrowId: null,
+      newActorName: null,
     };
 
     this.setCurrentPage = this.setCurrentPage.bind(this);
     this.setMenuName = this.setMenuName.bind(this);
     this.calculateNextPageAndMenu = this.calculateNextPageAndMenu.bind(this);
     this.setControllingStaticDrowId = this.setControllingStaticDrowId.bind(this);
+    this.setControllingActorDrowId = this.setControllingActorDrowId.bind(this);
+    this.setNewActorName = this.setNewActorName.bind(this);
   }
 
   setCurrentPage(event, { page, props }) {
@@ -57,6 +62,18 @@ export default class App extends React.Component {
     }
   }
 
+  setControllingActorDrowId(staticActorDrowId) {
+    if(this.state.controllingActorDrowId === staticActorDrowId) {
+      this.setState({controllingActorDrowId: null});
+    }else {
+      this.setState({controllingActorDrowId: staticActorDrowId});
+    }
+  }
+
+  setNewActorName(newActorName) {
+    this.setState({newActorName: newActorName});
+  }
+
   currentPage() {
     return {
       index: <Index />,
@@ -64,6 +81,7 @@ export default class App extends React.Component {
       businessModelComponent: <BusinessModelComponent />,
       rawModelComponent: <RawModelComponent />,
       actorModelComponent: <ActorModelComponent />,
+      createNewActorComponent: <CreateNewActorComponent />,
     }[this.state.currentPage];
   }
 
@@ -105,6 +123,8 @@ export default class App extends React.Component {
               controllingStaticDrowId: this.state.controllingStaticDrowId,
               calculateIndentLevel: calculateIndentLevel,
               setControllingStaticDrowId: this.setControllingStaticDrowId,
+              setControllingActorDrowId: this.setControllingActorDrowId,
+              setNewActorName: this.setNewActorName,
               ...this.state.currentPageProps,
             }) : children
           }

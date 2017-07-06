@@ -1,3 +1,4 @@
+
 export const calculateIndentLevelAtServer = function(dString) {
     let dStringSegments = dString.split(".");
     let segmentNumber = dStringSegments.length;

@@ -33,7 +33,7 @@ export const RawModelingMenu = function(props) {
 
 	return (<NavDropdown title="Actions" onSelect={this.handleSelect} id="modelingMenuDropdown">
 		<MenuItem eventKey="index">Go to index page</MenuItem>
-		<MenuItem eventKey="back">Go back to modeling page</MenuItem>
+		<MenuItem eventKey="back">Go back to business modeling page</MenuItem>
 
 	</NavDropdown>)
 }

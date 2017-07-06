@@ -46,7 +46,7 @@ export const calculateNextMenu = function(key, currentPage) {
 				case "index": return "indexMenu";
 				break;
 
-				case "back": return "modelingMenu";
+				case "back": return "businessModelingMenu";
 					break;
 				}
 			break;
@@ -57,8 +57,22 @@ export const calculateNextMenu = function(key, currentPage) {
 				break;
 
 				case "back": return "businessModelingMenu";
-					break;
-				}
+				break;
+
+				case "createNewActor": return "createNewActorMenu";
+				break;
+
+				}				
+			break;
+
+		case "createNewActorComponent":
+			switch(key) {
+				case "index": return "indexMenu";
+				break;
+
+				case "back": return "actorModelingMenu";
+				break;
+				}				
 			break;
 
 		default: return "NA";

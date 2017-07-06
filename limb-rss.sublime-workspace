@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"setControlling",
+				"setControllingActorDrowId"
+			],
+			[
 				"calcula",
 				"calculateIndentLevelAtServer"
 			],
@@ -510,89 +514,16 @@
 			[
 				"pare",
 				"parentStaticIndentLevel"
-			],
-			[
-				"source",
-				"sourceDrow"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "imports/api/server/server-functions/dynamic-array-functions/createDynamicArray.js",
+			"file": "imports/ui/components/menu-components/businessModelingMenu.js",
 			"settings":
 			{
-				"buffer_size": 2036,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "imports/api/server/server-functions/dynamic-array-functions/createChildDynamicItems.js",
-			"settings":
-			{
-				"buffer_size": 2359,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "imports/ui/components/modeling-components/business-model/businessDataRow.js",
-			"settings":
-			{
-				"buffer_size": 1201,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "imports/ui/components/modeling-components/general-modeling-components/generalDataRow.js",
-			"settings":
-			{
-				"buffer_size": 1128,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "client/stylesheets/simple-styles/simpleStyles.css",
-			"settings":
-			{
-				"buffer_size": 110,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "imports/ui/components/outline-components/checkBoxUnselected.js",
-			"settings":
-			{
-				"buffer_size": 300,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "imports/ui/components/outline-components/checkBoxSelected.js",
-			"settings":
-			{
-				"buffer_size": 367,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "imports/ui/layouts/App.js",
-			"settings":
-			{
-				"buffer_size": 4127,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "imports/ui/components/menu-components/indexMenu.js",
-			"settings":
-			{
-				"buffer_size": 1759,
+				"buffer_size": 1392,
 				"line_ending": "Windows"
 			}
 		},
@@ -600,25 +531,16 @@
 			"file": "imports/functions/ui-functions/menu-functions/calculateNextMenu.js",
 			"settings":
 			{
-				"buffer_size": 1004,
+				"buffer_size": 1343,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "imports/ui/components/modeling-components/actor-model/actorModelComponent.js",
+			"file": "imports/ui/components/menu-components/menuMaster.js",
 			"settings":
 			{
-				"buffer_size": 1131,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "imports/ui/components/menu-components/businessModelingMenu.js",
-			"settings":
-			{
-				"buffer_size": 1392,
+				"buffer_size": 3770,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -627,7 +549,16 @@
 			"file": "imports/functions/ui-functions/menu-functions/calculateNextPage.js",
 			"settings":
 			{
-				"buffer_size": 1051,
+				"buffer_size": 1329,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "imports/ui/components/menu-components/rawModelingMenu.js",
+			"settings":
+			{
+				"buffer_size": 1165,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -636,7 +567,100 @@
 			"file": "imports/ui/components/menu-components/actorModelingMenu.js",
 			"settings":
 			{
-				"buffer_size": 1290,
+				"buffer_size": 1381,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "imports/ui/components/menu-components/createNewActorMenu.js",
+			"settings":
+			{
+				"buffer_size": 1175,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "imports/startup/server/api.js",
+			"settings":
+			{
+				"buffer_size": 696,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "imports/api/server/server-methods/createActorArrayMethod.js",
+			"settings":
+			{
+				"buffer_size": 1345,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "imports/api/server/server-methods/createNewActorMethod.js",
+			"settings":
+			{
+				"buffer_size": 508,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "imports/api/server/server-functions/dot-functions/createDotRow.js",
+			"settings":
+			{
+				"buffer_size": 605,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "imports/api/server/server-functions/dot-functions/createDstringSet.js",
+			"settings":
+			{
+				"buffer_size": 587,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "imports/api/server/server-functions/dot-functions/findLastTopLevelDstring.js",
+			"settings":
+			{
+				"buffer_size": 497,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "imports/api/server/server-functions/dot-functions/calculateIndentLevelAtServer.js",
+			"settings":
+			{
+				"buffer_size": 285,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "imports/ui/components/modeling-components/actor-model/actorModelComponent.js",
+			"settings":
+			{
+				"buffer_size": 1133,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "import React from 'react';\nimport { FormGroup, FormControl } from 'react-bootstrap';\nimport { Bert } from 'meteor/themeteorchef:bert';\n\nexport class CreateNewActorComponent extends React.Component {\n\n\thandleCreateActor(this) {\n\t\tconsole.log(this);\n\t\t// console.log(props);\n\t  // const target = event.target;\n\t  // const label = target.value.trim();\n\t  // console.log(props);\n\t  \n\n\t  // if (label !== '' && event.keyCode === 13) {\n\t\t\t// console.log(label);\n\n\t  // }\n\t}\n\n\trender() {\n\t\treturn (<div>\n\t\t\t\t<h3>Create new actor</h3>\n\t\t\t\t<FormGroup>\n\t\t\t\t\t<FormControl\n\t\t\t\t\ttype=\"text\"\n\t\t\t\t\tonKeyUp={ handleCreateActor.bind(this)}\n\t\t\t\t\tplaceholder=\"Type an actor name and press enter...\"\n\t\t\t\t\t/>\n\t\t\t\t</FormGroup>\n\t\t\t</div>\n\t\t)\n\t}\n\t\n}",
+			"file": "imports/ui/components/modeling-components/actor-model/createNewActorComponent.js",
+			"file_size": 758,
+			"file_write_time": 131438001760584093,
+			"settings":
+			{
+				"buffer_size": 725,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -646,60 +670,23 @@
 			"settings":
 			{
 				"buffer_size": 1140,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "imports/ui/components/modeling-components/general-modeling-components/generalDataRow.js",
+			"settings":
+			{
+				"buffer_size": 1184,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "imports/api/server/server-methods/createDynamicArrayMethod.js",
+			"file": "imports/ui/layouts/App.js",
 			"settings":
 			{
-				"buffer_size": 998,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "imports/api/server/server-methods/createActorArrayMethod.js",
-			"settings":
-			{
-				"buffer_size": 1257,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "imports/api/server/publications/publications.js",
-			"settings":
-			{
-				"buffer_size": 459,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "imports/api/collections/actors.js",
-			"settings":
-			{
-				"buffer_size": 132,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "imports/api/server/server-functions/dot-functions/findAttribute.js",
-			"settings":
-			{
-				"buffer_size": 892,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "imports/startup/server/api.js",
-			"settings":
-			{
-				"buffer_size": 477,
+				"buffer_size": 4976,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -798,8 +785,6 @@
 	"expanded_folders":
 	[
 		"/C/Users/Eran/Meteor/limb-rrs",
-		"/C/Users/Eran/Meteor/limb-rrs/client/stylesheets",
-		"/C/Users/Eran/Meteor/limb-rrs/client/stylesheets/module",
 		"/C/Users/Eran/Meteor/limb-rrs/imports",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/collections",
@@ -814,6 +799,7 @@
 		"/C/Users/Eran/Meteor/limb-rrs/imports/functions/ui-functions",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/functions/ui-functions/menu-functions",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/modules",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/startup",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/startup/server",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components",
@@ -822,6 +808,8 @@
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/modeling-components/actor-model",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/modeling-components/business-model",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/modeling-components/general-modeling-components",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/modeling-components/raw-model",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/navigation-components",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/containers",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/layouts",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages",
@@ -830,29 +818,40 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-functions/dynamic-array-functions/createDynamicArray.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-functions/dynamic-array-functions/createChildDynamicItems.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/modeling-components/business-model/businessDataRow.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/modeling-components/general-modeling-components/generalDataRow.js",
+		"/C/Users/Eran/Meteor/limb-rrs/client/stylesheets/simple-styles/simpleStyles.css",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/outline-components/checkBoxUnselected.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/outline-components/checkBoxSelected.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/layouts/App.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/menu-components/indexMenu.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/functions/ui-functions/menu-functions/calculateNextMenu.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/modeling-components/actor-model/actorModelComponent.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/menu-components/businessModelingMenu.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/functions/ui-functions/menu-functions/calculateNextPage.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/menu-components/actorModelingMenu.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/modeling-components/business-model/businessModelComponent.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-methods/createDynamicArrayMethod.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-methods/createActorArrayMethod.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/publications/publications.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/collections/actors.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-functions/dot-functions/findAttribute.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/startup/server/api.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-functions/dot-functions/findPrincipalLabel.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/pipelines/findMostRecentAttributePipeline.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-functions/dynamic-array-functions/createDynamicItem.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-functions/dot-functions/calculateIndentLevelAtServer.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/modeling-components/raw-model/rawModelComponent.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/layouts/App.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/modelingWorkPage.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/modeling-components/business-model/businessModelComponent.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/startup/server/api.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-methods/createDynamicArrayMethod.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/modeling-components/raw-model/rawDataRow.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-functions/dynamic-array-functions/findCrossReferences.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-functions/dynamic-array-functions/findIfIsExcluded.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-functions/dynamic-array-functions/createChildDynamicItems.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-functions/dynamic-array-functions/createDynamicArray.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/collections/dynamicRows.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/menu-components/modelingMenu.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/menu-components/businessModelingMenu.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/menu-components/menuMaster.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/functions/ui-functions/menu-functions/calculateNextMenu.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/functions/ui-functions/menu-functions/calculateNextPage.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/startup/server/browser-policy.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/publications/publications.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/outline-components/horizontalBarsComponent.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/outline-components/horizontalBarComponent.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/functions/dot-functions/dotRowFunctions.js",
@@ -867,7 +866,6 @@
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/modeling-components/rawModelComponent.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/AppNavigation.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/AuthenticatedNavigation.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/menu-components/indexMenu.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/menu-components/unInitialisedIndexMenu.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/menu-components/preInitialisedMenu.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/menu-components/initialisedIndexMenu.js",
@@ -947,17 +945,7 @@
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/temp-components/tempSAR.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/temp-components/tempSARSList.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/functions/temp-functions/fli-functions/fliFunctions.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/summary-pages/combinedSummaryPage.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/api/data/data-functions/createCombinedSummaryCollection.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/containers/summary-containers/combinedSummaryContrainer.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/api/data/summary-data/summary-data-publications.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/Index.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/startup/server/temp-data/attractivenessSummaryData.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/api/documents/methods.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/startup/server/temp-data/combinedSummaryData.js",
-		"/C/Users/Eran/Meteor/limbx/imports/ui/components/pageRenderer.js",
-		"/C/Users/Eran/Meteor/limbx/imports/ui/layouts/secondary-layouts/smallPortraitStackLayout.js",
-		"/C/Users/Eran/Meteor/limbx/imports/ui/components/control-components/small-portrait-controls/smallPortraitTopBar.js"
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/summary-pages/combinedSummaryPage.js"
 	],
 	"find":
 	{
@@ -978,6 +966,12 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"title",
+			"handleAddActor",
+			"handleInsertDocument",
+			"lastDstring",
+			"mainDrow",
+			"br",
 			"dynamicList",
 			"businessDataRow",
 			"rr",
@@ -1099,13 +1093,7 @@
 			"id",
 			"TempDataStructureItems",
 			"createStructureDataItems",
-			"structureDataItems",
-			"DSI_1",
-			"DSI_2",
-			"structureDataItem",
-			"createStructureDataItem",
-			"dataStructureItem",
-			"TempSARSList"
+			"structureDataItems"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1156,330 +1144,11 @@
 	"groups":
 	[
 		{
-			"selected": 10,
+			"selected": 15,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "imports/api/server/server-functions/dynamic-array-functions/createDynamicArray.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2036,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								534,
-								534
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "imports/api/server/server-functions/dynamic-array-functions/createChildDynamicItems.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2359,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								697,
-								697
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "imports/ui/components/modeling-components/business-model/businessDataRow.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1201,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								180
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "imports/ui/components/modeling-components/general-modeling-components/generalDataRow.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1128,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								658,
-								658
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 120.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "client/stylesheets/simple-styles/simpleStyles.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 110,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								110,
-								110
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 18,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "imports/ui/components/outline-components/checkBoxUnselected.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 300,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								300,
-								300
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 16,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "imports/ui/components/outline-components/checkBoxSelected.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 367,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								81,
-								365
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 17,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "imports/ui/layouts/App.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4127,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1407,
-								1407
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 120.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "imports/ui/components/menu-components/indexMenu.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1759,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								347,
-								347
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 19,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "imports/functions/ui-functions/menu-functions/calculateNextMenu.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1004,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								946,
-								946
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 480.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 15,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "imports/ui/components/modeling-components/actor-model/actorModelComponent.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1131,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1131,
-								1131
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
 					"file": "imports/ui/components/menu-components/businessModelingMenu.js",
 					"semi_transient": false,
 					"settings":
@@ -1491,66 +1160,8 @@
 						"selection":
 						[
 							[
-								456,
-								456
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 14,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "imports/functions/ui-functions/menu-functions/calculateNextPage.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1051,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								676,
-								676
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 240.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "imports/ui/components/menu-components/actorModelingMenu.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1290,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								370,
-								370
+								880,
+								880
 							]
 						],
 						"settings":
@@ -1566,108 +1177,194 @@
 					"type": "text"
 				},
 				{
-					"buffer": 14,
-					"file": "imports/ui/components/modeling-components/business-model/businessModelComponent.js",
+					"buffer": 1,
+					"file": "imports/functions/ui-functions/menu-functions/calculateNextMenu.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1140,
+						"buffer_size": 1343,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								412,
-								1140
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 15,
-					"file": "imports/api/server/server-methods/createDynamicArrayMethod.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 998,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								163,
-								998
+								859,
+								859
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 60.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 16,
-					"file": "imports/api/server/server-methods/createActorArrayMethod.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1257,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								894,
-								894
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 300.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 17,
-					"file": "imports/api/server/publications/publications.js",
+					"buffer": 2,
+					"file": "imports/ui/components/menu-components/menuMaster.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 459,
+						"buffer_size": 3770,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								454,
-								454
+								422,
+								422
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 18,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "imports/functions/ui-functions/menu-functions/calculateNextPage.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1329,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1123,
+								1123
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 300.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 17,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "imports/ui/components/menu-components/rawModelingMenu.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1165,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1120,
+								1120
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "imports/ui/components/menu-components/actorModelingMenu.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1381,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								334,
+								334
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 60.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "imports/ui/components/menu-components/createNewActorMenu.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1175,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								885,
+								885
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "imports/startup/server/api.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 696,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								625,
+								625
 							]
 						],
 						"settings":
@@ -1678,52 +1375,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
-					"buffer": 18,
-					"file": "imports/api/collections/actors.js",
+					"buffer": 8,
+					"file": "imports/api/server/server-methods/createActorArrayMethod.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 132,
+						"buffer_size": 1345,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								132,
-								132
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 19,
-					"file": "imports/api/server/server-functions/dot-functions/findAttribute.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 892,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								892,
-								892
+								982,
+								982
 							]
 						],
 						"settings":
@@ -1740,20 +1409,80 @@
 					"type": "text"
 				},
 				{
-					"buffer": 20,
-					"file": "imports/startup/server/api.js",
+					"buffer": 9,
+					"file": "imports/api/server/server-methods/createNewActorMethod.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 477,
+						"buffer_size": 508,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								475,
-								475
+								493,
+								493
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "imports/api/server/server-functions/dot-functions/createDotRow.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 605,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								60,
+								60
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "imports/api/server/server-functions/dot-functions/createDstringSet.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 587,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								584,
+								584
 							]
 						],
 						"settings":
@@ -1764,7 +1493,206 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 20,
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "imports/api/server/server-functions/dot-functions/findLastTopLevelDstring.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 497,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								497,
+								497
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "imports/api/server/server-functions/dot-functions/calculateIndentLevelAtServer.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 285,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "imports/ui/components/modeling-components/actor-model/actorModelComponent.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1133,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								800,
+								800
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "imports/ui/components/modeling-components/actor-model/createNewActorComponent.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 725,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								216,
+								216
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "imports/ui/components/modeling-components/business-model/businessModelComponent.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1140,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "imports/ui/components/modeling-components/general-modeling-components/generalDataRow.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1184,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								679,
+								679
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "imports/ui/layouts/App.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4976,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3457,
+								3457
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 360.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -1859,7 +1787,7 @@
 	"show_open_files": true,
 	"show_tabs": false,
 	"side_bar_visible": true,
-	"side_bar_width": 452.0,
+	"side_bar_width": 462.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

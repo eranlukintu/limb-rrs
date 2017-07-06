@@ -1,6 +1,7 @@
 export const calculateNextPage = function(key, currentPage) {
 
 	let nextPage = "NA";
+	console.log(currentPage);
 
     switch(currentPage) {
 		case "index":
@@ -50,6 +51,17 @@ export const calculateNextPage = function(key, currentPage) {
 				case "back": nextPage = "businessModelComponent";
 			  	break;
 
+			  	case "createNewActor": nextPage = "createNewActorComponent";
+			  	break;
+			}
+
+		case "createNewActorComponent":
+			switch(key) {
+				case "index": nextPage = "index";
+				break;
+
+				case "back": nextPage = "actorModelComponent";
+			  	break;
 			}
     }
 

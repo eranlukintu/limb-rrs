@@ -14,8 +14,9 @@ export const createActorList = new ValidatedMethod({
     if(length > 0) {
       ACTORS.remove({});
 
-     const actorElementTypes = DOTROWS.find({elementType: "actor"});
-     if(actorElementTypes) {
+     const actorElementTypes = DOTROWS.find({elementType: "actor"}).fetch();
+     console.log(actorElementTypes);
+     if(actorElementTypes.length > 0) {
         let actor = {};
         actor.dynamicDstring = "55";
         actor.pLabel = "Test Actor";
