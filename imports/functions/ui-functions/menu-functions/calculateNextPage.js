@@ -8,6 +8,9 @@ export const calculateNextPage = function(key, currentPage) {
 			switch(key) {
 			  case "modeling": nextPage = "modeling";
 			  break;
+
+			  case "menuCentral": nextPage = "menuCentral";
+			  break;
 			}
 
 		case "modeling":

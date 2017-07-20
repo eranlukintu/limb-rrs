@@ -14,7 +14,7 @@ const IndexMenu = function(props) {
 				break;
 
 			case "modeling": 
-			
+			case "menuCentral": 			
 				const currentPage = props.currentPage;
 				const currentMenu = props.menuName;
 				const calculateNextPage = props.calculateNextPage;
@@ -42,6 +42,7 @@ const IndexMenu = function(props) {
 	}
 
 	return <NavDropdown title="Actions" onSelect={this.handleSelect} id="indexMenuDropdown">
+			<MenuItem eventKey="menuCentral">Go to menu central</MenuItem>
 			<MenuItem eventKey="modeling">Go to business model</MenuItem>
 			<MenuItem eventKey="createRoot">Create root item</MenuItem>
 		</NavDropdown>
