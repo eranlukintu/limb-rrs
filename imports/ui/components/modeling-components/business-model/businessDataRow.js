@@ -11,8 +11,10 @@ export const BusinessDataRow = function(props) {
 	const spacer = "  ";
 
 	handleOnSelect = function(event) {
-		console.log(businessDataRow.sourceRowId, props.controllingStaticDrowId);
+		// console.log(businessDataRow.sourceRowId, props.controllingStaticDrowId);
+		// console.log(businessDataRow.elementType);
 		props.setControllingStaticDrowId(businessDataRow.sourceRowId);
+		props.setSelectedItemType(businessDataRow.elementType);
 	}
 
 	renderCheckBox = function() {

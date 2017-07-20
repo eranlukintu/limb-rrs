@@ -17,7 +17,8 @@ const BusinessModelComponent = function(props){
 	            	controllingStaticDrowId={props.controllingStaticDrowId}
 	            	key = {br._id} 
 	            	calculateIndentLevel={props.calculateIndentLevel}
-	            	setControllingStaticDrowId={props.setControllingStaticDrowId}/>
+	            	setControllingStaticDrowId={props.setControllingStaticDrowId}
+	            	setSelectedItemType={props.setSelectedItemType}/>
 	          ))};    
 	    </ListGroup>
 	</div>

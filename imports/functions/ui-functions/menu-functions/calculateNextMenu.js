@@ -1,4 +1,4 @@
-export const calculateNextMenu = function(key, currentPage) {
+export const calculateNextMenu = function(key, currentPage, selectedItemType) {
 	
 	switch(currentPage) {
 		
@@ -19,7 +19,7 @@ export const calculateNextMenu = function(key, currentPage) {
 				case "index": return "indexMenu";
 				break;
 
-				case "businessModelComponent": return "businessModelingMenu";
+				case "businessModelComponent": return "businessModelingMenuMain";
 				break;
 
 				case "rawModelComponent": return "rawModelingMenu";
@@ -28,6 +28,12 @@ export const calculateNextMenu = function(key, currentPage) {
 			break;
 
 		case "businessModelComponent":
+
+			switch(selectedItemType) {
+				case "actor": 
+
+			}
+
 			switch(key) {
 				case "index": return "indexMenu";
 				break;

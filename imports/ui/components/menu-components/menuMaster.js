@@ -3,7 +3,8 @@ import IndexMenu from "./indexMenu.js";
 import { ModelingMenu} from "./modelingMenu.js";
 import { ModelingWorkPageMenu } from "./modelingWorkPageMenu.js";
 import { RawModelingMenu } from "./rawModelingMenu.js";
-import { BusinessModelingMenu } from "./businessModelingMenu.js";
+import { BusinessModelingMenuUnselected } from "./businessModelingMenu_unselected.js";
+import { BusinessModelingMenuSelected } from "./businessModelingMenu_selected.js";
 import { ActorModelingMenu } from "./actorModelingMenu.js";
 import { CreateNewActorMenu } from "./createNewActorMenu";
 
@@ -38,6 +39,18 @@ export const MenuMaster = (props) => {
 			return <ModelingWorkPageMenu 
 				currentPage={props.currentPage}
 				setCurrentPage={props.setCurrentPage} 
+				menuName={props.menuName}
+				setMenuName={props.setMenuName}
+				calculateNextPageAndMenu={props.calculateNextPageAndMenu}
+				calculateNextPage={props.calculateNextPage}
+				calculateNextMenu={props.calculateNextMenu}
+				isInitialised={props.isInitialised}/>
+			break;
+
+		case "businessModelingMenu_unselected": 
+			return <BusinessModelingMenuUnselected 
+				currentPage={props.currentPage}
+				setCurrentPage={props.setCurrentPage} 
 				menuName={props.menuName} 
 				setMenuName={props.setMenuName}
 				calculateNextPageAndMenu={props.calculateNextPageAndMenu}
@@ -46,8 +59,8 @@ export const MenuMaster = (props) => {
 				isInitialised={props.isInitialised}/>
 			break;
 
-		case "businessModelingMenu": 
-			return <BusinessModelingMenu 
+		case "businessModelingMenu_selected": 
+			return <BusinessModelingMenuSelected 
 				currentPage={props.currentPage}
 				setCurrentPage={props.setCurrentPage} 
 				menuName={props.menuName} 

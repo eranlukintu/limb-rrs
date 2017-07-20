@@ -26,6 +26,7 @@ export default class App extends React.Component {
       menuName: 'indexMenu',
       isInitialised: false,
       controllingStaticDrowId: null,
+      selectedItemType: null,
       controllingActorDrowId: null,
       newActorName: null,
     };
@@ -34,6 +35,7 @@ export default class App extends React.Component {
     this.setMenuName = this.setMenuName.bind(this);
     this.calculateNextPageAndMenu = this.calculateNextPageAndMenu.bind(this);
     this.setControllingStaticDrowId = this.setControllingStaticDrowId.bind(this);
+    this.setSelectedItemType = this.setSelectedItemType.bind(this);
     this.setControllingActorDrowId = this.setControllingActorDrowId.bind(this);
     this.setNewActorName = this.setNewActorName.bind(this);
   }
@@ -43,9 +45,17 @@ export default class App extends React.Component {
     this.setState({ currentPage: page, currentPageProps: props });
   }
 
-  calculateNextPageAndMenu(key, currentPage, calculateNextPage, calculateNextMenu, setCurrentPage, props, setMenuName) {
+  calculateNextPageAndMenu(
+                            key, 
+                            currentPage, 
+                            calculateNextPage, 
+                            calculateNextMenu, 
+                            setCurrentPage, 
+                            props, 
+                            setMenuName,
+                            selectedItemType) {
     const nextPage = calculateNextPage(key, currentPage);
-    const nextMenu = calculateNextMenu(key, currentPage);
+    const nextMenu = calculateNextMenu(key, currentPage, selectedItemType);
     setCurrentPage("", {page: nextPage, props: props});
     setMenuName(nextMenu);
   }
@@ -59,6 +69,15 @@ export default class App extends React.Component {
       this.setState({controllingStaticDrowId: null});
     }else {
       this.setState({controllingStaticDrowId: staticDrowId});
+    }
+  }
+
+  setSelectedItemType(selectedItemType) {
+    console.log(this.state.selectedItemType);
+    if(this.state.selectedItemType === selectedItemType) {
+      this.setState({selectedItemType: null});
+    } else {
+      this.setState({selectedItemType: selectedItemType});
     }
   }
 
@@ -123,6 +142,7 @@ export default class App extends React.Component {
               controllingStaticDrowId: this.state.controllingStaticDrowId,
               calculateIndentLevel: calculateIndentLevel,
               setControllingStaticDrowId: this.setControllingStaticDrowId,
+              setSelectedItemType: this.setSelectedItemType,
               setControllingActorDrowId: this.setControllingActorDrowId,
               setNewActorName: this.setNewActorName,
               ...this.state.currentPageProps,

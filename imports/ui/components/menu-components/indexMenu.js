@@ -14,6 +14,7 @@ const IndexMenu = function(props) {
 				break;
 
 			case "modeling": 
+			
 				const currentPage = props.currentPage;
 				const currentMenu = props.menuName;
 				const calculateNextPage = props.calculateNextPage;
@@ -21,13 +22,15 @@ const IndexMenu = function(props) {
 				const setCurrentPage = props.setCurrentPage;
 				const modeling = props.modeling;
 				const setMenuName=props.setMenuName;
+				const selectedItemType = props.selectedItemType;
 				props.calculateNextPageAndMenu(eventKey, 
 												currentPage, 
 												calculateNextPage, 
 												calculateNextMenu, 
 												setCurrentPage, 
 												currentPage.props,
-												setMenuName);
+												setMenuName,
+												selectedItemType);
 			break;
 		}
 	}
