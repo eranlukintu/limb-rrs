@@ -8,7 +8,7 @@ export default class MenuCentral extends React.Component {
 		const id=e.target.id;
 		console.log(e.target.value);
 		switch(id) {
-			case "1": createMenuCombinations();
+			case "1": Meteor.call("composeMenuCombinations", {});
 			break;
 		}
 	}
