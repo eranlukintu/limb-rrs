@@ -10,6 +10,9 @@ export default class MenuCentral extends React.Component {
 		switch(id) {
 			case "1": Meteor.call("composeMenuCombinations", {});
 			break;
+
+			case "2": Meteor.call("createMenuItemMethod", {});
+			break;
 		}
 	}
 
@@ -22,6 +25,10 @@ export default class MenuCentral extends React.Component {
 		  		<Button 
 		  			id="1" bsStyle="info" bsSize="small" onClick={this.handleButtonClick}>
 		  			Create combinations
+		  		</Button>
+		  		<Button 
+		  			id="2" bsStyle="info" bsSize="small" onClick={this.handleButtonClick}>
+		  			Create menu item
 		  		</Button>
 		  	</ButtonGroup>
 	  	</div>

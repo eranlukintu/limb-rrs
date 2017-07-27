@@ -20,5 +20,6 @@ export const createMenuCombinations = function() {
 	    return result;
 	}
 
-	console.log(getPermutation(allArrays));
+	const combinations = getPermutation(allArrays);
+	console.log(combinations);
 }
