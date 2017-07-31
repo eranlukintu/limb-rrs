@@ -5,6 +5,7 @@ import AppNavigation from '../containers/AppNavigation.js';
 import { PreInitialisedMenu } from '../components/menu-components/preInitialisedMenu.js';
 import Index from '../pages/Index.js';
 import MenuCentral from '../pages/menuCentral.js';
+import MenuDataItemPage from '../pages/menuDataItemPage.js';
 import { ModelingPage } from '../pages/ModelingPage.js';
 import { ModelingWorkPage } from '../pages/modelingWorkPage.js';
 import BusinessModelComponent from '../components/modeling-components/business-model/businessModelComponent.js';
@@ -102,7 +103,8 @@ export default class App extends React.Component {
       rawModelComponent: <RawModelComponent />,
       actorModelComponent: <ActorModelComponent />,
       createNewActorComponent: <CreateNewActorComponent />,
-      menuCentral: <MenuCentral />
+      menuCentral: <MenuCentral />,
+      menuDataItemPage: <MenuDataItemPage />
     }[this.state.currentPage];
   }
 

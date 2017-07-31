@@ -8,13 +8,16 @@ import { calculateIndentLevelAtServer } from '../server-functions/dot-functions/
 export const createMenuItemMethod = new ValidatedMethod({
   name: "createMenuItemMethod",
   validate: new SimpleSchema({ 
-    
+    // menuDataItemName: {type: String},
+    name: {type: String},
+    type: {type: String}
   }).validator(),
-  run({}) {
-  	const controllingDstring = findLastTopLevelMenuDstring();
-  	const controllingIndentLevel = calculateIndentLevelAtServer(controllingDstring);
-     const menuItem = createMenuItem();
-     console.log(controllingDstring, controllingIndentLevel);
-     // console.log(menuItem);     
+  run(menuDataItem) {
+	const controllingDstring = findLastTopLevelMenuDstring();
+	const controllingIndentLevel = calculateIndentLevelAtServer(controllingDstring);
+	const menuItem = createMenuItem();
+	console.log(controllingDstring, controllingIndentLevel);
+	console.log(menuDataItem.name, menuDataItem.type);
+// console.log(menuItem);     
   },
 });
