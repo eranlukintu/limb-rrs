@@ -4,38 +4,21 @@ import { Random } from 'meteor/random';
 export const createBasicItem = (controllingStaticDstring, 
                                  controllingStaticIndentLevel, 
                                  principalLabel,
-                                 itemType) => {
+                                 itemType,
+                                 itemDescription) => {
+   console.log(itemType, itemDescription);
 
       let basicItem = [];
- 
+      const controllingDrow = createControllingDrow(controllingStaticDstring, controllingStaticIndentLevel);
+      const principalLabelDrow = createPrincipalLabelDrow(controllingDrow, principalLabel);
+      const itemTypeDrow = createItemTypeDrow(controllingDrow, itemType);
+      const descriptionDrow = createItemDescriptionDrow(controllingDrow, itemDescription);
 
-      const createBasicItemArray = function(createControllingDrow, 
-                                             createPrincipalLabelDrow, 
-                                             createItemTypeDrow,
-                                             controllingStaticDstring, 
-                                             controllingStaticIndentLevel, 
-                                             principalLabel,
-                                             itemType) {
+      basicItem.push(controllingDrow);
+      basicItem.push(principalLabelDrow);
+      basicItem.push(itemTypeDrow);
+      basicItem.push(descriptionDrow);
 
-         const controllingDrow = createControllingDrow(controllingStaticDstring, controllingStaticIndentLevel);
-         const principalLabelDrow = createPrincipalLabelDrow(controllingDrow, principalLabel);
-         const itemTypeDrow = createItemTypeDrow(controllingDrow, itemType);
-
-         basicItem.push(controllingDrow);
-         basicItem.push(principalLabelDrow);
-         basicItem.push(itemTypeDrow);
-
-      }    
-
-      createBasicItemArray(createControllingDrow, 
-                           createPrincipalLabelDrow, 
-                           createItemTypeDrow,
-                           controllingStaticDstring, 
-                           controllingStaticIndentLevel, 
-                           principalLabel,
-                           itemType);
-    
-    // console.log(basicItem);
     return basicItem;
 }
 
@@ -88,4 +71,21 @@ const createItemTypeDrow = (controllingDrow, itemType) => {
    itemTypeDrow.tertiaryLabel = itemType;
 
    return itemTypeDrow;
+}
+
+const createItemDescriptionDrow = (controllingDrow, itemDescription) => {
+   const itemDescriptionDrow = {};
+   itemDescriptionDrow.title = "NA";
+   itemDescriptionDrow.dRowId = Random.id();
+   itemDescriptionDrow.staticDstring = controllingDrow.staticDstring + ".3";
+   itemDescriptionDrow.staticIndentLevel = (Number(controllingDrow.staticIndentLevel+1)).toString();;
+   itemDescriptionDrow.staticSortString = createSortStringAtServer(itemDescriptionDrow.staticDstring);;
+   itemDescriptionDrow.primaryId = controllingDrow.dRowId;
+   itemDescriptionDrow.primaryLabel = "drow";
+   itemDescriptionDrow.secondaryId = Random.id();
+   itemDescriptionDrow.secondaryLabel = "has item type";
+   itemDescriptionDrow.tertiaryId = Random.id();
+   itemDescriptionDrow.tertiaryLabel = itemDescription;
+
+   return itemDescriptionDrow;
 }

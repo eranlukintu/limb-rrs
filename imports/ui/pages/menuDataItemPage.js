@@ -1,8 +1,9 @@
 import React from 'react';
 import { ListGroup, ListGroupItem, Grid, Row, Col, Alert, Button, ButtonGroup,  FormGroup, FormControl, ControlLabel} from 'react-bootstrap';
 import { composeWithTracker } from 'react-komposer';
-import { MENUITEMS } from "../../api/collections/menuCollections.js";
+import { MENUDATAITEMS } from "../../api/collections/menuCollections.js";
 import Loading from "../components/Loading.js";
+import { RawDataRow } from "../components/modeling-components/raw-model/rawDataRow.js";
 
 class MenuDataItemPage extends React.Component {
 	constructor(props) {
@@ -10,6 +11,7 @@ class MenuDataItemPage extends React.Component {
 
 		this.state={
 			menuDataItemName: '',
+			menuDataItemDescription: 'No description added yet',
 			menuDataItemType: 'menuDataItem',
 		}
 
@@ -17,6 +19,7 @@ class MenuDataItemPage extends React.Component {
 		this.handleButtonClick = this.handleButtonClick.bind(this);
 		this.handleNameChange = this.handleNameChange.bind(this);
 		this.handleTypeChange = this.handleTypeChange.bind(this);
+		this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
 	}
 
 	handleButtonClick(e) {
@@ -25,10 +28,11 @@ class MenuDataItemPage extends React.Component {
 		const id=e.target.id;
 		const menuDataItem = {};
 		menuDataItem.name = this.state.menuDataItemName;
-		menuDataItem.type = this.state.menuDataItemType;		
+		menuDataItem.type = this.state.menuDataItemType;
+		menuDataItem.description = this.state.menuDataItemDescription;		
 		
 		switch(id) {
-			case "1": Meteor.call("createMenuItemMethod", menuDataItem);
+			case "1": Meteor.call("createMenuDataItemMethod", menuDataItem);
 			break;
 		}
 	}
@@ -38,8 +42,11 @@ class MenuDataItemPage extends React.Component {
 	}
 
 	handleTypeChange(e) {
-		console.log(e.target.value);
 		this.setState({menuDataItemType: e.target.value});
+	}
+
+	handleDescriptionChange(e) {
+		this.setState({menuDataItemDescription: e.target.value})
 	}
 
 	renderMenuDataItems(menuDataItemList) {
@@ -47,7 +54,7 @@ class MenuDataItemPage extends React.Component {
 		if(menuDataItemList.length>0) {
 			return (<ListGroup>
 		        {menuDataItemList.map((rr) => (
-		            <RawDataRow rawDataRow = {rr} key = {rr._id} calculateIndentLevel={props.calculateIndentLevel}/>
+		            <RawDataRow rawDataRow = {rr} key = {rr._id} calculateIndentLevel={this.props.calculateIndentLevel}/>
 		          ))};    
 		    </ListGroup>)
 		}else {
@@ -70,6 +77,12 @@ class MenuDataItemPage extends React.Component {
 					value={this.state.menuDataItemName}
 					placeholder="Enter name of menu item"
 					onChange={this.handleNameChange}>					
+				</FormControl>
+				<FormControl
+					type="text"
+					value={this.state.menuDataItemDescription}
+					placeholder="Enter description"
+					onChange={this.handleDescriptionChange}>					
 				</FormControl>				
 			</FormGroup>				
 			<FormGroup onChange={this.handleTypeChange}>
@@ -89,7 +102,7 @@ const composer = (params, onData) => {
   const subscription = Meteor.subscribe('populateMenuItems');
 
   if (subscription.ready()) {
-    menuDataItemList = MENUITEMS.find().fetch();
+    menuDataItemList = MENUDATAITEMS.find().fetch();
     onData(null, { menuDataItemList });
   }
 };

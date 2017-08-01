@@ -1,29 +1,31 @@
-import { MENUITEMS } from '../../../collections/drows.js';
+import { MENUDATAITEMS } from '../../../collections/menuCollections.js';
 
 
-export const findLastTopLevelMenuDstring = function() {
+export const findLastTopLevelMenuDataItemDstring = function() {
 
 	let lastDstring;
 
-	if(!MENUITEMS) {
+	if(!MENUDATAITEMS) {
+		console.log("no menu data items");
 		lastDstring = "1";
 	}else {
 		const lastDstringPipeline = [		
 			{$match: {staticIndentLevel: "0"}},
-			{$sort: {staticSortLevel: -1}},
-			{$group: {_id: null, first: {$first: "$$ROOT"}}},		
+			{$sort: {staticSortString: 1}},
+			{$group: {_id: null, last: {$last: "$$ROOT"}}},		
 	]
 
-		const topLevelArray=MENUITEMS.aggregate(lastDstringPipeline);
+		const topLevelArray=MENUDATAITEMS.aggregate(lastDstringPipeline);
+		console.log(topLevelArray);
 		
 
-		if(topLevelArray.length > 0) {
-			lastDstring = topLevelArray[0].first.staticDstring;
+		if(topLevelArray) {
+			lastDstring = topLevelArray[0].last.staticDstring;
 		}else {
 			lastDstring = 1;
 		}
 	}
-	
+	console.log("last dstring", lastDstring);
 	return lastDstring;
 
 }

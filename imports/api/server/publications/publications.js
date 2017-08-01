@@ -1,7 +1,7 @@
 import { DOTROWS } from "../../collections/drows.js";
 import { DYNAMICROWS } from '../../collections/dynamicRows.js';
 import { ACTORS } from '../../collections/actors.js';
-import { MENUITEMS } from '../../collections/menuCollections.js';
+import { MENUDATAITEMS } from '../../collections/menuCollections.js';
 import { Meteor } from 'meteor/meteor';
 
 Meteor.publish("populateRawModel", function() {
@@ -17,5 +17,5 @@ Meteor.publish("populateActorModel", function() {
 });
 
 Meteor.publish("populateMenuItems", function() {
-	return MENUITEMS.find({});
+	return MENUDATAITEMS.find({});
 });

@@ -1,23 +1,32 @@
 import { Meteor } from "meteor/meteor";
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
-import { createMenuItem } from '../server-functions/menu-server-functions/createMenuItem.js';
-import { findLastTopLevelMenuDstring } from '../server-functions/menu-server-functions/findLastToplevelMenuItemDstring.js';
+import { createMenuDataItem } from '../server-functions/menu-server-functions/createMenuDataItem.js';
+import { findLastTopLevelMenuDataItemDstring } from '../server-functions/menu-server-functions/findLastToplevelMenuItemDstring.js';
 import { calculateIndentLevelAtServer } from '../server-functions/dot-functions/calculateIndentLevelAtServer.js';
+import { MENUDATAITEMS } from '../../collections/menuCollections.js';
 
-export const createMenuItemMethod = new ValidatedMethod({
-  name: "createMenuItemMethod",
+export const createMenuDataItemMethod = new ValidatedMethod({
+  name: "createMenuDataItemMethod",
   validate: new SimpleSchema({ 
-    // menuDataItemName: {type: String},
     name: {type: String},
-    type: {type: String}
+    type: {type: String},
+    description: {type: String}
   }).validator(),
   run(menuDataItem) {
-	const controllingDstring = findLastTopLevelMenuDstring();
-	const controllingIndentLevel = calculateIndentLevelAtServer(controllingDstring);
-	const menuItem = createMenuItem();
-	console.log(controllingDstring, controllingIndentLevel);
-	console.log(menuDataItem.name, menuDataItem.type);
-// console.log(menuItem);     
+	const controllingStaticDstring = (Number(findLastTopLevelMenuDataItemDstring())+1).toString();
+	const controllingStaticIndentLevel = calculateIndentLevelAtServer(controllingStaticDstring);	
+	const principalLabel = menuDataItem.name;
+	const itemType = menuDataItem.type;
+	const itemDescription = menuDataItem.description;
+
+	const menuDataItemArray = createMenuDataItem(controllingStaticDstring, 
+				                                 controllingStaticIndentLevel, 
+				                                 principalLabel,
+				                                 itemType,
+				                                 itemDescription);
+	menuDataItemArray.forEach(function(mdi) {
+		MENUDATAITEMS.insert(mdi);
+	});
   },
 });

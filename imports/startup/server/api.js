@@ -11,4 +11,5 @@ import "../../api/server/server-functions/dot-functions/calculateIndentLevelAtSe
 import "../../api/server/server-functions/dot-functions/findLastTopLevelDstring.js";
 import "../../api/server/server-functions/getDotRowsLength.js";
 import "../../api/server/server-functions/menu-server-functions/findLastToplevelMenuItemDstring.js";
+import "../../api/server/server-functions/menu-server-functions/createMenuDataItem.js";
 
