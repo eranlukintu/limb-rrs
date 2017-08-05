@@ -83,7 +83,7 @@ const createItemDescriptionDrow = (controllingDrow, itemDescription) => {
    itemDescriptionDrow.primaryId = controllingDrow.dRowId;
    itemDescriptionDrow.primaryLabel = "drow";
    itemDescriptionDrow.secondaryId = Random.id();
-   itemDescriptionDrow.secondaryLabel = "has item type";
+   itemDescriptionDrow.secondaryLabel = "has description";
    itemDescriptionDrow.tertiaryId = Random.id();
    itemDescriptionDrow.tertiaryLabel = itemDescription;
 

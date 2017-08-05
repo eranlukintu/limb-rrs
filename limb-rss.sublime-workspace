@@ -541,7 +541,7 @@
 			"file": "imports/api/server/server-functions/menu-server-functions/findLastToplevelMenuItemDstring.js",
 			"settings":
 			{
-				"buffer_size": 805,
+				"buffer_size": 804,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -570,6 +570,17 @@
 			{
 				"buffer_size": 615,
 				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "export getAttribute = function(attributeName, dString) {\n\n}",
+			"file": "imports/api/server/server-functions/dRow-functions/getAttribute.js",
+			"file_size": 0,
+			"file_write_time": 131461159785838014,
+			"settings":
+			{
+				"buffer_size": 59,
 				"line_ending": "Windows"
 			}
 		},
@@ -1064,7 +1075,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 6,
 			"sheets":
 			[
 				{
@@ -1092,7 +1103,7 @@
 						"translation.y": 1404.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -1120,7 +1131,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -1129,15 +1140,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 805,
+						"buffer_size": 804,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								256,
-								256
+								804,
+								804
 							]
 						],
 						"settings":
@@ -1146,10 +1157,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 108.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -1177,7 +1188,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
@@ -1233,11 +1244,39 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 6,
+					"file": "imports/api/server/server-functions/dRow-functions/getAttribute.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 59,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								59,
+								59
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
 					"file": "imports/startup/server/api.js",
 					"semi_transient": false,
 					"settings":
@@ -1261,11 +1300,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 8,
 					"file": "imports/api/server/server-functions/dRow-functions/createBasicItem.js",
 					"semi_transient": false,
 					"settings":
@@ -1291,11 +1330,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 9,
 					"file": "imports/ui/layouts/App.js",
 					"semi_transient": false,
 					"settings":
@@ -1321,11 +1360,11 @@
 						"translation.y": 1458.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 10,
 					"file": "imports/ui/pages/menuCentral.js",
 					"semi_transient": false,
 					"settings":
@@ -1350,7 +1389,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 9,
 					"type": "text"
 				}
 			]

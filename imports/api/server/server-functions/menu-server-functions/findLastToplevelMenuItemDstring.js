@@ -18,7 +18,7 @@ export const findLastTopLevelMenuDataItemDstring = function() {
 		]
 
 		const topLevelArray=MENUDATAITEMS.aggregate(lastDstringPipeline);
-		console.log(topLevelArray);
+		// console.log(topLevelArray);
 		
 
 		if(topLevelArray) {

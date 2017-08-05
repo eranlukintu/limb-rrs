@@ -5,6 +5,7 @@ import { createMenuDataItem } from '../server-functions/menu-server-functions/cr
 import { findLastTopLevelMenuDataItemDstring } from '../server-functions/menu-server-functions/findLastToplevelMenuItemDstring.js';
 import { calculateIndentLevelAtServer } from '../server-functions/dot-functions/calculateIndentLevelAtServer.js';
 import { MENUDATAITEMS } from '../../collections/menuCollections.js';
+import { createMenuDataList } from '../server-functions/menu-server-functions/createMenuDataList.js';
 
 export const createMenuDataItemMethod = new ValidatedMethod({
   name: "createMenuDataItemMethod",
@@ -28,5 +29,7 @@ export const createMenuDataItemMethod = new ValidatedMethod({
 	menuDataItemArray.forEach(function(mdi) {
 		MENUDATAITEMS.insert(mdi);
 	});
+
+	createMenuDataList();
   },
 });
