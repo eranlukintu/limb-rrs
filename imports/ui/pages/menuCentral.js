@@ -1,5 +1,5 @@
 import React from 'react';
-import { Jumbotron, Button, ButtonGroup } from 'react-bootstrap';
+import { Jumbotron, Button, ButtonGroup, ButtonToolbar } from 'react-bootstrap';
 import { createMenuCombinations } from "../../functions/advanced-menu-functions/create-menu-combinations.js";
 
 export default class MenuCentral extends React.Component {
@@ -32,7 +32,8 @@ export default class MenuCentral extends React.Component {
 			<Jumbotron className="text-center">
 		    	<h2>Menu central</h2>
 		  	</Jumbotron>
-		  	<ButtonGroup>
+		  	<ButtonToolbar>
+		  		<ButtonGroup>
 		  		<Button 
 		  			id="1" bsStyle="info" bsSize="small" onClick={this.handleButtonClick}>
 		  			Create combinations
@@ -46,6 +47,7 @@ export default class MenuCentral extends React.Component {
 		  			Show menu data rows
 		  		</Button>
 		  	</ButtonGroup>
+		  	</ButtonToolbar>		  	
 	  	</div>
 	}
 }

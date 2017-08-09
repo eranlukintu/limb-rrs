@@ -7,6 +7,7 @@ import Index from '../pages/Index.js';
 import MenuCentral from '../pages/menuCentral.js';
 import MenuDataItemPage from '../pages/menuDataItemPage.js';
 import MenuDataRowsPage from '../pages/menuDataRowsPage.js';
+import EditMenuDataItemPage from '../pages/menu-pages/editMenuDataItemPage.js';
 import { ModelingPage } from '../pages/ModelingPage.js';
 import { ModelingWorkPage } from '../pages/modelingWorkPage.js';
 import BusinessModelComponent from '../components/modeling-components/business-model/businessModelComponent.js';
@@ -106,7 +107,8 @@ export default class App extends React.Component {
       createNewActorComponent: <CreateNewActorComponent />,
       menuCentral: <MenuCentral />,
       menuDataItemPage: <MenuDataItemPage />,
-      menuDataRowsPage: <MenuDataRowsPage />
+      menuDataRowsPage: <MenuDataRowsPage />,
+      editMenuDataItemPage: <EditMenuDataItemPage />
     }[this.state.currentPage];
   }
 

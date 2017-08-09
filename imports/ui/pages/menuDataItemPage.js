@@ -34,6 +34,9 @@ class MenuDataItemPage extends React.Component {
 		switch(id) {
 			case "1": Meteor.call("createMenuDataItemMethod", menuDataItem);
 			break;
+
+			case "2": setCurrentPage("", {page: "menuCentral", props: props});
+			break;
 		}
 	}
 
@@ -69,6 +72,10 @@ class MenuDataItemPage extends React.Component {
 				<Button
 					id="1" bsStyle="info" bsSize="small" onClick={this.handleButtonClick}>
 		  			Add menu data item
+				</Button>
+				<Button
+					id="2" bsStyle="info" bsSize="small" onClick={this.handleButtonClick}>
+		  			Menu central
 				</Button>
 			</ButtonGroup>
 			<FormGroup>

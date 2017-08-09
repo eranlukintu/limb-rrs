@@ -23,11 +23,15 @@ export const createMenuDataList = function() {
 		const type = getAttribute(dString, "has item type", indentLevel);
 		const desc = getAttribute(dString, "has description", indentLevel);
 		const menuDataRow = {};
+
+		// console.log(type);
+
 		menuDataRow.sourceDrowId = sourceDrowId;
 		menuDataRow.dString = dString;
 		menuDataRow.indentLevel = indentLevel;
 		menuDataRow.sortString = sortString;
 		menuDataRow.label = label;
+		menuDataRow.type = type;
 		menuDataRow.description = desc;
 		menuDataRows.push(menuDataRow);
 		MENUDATAROWS.insert(menuDataRow);
