@@ -23,6 +23,12 @@ export default class MenuCentral extends React.Component {
 
 			case "3": setCurrentPage("", {page: "menuDataRowsPage", props: props});
 			break;
+
+			case "4": setCurrentPage("", {page: "menuControlVariablesItemsPage", props: props});
+			break;
+
+			case "5": setCurrentPage("", {page: "menuControlItemsRowsPage", props: props});
+			break;
 		}
 	}
 
@@ -45,6 +51,14 @@ export default class MenuCentral extends React.Component {
 		  		<Button 
 		  			id="3" bsStyle="info" bsSize="small" onClick={this.handleButtonClick}>
 		  			Show menu data rows
+		  		</Button>
+		  		<Button 
+		  			id="4" bsStyle="info" bsSize="small" onClick={this.handleButtonClick}>
+		  			Create menu control variable
+		  		</Button>
+		  		<Button 
+		  			id="5" bsStyle="info" bsSize="small" onClick={this.handleButtonClick}>
+		  			Menu control items rows
 		  		</Button>
 		  	</ButtonGroup>
 		  	</ButtonToolbar>		  	

@@ -3,6 +3,9 @@ import { DYNAMICROWS } from '../../collections/dynamicRows.js';
 import { ACTORS } from '../../collections/actors.js';
 import { MENUDATAITEMS } from '../../collections/menuCollections.js';
 import { MENUDATAROWS } from '../../collections/menuCollections.js';
+import { MENUDATACONTROLVARIABLES } from '../../collections/menuCollections.js';
+import { MENUCONTROLVARIABLESROWS } from '../../collections/menuCollections.js';
+
 import { Meteor } from 'meteor/meteor';
 
 Meteor.publish("populateRawModel", function() {
@@ -23,4 +26,12 @@ Meteor.publish("populateMenuItems", function() {
 
 Meteor.publish("populateMenuDataRows", function() {	
 	return MENUDATAROWS.find({});
+});
+
+Meteor.publish("populateMenuControlItems", function() {
+	return MENUDATACONTROLVARIABLES.find({});
+});
+
+Meteor.publish("populateMenuControlRows", function() {	
+	return MENUCONTROLVARIABLESROWS.find({});
 });

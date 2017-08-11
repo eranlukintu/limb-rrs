@@ -1,6 +1,6 @@
 import {MENUDATAITEMS} from '../../../collections/menuCollections.js';
 
-export const getDrowByAttribute = function(dString, attributePhrase, originalStaticIndentLevel) {
+export const getDrowByAttribute = function(dString, attributePhrase, originalStaticIndentLevel, collection) {
 
    // const staticArray = DOTROWS.find().fetch();
    // console.log(staticArray);
@@ -19,7 +19,8 @@ export const getDrowByAttribute = function(dString, attributePhrase, originalSta
     }
   ]
 
-  const foundDrows = MENUDATAITEMS.aggregate(pipeline);
+  const foundDrows = collection.aggregate(pipeline);
+  // console.log(foundDrows);
   const foundDrow = foundDrows[0];
 
   return foundDrow;
