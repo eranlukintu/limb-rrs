@@ -22,6 +22,7 @@ class MenuControlItemsRowsPage extends React.Component {
 		this.handleNameChange = this.handleNameChange.bind(this);
 		this.handleTypeChange = this.handleTypeChange.bind(this);
 		this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
+		this.handleCategoryChange = this.handleCategoryChange.bind(this);
 	}
 
 	handleButtonClick(e) {
@@ -40,6 +41,9 @@ class MenuControlItemsRowsPage extends React.Component {
 
 			case "2": setCurrentPage("", {page: "menuCentral", props: props});
 			break;
+
+			case "3": Meteor.call('createMenuControlItemMethod', menuControlItem);
+			break;
 		}
 	}
 
@@ -56,7 +60,7 @@ class MenuControlItemsRowsPage extends React.Component {
 	}
 
 	handleCategoryChange(e) {
-		this.setState({menuControlItemDescription: e.target.value})
+		this.setState({menuControlItemCategory: e.target.value})
 	}
 
 	renderMenuDataItems(menuControlVariableList) {
@@ -84,7 +88,40 @@ class MenuControlItemsRowsPage extends React.Component {
 					id="2" bsStyle="info" bsSize="small" onClick={this.handleButtonClick}>
 		  			Menu central
 				</Button>
+				<Button
+					id="3" bsStyle="info" bsSize="small" onClick={this.handleButtonClick}>
+		  			Add menu control item
+				</Button>
 			</ButtonGroup>
+			<FormGroup>
+				<FormControl
+					type="text"
+					value={this.state.menuControlItemName}
+					placeholder="Enter name of menu item"
+					onChange={this.handleNameChange}>					
+				</FormControl>
+				<FormControl
+					type="text"
+					value={this.state.menuControlItemDescription}
+					placeholder="Enter description"
+					onChange={this.handleDescriptionChange}>					
+				</FormControl>			
+			</FormGroup>				
+			<FormGroup onChange={this.handleTypeChange}>
+				<FormControl componentClass="select" placeholder="select">
+			        <option value="menuControlItem" >Menu control item item</option>
+			        <option value="other" >Other</option>
+			      </FormControl>
+			</FormGroup>
+			<FormGroup onChange={this.handleCategoryChange}>
+				<FormControl componentClass="select" placeholder="select">
+			        <option value="role" >Role category</option>
+			        <option value="initialisation" >Initialisation category</option>
+			        <option value="page" >Page category</option>
+			        <option value="graphical" >Graphical category</option>
+			        <option value="selected" >Selected category</option>
+			      </FormControl>
+			</FormGroup>
 			
 			{this.renderMenuDataItems(menuControlVariableList)}
 		</div>
