@@ -33,5 +33,5 @@ Meteor.publish("populateMenuControlItems", function() {
 });
 
 Meteor.publish("populateMenuControlRows", function() {	
-	return MENUCONTROLVARIABLESROWS.find({});
+	return MENUCONTROLVARIABLESROWS.find({}, {sort: {category: 1}});
 });

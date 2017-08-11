@@ -60,7 +60,7 @@ class MenuControlItemsRowsPage extends React.Component {
 	}
 
 	renderMenuDataItems(menuControlVariableList) {
-		console.log(menuControlVariableList);
+		// console.log(menuControlVariableList);
 		if(menuControlVariableList.length>0) {
 			return (<ListGroup>
 		        {menuControlVariableList.map((rr) => (
@@ -78,7 +78,7 @@ class MenuControlItemsRowsPage extends React.Component {
 			<ButtonGroup>
 				<Button
 					id="1" bsStyle="info" bsSize="small" onClick={this.handleButtonClick}>
-		  			Add menu control item
+		  			Edit menu control item
 				</Button>
 				<Button
 					id="2" bsStyle="info" bsSize="small" onClick={this.handleButtonClick}>

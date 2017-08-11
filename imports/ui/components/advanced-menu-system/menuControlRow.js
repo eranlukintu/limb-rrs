@@ -7,8 +7,6 @@ export const MenuControlRow = function(props) {
 	const menuControlRow = props.menuControlRow;
 	// const setSelectedMenuControlRow = props.setSelectedMenuControlRow;
 	const spacer = "  ";
-
-	console.log(menuControlRow);
 	
 	handleSelect = function(e) {
 		setSelectedMenuControlRow(menuControlRow.sourceDrowId);
