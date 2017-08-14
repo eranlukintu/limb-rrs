@@ -10,6 +10,7 @@ import MenuDataRowsPage from '../pages/menuDataRowsPage.js';
 import MenuControlVariablesItemsPage from '../pages/menuControlVariablesItemsPage.js';
 import MenuControlItemsRowsPage from '../pages/menu-pages/menuControlItemsRowsPage';
 import EditMenuDataItemPage from '../pages/menu-pages/editMenuDataItemPage.js';
+import MenuAssociationsPage from '../pages/menu-pages/menuAssociationsPage.js';
 import { ModelingPage } from '../pages/ModelingPage.js';
 import { ModelingWorkPage } from '../pages/modelingWorkPage.js';
 import BusinessModelComponent from '../components/modeling-components/business-model/businessModelComponent.js';
@@ -112,7 +113,8 @@ export default class App extends React.Component {
       menuDataRowsPage: <MenuDataRowsPage />,
       editMenuDataItemPage: <EditMenuDataItemPage />,
       menuControlVariablesItemsPage: <MenuControlVariablesItemsPage />,
-      menuControlItemsRowsPage: <MenuControlItemsRowsPage />
+      menuControlItemsRowsPage: <MenuControlItemsRowsPage />,
+      menuAssociationsPage: <MenuAssociationsPage />
     }[this.state.currentPage];
   }
 

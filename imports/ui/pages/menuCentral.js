@@ -29,6 +29,9 @@ export default class MenuCentral extends React.Component {
 
 			case "5": setCurrentPage("", {page: "menuControlItemsRowsPage", props: props});
 			break;
+
+			case "6": setCurrentPage("", {page: "menuAssociationsPage", props: props});
+			break;
 		}
 	}
 
@@ -59,6 +62,10 @@ export default class MenuCentral extends React.Component {
 		  		<Button 
 		  			id="1" bsStyle="info" bsSize="small" onClick={this.handleButtonClick}>
 		  			Create combinations
+		  		</Button>
+		  		<Button 
+		  			id="6" bsStyle="info" bsSize="small" onClick={this.handleButtonClick}>
+		  			Menu associations
 		  		</Button>
 		  	</ButtonGroup>
 		  	</ButtonToolbar>		  	

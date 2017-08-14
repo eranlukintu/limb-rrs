@@ -32,10 +32,7 @@ export const createMenuCombinations = function() {
 			}
 		});
 		items.push(arr);
-		// console.log(arr);
 	});
-
-	// console.log(items);
 
 	function getPermutation(array, prefix) {
 	    prefix = prefix || '';
@@ -44,7 +41,6 @@ export const createMenuCombinations = function() {
 	    }
 
 	    let result = array[0].reduce(function (result, value) {
-	    	// console.log(value);
 	        return result.concat(getPermutation(array.slice(1), prefix + value));
 	    }, []);
 	    return result;
@@ -52,18 +48,16 @@ export const createMenuCombinations = function() {
 
 	const combinations = getPermutation(items);
 	let sCombinations = [];
-	// console.log(combinations);
+	
 	combinations.forEach(function(comb) {
 		sComb = JSON.stringify(comb);
 		sCombinations.push(sComb);
 	});
 
-	// console.log(sCombinations);
 	const test = ["abcede", "hjkmmen"];
 
 	MENUCOMBINATIONS.remove({});
 	combinations.forEach(function(combinationString) {
 		MENUCOMBINATIONS.insert({combinationString});
 	});
-	// console.log(combinations);
 }
