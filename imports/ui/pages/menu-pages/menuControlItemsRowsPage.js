@@ -97,7 +97,7 @@ class MenuControlItemsRowsPage extends React.Component {
 				<FormControl
 					type="text"
 					value={this.state.menuControlItemName}
-					placeholder="Enter name of menu item"
+					placeholder="Enter name of menu control item"
 					onChange={this.handleNameChange}>					
 				</FormControl>
 				<FormControl

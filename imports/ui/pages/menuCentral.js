@@ -39,11 +39,7 @@ export default class MenuCentral extends React.Component {
 		    	<h2>Menu central</h2>
 		  	</Jumbotron>
 		  	<ButtonToolbar>
-		  		<ButtonGroup>
-		  		<Button 
-		  			id="1" bsStyle="info" bsSize="small" onClick={this.handleButtonClick}>
-		  			Create combinations
-		  		</Button>
+		  		<ButtonGroup>		  		
 		  		<Button 
 		  			id="2" bsStyle="info" bsSize="small" onClick={this.handleButtonClick}>
 		  			Create menu item
@@ -59,6 +55,10 @@ export default class MenuCentral extends React.Component {
 		  		<Button 
 		  			id="5" bsStyle="info" bsSize="small" onClick={this.handleButtonClick}>
 		  			Menu control items rows
+		  		</Button>
+		  		<Button 
+		  			id="1" bsStyle="info" bsSize="small" onClick={this.handleButtonClick}>
+		  			Create combinations
 		  		</Button>
 		  	</ButtonGroup>
 		  	</ButtonToolbar>		  	

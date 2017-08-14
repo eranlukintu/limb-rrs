@@ -6,6 +6,7 @@ import { findLastTopLevelMenuControlItemDstring } from '../server-functions/menu
 import { calculateIndentLevelAtServer } from '../server-functions/dot-functions/calculateIndentLevelAtServer.js';
 import { MENUDATACONTROLVARIABLES } from '../../collections/menuCollections.js';
 import { createMenuControlItemList } from '../server-functions/menu-server-functions/createMenuControlItemList.js';
+import { createMenuCombinations } from '../server-functions/menu-server-functions/createMenuCombinations.js';
 
 export const createMenuControlItemMethod = new ValidatedMethod({
   name: "createMenuControlItemMethod",
@@ -37,6 +38,7 @@ export const createMenuControlItemMethod = new ValidatedMethod({
 		MENUDATACONTROLVARIABLES.insert(mdi);
 	});
 
+	// createMenuCombinations();
 	createMenuControlItemList();
   },
 });
