@@ -70,7 +70,7 @@ class MenuDataRowsPage extends React.Component {
 
 	render() {
 		return <div>
-			<h3>Menu data row</h3>	
+			<h4>Menu data row</h4>	
 			<ButtonGroup>
 				<Button
 					id="1" bsStyle="info" bsSize="small" onClick={this.handleButtonClick}>
