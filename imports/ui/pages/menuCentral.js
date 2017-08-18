@@ -5,11 +5,18 @@ import { createMenuCombinations } from "../../functions/advanced-menu-functions/
 export default class MenuCentral extends React.Component {
 	constructor(props) {
 		super();
+
+		this.state = {
+			selectedMenuCombinationId: "x",
+		}
+
 		this.handleButtonClick = this.handleButtonClick.bind(this);
+		
 	}
 
 	handleButtonClick(e) {
 		const props=this.props;
+		const amendedProps = this.setSelectedMenuCombinationId;
 		const setCurrentPage = this.props.setCurrentPage;
 		const id=e.target.id;
 		// console.log(e.target);
@@ -30,10 +37,10 @@ export default class MenuCentral extends React.Component {
 			case "5": setCurrentPage("", {page: "menuControlItemsRowsPage", props: props});
 			break;
 
-			case "6": setCurrentPage("", {page: "menuAssociationsPage", props: props});
+			case "6": setCurrentPage("", {page: "menuAssociationsPage"});
 			break;
 		}
-	}
+	}	
 
 	render() {
 		

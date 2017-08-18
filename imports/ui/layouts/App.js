@@ -34,6 +34,8 @@ export default class App extends React.Component {
       isInitialised: false,
       controllingStaticDrowId: null,
       selectedItemType: null,
+      selectedMenuCombinationId: "x",
+      selectedMenuDataRowId: "x",
       controllingActorDrowId: null,
       newActorName: null,
     };
@@ -45,6 +47,8 @@ export default class App extends React.Component {
     this.setSelectedItemType = this.setSelectedItemType.bind(this);
     this.setControllingActorDrowId = this.setControllingActorDrowId.bind(this);
     this.setNewActorName = this.setNewActorName.bind(this);
+    this.setSelectedMenuCombinationId = this.setSelectedMenuCombinationId.bind(this);
+    this.setSelectedMenuDataRowId = this.setSelectedMenuDataRowId.bind(this);
   }
 
   setCurrentPage(event, { page, props }) {
@@ -98,6 +102,26 @@ export default class App extends React.Component {
 
   setNewActorName(newActorName) {
     this.setState({newActorName: newActorName});
+  }
+
+  setSelectedMenuCombinationId(selectedMenuCombinationId) {
+    const currentSelectedMenuCombinationId = this.state.selectedMenuCombinationId;
+    console.log(currentSelectedMenuCombinationId);
+    if(selectedMenuCombinationId===currentSelectedMenuCombinationId) {
+      this.setState({selectedMenuCombinationId: "x"});
+    } else {
+      this.setState({selectedMenuCombinationId: selectedMenuCombinationId});
+    }
+  }
+
+  setSelectedMenuDataRowId(selectedMenuDataRowId) {
+    const currentSelectedMenuDataRowId = this.state.selectedMenuDataRowId;
+    console.log(currentSelectedMenuDataRowId);
+    if(selectedMenuDataRowId === currentSelectedMenuDataRowId) {
+      this.setState({selectedMenuDataRowId: "x"});
+    }else {
+      this.setState({selectedMenuDataRowId: selectedMenuDataRowId});
+    }
   }
 
   currentPage() {
@@ -159,6 +183,8 @@ export default class App extends React.Component {
               setSelectedItemType: this.setSelectedItemType,
               setControllingActorDrowId: this.setControllingActorDrowId,
               setNewActorName: this.setNewActorName,
+              setSelectedMenuCombinationId: this.setSelectedMenuCombinationId,
+              setSelectedMenuDataRowId: this.setSelectedMenuDataRowId,
               ...this.state.currentPageProps,
             }) : children
           }

@@ -17,7 +17,7 @@ class MenuStateCombinationsPage extends React.Component {
 		if(menuCombinationsList.length>0) {
 			return (<ListGroup>
 		        {menuCombinationsList.map((mc) => (
-		            <MenuStateCombinationRow key={mc._id} menuStateCombinationRow={mc}/>
+		            <MenuStateCombinationRow key={mc._id} menuStateCombinationRow={mc} props={this.props}/>
 		          ))}; 
 		    </ListGroup>)
 		}else {

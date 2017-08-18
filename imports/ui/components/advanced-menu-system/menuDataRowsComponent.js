@@ -10,16 +10,14 @@ import { MenuCheckboxDataRow } from './menuCheckboxDataRow';
 class MenuDataRowsComponent extends React.Component {
 	constructor(props) {
 		super();
-	}
-
-	
+	}	
 
 	renderMenuDataItems(menuDataItemList) {
 		// console.log(menuDataItemList);
 		if(menuDataItemList.length>0) {
 			return (<ListGroup>
 		        {menuDataItemList.map((rr) => (
-		            <MenuCheckboxDataRow menuDataRow = {rr} key = {rr._id} />
+		            <MenuCheckboxDataRow menuDataRow = {rr} key = {rr._id} props={this.props} />
 		          ))};    
 		    </ListGroup>)
 		}else {

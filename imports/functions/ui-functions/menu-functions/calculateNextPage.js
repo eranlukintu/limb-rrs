@@ -1,7 +1,7 @@
 export const calculateNextPage = function(key, currentPage) {
 
 	let nextPage = "NA";
-	console.log(currentPage);
+	// console.log(currentPage);
 
     switch(currentPage) {
 		case "index":

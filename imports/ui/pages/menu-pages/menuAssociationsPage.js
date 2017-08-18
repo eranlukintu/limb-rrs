@@ -8,19 +8,21 @@ import MenuDataRowsComponent from '../../components/advanced-menu-system/menuDat
 export default class MenuAssociationsPage extends React.Component {
 
 	render() {
+		const props = this.props;
+		console.log(props);
 		return <Grid>
 			<Row>
 				<h3>Menu associations </h3>
 			</Row>
 			<Row>
 				<Col md={4}>
-					<MenuStateCombinationsPage />
+					<MenuStateCombinationsPage props = {props} />
 				</Col>
 				<Col md={4}>
 					
 				</Col>
 				<Col md={4}>
-					<MenuDataRowsComponent />
+					<MenuDataRowsComponent props = {props}/>
 				</Col>
 			</Row>
 		</Grid>
