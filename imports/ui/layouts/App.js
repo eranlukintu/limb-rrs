@@ -49,6 +49,7 @@ export default class App extends React.Component {
     this.setNewActorName = this.setNewActorName.bind(this);
     this.setSelectedMenuCombinationId = this.setSelectedMenuCombinationId.bind(this);
     this.setSelectedMenuDataRowId = this.setSelectedMenuDataRowId.bind(this);
+    this.updateMenuAssociations = this.updateMenuAssociations.bind(this);
   }
 
   setCurrentPage(event, { page, props }) {
@@ -124,6 +125,17 @@ export default class App extends React.Component {
     }
   }
 
+  updateMenuAssociations(menuCombinationId, menuDataRowId) {
+    const associationIds = {};
+    console.log(menuCombinationId, menuDataRowId);
+    associationIds.menuCombinationId = menuCombinationId;
+    associationIds.menuDataRowId = menuDataRowId;
+
+    Meteor.call("updateMenuAssociationsMethod", associationIds);
+
+    // Meteor.call("updateMenuAssociations", associationIds);
+  }
+
   currentPage() {
     return {
       index: <Index />,
@@ -177,6 +189,7 @@ export default class App extends React.Component {
             React.cloneElement(this.currentPage(), {
               setCurrentPage: this.setCurrentPage,
               currentPage: this.state.currentPage,
+              selectedMenuCombinationId: this.state.selectedMenuCombinationId,
               controllingStaticDrowId: this.state.controllingStaticDrowId,
               calculateIndentLevel: calculateIndentLevel,
               setControllingStaticDrowId: this.setControllingStaticDrowId,
@@ -185,6 +198,7 @@ export default class App extends React.Component {
               setNewActorName: this.setNewActorName,
               setSelectedMenuCombinationId: this.setSelectedMenuCombinationId,
               setSelectedMenuDataRowId: this.setSelectedMenuDataRowId,
+              updateMenuAssociations: this.updateMenuAssociations,
               ...this.state.currentPageProps,
             }) : children
           }

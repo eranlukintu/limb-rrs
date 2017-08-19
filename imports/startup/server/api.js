@@ -7,6 +7,7 @@ import "../../api/server/server-methods/createActorArrayMethod.js";
 import "../../api/server/server-methods/createMenuItemMethod.js";
 import "../../api/server/server-methods/createMenuControlItemMethod.js";
 import "../../api/server/server-methods/updateMenuDataItemMethod.js";
+import "../../api/server/server-methods/updateMenuAssociationsMethod.js";
 import "../../api/server/server-functions/createRootItem.js";
 import "../../api/server/server-functions/createSortStringAtServer.js";
 import "../../api/server/server-functions/dot-functions/calculateIndentLevelAtServer.js";
