@@ -6,6 +6,7 @@ import { MENUDATAROWS } from '../../collections/menuCollections.js';
 import { MENUDATACONTROLVARIABLES } from '../../collections/menuCollections.js';
 import { MENUCONTROLVARIABLESROWS } from '../../collections/menuCollections.js';
 import { MENUCOMBINATIONS } from '../../collections/menuCollections.js';
+import { MENUASSOCIATIONS } from '../../collections/menuCollections.js';
 
 import { Meteor } from 'meteor/meteor';
 
@@ -39,4 +40,8 @@ Meteor.publish("populateMenuControlRows", function() {
 
 Meteor.publish("populateMenuCombinationRows", function() {	
 	return MENUCOMBINATIONS.find({});
+});
+
+Meteor.publish("populateMenuAssociationRows", function() {	
+	return MENUASSOCIATIONS.find({});
 });

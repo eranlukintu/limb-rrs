@@ -28,6 +28,6 @@ export const updateMenuAssociationsMethod = new ValidatedMethod({
       menuAssociationItem.menuDataRowId = associationIds.menuDataRowId;
       menuAssociationItem.menuDataRowLabel = menuDataRowLabel;
 
-      console.log(menuAssociationItem);
+      MENUASSOCIATIONS.insert(menuAssociationItem);
   }
 });

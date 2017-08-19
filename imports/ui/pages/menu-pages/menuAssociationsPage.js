@@ -3,7 +3,7 @@ import { ListGroup, ListGroupItem, Grid, Row, Col, Alert, Button, ButtonGroup,  
 import MenuStateCombinationsPage from './menuStateCombinationsPage.js';
 import MenuDataRowsPage from '../menuDataRowsPage.js';
 import MenuDataRowsComponent from '../../components/advanced-menu-system/menuDataRowsComponent.js';
-// import {MenuControlRow} from '../../components/advanced-menu-components/menuControlRow.js';
+import MenuAssociationsComponent from '../../components/advanced-menu-system/menuAssociationsComponent';
 
 export default class MenuAssociationsPage extends React.Component {
 
@@ -19,7 +19,7 @@ export default class MenuAssociationsPage extends React.Component {
 					<MenuStateCombinationsPage props = {props} />
 				</Col>
 				<Col md={4}>
-					
+					<MenuAssociationsComponent props = {props} />
 				</Col>
 				<Col md={4}>
 					<MenuDataRowsComponent props = {props}/>
