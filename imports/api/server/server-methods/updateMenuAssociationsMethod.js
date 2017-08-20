@@ -6,6 +6,8 @@ import { MENUDATAROWS } from '../../collections/menuCollections.js';
 import { MENUCOMBINATIONS } from '../../collections/menuCollections.js';
 import { getMenuCombinationLabel } from '../server-functions/menu-server-functions/getMenuCombinationLabel.js';
 import { getMenuDataRowLabel } from '../server-functions/menu-server-functions/getMenuDataRowLabel.js';
+import { validateMenuAssociation } from '../server-functions/menu-server-functions/validateMenuAssociation';
+import { checkForDuplicateMenuAssociation } from '../server-functions/menu-server-functions/checkForDuplicateMenuAssociation';
 
 export const updateMenuAssociationsMethod = new ValidatedMethod({
   name: "updateMenuAssociationsMethod",
@@ -22,12 +24,27 @@ export const updateMenuAssociationsMethod = new ValidatedMethod({
       								associationIds.menuDataRowId,
       								MENUDATAROWS);
 
-      const menuAssociationItem = {};
-      menuAssociationItem.menuCombinationId = associationIds.menuCombinationId;
-      menuAssociationItem.menuCombinationLabel = menuCombinationLabel;
-      menuAssociationItem.menuDataRowId = associationIds.menuDataRowId;
-      menuAssociationItem.menuDataRowLabel = menuDataRowLabel;
+      const valid = validateMenuAssociation(
+                      associationIds.menuCombinationId,
+                      associationIds.menuDataRowId,
+                      MENUASSOCIATIONS);
 
-      MENUASSOCIATIONS.insert(menuAssociationItem);
+      // console.log(valid);
+      const isThereDuplicate = checkForDuplicateMenuAssociation(
+                      associationIds.menuCombinationId,
+                      associationIds.menuDataRowId,
+                      MENUASSOCIATIONS);
+
+      if(valid===true && isThereDuplicate===false) {
+        const menuAssociationItem = {};
+        menuAssociationItem.menuCombinationId = associationIds.menuCombinationId;
+        menuAssociationItem.menuCombinationLabel = menuCombinationLabel;
+        menuAssociationItem.menuDataRowId = associationIds.menuDataRowId;
+        menuAssociationItem.menuDataRowLabel = menuDataRowLabel;
+
+        MENUASSOCIATIONS.insert(menuAssociationItem);
+      } else {
+        console.log("Association not saved");
+      }      
   }
 });

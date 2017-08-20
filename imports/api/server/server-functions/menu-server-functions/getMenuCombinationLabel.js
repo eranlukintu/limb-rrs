@@ -1,5 +1,5 @@
 export const getMenuCombinationLabel = function(id, menuCombinationCollection) {
-	console.log(id);
+	// console.log(id);
 	const menuCombinationRow = menuCombinationCollection.findOne({_id: id});
 	let menuCombinationLabel = "x";
 
