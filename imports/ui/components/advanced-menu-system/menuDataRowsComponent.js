@@ -11,21 +11,46 @@ import { MenuCheckboxDataRow } from './menuCheckboxDataRow';
 class MenuDataRowsComponent extends React.Component {
 	constructor(props) {
 		super();
+	}
+
+	setCheckedClass(selectedMenuCombinationId, 
+					menuDataRowId, 
+					menuAssociationsList) {
+		let checkedClass = "";
+
+		const associatedDataRows = menuAssociationsList.filter(function(ma) {
+			if(ma.menuCombinationId === selectedMenuCombinationId) {
+				return ma;
+			}
+		});
+
+		// console.log(associatedDataRows);
+		const foundMenuDataRow = associatedDataRows.find(
+									x => x.menuDataRowId === menuDataRowId);
+		// console.log(menuDataRowId);
+		// console.log(foundMenuDataRow);
+		if(foundMenuDataRow) {
+			checkedClass = "checked";
+		}
+		// console.log(checkedClass);
+		return checkedClass;
 	}	
 
 	renderMenuDataItems(bothLists) {
-		// console.log(menuDataRowList);
 		const menuDataRowList = bothLists[0];
 		const menuAssociationsList = bothLists[1];
-		// console.log(selectedMenuCombinationId);
-		// console.log(bothLists);
+		const selectedMenuCombinationId = this.props.props.selectedMenuCombinationId;
+		
 		if(menuDataRowList.length>0) {
 			return (<ListGroup>
 		        {menuDataRowList.map((rr) => (
 		            <MenuCheckboxDataRow 
 		            	menuDataRow = {rr} 
 		            	key = {rr._id} 
-		            	menuAssociationsList = {menuAssociationsList}
+		            	checkedClass = {this.setCheckedClass(
+		            				selectedMenuCombinationId,
+		            				rr._id,
+		            				menuAssociationsList)}
 		            	props={this.props} />
 		          ))};    
 		    </ListGroup>)
