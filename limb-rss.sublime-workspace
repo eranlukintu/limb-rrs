@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"menuAss",
+				"menuAssociationItemList"
+			],
+			[
+				"MenuAssoc",
+				"MenuAssociationsComponent"
+			],
+			[
+				"menuCombin",
+				"menuCombinationLabel"
+			],
+			[
 				"setSelectedM",
 				"setSelectedMenuDataRowId"
 			],
@@ -26,10 +38,6 @@
 			[
 				"menuData",
 				"menuDataRowsCollection"
-			],
-			[
-				"menuCombin",
-				"menuCombinationsCollection"
 			],
 			[
 				"setSele",
@@ -506,140 +514,46 @@
 			[
 				"spac",
 				"space-between"
-			],
-			[
-				"indentM",
-				"createIndentMarkerString"
-			],
-			[
-				"sim",
-				"simpleElements"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "imports/ui/components/advanced-menu-system/menuStateCombinationRow.js",
+			"file": "imports/api/server/server-functions/menu-server-functions/validateMenuAssociation.js",
 			"settings":
 			{
-				"buffer_size": 605,
+				"buffer_size": 349,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "imports/ui/pages/menu-pages/menuStateCombinationsPage.js",
+			"file": "imports/api/server/server-methods/updateMenuAssociationsMethod.js",
 			"settings":
 			{
-				"buffer_size": 1643,
+				"buffer_size": 2314,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "imports/api/server/publications/publications.js",
+			"contents": "import React from 'react';\nimport { ListGroup, ListGroupItem, Grid, Row, Col, Alert, Button, ButtonGroup,  FormGroup, FormControl, ControlLabel} from 'react-bootstrap';\nimport { composeWithTracker } from 'react-komposer';\nimport { MENUASSOCIATIONS } from \"../../../api/collections/menuCollections.js\";\nimport Loading from \"../../components/Loading.js\";\nimport { RawDataRow } from \"../../components/modeling-components/raw-model/rawDataRow.js\";\nimport { MenuDataRow } from './menuDataRow.js';\nimport { MenuCheckboxDataRow } from './menuCheckboxDataRow';\nimport { MenuAssociationRow } from './menuAssociationRow.js';\n\nclass MenuAssociationComponent extends React.Component {\n\tconstructor(props) {\n\t\tsuper();\n\t}\t\n\n\trenderMenuDataItems(menuAssociationItemList) {\n\t\tconst selectedMenuCombinationId = this.props.props.selectedMenuCombinationId;\n\t\tconst filteredMenuAssociationsList = menuAssociationItemList.filter(function(mc) {\n\t\t\tif(mc.menuCombinationId === selectedMenuCombinationId) {\n\t\t\t\treturn mc;\n\t\t\t}\n\t\t});\n\t\t// console.log(menuAssociationItemList);\n\t\t// console.log(filteredMenuAssociationsList);\n\t\tif(menuAssociationItemList.length>0) {\n\t\t\treturn (<ListGroup>\n\t\t        {menuAssociationItemList.map((rr) => (\n\t\t            <MenuAssociationRow menuAssociationRow = {rr} key = {rr._id}/>\n\t\t          ))};    \n\t\t    </ListGroup>)\n\t\t}else {\n\t\t\t<Alert bsStyle=\"warning\">No menu items yet.</Alert>\n\t\t}\n\t}\n\n\trender() {\n\t\treturn <div>\n\t\t\t<h4>Associated items</h4>\t\t\t\n\t\t\t{this.renderMenuDataItems(menuAssociationItemList)}\n\t\t</div>\n\t}\n}\n\nlet menuAssociationItemList;\n\nconst composer = (params, onData) => {\n  const subscription = Meteor.subscribe('populateMenuAssociationRows');\n\n  if (subscription.ready()) {\n    menuAssociationItemList = MENUASSOCIATIONS.find().fetch();\n    onData(null, { menuAssociationItemList });\n  }\n};\n\nexport default composeWithTracker(composer, Loading)(MenuAssociationComponent);",
+			"file": "imports/ui/components/advanced-menu-system/menuAssociationsComponent.js",
+			"file_size": 1954,
+			"file_write_time": 131476775694813008,
 			"settings":
 			{
-				"buffer_size": 1340,
+				"buffer_size": 1903,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "imports/ui/layouts/App.js",
+			"file": "imports/api/server/server-functions/menu-server-functions/checkForDuplicateMenuAssociation.js",
 			"settings":
 			{
-				"buffer_size": 8289,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "imports/startup/server/api.js",
-			"settings":
-			{
-				"buffer_size": 1242,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "imports/api/server/server-methods/updateMenuAssociationMethod..js",
-			"settings":
-			{
-				"buffer_size": 546,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "imports/api/server/server-methods/updateMenuDataItemMethod.js",
-			"settings":
-			{
-				"buffer_size": 1716,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "imports/functions/ui-functions/menu-functions/calculateNextPage.js",
-			"settings":
-			{
-				"buffer_size": 1396,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "imports/ui/pages/menu-pages/menuAssociationsPage.js",
-			"settings":
-			{
-				"buffer_size": 913,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "imports/ui/components/advanced-menu-system/menuDataRowsComponent.js",
-			"settings":
-			{
-				"buffer_size": 1472,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "imports/ui/components/advanced-menu-system/menuCheckboxDataRow.js",
-			"settings":
-			{
-				"buffer_size": 676,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "imports/api/collections/menuCollections.js",
-			"settings":
-			{
-				"buffer_size": 541,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "imports/api/server/server-functions/menu-server-functions/createMenuAssociation.js",
-			"settings":
-			{
-				"buffer_size": 1025,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "imports/api/server/server-functions/menu-server-functions/getMenuDataRowLabel.js",
-			"settings":
-			{
-				"buffer_size": 300,
+				"buffer_size": 577,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -648,25 +562,7 @@
 			"file": "imports/api/server/server-functions/menu-server-functions/getMenuCombinationLabel.js",
 			"settings":
 			{
-				"buffer_size": 340,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "imports/ui/pages/menuDataRowsPage.js",
-			"settings":
-			{
-				"buffer_size": 3161,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "imports/ui/pages/menuCentral.js",
-			"settings":
-			{
-				"buffer_size": 2257,
+				"buffer_size": 373,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -765,6 +661,7 @@
 	"expanded_folders":
 	[
 		"/C/Users/Eran/Meteor/limb-rrs",
+		"/C/Users/Eran/Meteor/limb-rrs/client",
 		"/C/Users/Eran/Meteor/limb-rrs/imports",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/collections",
@@ -773,15 +670,16 @@
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-functions",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-functions/dot-functions",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-functions/dRow-functions",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-functions/dynamic-array-functions",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-functions/menu-server-functions",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-methods",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/functions",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/functions/advanced-menu-functions",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/functions/dot-functions",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/functions/ui-functions",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/functions/ui-functions/menu-functions",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/modules",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/startup",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/startup/client",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/startup/server",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components",
@@ -798,16 +696,29 @@
 	],
 	"file_history":
 	[
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/menuDataItemPage.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/advanced-menu-system/menuStateCombinationRow.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/advanced-menu-system/menuAssociationRow.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/menu-pages/menuStateCombinationsPage.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/publications/publications.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/layouts/App.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/startup/server/api.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-methods/updateMenuAssociationsMethod.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/functions/ui-functions/menu-functions/calculateNextPage.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/menu-pages/menuAssociationsPage.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/advanced-menu-system/menuDataRowsComponent.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/advanced-menu-system/menuAssociationsComponent.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/advanced-menu-system/menuCheckboxDataRow.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/collections/menuCollections.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-functions/menu-server-functions/createMenuAssociation.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-functions/menu-server-functions/getMenuDataRowLabel.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-functions/menu-server-functions/getMenuCombinationLabel.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/menuDataRowsPage.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/menuCentral.js",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/menuDataItemPage.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/menuControlVariablesItemsPage.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/menu-pages/menuControlItemsRowsPage.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/menu-pages/editMenuDataItemPage.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/startup/server/api.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/layouts/App.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/menuCentral.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-functions/menu-server-functions/createMenuCombinations.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/publications/publications.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/advanced-menu-system/menuDataRow.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/advanced-menu-system/menuControlRow.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-functions/menu-server-functions/getAttribute.js",
@@ -821,7 +732,6 @@
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-methods/updateMenuDataItemMethod.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-functions/menu-server-functions/createMenuDataList.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-functions/menu-server-functions/createMenuControlItemList.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/api/collections/menuCollections.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-functions/menu-server-functions/findLastToplevelMenuItemDstring.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-functions/menu-server-functions/findLastTopLevelMenuControlItemDstring.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-functions/dRow-functions/getAttribute.js",
@@ -831,7 +741,6 @@
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-functions/dRow-functions/createBasicItem.txt",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/functions/advanced-menu-functions/create-menu-combinations.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-methods/createMenuCombinationsMethod.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/functions/ui-functions/menu-functions/calculateNextPage.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/menu-components/indexMenu.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/menu-components/businessModelingMenu_selected.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/menu-components/businessModelingMenuMain.js",
@@ -914,18 +823,7 @@
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/temp-data/temp-collections/tempCollections.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/temp-data/server/server-methods/summaryServerMethods.js",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/temp-data/server/server-methods/observationServerMethods.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/api/temp-data/server/temp-publications/tempPublications.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/temp-components/tempInfluencers.js",
-		"/C/Users/Eran/AppData/Roaming/Sublime Text 3/Packages/Theme - Default/Default.sublime-theme",
-		"/C/Users/Eran/AppData/Roaming/Sublime Text 3/Packages/Theme - Default/Widget.sublime-settings",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/temp-pages/tempDataManagementPage.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/functions/dot-string-functions/dotStringFunctions.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/temp-components/tempObservationsList.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/temp-components/tempTestDataItem.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/DocumentEditor.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/DocumentsList.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/temp-pages/tempOutlinePage.js",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/temp-pages/tempSARSPage.js"
+		"/C/Users/Eran/Meteor/limb-rrs/imports/api/temp-data/server/temp-publications/tempPublications.js"
 	],
 	"find":
 	{
@@ -946,6 +844,11 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"duplicate",
+			"menuDataItemList",
+			"MenuDataRowsComponent",
+			"menuStateCombinationRow",
+			"menuAssociationItem",
 			"composeMenuCombinations",
 			"Combination",
 			"MenuDataItemPage",
@@ -1068,12 +971,7 @@
 			"hierarchyActivity",
 			"activities",
 			"TempOutlineComponent",
-			"TempOutlinePage",
-			"displayData",
-			"sds",
-			"controllingElementId",
-			"setControllingElementId",
-			"allTestData"
+			"TempOutlinePage"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1124,82 +1022,24 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "imports/ui/components/advanced-menu-system/menuStateCombinationRow.js",
+					"file": "imports/api/server/server-functions/menu-server-functions/validateMenuAssociation.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 605,
+						"buffer_size": 349,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								585,
-								585
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "imports/ui/pages/menu-pages/menuStateCombinationsPage.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1643,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1031,
-								1031
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 240.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "imports/api/server/publications/publications.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1340,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								937,
-								957
+								53,
+								117
 							]
 						],
 						"settings":
@@ -1207,90 +1047,34 @@
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 300.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 15,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "imports/ui/layouts/App.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8289,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5669,
-								5669
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2305.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "imports/startup/server/api.js",
+					"buffer": 1,
+					"file": "imports/api/server/server-methods/updateMenuAssociationsMethod.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1242,
+						"buffer_size": 2314,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								667,
-								667
+								1569,
+								1569
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "imports/api/server/server-methods/updateMenuAssociationMethod..js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 546,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								546,
-								543
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1300,25 +1084,54 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "imports/api/server/server-methods/updateMenuDataItemMethod.js",
-					"semi_transient": true,
+					"buffer": 2,
+					"file": "imports/ui/components/advanced-menu-system/menuAssociationsComponent.js",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1716,
+						"buffer_size": 1903,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1100,
+								1100
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 60.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "imports/api/server/server-functions/menu-server-functions/checkForDuplicateMenuAssociation.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 577,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								574,
+								574
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1328,289 +1141,31 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "imports/functions/ui-functions/menu-functions/calculateNextPage.js",
+					"buffer": 4,
+					"file": "imports/api/server/server-functions/menu-server-functions/getMenuCombinationLabel.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1396,
+						"buffer_size": 373,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								114,
-								114
+								101,
+								101
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 60.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "imports/ui/pages/menu-pages/menuAssociationsPage.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 913,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								625,
-								625
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "imports/ui/components/advanced-menu-system/menuDataRowsComponent.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1472,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								752,
-								752
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 80.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 14,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "imports/ui/components/advanced-menu-system/menuCheckboxDataRow.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 676,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								519,
-								519
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "imports/api/collections/menuCollections.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 541,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								480,
-								496
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "imports/api/server/server-functions/menu-server-functions/createMenuAssociation.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1025,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								439,
-								439
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "imports/api/server/server-functions/menu-server-functions/getMenuDataRowLabel.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 300,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								226,
-								226
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 14,
-					"file": "imports/api/server/server-functions/menu-server-functions/getMenuCombinationLabel.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 340,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								340
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 15,
-					"file": "imports/ui/pages/menuDataRowsPage.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3161,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2480,
-								2480
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1080.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 16,
-					"type": "text"
-				},
-				{
-					"buffer": 16,
-					"file": "imports/ui/pages/menuCentral.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2257,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								433,
-								433
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 60.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
 					"type": "text"
 				}
 			]

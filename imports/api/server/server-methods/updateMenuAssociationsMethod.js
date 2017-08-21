@@ -13,7 +13,8 @@ export const updateMenuAssociationsMethod = new ValidatedMethod({
   name: "updateMenuAssociationsMethod",
   validate: new SimpleSchema({
   	menuCombinationId: {type: String},
-  	menuDataRowId: {type: String} 
+  	menuDataRowId: {type: String},
+    previousMenuDataRowId: {type: String} 
   }).validator(),
   run(associationIds) {
       const menuCombinationLabel = getMenuCombinationLabel(
@@ -44,7 +45,8 @@ export const updateMenuAssociationsMethod = new ValidatedMethod({
 
         MENUASSOCIATIONS.insert(menuAssociationItem);
       } else {
-        console.log("Association not saved");
+        console.log("valid", valid);
+        console.log("duplicate", isThereDuplicate);
       }      
   }
 });

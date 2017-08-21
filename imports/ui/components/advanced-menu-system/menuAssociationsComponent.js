@@ -14,15 +14,22 @@ class MenuAssociationComponent extends React.Component {
 	}	
 
 	renderMenuDataItems(menuAssociationItemList) {
+		const selectedMenuCombinationId = this.props.props.selectedMenuCombinationId;
+		const filteredMenuAssociationsList = menuAssociationItemList.filter(function(mc) {
+			if(mc.menuCombinationId === selectedMenuCombinationId) {
+				return mc;
+			}
+		});
 		// console.log(menuAssociationItemList);
-		if(menuAssociationItemList.length>0) {
+		// console.log(filteredMenuAssociationsList);
+		if(filteredMenuAssociationsList.length>0) {
 			return (<ListGroup>
-		        {menuAssociationItemList.map((rr) => (
+		        {filteredMenuAssociationsList.map((rr) => (
 		            <MenuAssociationRow menuAssociationRow = {rr} key = {rr._id}/>
 		          ))};    
 		    </ListGroup>)
 		}else {
-			<Alert bsStyle="warning">No menu items yet.</Alert>
+			<p>No associated items yet</p>
 		}
 	}
 

@@ -125,11 +125,12 @@ export default class App extends React.Component {
     }
   }
 
-  updateMenuAssociations(menuCombinationId, menuDataRowId) {
+  updateMenuAssociations(menuCombinationId, menuDataRowId, previousMenuDataRowId) {
     const associationIds = {};
-    console.log(menuCombinationId, menuDataRowId);
+    console.log(menuCombinationId, menuDataRowId, previousMenuDataRowId);
     associationIds.menuCombinationId = menuCombinationId;
     associationIds.menuDataRowId = menuDataRowId;
+    associationIds.previousMenuDataRowId = previousMenuDataRowId;
 
     Meteor.call("updateMenuAssociationsMethod", associationIds);
 
@@ -190,6 +191,7 @@ export default class App extends React.Component {
               setCurrentPage: this.setCurrentPage,
               currentPage: this.state.currentPage,
               selectedMenuCombinationId: this.state.selectedMenuCombinationId,
+              selectedMenuDataRowId: this.state.selectedMenuDataRowId,
               controllingStaticDrowId: this.state.controllingStaticDrowId,
               calculateIndentLevel: calculateIndentLevel,
               setControllingStaticDrowId: this.setControllingStaticDrowId,

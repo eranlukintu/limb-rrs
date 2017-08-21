@@ -2,6 +2,7 @@ import React from 'react';
 import { ListGroup, ListGroupItem, Grid, Row, Col, Alert, Button, ButtonGroup,  FormGroup, FormControl, ControlLabel} from 'react-bootstrap';
 import { composeWithTracker } from 'react-komposer';
 import { MENUDATAROWS } from "../../../api/collections/menuCollections.js";
+import { MENUASSOCIATIONS } from "../../../api/collections/menuCollections.js";
 import Loading from "../../components/Loading.js";
 import { RawDataRow } from "../../components/modeling-components/raw-model/rawDataRow.js";
 import { MenuDataRow } from './menuDataRow.js';
@@ -12,12 +13,20 @@ class MenuDataRowsComponent extends React.Component {
 		super();
 	}	
 
-	renderMenuDataItems(menuDataItemList) {
-		// console.log(menuDataItemList);
-		if(menuDataItemList.length>0) {
+	renderMenuDataItems(bothLists) {
+		// console.log(menuDataRowList);
+		const menuDataRowList = bothLists[0];
+		const menuAssociationsList = bothLists[1];
+		// console.log(selectedMenuCombinationId);
+		// console.log(bothLists);
+		if(menuDataRowList.length>0) {
 			return (<ListGroup>
-		        {menuDataItemList.map((rr) => (
-		            <MenuCheckboxDataRow menuDataRow = {rr} key = {rr._id} props={this.props} />
+		        {menuDataRowList.map((rr) => (
+		            <MenuCheckboxDataRow 
+		            	menuDataRow = {rr} 
+		            	key = {rr._id} 
+		            	menuAssociationsList = {menuAssociationsList}
+		            	props={this.props} />
 		          ))};    
 		    </ListGroup>)
 		}else {
@@ -27,21 +36,25 @@ class MenuDataRowsComponent extends React.Component {
 
 	render() {
 		return <div>
-			<h4>MenuItem</h4>
+			<h4>Menu data row</h4>
 			
-			{this.renderMenuDataItems(menuDataItemList)}
+			{this.renderMenuDataItems(bothLists)}
 		</div>
 	}
 }
 
-let menuDataItemList;
+let menuDataRowList;
+let menuAssociationsList;
+let bothLists;
 
 const composer = (params, onData) => {
   const subscription = Meteor.subscribe('populateMenuDataRows');
 
   if (subscription.ready()) {
-    menuDataItemList = MENUDATAROWS.find().fetch();
-    onData(null, { menuDataItemList });
+    menuDataRowList = MENUDATAROWS.find().fetch();
+    menuAssociationsList = MENUASSOCIATIONS.find().fetch();
+    bothLists = [menuDataRowList, menuAssociationsList];
+    onData(null, { bothLists });
   }
 };
 

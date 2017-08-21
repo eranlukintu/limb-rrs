@@ -10,10 +10,16 @@ export const checkForDuplicateMenuAssociation = function
 
 	let isThereDuplicate = true;
 
-	const foundMenuCombination = menuAssociationsCollection.findOne({menuCombinationId: menuCombinationId});
-	const foundMenuDataRow = menuAssociationsCollection.findOne({menuDataRowId: menuDataRowId});
+	
+	
+	const associatedMenuDataRows = menuAssociationsCollection.find(
+		{menuCombinationId: menuCombinationId}
+		).fetch();
 
-	if(foundMenuCombination && foundMenuDataRow) {
+	const foundMenuDataRow = associatedMenuDataRows.find(x => x.menuDataRowId === menuDataRowId);
+	console.log(foundMenuDataRow);
+
+	if(foundMenuDataRow) {
 		isThereDuplicate = true;
 	}else {
 		isThereDuplicate = false;

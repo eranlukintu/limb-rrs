@@ -8,9 +8,14 @@ export const MenuCheckboxDataRow = function(props) {
 	const setSelectedMenuDataRowId = props.props.props.setSelectedMenuDataRowId;
 	const updateMenuAssociations = props.props.props.updateMenuAssociations;
 	const selectedMenuCombinationId = props.props.props.selectedMenuCombinationId;
+	const previousMenuDataRowId = props.props.props.selectedMenuDataRowId;
+
 
 	handleChange = function() {
-		updateMenuAssociations(selectedMenuCombinationId, menuDataRow._id);
+		console.log("previous", previousMenuDataRowId)
+		updateMenuAssociations(selectedMenuCombinationId, 
+								menuDataRow._id, 
+								previousMenuDataRowId);
 		// console.log(props);
 	}
 

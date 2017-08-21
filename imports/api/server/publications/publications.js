@@ -27,7 +27,10 @@ Meteor.publish("populateMenuItems", function() {
 });
 
 Meteor.publish("populateMenuDataRows", function() {	
-	return MENUDATAROWS.find({});
+	return [
+		MENUDATAROWS.find({}),
+		MENUASSOCIATIONS.find({})
+		];
 });
 
 Meteor.publish("populateMenuControlItems", function() {
