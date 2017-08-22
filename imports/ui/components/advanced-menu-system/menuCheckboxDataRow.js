@@ -5,7 +5,7 @@ import { ListGroup, ListGroupItem, Checkbox} from 'react-bootstrap';
 export const MenuCheckboxDataRow = function(props) {
 
 	const menuDataRow = props.menuDataRow
-	const setSelectedMenuDataRowId = props.props.props.setSelectedMenuDataRowId;
+	// const setSelectedMenuDataRowId = props.props.props.setSelectedMenuDataRowId;
 	const updateMenuAssociations = props.props.props.updateMenuAssociations;
 	const selectedMenuCombinationId = props.props.props.selectedMenuCombinationId;
 	const previousMenuDataRowId = props.props.props.selectedMenuDataRowId;

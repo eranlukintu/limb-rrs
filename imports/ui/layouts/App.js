@@ -107,7 +107,7 @@ export default class App extends React.Component {
 
   setSelectedMenuCombinationId(selectedMenuCombinationId) {
     const currentSelectedMenuCombinationId = this.state.selectedMenuCombinationId;
-    console.log(currentSelectedMenuCombinationId);
+    // console.log(currentSelectedMenuCombinationId);
     if(selectedMenuCombinationId===currentSelectedMenuCombinationId) {
       this.setState({selectedMenuCombinationId: "x"});
     } else {
@@ -127,7 +127,7 @@ export default class App extends React.Component {
 
   updateMenuAssociations(menuCombinationId, menuDataRowId, previousMenuDataRowId) {
     const associationIds = {};
-    console.log(menuCombinationId, menuDataRowId, previousMenuDataRowId);
+    // console.log(menuCombinationId, menuDataRowId, previousMenuDataRowId);
     associationIds.menuCombinationId = menuCombinationId;
     associationIds.menuDataRowId = menuDataRowId;
     associationIds.previousMenuDataRowId = previousMenuDataRowId;
