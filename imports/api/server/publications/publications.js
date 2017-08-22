@@ -7,6 +7,7 @@ import { MENUDATACONTROLVARIABLES } from '../../collections/menuCollections.js';
 import { MENUCONTROLVARIABLESROWS } from '../../collections/menuCollections.js';
 import { MENUCOMBINATIONS } from '../../collections/menuCollections.js';
 import { MENUASSOCIATIONS } from '../../collections/menuCollections.js';
+import { removeRedundantMenuAssociations } from '../server-functions/menu-server-functions/removeRedundantMenuAssociations.js';
 
 import { Meteor } from 'meteor/meteor';
 
@@ -46,5 +47,6 @@ Meteor.publish("populateMenuCombinationRows", function() {
 });
 
 Meteor.publish("populateMenuAssociationRows", function() {	
+	removeRedundantMenuAssociations();
 	return MENUASSOCIATIONS.find({});
 });
