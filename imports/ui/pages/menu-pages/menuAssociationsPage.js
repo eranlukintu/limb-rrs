@@ -6,13 +6,23 @@ import MenuDataRowsComponent from '../../components/advanced-menu-system/menuDat
 import MenuAssociationsComponent from '../../components/advanced-menu-system/menuAssociationsComponent';
 
 export default class MenuAssociationsPage extends React.Component {
+	constructor(props) {
+		super();
+	}
+
+	handleButtonClick() {
+		this.props.setCurrentPage("", {page:"menuCentral", props: this.props});
+	}
 
 	render() {
 		const props = this.props;
 		// console.log(props);
 		return <Grid>
 			<Row>
-				<h3>Menu associations </h3>
+				<span>
+					<h3>Menu associations </h3>				
+					<Button onClick={this.handleButtonClick.bind(this)}>Menu central</Button>
+				</span>
 			</Row>
 			<Row>
 				<Col md={4}>
