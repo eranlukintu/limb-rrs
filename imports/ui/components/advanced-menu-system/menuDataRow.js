@@ -16,7 +16,5 @@ export const MenuDataRow = function(props) {
 
 	return <ListGroupItem onClick={this.handleSelect.bind(this)}> 
 		{menuDataRow.label}
-		{spacer}
-		{menuDataRow.description}
 	</ListGroupItem>
 }

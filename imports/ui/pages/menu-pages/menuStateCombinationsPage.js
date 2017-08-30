@@ -11,17 +11,29 @@ class MenuStateCombinationsPage extends React.Component {
 	constructor(props) {
 		super();
 		}
-	
+
+	setCheckedClass(currentMenuCombinationId, selectedMenuCombinationId) {
+		if(currentMenuCombinationId === selectedMenuCombinationId) {
+			return "checked";
+		}else {
+			return "";
+		}
+	}
+
 	renderMenuDataItems(menuCombinationsList) {
 		// console.log(menuCombinationsList);
+		const selectedMenuCombinationId = this.props.props.selectedMenuCombinationId;
 		if(menuCombinationsList.length>0) {
 			return (<ListGroup>
 		        {menuCombinationsList.map((mc) => (
-		            <MenuStateCombinationRow key={mc._id} menuStateCombinationRow={mc} props={this.props}/>
+		            <MenuStateCombinationRow key={mc._id} 
+		            	menuStateCombinationRow={mc}
+		            	checkedClass = {this.setCheckedClass(mc._id, selectedMenuCombinationId)}
+		            	props={this.props}/>
 		          ))}; 
 		    </ListGroup>)
 		}else {
-			<Alert bsStyle="warning">No menu items yet.</Alert>
+			<p>No menu items yet.</p>
 		}
 	}
 

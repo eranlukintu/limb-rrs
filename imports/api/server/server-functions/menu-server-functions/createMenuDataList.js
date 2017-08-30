@@ -5,6 +5,7 @@ import { getAttribute } from "./getAttribute.js";
 export const createMenuDataList = function() {
 
 	MENUDATAROWS.remove({});
+	const menuDataItemsCollection = MENUDATAITEMS;
 
 	const topLevelPipeline = [		
 			{$match: {staticIndentLevel: "0"}},		
@@ -19,9 +20,9 @@ export const createMenuDataList = function() {
 		const dString = t.staticDstring;
 		const indentLevel = t.staticIndentLevel;
 		const sortString = t.staticSortString;
-		const label = getAttribute(dString, "has principal label", indentLevel);
-		const type = getAttribute(dString, "has item type", indentLevel);
-		const desc = getAttribute(dString, "has description", indentLevel);
+		const label = getAttribute(dString, "has principal label", indentLevel, menuDataItemsCollection);
+		const type = getAttribute(dString, "has item type", indentLevel, menuDataItemsCollection);
+		const desc = getAttribute(dString, "has description", indentLevel, menuDataItemsCollection);
 		const menuDataRow = {};
 
 		// console.log(type);

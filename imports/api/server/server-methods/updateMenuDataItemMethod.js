@@ -18,11 +18,20 @@ export const updateMenuDataItemMethod = new ValidatedMethod({
 	// console.log(menuDataItem);
 		const foundMenuDataHeadDrow = MENUDATAITEMS.findOne({dRowId: menuDataItem.sourceDrowId});
 		// console.log(foundMenuDataHeadDrow);
+		const menuDataItemsCollection = MENUDATAITEMS;
+		// console.log(menuDataItemsCollection);
 
 		const controllingDstring = foundMenuDataHeadDrow.staticDstring;
 		const controllingIndentLevel = foundMenuDataHeadDrow.staticIndentLevel;
-		let foundLabelDrow = getDrowByAttribute(controllingDstring, "has principal label", controllingIndentLevel);
-		let foundDescriptionDrow = getDrowByAttribute(controllingDstring, "has description", controllingIndentLevel);
+		let foundLabelDrow = getDrowByAttribute(
+							controllingDstring, "has principal label", 
+							controllingIndentLevel,
+							menuDataItemsCollection
+							);
+		let foundDescriptionDrow = getDrowByAttribute(
+							controllingDstring, "has description", 
+							controllingIndentLevel,
+							menuDataItemsCollection);
 
 		const foundLabelDrowId = foundLabelDrow._id;
 		const newLabel = menuDataItem.name;

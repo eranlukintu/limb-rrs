@@ -5,6 +5,7 @@ export const getDrowByAttribute = function(dString, attributePhrase, originalSta
    // const staticArray = DOTROWS.find().fetch();
    // console.log(staticArray);
 
+   // console.log("collection", collection);
    const staticIndentLevel = (Number(originalStaticIndentLevel) + 1).toString();
    let dStringToBeMatched = "^" + dString + "\\.";
    
