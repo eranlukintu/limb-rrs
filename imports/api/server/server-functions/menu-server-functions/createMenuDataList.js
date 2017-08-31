@@ -4,7 +4,7 @@ import { getAttribute } from "./getAttribute.js";
 
 export const createMenuDataList = function() {
 
-	MENUDATAROWS.remove({});
+	// MENUDATAROWS.remove({});
 	const menuDataItemsCollection = MENUDATAITEMS;
 
 	const topLevelPipeline = [		
@@ -15,29 +15,32 @@ export const createMenuDataList = function() {
 
 	const topLevelMenuDataItemRows = MENUDATAITEMS.aggregate(topLevelPipeline)
 	topLevelMenuDataItemRows.forEach(function(t) {
-		// console.log(t);
-		const sourceDrowId = t.dRowId;
-		const dString = t.staticDstring;
-		const indentLevel = t.staticIndentLevel;
-		const sortString = t.staticSortString;
-		const label = getAttribute(dString, "has principal label", indentLevel, menuDataItemsCollection);
-		const type = getAttribute(dString, "has item type", indentLevel, menuDataItemsCollection);
-		const desc = getAttribute(dString, "has description", indentLevel, menuDataItemsCollection);
-		const menuDataRow = {};
+		const foundDataRow = MENUDATAROWS.findOne({sourceDrowId: t.dRowId});
+		if(!foundDataRow){
+			// console.log(t);
+			const sourceDrowId = t.dRowId;
+			const dString = t.staticDstring;
+			const indentLevel = t.staticIndentLevel;
+			const sortString = t.staticSortString;
+			const label = getAttribute(dString, "has principal label", indentLevel, menuDataItemsCollection);
+			const type = getAttribute(dString, "has item type", indentLevel, menuDataItemsCollection);
+			const desc = getAttribute(dString, "has description", indentLevel, menuDataItemsCollection);
+			const menuDataRow = {};
 
-		// console.log(type);
+			// console.log(type);
 
-		menuDataRow.sourceDrowId = sourceDrowId;
-		menuDataRow.dString = dString;
-		menuDataRow.indentLevel = indentLevel;
-		menuDataRow.sortString = sortString;
-		menuDataRow.label = label;
-		menuDataRow.type = type;
-		menuDataRow.description = desc;
-		menuDataRows.push(menuDataRow);
-		MENUDATAROWS.insert(menuDataRow);
+			menuDataRow.sourceDrowId = sourceDrowId;
+			menuDataRow.dString = dString;
+			menuDataRow.indentLevel = indentLevel;
+			menuDataRow.sortString = sortString;
+			menuDataRow.label = label;
+			menuDataRow.type = type;
+			menuDataRow.description = desc;
+			menuDataRows.push(menuDataRow);
+			MENUDATAROWS.insert(menuDataRow);
+		}else {
+			console.log("Data row already exists");
+		}
+		
 	});
-	// console.log(menuDataRows);
-
-
 }

@@ -11,6 +11,6 @@ export const composeMenuCombinations = new ValidatedMethod({
   }).validator(),
   run({}) {
      const menuCombinations = createMenuCombinations();
-     console.log(menuCombinations);     
+     // console.log(menuCombinations);     
   },
 });

@@ -56,8 +56,14 @@ export const createMenuCombinations = function() {
 
 	const test = ["abcede", "hjkmmen"];
 
-	MENUCOMBINATIONS.remove({});
+	// MENUCOMBINATIONS.remove({});
 	combinations.forEach(function(combinationString) {
-		MENUCOMBINATIONS.insert({combinationString});
+		const foundMenuCombination = MENUCOMBINATIONS.findOne({combinationString: combinationString});
+		if(!foundMenuCombination) {
+			MENUCOMBINATIONS.insert({combinationString});
+		}else {
+			console.log("Menu combination already exists");
+		}
+		
 	});
 }

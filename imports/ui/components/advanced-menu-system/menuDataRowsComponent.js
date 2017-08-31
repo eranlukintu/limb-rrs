@@ -55,7 +55,7 @@ class MenuDataRowsComponent extends React.Component {
 		          ))};    
 		    </ListGroup>)
 		}else {
-			<Alert bsStyle="warning">No menu items yet.</Alert>
+			<p>No menu items yet.</p>
 		}
 	}
 
