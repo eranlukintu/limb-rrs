@@ -4,12 +4,13 @@ import { ListGroup, ListGroupItem} from 'react-bootstrap';
 
 export const MenuControlRow = function(props) {
 
+	console.log(props);
 	const menuControlRow = props.menuControlRow;
-	// const setSelectedMenuControlRow = props.setSelectedMenuControlRow;
+	const setSelectedMenuControlRowId = props.props.setSelectedMenuControlRowId;
 	const spacer = "  ";
 	
 	handleSelect = function(e) {
-		setSelectedMenuControlRow(menuControlRow.sourceDrowId);
+		setSelectedMenuControlRowId(menuControlRow.sourceDrowId);
 	}
 
 	return <ListGroupItem onClick={this.handleSelect.bind(this)}> 

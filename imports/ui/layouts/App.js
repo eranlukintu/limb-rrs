@@ -36,8 +36,11 @@ export default class App extends React.Component {
       selectedItemType: null,
       selectedMenuCombinationId: "x",
       selectedMenuDataRowId: "x",
+      selectedMenuControlRowId: "x",
       controllingActorDrowId: null,
       newActorName: null,
+      activeRole: "administrator",
+      graphicalState: false,
     };
 
     this.setCurrentPage = this.setCurrentPage.bind(this);
@@ -50,6 +53,8 @@ export default class App extends React.Component {
     this.setSelectedMenuCombinationId = this.setSelectedMenuCombinationId.bind(this);
     this.setSelectedMenuDataRowId = this.setSelectedMenuDataRowId.bind(this);
     this.updateMenuAssociations = this.updateMenuAssociations.bind(this);
+    this.setSelectedMenuControlRowId = this.setSelectedMenuControlRowId.bind(this);
+    // this.setActiveRole = this.setActiveRole.bind(this);
   }
 
   setCurrentPage(event, { page, props }) {
@@ -125,6 +130,16 @@ export default class App extends React.Component {
     }
   }
 
+  setSelectedMenuControlRowId(selectedMenuControlRowId) {
+    const currentSelectedMenuControlRowId = this.state.selectedMenuControlRowId;
+    if(selectedMenuControlRowId === currentSelectedMenuControlRowId) {
+      this.setState({selectedMenuControlRowId: "x"});
+    }else {
+      this.setState({selectedMenuControlRowId: selectedMenuControlRowId});
+    }
+    console.log(this.state.selectedMenuControlRowId);
+  }
+
   updateMenuAssociations(menuCombinationId, menuDataRowId, previousMenuDataRowId) {
     const associationIds = {};
     // console.log(menuCombinationId, menuDataRowId, previousMenuDataRowId);
@@ -135,6 +150,10 @@ export default class App extends React.Component {
     Meteor.call("updateMenuAssociationsMethod", associationIds);
 
     // Meteor.call("updateMenuAssociations", associationIds);
+  }
+
+  setActiveRole() {
+    return "administrator";
   }
 
   currentPage() {
@@ -200,6 +219,7 @@ export default class App extends React.Component {
               setNewActorName: this.setNewActorName,
               setSelectedMenuCombinationId: this.setSelectedMenuCombinationId,
               setSelectedMenuDataRowId: this.setSelectedMenuDataRowId,
+              setSelectedMenuControlRowId: this.setSelectedMenuControlRowId,
               updateMenuAssociations: this.updateMenuAssociations,
               ...this.state.currentPageProps,
             }) : children

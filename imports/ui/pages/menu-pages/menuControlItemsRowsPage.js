@@ -68,7 +68,7 @@ class MenuControlItemsRowsPage extends React.Component {
 		if(menuControlVariableList.length>0) {
 			return (<ListGroup>
 		        {menuControlVariableList.map((rr) => (
-		            <MenuControlRow menuControlRow = {rr} key = {rr._id}/>
+		            <MenuControlRow menuControlRow = {rr} key = {rr._id} props={this.props}/>
 		          ))};    
 		    </ListGroup>)
 		}else {

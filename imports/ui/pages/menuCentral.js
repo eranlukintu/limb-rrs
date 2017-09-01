@@ -1,6 +1,7 @@
 import React from 'react';
 import { Jumbotron, Button, ButtonGroup, ButtonToolbar } from 'react-bootstrap';
 import { createMenuCombinations } from "../../functions/advanced-menu-functions/create-menu-combinations.js";
+import { getMenuControlStates } from "../ui-functions/getMenuControlStates.js";
 
 export default class MenuCentral extends React.Component {
 	constructor(props) {
@@ -11,7 +12,24 @@ export default class MenuCentral extends React.Component {
 		}
 
 		this.handleButtonClick = this.handleButtonClick.bind(this);
+		// this.test = this.test.bind(this);
 		
+	}
+
+	
+	test() {
+		const roleState = "administrator";
+		const initialisationState = true;
+		const graphicalState = false;
+		const selectedState = "null";
+		const pageState = "index";
+
+		const states = getMenuControlStates(roleState,
+												initialisationState,
+												graphicalState,
+												selectedState,
+												pageState);
+
 	}
 
 	handleButtonClick(e) {
@@ -38,6 +56,9 @@ export default class MenuCentral extends React.Component {
 			break;
 
 			case "6": setCurrentPage("", {page: "menuAssociationsPage"});
+			break;
+
+			case "7": this.test();
 			break;
 		}
 	}	
@@ -73,6 +94,10 @@ export default class MenuCentral extends React.Component {
 		  		<Button 
 		  			id="6" bsStyle="info" bsSize="small" onClick={this.handleButtonClick}>
 		  			Menu associations
+		  		</Button>
+		  		<Button 
+		  			id="7" bsStyle="success" bsSize="small" onClick={this.handleButtonClick}>
+		  			Get active menu actions
 		  		</Button>
 		  	</ButtonGroup>
 		  	</ButtonToolbar>		  	

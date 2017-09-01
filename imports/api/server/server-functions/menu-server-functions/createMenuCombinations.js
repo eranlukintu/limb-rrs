@@ -6,7 +6,7 @@ export const createMenuCombinations = function() {
 
 	const menuControlVeriablesRows =MENUCONTROLVARIABLESROWS.find({}).fetch();
 	const previousMenuCombinations = MENUCOMBINATIONS.find({}).fetch();
-	console.log(previousMenuCombinations);
+	// console.log(previousMenuCombinations);
 
 	const categoriesPipeline = [
 		{$match: {secondaryLabel: "has category"}},
