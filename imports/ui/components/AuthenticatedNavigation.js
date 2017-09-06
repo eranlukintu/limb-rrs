@@ -4,6 +4,8 @@ import { IndexLinkContainer, LinkContainer } from 'react-router-bootstrap';
 import { Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import { Meteor } from 'meteor/meteor';
 import { MenuMaster } from "./menu-components/menuMaster.js";
+import MenuDropdown from "./menu-components/menuDropdown.js";
+
 
 const handleLogout = () => Meteor.logout(() => browserHistory.push('/login'));
 
@@ -20,9 +22,11 @@ const AuthenticatedNavigation = ({ currentPage,
                                   calculateNextPageAndMenu, 
                                   calculateNextPage,
                                   calculateNextMenu,
-                                  isInitialised}) => (
+                                  isInitialised,
+                                  navControlStates}) => (
   <div>
     <Nav>
+      <MenuDropdown navControlStates = {navControlStates}/>
       < MenuMaster 
           currentPage={currentPage}
           setCurrentPage={setCurrentPage} 

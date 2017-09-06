@@ -16,7 +16,7 @@ export default class MenuAssociationsPage extends React.Component {
 
 	render() {
 		const props = this.props;
-		console.log(props);
+		// console.log(props);
 		return <Grid>
 			<Row>
 				<span>

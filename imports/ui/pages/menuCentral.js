@@ -16,22 +16,6 @@ export default class MenuCentral extends React.Component {
 		
 	}
 
-	
-	test() {
-		const roleState = "administrator";
-		const initialisationState = true;
-		const graphicalState = false;
-		const selectedState = "null";
-		const pageState = "index";
-
-		const states = getMenuControlStates(roleState,
-												initialisationState,
-												graphicalState,
-												selectedState,
-												pageState);
-
-	}
-
 	handleButtonClick(e) {
 		const props=this.props;
 		const amendedProps = this.setSelectedMenuCombinationId;
@@ -58,8 +42,6 @@ export default class MenuCentral extends React.Component {
 			case "6": setCurrentPage("", {page: "menuAssociationsPage"});
 			break;
 
-			case "7": this.test();
-			break;
 		}
 	}	
 
@@ -94,10 +76,6 @@ export default class MenuCentral extends React.Component {
 		  		<Button 
 		  			id="6" bsStyle="info" bsSize="small" onClick={this.handleButtonClick}>
 		  			Menu associations
-		  		</Button>
-		  		<Button 
-		  			id="7" bsStyle="success" bsSize="small" onClick={this.handleButtonClick}>
-		  			Get active menu actions
 		  		</Button>
 		  	</ButtonGroup>
 		  	</ButtonToolbar>		  	

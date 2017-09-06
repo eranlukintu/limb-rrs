@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"currentSelectedMen",
+				"currentSelectedMenuControlRowId"
+			],
+			[
 				"menuAss",
 				"menuAssociationItemToBeRemoved"
 			],
@@ -510,10 +514,6 @@
 			[
 				"min",
 				"min-width"
-			],
-			[
-				"Combin",
-				"CombinedSummaryView"
 			]
 		]
 	},
@@ -559,7 +559,7 @@
 			"file": "imports/api/server/server-functions/menu-server-functions/createMenuDataList.js",
 			"settings":
 			{
-				"buffer_size": 1409,
+				"buffer_size": 1550,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -578,6 +578,78 @@
 			"settings":
 			{
 				"buffer_size": 1912,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "imports/api/server/server-methods/createMenuCombinationsMethod.js",
+			"settings":
+			{
+				"buffer_size": 614,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "imports/api/server/server-functions/menu-server-functions/createMenuControlItemList.js",
+			"settings":
+			{
+				"buffer_size": 1932,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "imports/ui/pages/menu-pages/menuControlItemsRowsPage.js",
+			"settings":
+			{
+				"buffer_size": 4736,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "imports/ui/components/advanced-menu-system/menuControlRow.js",
+			"settings":
+			{
+				"buffer_size": 547,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "imports/functions/advanced-menu-functions/get-application-control-state/getApplicationControlState.js",
+			"settings":
+			{
+				"buffer_size": 1536,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "imports/ui/ui-functions/getMenuControlStates.js",
+			"settings":
+			{
+				"buffer_size": 1526,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "imports/ui/pages/menuCentral.js",
+			"settings":
+			{
+				"buffer_size": 2377,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "imports/api/server/server-functions/menu-server-functions/createMenuCombinations.js",
+			"settings":
+			{
+				"buffer_size": 1906,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -604,7 +676,7 @@
 			"file": "imports/ui/pages/menu-pages/menuAssociationsPage.js",
 			"settings":
 			{
-				"buffer_size": 1212,
+				"buffer_size": 1209,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -619,19 +691,28 @@
 			}
 		},
 		{
-			"file": "imports/ui/components/advanced-menu-system/menuStateCombinationRow.js",
+			"file": "imports/ui/pages/menuControlVariablesItemsPage.js",
 			"settings":
 			{
-				"buffer_size": 750,
+				"buffer_size": 4547,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "imports/ui/pages/menu-pages/editMenuDataItemPage.js",
+			"settings":
+			{
+				"buffer_size": 2552,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "imports/ui/components/advanced-menu-system/menuControlRow.js",
+			"file": "imports/ui/components/advanced-menu-system/menuStateCombinationRow.js",
 			"settings":
 			{
-				"buffer_size": 517,
+				"buffer_size": 750,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
@@ -645,10 +726,19 @@
 			}
 		},
 		{
+			"file": "imports/functions/ui-functions/menu-functions/getActiveMenuActionNames.js",
+			"settings":
+			{
+				"buffer_size": 503,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "imports/ui/components/advanced-menu-system/menuDataRowsComponent.js",
 			"settings":
 			{
-				"buffer_size": 2641,
+				"buffer_size": 2615,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -666,7 +756,7 @@
 			"file": "imports/ui/layouts/App.js",
 			"settings":
 			{
-				"buffer_size": 8536,
+				"buffer_size": 10031,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -804,13 +894,11 @@
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-functions/menu-server-functions",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/api/server/server-methods",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/functions",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/functions/dot-functions",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/functions/advanced-menu-functions",
+		"/C/Users/Eran/Meteor/limb-rrs/imports/functions/advanced-menu-functions/get-application-control-state",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/functions/ui-functions",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/functions/ui-functions/menu-functions",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/modules",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/startup",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/startup/client",
-		"/C/Users/Eran/Meteor/limb-rrs/imports/startup/server",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/components/advanced-menu-system",
@@ -822,7 +910,7 @@
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/layouts",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages",
 		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/pages/menu-pages",
-		"/C/Users/Eran/Meteor/limb-rrs/server"
+		"/C/Users/Eran/Meteor/limb-rrs/imports/ui/ui-functions"
 	],
 	"file_history":
 	[
@@ -974,6 +1062,8 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"applicationControlState",
+			"setSelectedMenuControlRow",
 			"selectionClass",
 			"menuDataItemList",
 			"duplicate",
@@ -1099,9 +1189,7 @@
 			"tdi",
 			"testDataList",
 			"parentHierarchItem",
-			"parentHierarchyActor",
-			"hierarchyActivity",
-			"activities"
+			"parentHierarchyActor"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1152,7 +1240,7 @@
 	"groups":
 	[
 		{
-			"selected": 10,
+			"selected": 23,
 			"sheets":
 			[
 				{
@@ -1180,7 +1268,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 16,
+					"stack_index": 27,
 					"type": "text"
 				},
 				{
@@ -1208,7 +1296,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 15,
+					"stack_index": 26,
 					"type": "text"
 				},
 				{
@@ -1238,7 +1326,7 @@
 						"translation.y": 120.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 14,
+					"stack_index": 25,
 					"type": "text"
 				},
 				{
@@ -1266,7 +1354,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 22,
 					"type": "text"
 				},
 				{
@@ -1275,15 +1363,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1409,
+						"buffer_size": 1550,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								999,
-								999
+								1548,
+								1548
 							]
 						],
 						"settings":
@@ -1291,11 +1379,11 @@
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.x": -0.0,
+						"translation.y": 360.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 16,
 					"type": "text"
 				},
 				{
@@ -1325,7 +1413,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 21,
 					"type": "text"
 				},
 				{
@@ -1349,15 +1437,253 @@
 						{
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
-						"translation.x": -0.0,
-						"translation.y": 600.0,
+						"translation.x": 0.0,
+						"translation.y": 451.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "imports/api/server/server-methods/createMenuCombinationsMethod.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 614,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								605,
+								605
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "imports/api/server/server-functions/menu-server-functions/createMenuControlItemList.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1932,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1887,
+								1887
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 491.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "imports/ui/pages/menu-pages/menuControlItemsRowsPage.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4736,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2512,
+								2512
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 120.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "imports/ui/components/advanced-menu-system/menuControlRow.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 547,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								238,
+								238
+							],
+							[
+								280,
+								280
+							],
+							[
+								365,
+								365
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "imports/functions/advanced-menu-functions/get-application-control-state/getApplicationControlState.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1536,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								234,
+								234
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 420.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "imports/ui/ui-functions/getMenuControlStates.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1526,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								989,
+								989
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 13,
+					"file": "imports/ui/pages/menuCentral.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2377,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2313,
+								2313
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1200.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "imports/api/server/server-functions/menu-server-functions/createMenuCombinations.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1906,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1603,
+								1603
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 840.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
 					"file": "imports/ui/components/advanced-menu-system/menuDataRow.js",
 					"semi_transient": false,
 					"settings":
@@ -1382,11 +1708,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 16,
 					"file": "imports/api/server/server-functions/menu-server-functions/removeRedundantMenuAssociations.js",
 					"semi_transient": false,
 					"settings":
@@ -1410,24 +1736,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 23,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 17,
 					"file": "imports/ui/pages/menu-pages/menuAssociationsPage.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1212,
+						"buffer_size": 1209,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								695,
-								695
+								769,
+								769
 							]
 						],
 						"settings":
@@ -1439,11 +1765,11 @@
 						"translation.y": 131.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 18,
 					"file": "imports/ui/pages/menu-pages/menuStateCombinationsPage.js",
 					"semi_transient": false,
 					"settings":
@@ -1464,15 +1790,73 @@
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 81.0,
-						"translation.y": 180.0,
+						"translation.x": 0.0,
+						"translation.y": 60.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 19,
+					"file": "imports/ui/pages/menuControlVariablesItemsPage.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 4547,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 2220.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"file": "imports/ui/pages/menu-pages/editMenuDataItemPage.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2552,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1515,
+								1515
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 660.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 18,
+					"type": "text"
+				},
+				{
+					"buffer": 21,
 					"file": "imports/ui/components/advanced-menu-system/menuStateCombinationRow.js",
 					"semi_transient": false,
 					"settings":
@@ -1497,40 +1881,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 19,
 					"type": "text"
 				},
 				{
-					"buffer": 12,
-					"file": "imports/ui/components/advanced-menu-system/menuControlRow.js",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 517,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
+					"buffer": 22,
 					"file": "imports/ui/components/advanced-menu-system/menuAssociationsComponent.js",
 					"semi_transient": false,
 					"settings":
@@ -1542,8 +1897,8 @@
 						"selection":
 						[
 							[
-								1385,
-								1385
+								1523,
+								1892
 							]
 						],
 						"settings":
@@ -1552,27 +1907,55 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 120.0,
+						"translation.y": 720.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 14,
-					"file": "imports/ui/components/advanced-menu-system/menuDataRowsComponent.js",
+					"buffer": 23,
+					"file": "imports/functions/ui-functions/menu-functions/getActiveMenuActionNames.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2641,
+						"buffer_size": 503,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1299,
-								1299
+								75,
+								75
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 24,
+					"file": "imports/ui/components/advanced-menu-system/menuDataRowsComponent.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2615,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1951,
+								1951
 							]
 						],
 						"settings":
@@ -1584,11 +1967,11 @@
 						"translation.y": 600.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 17,
 					"type": "text"
 				},
 				{
-					"buffer": 15,
+					"buffer": 25,
 					"file": "imports/ui/components/advanced-menu-system/menuCheckboxDataRow.js",
 					"semi_transient": false,
 					"settings":
@@ -1613,41 +1996,41 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 20,
 					"type": "text"
 				},
 				{
-					"buffer": 16,
+					"buffer": 26,
 					"file": "imports/ui/layouts/App.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8536,
+						"buffer_size": 10031,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5568,
-								5568
+								8053,
+								8053
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": -0.0,
-						"translation.y": 2305.0,
+						"translation.x": 7.0,
+						"translation.y": 60.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 17,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 17,
+					"buffer": 27,
 					"file": "imports/api/server/publications/publications.js",
 					"semi_transient": false,
 					"settings":
@@ -1671,11 +2054,11 @@
 						"translation.y": 420.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 24,
 					"type": "text"
 				},
 				{
-					"buffer": 18,
+					"buffer": 28,
 					"file": "imports/api/server/server-functions/menu-server-functions/checkForDuplicateMenuAssociation.js",
 					"semi_transient": false,
 					"settings":
@@ -1699,11 +2082,11 @@
 						"translation.y": 60.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 18,
+					"stack_index": 28,
 					"type": "text"
 				},
 				{
-					"buffer": 19,
+					"buffer": 29,
 					"file": "imports/api/server/server-functions/menu-server-functions/getMenuCombinationLabel.js",
 					"semi_transient": false,
 					"settings":
@@ -1727,7 +2110,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 19,
+					"stack_index": 29,
 					"type": "text"
 				}
 			]

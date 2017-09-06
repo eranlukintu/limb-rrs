@@ -20,8 +20,10 @@ import { CreateNewActorComponent } from '../components/modeling-components/actor
 import { calculateNextPage } from '../../functions/ui-functions/menu-functions/calculateNextPage.js';
 import { calculateNextMenu } from '../../functions/ui-functions/menu-functions/calculateNextMenu.js';
 import { calculateIndentLevel } from '../../functions/dot-functions/dotRowFunctions';
-import { DOTROWS } from '../../api/collections/drows.js';
+import { MENUASSOCIATIONS } from '../../api/collections/menuCollections.js';
 import { Loading } from '../components/Loading.js';
+import { getMenuControlStates } from "../ui-functions/getMenuControlStates.js";
+import getActiveMenuActionNames from "../ui-functions/getActiveMenuActionNames.js";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -31,7 +33,7 @@ export default class App extends React.Component {
       currentPage: 'index', 
       currentPageProps: null,
       menuName: 'indexMenu',
-      isInitialised: false,
+      isInitialised: true,
       controllingStaticDrowId: null,
       selectedItemType: null,
       selectedMenuCombinationId: "x",
@@ -179,9 +181,26 @@ export default class App extends React.Component {
   }
 
   renderMenu() {
+
+    const roleState = this.state.activeRole;
+    const initialisationState = this.state.isInitialised;
+    const graphicalState = this.state.graphicalState;
+    const selectedState = this.state.selectedItemType;
+    const pageState = this.state.currentPage;
+
+    const navControlStates = [
+        roleState,
+        initialisationState,
+        graphicalState,
+        selectedState,
+        pageState
+    ]
+
+    // const activeMenuNames = getActiveMenuActionNames();
+
     let isEmpty = this.state.isInitialised;
 
-    if(isEmpty === true) {
+    if(isEmpty === false) {
       return (<PreInitialisedMenu />);
     } else {
         return(<AppNavigation
@@ -193,6 +212,7 @@ export default class App extends React.Component {
             menuName={this.state.menuName}
             setMenuName={ this.setMenuName }
             isInitialised={ this.state.isInitialised}
+            navControlStates = {navControlStates}
           />);
     }
   }

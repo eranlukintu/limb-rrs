@@ -1,8 +1,8 @@
 export const getMenuControlStates = function(roleState,
-													initialisationState,
-													graphicalState,
-													selectedState,
-													pageState) {
+											initialisationState,
+											graphicalState,
+											selectedState,
+											pageState) {
 	let applicationControlStates = [];
 
 	const applicationRoleState = getRoleState(roleState);
@@ -21,7 +21,7 @@ export const getMenuControlStates = function(roleState,
 		return combinedString + currentString;
 	}, "");
 
-	console.log(applicationControlState);
+	return applicationControlState;
 
 }
 
