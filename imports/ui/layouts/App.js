@@ -60,6 +60,7 @@ export default class App extends React.Component {
   }
 
   setCurrentPage(event, { page, props }) {
+    // console.log(page);
     if (event) event.preventDefault();
     this.setState({ currentPage: page, currentPageProps: props });
   }

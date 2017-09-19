@@ -16,8 +16,53 @@ export const createMenuDataList = function() {
 	const topLevelMenuDataItemRows = MENUDATAITEMS.aggregate(topLevelPipeline)
 	topLevelMenuDataItemRows.forEach(function(t) {
 		const foundDataRow = MENUDATAROWS.findOne({sourceDrowId: t.dRowId});
-		if(!foundDataRow){
-			// console.log(t);
+		if(foundDataRow){
+				const isChanged = function() {
+
+					let isDataRowChanged = false;
+
+					const dString = foundDataRow.staticDstring;
+					const indentLevel = foundDataRow.staticIndentLevel;
+					const originalLabel = foundDataRow.label;
+					const newLabel = getAttribute(dString, "has principal label", indentLevel, menuDataItemsCollection);
+					const originalDescription = foundRow.description;
+					const newDescription = getAttribute(dString, "has description", indentLevel, menuDataItemsCollection);
+
+					if(originalLabel !== newLabel) {
+						isDataRowChanged = true;
+					}
+
+					if(originalDescription !== newDescription) {
+						isDataRowChanged = true
+					}
+
+					return isDataRowChanged;
+				}
+
+				const dataRowChangedStatus = isChanged();
+				if(dataRowChangedStatus === true) {
+					const amendedLabel = getAttribute(
+									foundDataRow.staticDstring, 
+									"has principal label", 
+									foundDataRow.staticIndentLevel, 
+									menuDataItemsCollection);
+					const amendedDescription =  getAttribute(
+									foundDataRow.staticDstring, 
+									"has description", 
+									foundDataRow.staticIndentLevel, 
+									menuDataItemsCollection);
+
+					MENUDATAROWS.update(_id: t._id,	
+							{ $set:
+								{
+									label: amendedLabel, description: amendedDescription
+								}
+							}
+						);					
+				}else {
+					console.log("Data row already exists");
+				}
+		}else {
 			const sourceDrowId = t.dRowId;
 			const dString = t.staticDstring;
 			const indentLevel = t.staticIndentLevel;
@@ -36,11 +81,8 @@ export const createMenuDataList = function() {
 			menuDataRow.label = label;
 			menuDataRow.type = type;
 			menuDataRow.description = desc;
-			menuDataRows.push(menuDataRow);
+
 			MENUDATAROWS.insert(menuDataRow);
-		}else {
-			console.log("Data row already exists");
 		}
-		
 	});
 }

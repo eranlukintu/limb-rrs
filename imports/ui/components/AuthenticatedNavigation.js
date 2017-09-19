@@ -26,7 +26,9 @@ const AuthenticatedNavigation = ({ currentPage,
                                   navControlStates}) => (
   <div>
     <Nav>
-      <MenuDropdown navControlStates = {navControlStates}/>
+      <MenuDropdown navControlStates = {navControlStates} setCurrentPage={setCurrentPage}/>
+    </Nav>
+    <Nav>  
       < MenuMaster 
           currentPage={currentPage}
           setCurrentPage={setCurrentPage} 

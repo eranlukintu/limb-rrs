@@ -24,15 +24,12 @@ class MenuDataRowsComponent extends React.Component {
 			}
 		});
 
-		// console.log(associatedDataRows);
 		const foundMenuDataRow = associatedDataRows.find(
 									x => x.menuDataRowId === menuDataRowId);
-		// console.log(menuDataRowId);
-		// console.log(foundMenuDataRow);
+		
 		if(foundMenuDataRow) {
 			checkedClass = "checked";
 		}
-		// console.log(checkedClass);
 		return checkedClass;
 	}	
 
@@ -55,14 +52,13 @@ class MenuDataRowsComponent extends React.Component {
 		          ))};    
 		    </ListGroup>)
 		}else {
-			<p>No menu items yet.</p>
+			return <p>No menu items yet.</p>
 		}
 	}
 
 	render() {
 		return <div>
-			<h4>Menu data row</h4>
-			
+			<h4>Menu data row</h4>			
 			{this.renderMenuDataItems(bothLists)}
 		</div>
 	}

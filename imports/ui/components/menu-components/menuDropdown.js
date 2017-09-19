@@ -4,24 +4,50 @@ import { getMenuControlStates } from '../../ui-functions/getMenuControlStates.js
 import { composeWithTracker } from 'react-komposer';
 import { MENUASSOCIATIONS } from "../../../api/collections/menuCollections.js";
 import Loading from "../../components/Loading.js";
+import {allMenuActions} from "../menu-action-components/allMenuActions.js";
+import {GenericMenuActionComponent} from "../menu-action-components/genericMenuActionComponent";
 
 class MenuDropdown extends React.Component {
+	constructor(props) {
+		super(props);
+		
+		this.renderMenuActions = this.renderMenuActions.bind(this);
+	}
+
+	renderMenuActions(activeMenuNames, props) {
+		// const setCurrentPage = this.props.setCurrentPage;
+		// console.log(this.props);
+		const test = activeMenuNames.map(function(a) {
+			return allMenuActions(a.menuDataRowLabel);
+		});
+
+		// console.log(this.props);
+
+		return activeMenuNames.map(function(rr) {
+			// console.log(props);
+             return <GenericMenuActionComponent 
+             	key = {rr._id}
+             	currentPage = {rr.menuDataRowLabel}
+             	setCurrentPage = {props.setCurrentPage}/>	            
+          }); 
+		
+	}
+
 	render() {
 		
 		const navControlStates = this.props.navControlStates;
 		const menuControlStates = getMenuControlStates(...navControlStates);
-		// console.log(menuAssociationItemList);
-		activeMenuNames = menuAssociationItemList.filter(function(mi) {
+		const setCurrentPage = this.props.setCurrentPage;
+		const props = this.props;
+		const activeMenuNames = menuAssociationItemList.filter(function(mi) {
 			if(mi.menuCombinationLabel === menuControlStates) {
 				return mi;
 			}
-		});
-
-		console.log(activeMenuNames);
+		});	
 
 		return <NavDropdown title="Actions" id="menuDropdown">
-			<MenuItem eventKey="temp">Temp</MenuItem>
-		</NavDropdown> 
+			{this.renderMenuActions(activeMenuNames, props)}
+		</NavDropdown>
 	}
 }
 
