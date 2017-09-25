@@ -42,6 +42,9 @@ export default class MenuCentral extends React.Component {
 			case "6": setCurrentPage("", {page: "menuAssociationsPage"});
 			break;
 
+			case "7": Meteor.call("createMenuDataRows", {});
+			break;
+
 		}
 	}	
 
@@ -56,6 +59,10 @@ export default class MenuCentral extends React.Component {
 		  		<Button 
 		  			id="2" bsStyle="info" bsSize="small" onClick={this.handleButtonClick}>
 		  			Create menu item
+		  		</Button>
+		  		<Button 
+		  			id="7" bsStyle="info" bsSize="small" onClick={this.handleButtonClick}>
+		  			Create menu data rows
 		  		</Button>
 		  		<Button 
 		  			id="3" bsStyle="info" bsSize="small" onClick={this.handleButtonClick}>

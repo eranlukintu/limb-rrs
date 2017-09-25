@@ -5,6 +5,7 @@ import "../../api/server/server-methods/createDynamicArrayMethod.js";
 import "../../api/server/server-methods/createMenuCombinationsMethod.js";
 import "../../api/server/server-methods/createActorArrayMethod.js";
 import "../../api/server/server-methods/createMenuItemMethod.js";
+import "../../api/server/server-methods/createMenuDataRowsMethod.js";
 import "../../api/server/server-methods/createMenuControlItemMethod.js";
 import "../../api/server/server-methods/updateMenuDataItemMethod.js";
 import "../../api/server/server-methods/updateMenuAssociationsMethod.js";

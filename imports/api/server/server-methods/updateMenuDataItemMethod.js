@@ -2,6 +2,7 @@ import { Meteor } from "meteor/meteor";
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import { MENUDATAITEMS } from '../../collections/menuCollections.js';
+import { MENUDATAROWS } from '../../collections/menuCollections.js';
 import { createMenuDataList } from '../server-functions/menu-server-functions/createMenuDataList.js';
 import { getDrowByAttribute } from "../server-functions/dRow-functions/getDrowByAttribute.js";
 import { createMenuDataItemsArray } from "../server-functions/menu-server-functions/update-menu-data-item/createMenuDataItemsArray.js";
@@ -18,10 +19,11 @@ export const updateMenuDataItemMethod = new ValidatedMethod({
   }).validator(),
   run(menuDataItem) {
 		const menuDataItemsCollection = MENUDATAITEMS;
+		const menuDataRowsCollection = MENUDATAROWS;
 		const sourceDrowId = menuDataItem.sourceDrowId;
 		// console.log("update started");
 	
-		createMenuDataItemsArray(menuDataItemsCollection, sourceDrowId)
+		createMenuDataItemsArray(menuDataItemsCollection, menuDataRowsCollection, sourceDrowId)
 		.then(function(args) {
 			// console.log(args);
 			return getHeadDrow(args);
@@ -29,8 +31,12 @@ export const updateMenuDataItemMethod = new ValidatedMethod({
 		.then(function(args2) {
 			// console.log(args2);
 			return getAttributeDrows(args2);
-		}).then(function(result) {
-			console.log(result);
+		})
+		.then(function(args3) {
+			// console.log(args3);
+		})
+		.catch(function(err) {
+			console.log(err);
 		});
 	// 	const foundMenuDataHeadDrow = MENUDATAITEMS.findOne({dRowId: menuDataItem.sourceDrowId});
 	// 	// console.log(foundMenuDataHeadDrow);
