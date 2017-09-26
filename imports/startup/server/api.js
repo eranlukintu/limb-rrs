@@ -13,6 +13,7 @@ import "../../api/server/server-functions/createRootItem.js";
 import "../../api/server/server-functions/createSortStringAtServer.js";
 import "../../api/server/server-functions/dot-functions/calculateIndentLevelAtServer.js";
 import "../../api/server/server-functions/dot-functions/findLastTopLevelDstring.js";
+import "../../api/server/server-functions/dRow-functions/createMenuDataRowsArray.js";
 import "../../api/server/server-functions/getDotRowsLength.js";
 import "../../api/server/server-functions/menu-server-functions/findLastToplevelMenuItemDstring.js";
 import "../../api/server/server-functions/menu-server-functions/createMenuDataItem.js";

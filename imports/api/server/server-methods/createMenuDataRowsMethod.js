@@ -9,6 +9,7 @@ import { createInitialArgs } from '../server-functions/menu-server-functions/upd
 import { attributePhrases } from '../server-functions/server-fixtures/attributePhrases.js';
 import { createAttributeHierarchyArray } from '../server-functions/dRow-functions/createAttributeHierarchyArray.js';
 import { getDirectChildren } from '../server-functions/dRow-functions/getDirectChildren.js';
+import { createMenuDataRowsArray } from '../server-functions/dRow-functions/createMenuDataRowsArray';
 
 export const createMenuDataRows = new ValidatedMethod({
   name: "createMenuDataRows",
@@ -24,6 +25,9 @@ export const createMenuDataRows = new ValidatedMethod({
         })
         .then(function(args) {
           return createAttributeHierarchyArray(args);
+        })
+        .then(function(args) {
+          return createMenuDataRowsArray(args);
         })
         .then(function(args) {
           console.log(args);
