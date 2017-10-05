@@ -4,8 +4,10 @@ export const getHeadDrows = function(initialArgs) {
 		const menuDataItemsArray = initialArgs.menuDataItemsArray;
 		const attributePhrases = initialArgs.attributePhrases;
 		const getDirectChildren = initialArgs.getDirectChildren;
+		const menuDataRowsArray = initialArgs.menuDataRowsArray;
 
 		const headDrows = menuDataItemsArray.filter(function(ai) {
+			// console.log(headDrows);
 			if(ai.staticIndentLevel === "0") {
 				return ai;
 			}
@@ -18,6 +20,7 @@ export const getHeadDrows = function(initialArgs) {
 			args.attributePhrases = attributePhrases;
 			args.getDirectChildren = getDirectChildren;
 			args.headDrows = headDrows;
+			args.menuDataRowsArray = menuDataRowsArray;			
 			resolve(args);
 		}else {
 			console.log("Couldn't create head dRows");

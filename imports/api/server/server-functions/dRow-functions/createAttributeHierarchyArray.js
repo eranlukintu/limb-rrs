@@ -4,26 +4,28 @@ export const createAttributeHierarchyArray = function(args) {
 		const attributePhrases = args.attributePhrases;
 		const menuDataItemsArray = args.menuDataItemsArray;
 		const getDirectChildren = args.getDirectChildren;
+		const menuDataRowsArray = args.menuDataRowsArray;
 
 		if(headDrows) {
 			const args1 = {};
 			args1.menuDataItemsArray = menuDataItemsArray;
 			args1.attributePhrases = attributePhrases;
 			args1.headDrows = headDrows;
+			args1.menuDataRowsArray = menuDataRowsArray;
 			// args1.getDirectChildren = getDirectChildren;
 
 			let attributeHierarchyArray = [];
 
 			headDrows.forEach(function(hdr) {
-				const dString = hdr.staticDstring;
-				const indentLevel = hdr.staticIndentLevel;
+				const staticDstring = hdr.staticDstring;
+				const staticIndentLevel = hdr.staticIndentLevel;
 
 				attributeHierarchyArray.push(hdr);
 				const length = attributeHierarchyArray.length;
 				const hdrIndex = length - 1;
 				attributeHierarchyArray[hdrIndex].children = [];
 
-				const directChildren = getDirectChildren(dString, indentLevel, menuDataItemsArray);
+				const directChildren = getDirectChildren(staticDstring, staticIndentLevel, menuDataItemsArray);
 				
 				directChildren.forEach(function(dc) {
 					const childPhrase = dc.secondaryLabel;

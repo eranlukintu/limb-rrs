@@ -12,9 +12,9 @@ export default class EditMenuDataItemPage extends React.Component {
 		// console.log(props[0]);
 
 		this.state={
-			menuDataItemName: props[0].label,
-			menuDataItemDescription: props[0].description,
-			menuDataItemType: props[0].type,
+			menuDataRowName: props[0].label,
+			menuDataRowDescription: props[0].description,
+			menuDataRowType: props[0].type,
 		}
 
 		this.handleButtonClick = this.handleButtonClick.bind(this);
@@ -27,14 +27,14 @@ export default class EditMenuDataItemPage extends React.Component {
 		const props=this.props;
 		const setCurrentPage = this.props.setCurrentPage;
 		const id=e.target.id;
-		const menuDataItem = {};
-		menuDataItem.sourceDrowId = props[0].sourceDrowId;
-		menuDataItem.name = this.state.menuDataItemName;
-		menuDataItem.type = this.state.menuDataItemType;
-		menuDataItem.description = this.state.menuDataItemDescription;	
+		const menuDataRow = {};
+		menuDataRow.sourceDrowId = props[0].sourceDrowId;
+		menuDataRow.name = this.state.menuDataRowName;
+		menuDataRow.type = this.state.menuDataRowType;
+		menuDataRow.description = this.state.menuDataRowDescription;	
 		
 		switch(id) {
-			case "1": Meteor.call("updateMenuDataItemMethod", menuDataItem)
+			case "1": Meteor.call("updateMenuDataItemMethod", menuDataRow)
 			break;
 
 			case "2": setCurrentPage("", {page: "menuCentral", props: props});
@@ -43,15 +43,15 @@ export default class EditMenuDataItemPage extends React.Component {
 	}
 
 	handleNameChange(e) {
-		this.setState({menuDataItemName: e.target.value});
+		this.setState({menuDataRowName: e.target.value});
 	}
 
 	handleTypeChange(e) {
-		this.setState({menuDataItemType: e.target.value});
+		this.setState({menuDataRowType: e.target.value});
 	}
 
 	handleDescriptionChange(e) {
-		this.setState({menuDataItemDescription: e.target.value})
+		this.setState({menuDataRowDescription: e.target.value})
 	}
 
 	render() {
@@ -70,13 +70,13 @@ export default class EditMenuDataItemPage extends React.Component {
 			<FormGroup>
 				<FormControl
 					type="text"
-					value={this.state.menuDataItemName}
+					value={this.state.menuDataRowName}
 					placeholder="Enter name of menu item"
 					onChange={this.handleNameChange}>					
 				</FormControl>
 				<FormControl
 					type="text"
-					value={this.state.menuDataItemDescription}
+					value={this.state.menuDataRowDescription}
 					placeholder="Enter description"
 					onChange={this.handleDescriptionChange}>					
 				</FormControl>				
