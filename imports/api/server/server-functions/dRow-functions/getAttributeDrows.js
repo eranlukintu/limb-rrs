@@ -1,15 +1,43 @@
 export const getAttributeDrows = function(args) {
  return new Promise(function(resolve, reject) {
- 	const headDrow = args.headDrow; 
- 	const dString = headDrow.staticDstring;
- 	const indentLevel = headDrow.staticIndentLevel;
+ 	const originalHeadDrow = args.originalHeadDrow; 
+ 	const dString = originalHeadDrow.staticDstring;
+ 	const indentLevel = originalHeadDrow.staticIndentLevel;
+ 	// const menuDataItemsArray = args.menuDataItemsArray;
+ 	const menuDataRow = args.menuDataRow;
+ 	const getDirectChildren = args.getDirectChildren;
+ 	const attributePhrases = args.attributePhrases;
+ 	const menuDataItemsCollection = args.menuDataItemsCollection;
 
- 	resolve(headDrow);
+ 	// console.log(args);
+ 	const menuDataItemsArray = menuDataItemsCollection.find().fetch();
+
+ 	const directChildren = getDirectChildren(dString, indentLevel, menuDataItemsArray)
+
+ 	const attributeDrowsArray = [];
+ 	directChildren.forEach(function(dc) {
+		const childPhrase = dc.secondaryLabel;
+		const childPhraseIndexInAttributePhrases = attributePhrases.indexOf(childPhrase);
+		if(childPhraseIndexInAttributePhrases !== -1) {
+			attributeDrowsArray.push(dc);
+		}					
+	});
+
+ 	const args1 = {};
+ 	args1.sourceDrowId =args.sourceDrowId;
+ 	args1.attributeDrowsArray = attributeDrowsArray;
+	// args1.originalHeadDrow = originalHeadDrow;
+	args1.pendingMenuDataRow = menuDataRow;
+	// args1.attributePhrases = attributePhrases;
+	// args1.getDirectChildren = getDirectChildren;
+	args1.menuDataItemsCollection = args.menuDataItemsCollection
+
+ 	resolve(args1);
  	
- 	// if(headDrow) {
-		// // console.log(headDrow);
- 	// 	const originalStaticIndentLevel = args.headDrow.staticIndentLevel;
- 	// 	const dString = args.headDrow.staticDstring;
+ 	// if(originalHeadDrow) {
+		// // console.log(originalHeadDrow);
+ 	// 	const originalStaticIndentLevel = args.originalHeadDrow.staticIndentLevel;
+ 	// 	const dString = args.originalHeadDrow.staticDstring;
  	// 	const staticIndentLevel = (Number(originalStaticIndentLevel) + 1).toString();
 
   //  		const attributeDrows = args.menuDataItemsArray.filter(function(mdi) {

@@ -10,7 +10,7 @@ export const createInitialArgs = function(
 			const menuDataRowsArray = menuDataRowsCollection.find({}).fetch();
 			// console.log(menuDataRowsArray);
 			// console.log(menuDataItemsArray);
-			initialArgs.menuDataItemsCollection = menuDataRowsCollection;
+			initialArgs.menuDataItemsCollection = menuDataItemsCollection;
 			initialArgs.menuDataItemsArray = menuDataItemsArray;
 			initialArgs.attributePhrases = attributePhrases;
 			initialArgs.getDirectChildren = getDirectChildren;

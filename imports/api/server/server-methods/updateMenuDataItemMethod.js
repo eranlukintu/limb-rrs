@@ -19,7 +19,7 @@ export const updateMenuDataItemMethod = new ValidatedMethod({
   name: "updateMenuDataItemMethod",
   validate: new SimpleSchema({ 
     sourceDrowId: {type: String},
-    name: {type: String},
+    label: {type: String},
     type: {type: String},
     description: {type: String}
   }).validator(),
@@ -31,10 +31,10 @@ export const updateMenuDataItemMethod = new ValidatedMethod({
 		createInitialArgs(MENUDATAITEMS, attributePhrases, getDirectChildren, MENUDATAROWS)
 		.then(function(args) {
 			// console.log(args);
-			return getHeadDrow(args, sourceDrowId);
+			return getHeadDrow(args, sourceDrowId, menuDataItem);
 		})
 		.then(function(args) {
-			// console.log(args);
+			// console.log(args.originalHeadDrow);
 			return getAttributeDrows(args);
 		})
 		.then(function(args) {

@@ -29,7 +29,7 @@ export default class EditMenuDataItemPage extends React.Component {
 		const id=e.target.id;
 		const menuDataRow = {};
 		menuDataRow.sourceDrowId = props[0].sourceDrowId;
-		menuDataRow.name = this.state.menuDataRowName;
+		menuDataRow.label = this.state.menuDataRowName;
 		menuDataRow.type = this.state.menuDataRowType;
 		menuDataRow.description = this.state.menuDataRowDescription;	
 		
