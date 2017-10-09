@@ -42,7 +42,7 @@ export default class MenuCentral extends React.Component {
 			case "6": setCurrentPage("", {page: "menuAssociationsPage"});
 			break;
 
-			case "7": Meteor.call("createMenuDataRows", {});
+			case "7": Meteor.call("createMenuDataRowsMethod", {});
 			break;
 
 		}
