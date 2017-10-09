@@ -14,6 +14,9 @@ import { createMenuDataRowsArray } from '../server-functions/dRow-functions/crea
 import { getAttributeDrows } from '../server-functions/dRow-functions/getAttributeDrows.js';
 import { createCategorisedDataRowsArray } from '../server-functions/menu-server-functions/update-menu-data-row/createCategorisedDataRowsArray.js';
 import { saveMenuDataRows } from '../server-functions/menu-server-functions/update-menu-data-row/saveMenuDataRows.js';
+import { getPendingAttributeDrows } from '../server-functions/dRow-functions/getPendingAttributeDrows.js';
+import { getLastDescriptionWord } from '../server-functions/dRow-functions/getLastDescriptionWord.js';
+import { updatePendingAttributeDrows } from '../server-functions/dRow-functions/updatePendingAttributeDrows.js';
 
 export const updateMenuDataItemMethod = new ValidatedMethod({
   name: "updateMenuDataItemMethod",
@@ -38,7 +41,10 @@ export const updateMenuDataItemMethod = new ValidatedMethod({
 			return getAttributeDrows(args);
 		})
 		.then(function(args) {
-			console.log(args);
+			return getPendingAttributeDrows(args, getLastDescriptionWord);
+		})
+		.then(function(args) {
+			updatePendingAttributeDrows(args, MENUDATAITEMS);
 		})
 		.catch(function(err) {
 			console.log(err);
