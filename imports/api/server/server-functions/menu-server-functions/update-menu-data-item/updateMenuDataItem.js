@@ -12,6 +12,7 @@ import { saveMenuDataRows } from '../update-menu-data-row/saveMenuDataRows.js';
 import { getPendingAttributeDrows } from '../../dRow-functions/getPendingAttributeDrows.js';
 import { getLastDescriptionWord } from '../../dRow-functions/getLastDescriptionWord.js';
 import { updatePendingAttributeDrows } from '../../dRow-functions/updatePendingAttributeDrows.js';
+import { createMenuDataRows } from '../createMenuDataRows.js';
 
 export const updateMenuDataItem = function(menuDataItem) {
 		
@@ -32,6 +33,9 @@ export const updateMenuDataItem = function(menuDataItem) {
 	})
 	.then(function(args) {
 		updatePendingAttributeDrows(args, MENUDATAITEMS);
+	})
+	.then(function() {
+		return createMenuDataRows();
 	})
 	.catch(function(err) {
 		console.log(err);

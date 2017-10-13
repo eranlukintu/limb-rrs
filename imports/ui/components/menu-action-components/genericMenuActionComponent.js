@@ -16,12 +16,12 @@ export class GenericMenuActionComponent extends React.Component {
 	}
 
 	render() {
-		// console.log(this.props);?
+		console.log(this.props);
 		const currentPage = this.props.currentPage;
 		// console.log(currentPage);
 
 		return <MenuItem eventKey={currentPage} onSelect={this.handleSelect}>
-			Go to menu central
+			{currentPage}
 		</MenuItem>
 	}
 }

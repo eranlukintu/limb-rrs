@@ -17,6 +17,7 @@ class MenuDropdown extends React.Component {
 	renderMenuActions(activeMenuNames, props) {
 		// const setCurrentPage = this.props.setCurrentPage;
 		// console.log(this.props);
+		// console.log(activeMenuNames);
 		const test = activeMenuNames.map(function(a) {
 			return allMenuActions(a.menuDataRowLabel);
 		});

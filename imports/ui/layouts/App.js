@@ -199,9 +199,9 @@ export default class App extends React.Component {
 
     // const activeMenuNames = getActiveMenuActionNames();
 
-    let isEmpty = this.state.isInitialised;
+    let isInitialised = this.state.isInitialised;
 
-    if(isEmpty === false) {
+    if(isInitialised === false) {
       return (<PreInitialisedMenu />);
     } else {
         return(<AppNavigation
